@@ -19,6 +19,9 @@
 html{scroll-behavior:smooth}
 .es-skip-link{position:absolute;left:16px;top:-60px;z-index:100;background:#fff;color:var(--text-heading);padding:12px 20px;font:700 13px var(--font-display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:2px solid var(--action-primary);transition:top var(--duration-fast) var(--ease-standard)}
 .es-skip-link:focus{top:16px}
+.es-breadcrumb a{text-decoration:underline;text-underline-offset:2px}
+.es-breadcrumb a:hover{opacity:.65}
+.es-breadcrumb a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--surface-light);font-family:var(--font-body)}
 a{color:var(--text-accent);text-decoration:none}
@@ -162,7 +165,7 @@ a:hover{color:var(--action-primary-hover)}
 
 <div style="background:var(--surface-light);padding:clamp(40px,7vh,80px) var(--space-section-x) clamp(24px,4vh,40px)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<ol aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)"><li><a href="Eurostar%20Landing%20Hi-Fi.dc.html" style="color:var(--gray-500)">Home</a></li><li aria-hidden="true">/</li><li style="color:var(--text-heading)">Servizi</li></ol>
+<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)"><li><a href="Eurostar%20Landing%20Hi-Fi.dc.html" style="color:var(--gray-500)">Home</a></li><li aria-hidden="true">/</li><li style="color:var(--text-heading)">Servizi</li></ol>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Servizi e post-vendita</x-import>
 <h1 style="margin:16px 0 16px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:15ch;letter-spacing:var(--tracking-tight)">Al tuo fianco anche dopo l'installazione</h1>
 <p style="margin:0;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Un impianto Eurostar è un investimento di lungo periodo. Il nostro reparto tecnico garantisce continuità operativa con assistenza rapida, ricambi originali e diagnostica da remoto.</p>

@@ -19,6 +19,9 @@
 html{scroll-behavior:smooth}
 .es-skip-link{position:absolute;left:16px;top:-60px;z-index:100;background:#fff;color:var(--text-heading);padding:12px 20px;font:700 13px var(--font-display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:2px solid var(--action-primary);transition:top var(--duration-fast) var(--ease-standard)}
 .es-skip-link:focus{top:16px}
+.es-breadcrumb a{text-decoration:underline;text-underline-offset:2px}
+.es-breadcrumb a:hover{opacity:.65}
+.es-breadcrumb a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--surface-light);font-family:var(--font-body)}
 a{color:var(--text-accent);text-decoration:none}
@@ -158,7 +161,7 @@ a:hover{color:var(--action-primary-hover)}
 <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.5) 100%)"></div>
 <div style="position:relative;padding:clamp(40px,7vh,80px) var(--space-section-x);width:100%;box-sizing:border-box">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<ol aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="Eurostar%20Landing%20Hi-Fi.dc.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="Eurostar%20Catalogo%20Hi-Fi.dc.html" style="color:var(--text-on-dark-faint)">Macchine</a></li><li aria-hidden="true">/</li><li style="color:#fff">Macchine usate</li></ol>
+<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="Eurostar%20Landing%20Hi-Fi.dc.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="Eurostar%20Catalogo%20Hi-Fi.dc.html" style="color:var(--text-on-dark-faint)">Macchine</a></li><li aria-hidden="true">/</li><li style="color:#fff">Macchine usate</li></ol>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Categoria</x-import>
 <h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Macchine usate</h1>
 <p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Macchine usate e revisionate, ispezionate e collaudate dal nostro reparto tecnico, con garanzia e assistenza inclusa.</p>
