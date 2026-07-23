@@ -1,0 +1,41 @@
+:root{
+/* Fixed spacing scale (px) seen across cards, grids, icons */
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-7:32px;
+--space-8:40px;
+--space-9:48px;
+--space-10:56px;
+--space-11:64px;
+--space-12:80px;
+
+/* Fluid section rhythm — used for section padding block/inline */
+--space-section-y:clamp(64px,10vh,140px);
+--space-section-y-lg:clamp(96px,16vh,190px);
+--space-section-x:clamp(20px,6vw,80px);
+--space-content-max:1360px;
+--space-content-max-narrow:1180px;
+
+/* Radii — the brand uses hard edges everywhere; only dots/pills are round */
+--radius-none:0;
+--radius-full:9999px;
+
+/* Signature diagonal cut on buttons/CTAs (top-right corner clipped 12px) */
+--clip-cut-tr:polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%); /* @kind other */
+
+/* Motion */
+--ease-standard:cubic-bezier(0.22,1,0.36,1); /* @kind other */
+--duration-fast:0.2s; /* @kind other */
+--duration-base:0.35s; /* @kind other */
+--duration-slow:0.7s; /* @kind other */
+--duration-reveal:0.8s; /* @kind other */
+
+/* Shadows — used sparingly: hover lift + menu panels only */
+--shadow-nav:0 1px 0 rgba(0,0,0,0.08);
+--shadow-card-hover:0 18px 44px rgba(0,0,0,0.12);
+--shadow-panel:0 30px 60px rgba(0,0,0,0.4);
+}

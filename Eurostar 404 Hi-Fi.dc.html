@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<title>Pagina non trovata | Eurostar</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/colors.css">
+<link rel="stylesheet" href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/typography.css">
+<link rel="stylesheet" href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/styles.css">
+<script src="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/_ds_bundle.js"></script>
+<style>
+html{scroll-behavior:smooth}
+.es-skip-link{position:absolute;left:16px;top:-60px;z-index:100;background:#fff;color:var(--text-heading);padding:12px 20px;font:700 13px var(--font-display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:2px solid var(--action-primary);transition:top var(--duration-fast) var(--ease-standard)}
+.es-skip-link:focus{top:16px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--surface-dark);font-family:var(--font-body)}
+a{color:var(--text-accent);text-decoration:none}
+a:hover{color:var(--action-primary-hover)}
+.es-navlink{position:relative;display:inline-block;padding-bottom:6px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.75;cursor:pointer;text-decoration:none}
+.es-navlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform var(--duration-base) var(--ease-standard)}
+.es-navlink:hover{color:#fff}
+.es-navlink:hover::after{transform:scaleX(1)}
+.es-navlink:focus-visible{opacity:1;outline:2px solid #fff;outline-offset:4px}
+.es-navlink.active{opacity:1;font-weight:800}
+.es-navlink.active::after{transform:scaleX(1);background:var(--blue-300)}.es-navlink-group{position:relative}.es-navlink-group .es-navlink::after{content:none}.es-navlink-group::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform var(--duration-base) var(--ease-standard)}.es-navlink-group:hover::after,.es-navlink-group:focus-within::after{transform:scaleX(1)}.es-navlink-group:hover .es-navlink,.es-navlink-group:focus-within .es-navlink{color:#fff}
+.es-navlink-cta{align-self:stretch;display:flex;align-items:center;background:var(--action-primary);color:#fff;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;margin:-18px calc(-1 * clamp(20px,4vw,56px)) -18px 0;padding:18px clamp(20px,4vw,56px) 18px 28px;transition:background var(--duration-base) var(--ease-standard)}
+.es-navlink-cta:hover{background:var(--action-primary-hover);color:#fff}
+.es-navlink-cta:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.es-nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;position:relative;z-index:41}
+.es-nav-toggle span{display:block;width:24px;height:2px;background:#fff;transition:transform var(--duration-base) var(--ease-standard),opacity var(--duration-base) var(--ease-standard)}
+.es-nav-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.es-nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.es-nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.es-nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:1024px){
+.es-nav-toggle{display:flex}
+.es-nav-links{position:fixed;inset:0;z-index:40;flex-direction:column;align-items:stretch !important;gap:0;background:var(--surface-darkest);padding:110px 28px 40px;overflow-y:auto;align-self:auto;transform:translateX(100%);transition:transform var(--duration-base) var(--ease-standard);visibility:hidden}
+.es-nav-links.is-open{transform:translateX(0);visibility:visible}
+.es-nav-links .es-navlink{padding:18px 0;font-size:16px;border-bottom:1px solid var(--border-on-dark)}.es-nav-links .es-navlink-group{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-on-dark)}.es-nav-links .es-navlink-group .es-navlink{border-bottom:none;padding:18px 0}
+.es-nav-links .es-navlink-cta{margin:28px 0 0;align-self:auto;justify-content:center;padding:16px 24px}
+}
+.es-mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:none;border:none;color:#fff;opacity:.75;cursor:pointer;padding:0}
+.es-mega-caret svg{transition:transform var(--duration-base) var(--ease-standard)}
+.es-mega-caret[aria-expanded="true"] svg{transform:rotate(180deg)}
+.es-mega-caret:hover{opacity:1}
+.es-mega-caret:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.es-mega{position:fixed;left:0;right:0;z-index:45;background:var(--surface-light);border-top:1px solid var(--border-subtle);box-shadow:var(--shadow-panel);max-height:calc(100vh - 100px);overflow-y:auto;padding:44px var(--space-section-x);box-sizing:border-box;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity var(--duration-base) var(--ease-standard),transform var(--duration-base) var(--ease-standard),visibility var(--duration-base)}
+.es-mega.is-open{opacity:1;transform:translateY(0);visibility:visible}
+.es-mega-inner{max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:56px;position:relative}
+.es-mega-col h3{margin:0 0 4px;font:var(--text-h4);font-size:14px;color:var(--text-heading);text-transform:uppercase}
+.es-mega-col p{margin:0 0 16px;font:var(--text-body-sm);color:var(--text-body)}
+.es-mega-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.es-mega-list a{display:block;padding:8px 0;font:400 14px/1.3 var(--font-body);color:var(--text-body);text-decoration:none;border-bottom:1px solid var(--border-subtle)}
+.es-mega-list a:hover{color:var(--text-heading)}
+.es-mega-featured{background:var(--surface-tint);padding:20px}
+.es-mega-featured .es-mega-frame{aspect-ratio:4/3;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 10px/1.2 var(--font-body);text-align:center;margin-bottom:14px}
+.es-mega-featured h4{margin:0 0 4px;font:var(--text-h4);font-size:15px;color:var(--text-heading);text-transform:uppercase}
+.es-mega-featured p{margin:0 0 12px;font:var(--text-body-sm);color:var(--text-body)}
+@media (max-width:1024px){.es-mega-caret{display:none}.es-mega{display:none}}
+.es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:13px 15px;font:var(--text-body-md);color:var(--text-heading);box-sizing:border-box}
+.es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
+select.es-field{appearance:none;-webkit-appearance:none;-moz-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px 12px}
+select.es-field::-ms-expand{display:none}
+.es-flabel{display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-600);margin-bottom:8px}
+.es-req{color:var(--flag-red)}
+</style>
+</helmet>
+
+<a href="#main-content" class="es-skip-link">Salta al contenuto principale</a>
+
+<div style="width:100%">
+
+<div style="background:var(--surface-darkest);color:var(--text-on-dark-muted);display:flex;align-items:center;justify-content:space-between;padding:8px clamp(20px,4vw,56px);font:var(--text-caption)">
+<div style="display:flex;align-items:center;gap:10px"><span style="width:7px;height:7px;border-radius:var(--radius-full);background:var(--blue-400);display:inline-block"></span><span style="letter-spacing:.04em">Supporto completo: rispondiamo entro 24 ore</span></div>
+<nav aria-label="Selettore lingua" style="display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px"><a href="#" style="color:#fff">it</a><span aria-hidden="true" style="opacity:.4">-</span><a href="#" style="color:var(--text-on-dark-faint)">en</a></nav>
+<div class="es-mega" id="es-mega-panel" role="region" aria-label="Sottomenu Macchine">
+<div class="es-mega-inner">
+<div class="es-mega-col">
+<h3>Macchine</h3>
+<p>Riempitrici, sciacquatrici, tappatrici ed etichettatrici per ogni tipo di contenitore e produttività.</p>
+<a href="Eurostar%20Catalogo%20Hi-Fi.dc.html" class="es-textlink">Vedi tutto il catalogo →</a>
+</div>
+<div class="es-mega-col">
+<h3>Per tipologia</h3>
+<ul class="es-mega-list">
+<li><a href="Eurostar%20Riempitrici%20Hi-Fi.dc.html">Riempitrici</a></li>
+<li><a href="Eurostar%20Tappatrici%20Hi-Fi.dc.html">Tappatrici</a></li>
+<li><a href="Eurostar%20Etichettatrici%20Hi-Fi.dc.html">Etichettatrici</a></li>
+<li><a href="Eurostar%20Sciacquatrici%20Hi-Fi.dc.html">Sciacquatrici</a></li>
+</ul>
+</div>
+<div class="es-mega-col">
+<h3>Per esigenza</h3>
+<ul class="es-mega-list">
+<li><a href="Eurostar%20Linee%20Complete%20Hi-Fi.dc.html">Linee complete</a></li>
+<li><a href="Eurostar%20Macchine%20Usate%20Hi-Fi.dc.html">Macchine usate</a></li>
+<li><a href="Eurostar%20Servizi%20Hi-Fi.dc.html">Ricambi e assistenza</a></li>
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Soluzioni per settore</a></li>
+</ul>
+</div>
+<div class="es-mega-col es-mega-featured">
+<div class="es-mega-frame" aria-hidden="true">[IMG: MEC LD]</div>
+<h4>MEC LD</h4>
+<p>Monoblocco a gravità, 24k bottiglie/ora.</p>
+<a href="Eurostar%20Scheda%20Macchina%20Hi-Fi.dc.html" class="es-textlink">Scopri la macchina →</a>
+</div>
+</div>
+</div><div class="es-mega" id="es-mega-panel-settori" role="region" aria-label="Sottomenu Settori">
+<div class="es-mega-inner">
+<div class="es-mega-col">
+<h3>Settori</h3>
+<p>Soluzioni di imbottigliamento su misura, progettate per le esigenze specifiche di ogni filiera produttiva.</p>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" class="es-textlink">Vedi tutti i settori →</a>
+</div>
+<div class="es-mega-col">
+<h3>Bevande</h3>
+<ul class="es-mega-list">
+<li><a href="Eurostar%20Settore%20Hi-Fi.dc.html">Vino</a></li>
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Birra</a></li>
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Succhi</a></li>
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Acqua e bevande gassate</a></li>
+</ul>
+</div>
+<div class="es-mega-col">
+<h3>Altri settori</h3>
+<ul class="es-mega-list">
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Distillati e liquori</a></li>
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Olio e aceto</a></li>
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Cosmetica</a></li>
+<li><a href="Eurostar%20Settori%20Hi-Fi.dc.html">Chimica e farmaceutica</a></li>
+</ul>
+</div>
+<div class="es-mega-col es-mega-featured">
+<div class="es-mega-frame" aria-hidden="true">[IMG: Settore Vino]</div>
+<h4>Vino</h4>
+<p>Linee dedicate a spumanti, fermi e metodo classico.</p>
+<a href="Eurostar%20Settore%20Hi-Fi.dc.html" class="es-textlink">Scopri il settore →</a>
+</div>
+</div>
+</div>
+</div>
+
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,4vw,56px);background:var(--surface-dark);box-shadow:var(--shadow-nav)">
+<a href="Eurostar%20Landing%20Hi-Fi.dc.html" style="display:flex;align-items:center;gap:16px"><img src="assets/logo-white.png" alt="Eurostar" style="height:40px;cursor:pointer" /><span aria-hidden="true" style="width:1px;height:28px;background:rgba(255,255,255,.3)"></span><img src="assets/logo-30-white.png" alt="30 anni, 1996-2026" style="height:32px" /></a>
+<button type="button" class="es-nav-toggle" id="es-nav-toggle" aria-expanded="false" aria-controls="es-nav-links" aria-label="Apri il menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+<div style="display:flex;gap:clamp(16px,2.2vw,32px);align-items:center;align-self:stretch" class="es-nav-links" id="es-nav-links">
+<a class="es-navlink" href="Eurostar%20Contenuto%20Hi-Fi.dc.html">Azienda</a><span class="es-navlink-group" style="display:inline-flex;align-items:center;gap:2px"><a class="es-navlink" href="Eurostar%20Catalogo%20Hi-Fi.dc.html">Macchine</a><button type="button" class="es-mega-caret" id="es-mega-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="es-mega-panel" aria-label="Mostra sottomenu Macchine"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></span><span class="es-navlink-group" style="display:inline-flex;align-items:center;gap:2px"><a class="es-navlink" href="Eurostar%20Settori%20Hi-Fi.dc.html">Settori</a><button type="button" class="es-mega-caret" id="es-mega-trigger-settori" aria-expanded="false" aria-haspopup="true" aria-controls="es-mega-panel-settori" aria-label="Mostra sottomenu Settori"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></span><a class="es-navlink" href="Eurostar%20Servizi%20Hi-Fi.dc.html">Servizi</a><a class="es-navlink" href="Eurostar%20Referenze%20Hi-Fi.dc.html">Referenze</a><a class="es-navlink" href="Eurostar%20News%20Hi-Fi.dc.html">News</a><a class="es-navlink-cta" href="Eurostar%20Contatti%20Hi-Fi.dc.html">Richiedi una consulenza</a>
+</div>
+</nav>
+
+<main id="main-content">
+
+<!-- 404 -->
+<section style="background:var(--surface-light);padding:clamp(90px,16vh,180px) var(--space-section-x);min-height:64vh;display:flex;align-items:center">
+<div style="max-width:640px;margin:0 auto;text-align:center">
+<span style="display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(72px,12vw,140px);line-height:1;color:var(--gray-200);margin-bottom:8px" aria-hidden="true">404</span>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" align="center" hint-size="auto,20px">Errore 404</x-import>
+<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase">Pagina non trovata</h1>
+<p style="margin:0 0 36px;font:var(--text-body-lg);color:var(--text-body)">La pagina che cerchi potrebbe essere stata rimossa, rinominata o non è mai esistita. Prova a ripartire da qui.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:44px">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" href="Eurostar%20Landing%20Hi-Fi.dc.html" hint-size="auto,52px">Torna alla home</x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="Eurostar%20Catalogo%20Hi-Fi.dc.html" hint-size="auto,52px">Vai al catalogo macchine</x-import>
+</div>
+<nav aria-label="Sezioni principali" style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--border-subtle)">
+<a href="Eurostar%20Contenuto%20Hi-Fi.dc.html" style="font:400 15px/1.4 var(--font-body);color:var(--text-body);text-decoration:underline">Azienda</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 15px/1.4 var(--font-body);color:var(--text-body);text-decoration:underline">Settori</a>
+<a href="Eurostar%20Servizi%20Hi-Fi.dc.html" style="font:400 15px/1.4 var(--font-body);color:var(--text-body);text-decoration:underline">Servizi</a>
+<a href="Eurostar%20Contatti%20Hi-Fi.dc.html" style="font:400 15px/1.4 var(--font-body);color:var(--text-body);text-decoration:underline">Contatti</a>
+</nav>
+</div>
+</section>
+
+</main>
+
+<footer style="background:var(--surface-darkest);padding:clamp(48px,7vh,80px) var(--space-section-x) 0">
+<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:40px 28px">
+<div>
+<div style="display:flex;align-items:center;gap:16px"><img src="assets/logo-white.png" alt="Eurostar" style="height:34px" /><span aria-hidden="true" style="width:1px;height:24px;background:rgba(255,255,255,.3)"></span><img src="assets/logo-30-white.png" alt="30 anni, 1996-2026" style="height:28px" /></div>
+<div style="margin-top:28px">
+<span style="display:block;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-accent-on-dark)">Sede operativa</span>
+<p style="margin:10px 0 0;font:400 16px/1.6 var(--font-body);color:var(--text-on-dark-muted)">Regione Leiso, 86 — 14050<br />S. Marzano Oliveto — Italia</p>
+</div>
+<div style="margin-top:24px">
+<span style="display:block;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-accent-on-dark)">Sede legale</span>
+<p style="margin:10px 0 0;font:400 16px/1.6 var(--font-body);color:var(--text-on-dark-muted)">Via Donizetti, 23<br />20122 Milano — Italia</p>
+</div>
+</div>
+<div>
+<span style="display:block;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-accent-on-dark)">Azienda</span>
+<div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+<a href="Eurostar%20Contenuto%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Chi siamo</a>
+<a href="Eurostar%20Servizi%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Servizi e post-vendita</a>
+<a href="Eurostar%20Contatti%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Contatti</a>
+</div>
+</div>
+<div>
+<span style="display:block;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-accent-on-dark)">Macchine</span>
+<div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+<a href="Eurostar%20Riempitrici%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Riempitrici</a>
+<a href="Eurostar%20Tappatrici%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Tappatrici</a>
+<a href="Eurostar%20Etichettatrici%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Etichettatrici</a>
+<a href="Eurostar%20Sciacquatrici%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Sciacquatrici</a>
+<a href="Eurostar%20Linee%20Complete%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Linee complete</a>
+<a href="Eurostar%20Macchine%20Usate%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Macchine usate</a>
+</div>
+</div>
+<div>
+<span style="display:block;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-accent-on-dark)">Settori</span>
+<div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Vino</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Birra</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Succhi</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Distillati e liquori</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Olio e aceto</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Acqua e bevande gassate</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Cosmetica</a>
+<a href="Eurostar%20Settori%20Hi-Fi.dc.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Chimica e farmaceutica</a>
+</div>
+</div>
+<div>
+<span style="display:block;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-accent-on-dark)">Contatto</span>
+<div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+<a href="mailto:info@eurostarsrl.it" style="font:500 16px/1.4 var(--font-body);color:var(--text-on-dark);text-decoration:none">info@eurostarsrl.it</a>
+<a href="tel:+390141856032" style="font:500 16px/1.4 var(--font-body);color:var(--text-on-dark);text-decoration:none">+39 0141 856 032</a>
+</div>
+<div style="display:flex;gap:10px;margin-top:20px">
+<a href="#" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--border-on-dark);color:var(--text-on-dark)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V23h-4.5V8.25zM8.5 8.25h4.31v2.02h.06c.6-1.13 2.06-2.32 4.24-2.32 4.54 0 5.38 2.99 5.38 6.88V23h-4.5v-6.9c0-1.64-.03-3.76-2.29-3.76-2.29 0-2.64 1.79-2.64 3.64V23H8.5V8.25z"/></svg>
+</a>
+<a href="#" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--border-on-dark);color:var(--text-on-dark)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.44 1.27 4.89L2 22l5.25-1.28A9.96 9.96 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.06c-1.56 0-3.03-.42-4.3-1.15l-.31-.18-3.12.76.78-3.05-.2-.32A7.98 7.98 0 0 1 4.04 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8.04-8 8.04zm4.4-6c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.34-1.68-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
+</a>
+</div>
+</div>
+</div>
+<div style="max-width:var(--space-content-max);margin:36px auto 0;padding:22px 0;border-top:1px solid var(--border-on-dark);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+<span style="font:400 13px/1.4 var(--font-body);color:var(--text-on-dark-faint)">© 2026 Eurostar S.r.l. — P.IVA IT01233470051 · Codice Fiscale 02506310040</span>
+<div style="display:flex;align-items:center;gap:20px">
+<a href="#" style="font:400 13px/1.4 var(--font-body);color:var(--text-on-dark-faint);text-decoration:none">Squadron</a>
+<a href="#" style="font:400 13px/1.4 var(--font-body);color:var(--text-on-dark-faint);text-decoration:none">Eurostar Carpenteria</a>
+<a href="#" id="es-back-to-top" aria-label="Torna in alto" style="width:44px;height:26px;border-radius:14px;border:1px solid var(--border-on-dark);display:flex;align-items:center;justify-content:center;color:var(--text-on-dark);flex-shrink:0">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+</a>
+</div>
+</div>
+</footer>
+
+</div>
+
+</x-dc>
+<script>
+document.addEventListener('click', function(e){
+  var btn = e.target.closest && e.target.closest('#es-nav-toggle');
+  if (!btn) return;
+  var panel = document.getElementById('es-nav-links');
+  if (!panel) return;
+  var open = panel.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  btn.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+});
+document.addEventListener('keydown', function(e){
+  if (e.key !== 'Escape') return;
+  var panel = document.getElementById('es-nav-links');
+  var btn = document.getElementById('es-nav-toggle');
+  if (panel && panel.classList.contains('is-open')) {
+    panel.classList.remove('is-open');
+    if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Apri il menu'); btn.focus(); }
+  }
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var trigger = e.target.closest && e.target.closest('.es-mega-caret');
+  if (trigger) {
+    var panel = document.getElementById(trigger.getAttribute('aria-controls'));
+    if (!panel) return;
+    var nav = trigger.closest('nav');
+    var opening = !panel.classList.contains('is-open');
+    document.querySelectorAll('.es-mega.is-open').forEach(function(p){
+      if (p === panel) return;
+      p.classList.remove('is-open');
+      var ot = document.querySelector('.es-mega-caret[aria-controls="' + p.id + '"]');
+      if (ot) ot.setAttribute('aria-expanded', 'false');
+    });
+    if (opening) {
+      panel.style.top = nav.getBoundingClientRect().bottom + 'px';
+      panel.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+    return;
+  }
+  document.querySelectorAll('.es-mega.is-open').forEach(function(panel){
+    if (panel.contains(e.target)) return;
+    panel.classList.remove('is-open');
+    var t2 = document.querySelector('.es-mega-caret[aria-controls="' + panel.id + '"]');
+    if (t2) t2.setAttribute('aria-expanded', 'false');
+  });
+});
+document.addEventListener('keydown', function(e){
+  if (e.key !== 'Escape') return;
+  document.querySelectorAll('.es-mega.is-open').forEach(function(panel){
+    panel.classList.remove('is-open');
+    var trigger = document.querySelector('.es-mega-caret[aria-controls="' + panel.id + '"]');
+    if (trigger) { trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); }
+  });
+});
+window.addEventListener('resize', function(){
+  var nav = document.querySelector('nav');
+  if (!nav) return;
+  document.querySelectorAll('.es-mega.is-open').forEach(function(panel){
+    panel.style.top = nav.getBoundingClientRect().bottom + 'px';
+  });
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var btn = e.target.closest && e.target.closest('#es-back-to-top');
+  if (!btn) return;
+  e.preventDefault();
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
+</script>
+</body>
+</html>
