@@ -27,6 +27,9 @@
 /* Signature diagonal cut on buttons/CTAs (top-right corner clipped 12px) */
 --clip-cut-tr:polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%); /* @kind other */
 
+/* Large diagonal panel cut, used to split image/text blocks (56px slant) */
+--clip-diag:polygon(0 0, 100% 0, calc(100% - 56px) 100%, 0 100%); /* @kind other */
+
 /* Motion */
 --ease-standard:cubic-bezier(0.22,1,0.36,1); /* @kind other */
 --duration-fast:0.2s; /* @kind other */
