@@ -81,6 +81,8 @@ a:hover{color:var(--action-primary-hover)}
 .es-diag-media{min-height:280px}
 .es-diag-media.es-diag-left{order:2}
 .es-diag-panel.es-diag-right{order:1}
+.es-featured-grid{grid-template-columns:1fr !important;gap:48px !important}
+.es-featured-col{padding:0 !important;border-left:none !important;margin-left:0 !important;min-height:360px !important}
 }
 .es-textlink{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--action-primary)}
 .es-cat{position:relative;display:block;text-decoration:none;cursor:pointer;background:var(--surface-dark);border-radius:var(--radius-md);padding:28px 24px 56px;transition:background var(--duration-base) var(--ease-standard)}
@@ -365,27 +367,43 @@ a:hover{color:var(--action-primary-hover)}
 <div style="max-width:var(--space-content-max);margin:88px auto 0;display:flex;justify-content:center"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" href="archive-macchine.html" hint-size="auto,52px">Vedi le macchine</x-import></div>
 </section>
 
-<!-- Macchina in evidenza -->
-<section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:clamp(40px,5vw,80px);align-items:center">
-<div>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Macchina in evidenza</x-import>
-<h2 style="margin:16px 0 32px;font:var(--text-display-1);font-size:clamp(36px,4.4vw,56px);line-height:1.05;color:var(--text-heading);text-transform:uppercase">MEC LD <span style="color:var(--action-primary)">nel</span><br /><span style="color:var(--action-primary)">dettaglio</span></h2>
-<div style="display:flex;gap:0;margin:0 0 36px">
-<div style="padding-right:28px"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:36px;color:var(--text-heading)">24k</span><span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Bottiglie / ora</span></div>
-<div style="padding:0 28px;border-left:1px solid var(--border-subtle)"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:36px;color:var(--text-heading)">4</span><span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Fasi di riempimento</span></div>
-<div style="padding-left:28px;border-left:1px solid var(--border-subtle)"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:36px;color:var(--text-heading)">±1mm</span><span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Precisione livello</span></div>
+<!-- Macchine in evidenza -->
+<section style="background:var(--surface-darkest);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">La nostra gamma</x-import>
+<h2 style="margin:16px 0 20px;font:var(--text-display-1);font-size:clamp(32px,4vw,52px);line-height:1.05;color:#fff;text-transform:uppercase">Macchine in evidenza</h2>
+<p style="margin:0 0 56px;font:var(--text-body-lg);color:var(--text-on-dark-muted);max-width:64ch">Una selezione dalle nostre linee di riempimento, tappatura, etichettatura e lavaggio — ognuna progettata internamente e calibrata sul prodotto che tratta.</p>
+<div class="es-featured-grid" style="display:grid;grid-template-columns:1fr 1fr 0.85fr;gap:0;align-items:stretch">
+
+<div class="es-featured-col" style="padding:0 clamp(24px,3vw,40px) 0 0">
+<span style="display:block;margin-bottom:24px;font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)">Riempimento</span>
+<div style="aspect-ratio:4/3;background:var(--navy-700);border:1px dashed var(--border-on-dark);display:flex;align-items:center;justify-content:center;color:var(--text-on-dark-faint);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box;margin-bottom:28px">[IMG: Can Fill 9/1 Revolution]</div>
+<h3 style="margin:0 0 6px;font:var(--text-h2);font-size:26px;color:#fff;text-transform:uppercase">Can Fill</h3>
+<span style="display:block;margin-bottom:16px;font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--text-on-dark-faint)">Contropressione</span>
+<p style="margin:0 0 28px;font:var(--text-body-md);color:var(--text-on-dark-muted);max-width:38ch">Riempie liquidi fermi a bassa densità: le valvole si aprono al contatto con il collo del contenitore, sollevato dai cilindri di supporto — altamente configurabile.</p>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="taxonomy-macchina-riempitrici.html" hint-size="auto,48px">Schede tecniche</x-import>
 </div>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" href="single-macchina.html" hint-size="auto,52px">Scopri la macchina</x-import>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:48px">
-<div style="padding-top:20px;border-top:1px solid var(--border-subtle)"><span style="display:block;margin-bottom:8px;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--action-primary)">01</span><h3 style="margin:0 0 8px;font:var(--text-h3);font-size:17px;color:var(--text-heading);text-transform:uppercase">Deareazione e flussaggio N₂</h3><p style="margin:0;font:var(--text-body-sm);color:var(--gray-500)">L'aria viene estratta dalla bottiglia e sostituita con gas inerte prima del riempimento, riducendo al minimo l'ossidazione.</p></div>
-<div style="padding-top:20px;border-top:1px solid var(--border-subtle)"><span style="display:block;margin-bottom:8px;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--action-primary)">03</span><h3 style="margin:0 0 8px;font:var(--text-h3);font-size:17px;color:var(--text-heading);text-transform:uppercase">Sistema di livellamento</h3><p style="margin:0;font:var(--text-body-sm);color:var(--gray-500)">Una stazione rotativa imposta il livello esatto; l'eccesso ritorna in un serbatoio separato mentre il gas protegge il prodotto fino alla chiusura.</p></div>
-<div style="padding-top:20px;margin-top:28px;border-top:1px solid var(--border-subtle)"><span style="display:block;margin-bottom:8px;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--action-primary)">02</span><h3 style="margin:0 0 8px;font:var(--text-h3);font-size:17px;color:var(--text-heading);text-transform:uppercase">Valvole di riempimento a gravità</h3><p style="margin:0;font:var(--text-body-sm);color:var(--gray-500)">Le valvole si aprono a contatto con il collo del contenitore — riempimento delicato e preciso per prodotti fermi a bassa densità.</p></div>
-<div style="padding-top:20px;margin-top:28px;border-top:1px solid var(--border-subtle)"><span style="display:block;margin-bottom:8px;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--action-primary)">04</span><h3 style="margin:0 0 8px;font:var(--text-h3);font-size:17px;color:var(--text-heading);text-transform:uppercase">Controllo touch-screen</h3><p style="margin:0;font:var(--text-body-sm);color:var(--gray-500)">Un HMI da 5.7" gestisce l'intera linea, con WiFi/Ethernet opzionali per diagnostica e assistenza da remoto.</p></div>
+
+<div class="es-featured-col" style="padding:0 clamp(24px,3vw,40px);border-left:1px solid var(--border-on-dark)">
+<span style="display:block;margin-bottom:24px;font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)">Riempimento</span>
+<div style="aspect-ratio:4/3;background:var(--navy-700);border:1px dashed var(--border-on-dark);display:flex;align-items:center;justify-content:center;color:var(--text-on-dark-faint);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box;margin-bottom:28px">[IMG: MEC LD 63/12VP-VA/10C]</div>
+<h3 style="margin:0 0 6px;font:var(--text-h2);font-size:26px;color:#fff;text-transform:uppercase">MEC LD</h3>
+<span style="display:block;margin-bottom:16px;font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--text-on-dark-faint)">Sottovuoto / gravità</span>
+<p style="margin:0 0 28px;font:var(--text-body-md);color:var(--text-on-dark-muted);max-width:38ch">Riempie liquidi fermi a bassa densità: le valvole si aprono al contatto con il collo del contenitore, sollevato dai cilindri di supporto — altamente configurabile.</p>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="single-macchina.html" hint-size="auto,48px">Schede tecniche</x-import>
+</div>
+
+<a href="#" class="es-featured-col" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;margin-left:clamp(24px,3vw,40px);min-height:100%;background:var(--navy-700);border:1px dashed var(--border-on-dark);overflow:hidden;text-decoration:none;box-sizing:border-box">
+<div aria-hidden="true" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--text-on-dark-faint);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box">[IMG: Macchina Squadron]</div>
+<div style="position:relative;padding:28px;background:linear-gradient(0deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,0) 65%)">
+<span style="display:block;margin-bottom:8px;font-family:var(--font-display);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)">Soluzioni per piccole produzioni</span>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+<span style="font:var(--text-h2);font-size:26px;color:#fff;text-transform:uppercase">Squadron</span>
+<span aria-hidden="true" style="width:36px;height:36px;border-radius:var(--radius-full);border:1px solid var(--border-on-dark);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0">→</span>
 </div>
 </div>
-<div style="position:relative;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center">
-<div style="width:100%;height:100%;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;overflow:hidden;box-sizing:border-box;color:var(--gray-500);font:400 10px/1.2 var(--font-body);text-align:center;padding:2px">[IMG: Macchina Eurostar MEC LD]</div>
+</a>
+
 </div>
 </div>
 </section>
