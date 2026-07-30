@@ -101,17 +101,36 @@ a:hover{color:var(--action-primary-hover)}
 .es-icon-btn{flex-shrink:0;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--action-ghost-on-dark-bg);border:1px solid var(--border-on-dark);color:#fff;cursor:pointer;padding:0;transition:border-color var(--duration-base) var(--ease-standard),background var(--duration-base) var(--ease-standard)}
 .es-icon-btn:hover{border-color:rgba(255,255,255,.7)}
 .es-icon-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.es-engineer-media{position:relative;min-height:52vh;display:flex;align-items:center;justify-content:center;background:var(--surface-dark);overflow:hidden;clip-path:polygon(0 0,100% 0,100% 84%,0 100%)}
-.es-engineer-stats{max-width:1240px;margin:-56px auto 0;position:relative;z-index:2;padding:0 var(--space-section-x);box-sizing:border-box}
-.es-engineer-stats-inner{background:var(--surface-light);box-shadow:var(--shadow-card-hover);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:clamp(28px,4vw,48px)}
+.es-engineer{background:var(--surface-tint)}
+.es-engineer-visual{position:relative;padding:56px 24px 40px;display:flex;flex-direction:column;align-items:center;gap:28px;box-sizing:border-box;overflow:hidden}
+.es-engineer-photo{position:absolute;inset:0;background:var(--navy-800)}
+.es-engineer-photo-tex{position:absolute;inset:0;opacity:.5;background:var(--gray-400)}
+.es-engineer-photo-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.78) 0%,rgba(10,10,10,.6) 100%)}
+.es-engineer-cut{display:none}
+.es-engineer-bottle{position:relative;z-index:3;width:140px;height:280px;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 10px/1.3 var(--font-body);text-align:center;padding:6px;box-sizing:border-box;order:1}
+.es-engineer-claim{position:relative;z-index:2;text-align:center;font-family:var(--font-display);font-weight:900;font-size:clamp(26px,7vw,40px);line-height:1.05;color:#fff;text-transform:uppercase;letter-spacing:var(--tracking-tight);max-width:16ch;margin:0;order:2}
+.es-engineer-stats-wrap{position:relative;z-index:4;display:grid;grid-template-columns:1fr 1fr;gap:28px 20px;width:100%;max-width:420px;order:3}
+.es-engineer-stat{text-align:center}
+.es-engineer-stat .value{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3vw,34px);line-height:1;color:#fff}
+.es-engineer-stat .label{display:block;margin-top:6px;font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--text-on-dark-faint)}
 .es-discover-item{display:flex;flex-direction:column}
 .es-discover-icon{width:52px;height:52px;border:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;color:var(--action-primary);margin-bottom:20px;flex-shrink:0}
 .es-discover-item h4{margin:0 0 10px;font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-heading)}
 .es-discover-item p{margin:0 0 16px;font:var(--text-body-sm);color:var(--gray-500);flex:1}
-@media (max-width:900px){
-.es-engineer-media{min-height:0;padding:64px 0;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
-.es-engineer-stats{margin-top:-40px}
-.es-engineer-stats-inner{grid-template-columns:1fr 1fr;gap:32px 20px}
+@media (min-width:901px){
+.es-engineer-visual{min-height:760px;padding:0;display:block}
+.es-engineer-cut{display:block;position:absolute;inset:0;background:var(--surface-tint);clip-path:polygon(0 60%,100% 40%,100% 100%,0 100%);z-index:1}
+.es-engineer-bottle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(160px,15vw,220px);height:74%;z-index:3}
+.es-engineer-claim{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:20ch;font-size:clamp(34px,5.5vw,64px)}
+.es-engineer-stats-wrap{position:static;display:contents;max-width:none}
+.es-engineer-stat{position:absolute;text-align:left;z-index:5}
+.es-engineer-stat .value{font-size:clamp(30px,3.4vw,44px)}
+.es-engineer-stat.pos-tl{left:clamp(20px,6vw,100px);top:16%}
+.es-engineer-stat.pos-tr{right:clamp(20px,6vw,100px);top:26%}
+.es-engineer-stat.pos-bl{left:clamp(20px,6vw,100px);bottom:14%}
+.es-engineer-stat.pos-bl .value,.es-engineer-stat.pos-br .value{color:var(--text-heading)}
+.es-engineer-stat.pos-bl .label,.es-engineer-stat.pos-br .label{color:var(--gray-500)}
+.es-engineer-stat.pos-br{right:clamp(20px,6vw,100px);bottom:6%}
 }
 .es-icon-btn svg{display:block;pointer-events:none}
 .es-sec{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy-900);text-decoration:none;display:block}
@@ -267,24 +286,20 @@ a:hover{color:var(--action-primary-hover)}
 </section>
 
 <!-- We engineer solutions -->
-<section style="background:var(--surface-tint);padding:0 0 var(--space-section-y-lg)">
-<div class="es-engineer-media">
-<div style="position:absolute;inset:0;width:100%;height:100%;opacity:.5;background:var(--gray-150)" aria-hidden="true"></div>
-<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.4) 55%,rgba(10,10,10,.75) 100%)"></div>
-<div style="position:relative;text-align:center;padding:clamp(56px,10vh,120px) var(--space-section-x)">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" align="center" hint-size="auto,20px">Ingegneria Eurostar</x-import>
-<h2 style="margin:18px 0 0;font:var(--text-display-1);font-size:clamp(30px,5.6vw,68px);color:#fff;text-transform:uppercase;letter-spacing:var(--tracking-tight)">Progettiamo soluzioni.</h2>
+<section class="es-engineer">
+<div class="es-engineer-visual">
+<div class="es-engineer-photo" aria-hidden="true"><div class="es-engineer-photo-tex"></div><div class="es-engineer-photo-shade"></div></div>
+<div class="es-engineer-cut" aria-hidden="true"></div>
+<h2 class="es-engineer-claim">Progettiamo soluzioni.</h2>
+<div class="es-engineer-bottle" aria-hidden="true">[IMG: Bottiglia vuota in PET, macchina sullo sfondo]</div>
+<div class="es-engineer-stats-wrap">
+<div class="es-engineer-stat pos-tl"><span class="value">30+</span><span class="label">Anni di ingegneria</span></div>
+<div class="es-engineer-stat pos-tr"><span class="value">2.000+</span><span class="label">Macchine installate</span></div>
+<div class="es-engineer-stat pos-bl"><span class="value">60+</span><span class="label">Paesi serviti</span></div>
+<div class="es-engineer-stat pos-br"><span class="value">24/7</span><span class="label">Risposta assistenza</span></div>
 </div>
 </div>
-<div class="es-engineer-stats">
-<div class="es-engineer-stats-inner">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="30" label="Anni di attività" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="2.000+" label="Macchine installate" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="60+" label="Paesi serviti" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="24/7" label="Risposta assistenza" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-</div>
-</div>
-<div style="max-width:var(--space-content-max);margin:clamp(48px,7vh,80px) auto 0;padding:0 var(--space-section-x);box-sizing:border-box">
+<div style="max-width:var(--space-content-max);margin:0 auto;padding:clamp(48px,7vh,80px) var(--space-section-x) var(--space-section-y-lg);box-sizing:border-box">
 <h3 style="margin:0 0 32px;font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Scopri le macchine per:</h3>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(28px,3vw,40px)">
 <div class="es-discover-item">
