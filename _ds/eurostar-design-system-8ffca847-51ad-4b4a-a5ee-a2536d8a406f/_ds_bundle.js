@@ -152,27 +152,33 @@ Object.assign(__ds_scope, { SpecRow, SpecList });
 
 // components/core/StatBlock.jsx
 try { (() => {
+const statSizes = {
+  lg: { value: 'clamp(40px,5vw,74px)', lineHeight: 0.9, labelTop: 10, label: 12, labelSpacing: '0.14em' },
+  md: { value: 'clamp(28px,2.8vw,40px)', lineHeight: 1, labelTop: 6, label: 11, labelSpacing: '0.08em' },
+  sm: { value: 'clamp(22px,2.2vw,30px)', lineHeight: 1, labelTop: 0, label: 11, labelSpacing: '0.06em' }
+};
 function StatBlock({
   value,
   label,
   dark = true,
   size = 'lg'
 }) {
+  const s = statSizes[size] || statSizes.lg;
   return React.createElement('div', null, React.createElement('div', {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 900,
-      fontSize: size === 'lg' ? 'clamp(40px,5vw,74px)' : 'clamp(22px,2.2vw,30px)',
-      lineHeight: size === 'lg' ? 0.9 : 1,
+      fontSize: s.value,
+      lineHeight: s.lineHeight,
       color: dark ? '#fff' : 'var(--text-heading)'
     }
   }, value), React.createElement('div', {
     style: {
-      marginTop: size === 'lg' ? 10 : 0,
+      marginTop: s.labelTop,
       fontFamily: 'var(--font-body)',
       fontWeight: 400,
-      fontSize: size === 'lg' ? 12 : 11,
-      letterSpacing: size === 'lg' ? '0.14em' : '0.06em',
+      fontSize: s.label,
+      letterSpacing: s.labelSpacing,
       textTransform: 'uppercase',
       color: dark ? 'var(--text-accent-on-dark)' : 'var(--gray-500)'
     }
