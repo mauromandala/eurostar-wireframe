@@ -71,6 +71,16 @@ a:hover{color:var(--action-primary-hover)}
 .es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:12px 14px;font:var(--text-body-sm);color:var(--text-heading);box-sizing:border-box}
 .es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
 .es-dl-link{display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid var(--border-subtle);font:var(--text-body-md);color:var(--action-primary);font-weight:500}
+.es-product-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,72px);align-items:start}
+@media (max-width:900px){.es-product-hero{grid-template-columns:1fr}}
+.es-gallery{display:flex;flex-direction:column;gap:12px}
+.es-gallery-main{aspect-ratio:4/3;background:var(--gray-100)}
+.es-gallery-frame{width:100%;height:100%;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box}
+.es-gallery-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.es-gallery-thumb{aspect-ratio:1/1;background:var(--gray-150);border:1px dashed var(--gray-400);color:var(--gray-500);font:700 11px var(--font-display);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.es-gallery-thumb.is-active{border-color:var(--action-primary);color:var(--action-primary)}
+.es-gallery-thumb:focus-visible{outline:2px solid var(--action-primary);outline-offset:2px}
+.es-container-tag{display:inline-flex;align-items:center;gap:6px;font:400 13px var(--font-body);color:var(--text-heading)}
 </style>
 </helmet>
 
@@ -159,22 +169,40 @@ a:hover{color:var(--action-primary-hover)}
 <main id="main-content">
 
 <!-- Product header -->
-<div style="background:var(--surface-tint);padding:clamp(40px,6vh,64px) var(--space-section-x) 0">
+<section style="background:var(--surface-tint);padding:clamp(40px,6vh,64px) var(--space-section-x) clamp(56px,8vh,88px)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 24px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)"><li><a href="home.html" style="color:var(--gray-500)">Home</a></li><li aria-hidden="true">/</li><li><a href="archive-macchine.html" style="color:var(--gray-500)">Macchine</a></li><li aria-hidden="true">/</li><li><a href="taxonomy-macchina-riempitrici.html" style="color:var(--gray-500)">Riempitrici</a></li><li aria-hidden="true">/</li><li style="color:var(--text-heading)">MEC LD</li></ol>
+<div class="es-product-hero">
+<div>
 <h1 style="margin:0 0 14px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase">MEC LD</h1>
-<p style="margin:0 0 20px;font:var(--text-body-lg);color:var(--action-primary);font-weight:500">Riempitrice a gravità monoblocco automatica</p>
+<p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--action-primary);font-weight:500">Riempitrice a gravità monoblocco automatica</p>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
 <span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Adatta per</span>
 <a href="taxonomy-settore.html" style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:6px 16px;text-decoration:none">Vino</a>
 <a href="archive-settori.html" style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:6px 16px;text-decoration:none">Olio e aceto</a>
 <a href="archive-settori.html" style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:6px 16px;text-decoration:none">Succhi</a>
 </div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:18px">
+<span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Contenitori</span>
+<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>Bottiglia in vetro</span>
+<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M6 8h12M6 14h12"/></svg>Lattina</span>
 </div>
 </div>
+<div class="es-gallery" data-gallery-main>
+<div class="es-gallery-main"><div class="es-gallery-frame" aria-hidden="true">[IMG: Riempitrice MEC LD, vista completa]</div></div>
+<div class="es-gallery-thumbs" role="tablist" aria-label="Galleria immagini MEC LD">
+<button type="button" class="es-gallery-thumb is-active" role="tab" aria-selected="true" data-gallery-label="Riempitrice MEC LD, vista completa">01</button>
+<button type="button" class="es-gallery-thumb" role="tab" aria-selected="false" data-gallery-label="Dettaglio valvole di riempimento">02</button>
+<button type="button" class="es-gallery-thumb" role="tab" aria-selected="false" data-gallery-label="Pannello di controllo touch-screen">03</button>
+<button type="button" class="es-gallery-thumb" role="tab" aria-selected="false" data-gallery-label="Stazione di tappatura integrata">04</button>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 <!-- Stats strip -->
-<section style="background:var(--surface-tint);padding:clamp(40px,6vh,64px) var(--space-section-x) 0">
+<section style="background:var(--surface-tint);padding:0 var(--space-section-x) clamp(40px,6vh,64px)">
 <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:40px">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="3.000–12.000" label="Bottiglie/ora" dark="{{ false }}" size="sm" hint-size="auto,60px"></x-import>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="24–60" label="Valvole di riempimento" dark="{{ false }}" size="sm" hint-size="auto,60px"></x-import>
@@ -182,13 +210,6 @@ a:hover{color:var(--action-primary-hover)}
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="AISI 316L" label="Materiale a contatto" dark="{{ false }}" size="sm" hint-size="auto,60px"></x-import>
 </div>
 </section>
-
-<!-- Gallery -->
-<div style="background:var(--surface-tint);padding:clamp(32px,5vh,56px) var(--space-section-x) clamp(56px,8vh,88px)">
-<div style="max-width:var(--space-content-max);margin:0 auto;aspect-ratio:16/9;background:var(--gray-100);overflow:hidden;display:flex;align-items:center;justify-content:center">
-<div style="width:100%;height:100%;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;overflow:hidden;box-sizing:border-box;color:var(--gray-500);font:400 10px/1.2 var(--font-body);text-align:center;padding:2px">[IMG: Riempitrice MEC LD, vista completa]</div>
-</div>
-</div>
 
 <!-- Progettata internamente -->
 <section style="background:var(--surface-light);padding:clamp(48px,7vh,88px) var(--space-section-x) var(--space-section-y-lg)">
@@ -216,6 +237,24 @@ a:hover{color:var(--action-primary-hover)}
 <h3 style="margin:0 0 12px;font:var(--text-h3);font-size:19px;color:var(--text-heading);text-transform:uppercase">Controllo touch-screen</h3>
 <p style="margin:0;font:var(--text-body-sm);color:var(--gray-500);line-height:1.6">HMI a colori 5.7", predisposizione WiFi opzionale.</p>
 </div>
+</div>
+</div>
+</section>
+
+<!-- Focus macchina -->
+<section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">In dettaglio</x-import>
+<h2 style="margin:20px 0 40px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase;max-width:24ch">Uno sguardo ravvicinato sui punti di forza</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,3vw,40px)">
+<figure style="margin:0">
+<div style="aspect-ratio:4/3;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box" aria-hidden="true">[IMG: Dettaglio valvole di riempimento]</div>
+<figcaption style="margin-top:16px;font:var(--text-body-sm);color:var(--text-body);line-height:1.6"><strong style="color:var(--text-heading)">Valvole a gravità con flussaggio N2.</strong> Ogni valvola lavora in modo indipendente, garantendo un riempimento uniforme anche con prodotti gassati o sensibili all'ossigeno.</figcaption>
+</figure>
+<figure style="margin:0">
+<div style="aspect-ratio:4/3;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box" aria-hidden="true">[IMG: Pannello di controllo touch-screen]</div>
+<figcaption style="margin-top:16px;font:var(--text-body-sm);color:var(--text-body);line-height:1.6"><strong style="color:var(--text-heading)">HMI 5.7" touch-screen.</strong> Impostazione livelli, diagnostica e storico allarmi da pannello, con predisposizione WiFi per il monitoraggio remoto.</figcaption>
+</figure>
 </div>
 </div>
 </section>
@@ -448,6 +487,19 @@ document.addEventListener('click', function(e){
   e.preventDefault();
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var thumb = e.target.closest && e.target.closest('.es-gallery-thumb');
+  if (!thumb) return;
+  var gallery = thumb.closest('.es-gallery');
+  if (!gallery) return;
+  gallery.querySelectorAll('.es-gallery-thumb').forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+  thumb.classList.add('is-active');
+  thumb.setAttribute('aria-selected', 'true');
+  var frame = gallery.querySelector('.es-gallery-frame');
+  if (frame) frame.textContent = '[IMG: ' + thumb.getAttribute('data-gallery-label') + ']';
 });
 </script>
 </body>
