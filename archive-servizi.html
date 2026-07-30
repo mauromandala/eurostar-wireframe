@@ -69,6 +69,25 @@ a:hover{color:var(--action-primary-hover)}
 .es-svc{background:var(--surface-light);text-decoration:none;display:flex;flex-direction:column;transition:transform var(--duration-base) var(--ease-standard),box-shadow var(--duration-base) var(--ease-standard)}
 .es-svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover)}
 .es-svc img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+
+.es-util-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-on-dark-muted);text-decoration:none;font:var(--text-caption);letter-spacing:.02em}
+.es-util-link:hover{color:#fff}
+.es-util-link:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.es-util-divider{width:1px;height:14px;background:rgba(255,255,255,.2);display:inline-block}
+.es-search-wrap{position:relative;display:flex;align-items:center}
+.es-search-toggle{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:none;border:none;color:var(--text-on-dark-muted);cursor:pointer;padding:0}
+.es-search-toggle:hover{color:#fff}
+.es-search-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.es-search-toggle[aria-expanded="true"]{color:#fff}
+.es-search-panel{position:absolute;top:calc(100% + 12px);right:0;z-index:55;background:var(--surface-light);border:1px solid var(--border-subtle);box-shadow:var(--shadow-panel);padding:16px;width:280px;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity var(--duration-base) var(--ease-standard),transform var(--duration-base) var(--ease-standard),visibility var(--duration-base)}
+.es-search-panel.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+.es-search-panel form{display:flex;gap:8px;align-items:center}
+.es-search-panel input{flex:1;border:1px solid var(--border-subtle);padding:8px 10px;font:var(--text-body-sm);color:var(--text-heading);box-sizing:border-box}
+.es-search-panel input:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
+.es-search-submit{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0;background:var(--action-primary);border:none;color:#fff;cursor:pointer}
+.es-search-submit:hover{background:var(--action-primary-hover)}
+.es-search-submit:focus-visible{outline:2px solid var(--action-primary);outline-offset:2px}
+@media (max-width:560px){.es-util-support{display:none !important}}
 </style>
 </helmet>
 
@@ -76,9 +95,9 @@ a:hover{color:var(--action-primary-hover)}
 
 <div style="width:100%">
 
-<div style="background:var(--surface-darkest);color:var(--text-on-dark-muted);display:flex;align-items:center;justify-content:space-between;padding:8px clamp(20px,4vw,56px);font:var(--text-caption)">
-<div style="display:flex;align-items:center;gap:10px"><span style="width:7px;height:7px;border-radius:var(--radius-full);background:var(--blue-400);display:inline-block"></span><span style="letter-spacing:.04em">Supporto completo: rispondiamo entro 24 ore</span></div>
-<nav aria-label="Selettore lingua" style="display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px"><a href="#" style="color:#fff">it</a><span aria-hidden="true" style="opacity:.4">-</span><a href="#" style="color:var(--text-on-dark-faint)">en</a></nav>
+<div style="background:var(--surface-darkest);color:var(--text-on-dark-muted);display:flex;align-items:center;padding:8px clamp(20px,4vw,56px);font:var(--text-caption);flex-wrap:nowrap;gap:12px">
+<div class="es-util-support" style="display:flex;align-items:center;gap:10px;min-width:0"><span style="width:7px;height:7px;border-radius:var(--radius-full);background:var(--blue-400);display:inline-block"></span><span style="letter-spacing:.04em">Supporto completo: rispondiamo entro 24 ore</span></div>
+<div style="display:flex;align-items:center;gap:16px;margin-left:auto;flex-shrink:0"><a href="archive-macchine.html" class="es-util-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/></svg>Catalogo</a><span class="es-util-divider" aria-hidden="true"></span><nav aria-label="Selettore lingua" style="display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px"><a href="#" style="color:#fff">it</a><span aria-hidden="true" style="opacity:.4">-</span><a href="#" style="color:var(--text-on-dark-faint)">en</a></nav><span class="es-util-divider" aria-hidden="true"></span><div class="es-search-wrap"><button type="button" class="es-search-toggle" id="es-search-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="es-search-panel" aria-label="Apri la ricerca"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button><div class="es-search-panel" id="es-search-panel" role="region" aria-label="Ricerca nel sito"><form role="search" action="#" onsubmit="return false"><label for="es-search-input" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Cerca nel sito</label><input id="es-search-input" type="search" placeholder="Cerca macchine, settori…" /><button type="submit" class="es-search-submit" aria-label="Avvia la ricerca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button></form></div></div></div>
 <div class="es-mega" id="es-mega-panel" role="region" aria-label="Sottomenu Macchine">
 <div class="es-mega-inner">
 <div class="es-mega-col">
@@ -348,6 +367,37 @@ document.addEventListener('click', function(e){
   e.preventDefault();
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var trigger = e.target.closest && e.target.closest('#es-search-trigger');
+  var panel = document.getElementById('es-search-panel');
+  if (trigger) {
+    if (!panel) return;
+    var opening = !panel.classList.contains('is-open');
+    panel.classList.toggle('is-open', opening);
+    trigger.setAttribute('aria-expanded', opening ? 'true' : 'false');
+    if (opening) {
+      var input = panel.querySelector('input');
+      if (input) input.focus();
+    }
+    return;
+  }
+  if (panel && panel.classList.contains('is-open') && !panel.contains(e.target)) {
+    panel.classList.remove('is-open');
+    var t = document.getElementById('es-search-trigger');
+    if (t) t.setAttribute('aria-expanded', 'false');
+  }
+});
+document.addEventListener('keydown', function(e){
+  if (e.key !== 'Escape') return;
+  var panel = document.getElementById('es-search-panel');
+  var trigger = document.getElementById('es-search-trigger');
+  if (panel && panel.classList.contains('is-open')) {
+    panel.classList.remove('is-open');
+    if (trigger) { trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); }
+  }
 });
 </script>
 </body>
