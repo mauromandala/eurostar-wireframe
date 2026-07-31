@@ -101,9 +101,7 @@ a:hover{color:var(--action-primary-hover)}
 .es-icon-btn{flex-shrink:0;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--action-ghost-on-dark-bg);border:1px solid var(--border-on-dark);color:#fff;cursor:pointer;padding:0;transition:border-color var(--duration-base) var(--ease-standard),background var(--duration-base) var(--ease-standard)}
 .es-icon-btn:hover{border-color:rgba(255,255,255,.7)}
 .es-icon-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.es-hero-cut{display:none}
-.es-hero-pause{bottom:24px}
-.es-engineer{background:var(--surface-light);position:relative}
+.es-engineer{background:var(--surface-light);position:relative;display:flow-root}
 .es-engineer-wrap{position:relative;max-width:var(--space-content-max);margin:0 auto;padding:40px var(--space-section-x);box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:28px}
 .es-engineer-bottle{position:relative;z-index:2;width:140px;height:300px;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 10px/1.3 var(--font-body);text-align:center;padding:6px;box-sizing:border-box}
 .es-engineer-claim{position:relative;z-index:1;text-align:center;font-family:var(--font-display);font-weight:900;font-size:clamp(30px,9vw,48px);line-height:1.05;color:var(--text-heading);text-transform:uppercase;letter-spacing:var(--tracking-tight);max-width:16ch;margin:0}
@@ -116,18 +114,16 @@ a:hover{color:var(--action-primary-hover)}
 .es-discover-item h4{margin:0 0 10px;font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-heading)}
 .es-discover-item p{margin:0 0 16px;font:var(--text-body-sm);color:var(--gray-500);flex:1}
 @media (min-width:901px){
-.es-hero{padding-bottom:320px;box-sizing:content-box}
-.es-hero-pause{bottom:344px}
-.es-hero-cut{display:block;position:absolute;left:0;right:0;bottom:0;height:320px;background:var(--surface-light);clip-path:polygon(100% calc(50% - clamp(50px,4.5vw,130px)),100% 100%,0 100%,0 calc(50% + clamp(50px,4.5vw,130px)));z-index:2}
-.es-engineer-wrap{min-height:680px;padding-top:0;padding-bottom:0;margin-top:-320px}
-.es-engineer-bottle{position:absolute;left:50%;top:0;transform:translateX(-50%);width:clamp(160px,14vw,210px);height:90%;z-index:2}
-.es-engineer-claim{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);max-width:20ch;font-size:clamp(40px,6vw,80px)}
+.es-hero{clip-path:polygon(0 0,100% 0,100% 84%,0 100%)}
+.es-engineer-wrap{min-height:520px;padding-top:0;padding-bottom:0;margin-top:-180px}
+.es-engineer-bottle{position:absolute;left:50%;top:0;transform:translateX(-50%);width:clamp(160px,14vw,210px);height:85%;z-index:2}
+.es-engineer-claim{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:20ch;font-size:clamp(40px,6vw,80px)}
 .es-engineer-stats-wrap{position:static;display:contents}
 .es-engineer-stat{position:absolute;text-align:left;z-index:3}
-.es-engineer-stat.pos-tl{left:var(--space-section-x);top:290px}
-.es-engineer-stat.pos-tr{right:var(--space-section-x);top:170px}
-.es-engineer-stat.pos-bl{left:var(--space-section-x);top:68%}
-.es-engineer-stat.pos-br{right:var(--space-section-x);top:77%}
+.es-engineer-stat.pos-tl{left:var(--space-section-x);top:230px}
+.es-engineer-stat.pos-tr{right:var(--space-section-x);top:130px}
+.es-engineer-stat.pos-bl{left:var(--space-section-x);top:72%}
+.es-engineer-stat.pos-br{right:var(--space-section-x);top:80%}
 }
 .es-icon-btn svg{display:block;pointer-events:none}
 .es-sec{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy-900);text-decoration:none;display:block}
@@ -277,10 +273,9 @@ a:hover{color:var(--action-primary-hover)}
 </div>
 </div>
 </div>
-<button aria-label="Pausa video" class="es-icon-btn es-hero-pause" style="position:absolute;right:clamp(20px,4vw,56px)">
+<button aria-label="Pausa video" class="es-icon-btn" style="position:absolute;bottom:24px;right:clamp(20px,4vw,56px)">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
 </button>
-<div class="es-hero-cut" aria-hidden="true"></div>
 </section>
 
 <!-- We engineer solutions -->
