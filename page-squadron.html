@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<title>News e guide tecniche | Eurostar</title>
+<title>Squadron — Soluzioni per piccole produzioni | Eurostar</title>
 </head>
 <body>
 <x-dc>
@@ -66,14 +66,8 @@ a:hover{color:var(--action-primary-hover)}
 .es-mega-featured h4{margin:0 0 4px;font:var(--text-h4);font-size:15px;color:var(--text-heading);text-transform:uppercase}
 .es-mega-featured p{margin:0 0 12px;font:var(--text-body-sm);color:var(--text-body)}
 @media (max-width:1024px){.es-mega-caret{display:none}.es-mega{display:none}}
-.es-tab{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);background:none;border:none;padding:16px 4px;cursor:pointer;border-bottom:2px solid transparent}
-.es-tab[aria-selected="true"]{color:var(--text-heading);border-bottom-color:var(--action-primary)}
-.es-tab:hover{color:var(--text-heading)}
-.es-art{background:var(--surface-light);text-decoration:none;display:flex;flex-direction:column;transition:transform var(--duration-base) var(--ease-standard),box-shadow var(--duration-base) var(--ease-standard)}
-.es-art:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover)}
-.es-art .es-frame{aspect-ratio:16/10;overflow:hidden;background:var(--gray-100)}
-.es-art img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-standard)}
-.es-art:hover img{transform:scale(1.05)}
+.es-tech{display:flex;flex-direction:column;gap:12px}
+.es-tech .es-tech-num{font-family:var(--font-display);font-weight:800;font-size:14px;letter-spacing:.1em;color:var(--action-primary)}
 
 .es-util-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-on-dark-muted);text-decoration:none;font:var(--text-caption);letter-spacing:.02em}
 .es-util-link:hover{color:#fff}
@@ -130,7 +124,7 @@ a:hover{color:var(--action-primary-hover)}
 <div class="es-mega-col es-mega-featured">
 <div class="es-mega-frame" aria-hidden="true">[IMG: MEC LD]</div>
 <h4>MEC LD</h4>
-<p>Monoblocco a gravità, 24k bottiglie/ora.</p>
+<p>Monoblocco a gravità, fino a 10.000 bottiglie/ora.</p>
 <a href="single-macchina.html" class="es-textlink">Scopri la macchina →</a>
 </div>
 </div>
@@ -176,49 +170,96 @@ a:hover{color:var(--action-primary-hover)}
 <span class="es-navlink-group" style="display:inline-flex;align-items:center;gap:2px"><a class="es-navlink" href="archive-settori.html">Settori</a><button type="button" class="es-mega-caret" id="es-mega-trigger-settori" aria-expanded="false" aria-haspopup="true" aria-controls="es-mega-panel-settori" aria-label="Mostra sottomenu Settori"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></span>
 <a class="es-navlink" href="archive-servizi.html">Servizi</a>
 <a class="es-navlink" href="page-referenze.html">Referenze</a>
-<a class="es-navlink active" href="archive-news.html">News</a>
+<a class="es-navlink active" href="page-squadron.html">Squadron</a>
+<a class="es-navlink" href="archive-news.html">News</a>
 <a class="es-navlink-cta" href="page-contatti.html">Richiedi una consulenza</a>
 </div>
 </nav>
 
 <main id="main-content">
 
-<section style="position:relative;min-height:42vh;display:flex;align-items:flex-end;background:var(--surface-dark);overflow:hidden">
+<!-- Hero -->
+<section style="position:relative;min-height:46vh;display:flex;align-items:flex-end;background:var(--surface-dark);overflow:hidden">
 <div style="position:absolute;inset:0;width:100%;height:100%;opacity:.45;background:var(--gray-150)" aria-hidden="true"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.5) 100%)"></div>
 <div style="position:relative;padding:clamp(40px,8vh,90px) var(--space-section-x);width:100%;box-sizing:border-box">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li style="color:#fff">News</li></ol>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Editoriale</x-import>
-<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Novità, guide tecniche e aggiornamenti Eurostar</h1>
-<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Approfondimenti tecnici sull'imbottigliamento, casi studio e aggiornamenti sull'azienda, dal reparto tecnico e dal team marketing Eurostar.</p>
+<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li style="color:#fff">Squadron</li></ol>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Soluzioni per piccole produzioni</x-import>
+<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase;max-width:16ch">Squadron — soluzioni per piccole produzioni</h1>
 </div>
 </div>
 </section>
 
-<div style="border-bottom:1px solid var(--border-subtle);background:var(--surface-light);position:sticky;top:0;z-index:40">
-<div style="max-width:var(--space-content-max);margin:0 auto;padding:0 var(--space-section-x)">
-<div role="tablist" aria-label="Categorie news" style="display:flex;gap:28px;flex-wrap:wrap">
-<button role="tab" aria-selected="true" class="es-tab">Tutte</button>
-<button role="tab" aria-selected="false" class="es-tab">Guide tecniche</button>
-<button role="tab" aria-selected="false" class="es-tab">Aggiornamenti</button>
-<button role="tab" aria-selected="false" class="es-tab">Fiere ed eventi</button>
+<!-- Box di disambiguazione -->
+<section style="background:var(--surface-tint);padding:clamp(32px,5vh,56px) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto;background:var(--surface-light);border-left:3px solid var(--action-primary);padding:clamp(24px,3vw,40px)">
+<p style="margin:0;font:var(--text-body-lg);color:var(--text-body);max-width:70ch">Squadron è il marchio del gruppo Eurostar dedicato alle piccole e medie produzioni: monoblocchi di riempimento semiautomatici e automatici, pensati per chi parte in piccolo ma vuole una macchina costruita su misura, non un modello di catalogo generico.</p>
 </div>
-</div>
-</div>
+</section>
 
+<!-- Perché Squadron -->
 <section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Marzo 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempimento isobarico: come scegliere i BPH giusti</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Una guida pratica per dimensionare la linea sulla base di produttività, formato e tipo di contenitore.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Caso studio</span><span style="color:var(--gray-500)">Febbraio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Cantine Ferrari: precisione sullo spumante</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Come un monoblocco dedicato ha ridotto gli scarti sul riempimento di spumante metodo classico.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Gennaio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Eurostar supera le 2.000 installazioni nel mondo</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un traguardo che conferma la crescita internazionale e la solidità del supporto post-vendita.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Fiere ed eventi</span><span style="color:var(--gray-500)">Maggio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Ci vediamo a SIMEI 2026, Milano</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Vieni a scoprire le novità di gamma allo stand Eurostar. Prenota un appuntamento tecnico.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Dicembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempire prodotti viscosi: olio EVO e aceto</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Le accortezze costruttive per gestire viscosità e schiuma senza perdere precisione di livello.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Novembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Recupero acqua: -50% di consumo idrico in linea</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Il nuovo gruppo di risciacquo a recupero applicato alle linee di nuova generazione.</p></div></a>
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Perché Squadron</x-import>
+<h2 style="margin:16px 0 40px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:18ch">Pensata per chi cresce in piccolo</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px 48px">
+<div class="es-tech"><span class="es-tech-num">01</span><h3 style="margin:0;font:var(--text-h4);color:var(--text-heading);text-transform:uppercase">Lead time ridotto</h3><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Rispetto alle configurazioni Eurostar su grande scala — ideale per chi deve avviare o ampliare rapidamente una linea di imbottigliamento di piccole dimensioni.</p></div>
+<div class="es-tech"><span class="es-tech-num">02</span><h3 style="margin:0;font:var(--text-h4);color:var(--text-heading);text-transform:uppercase">Macchine progettate sul prodotto</h3><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Non semplicemente scelte da un listino: dalla piccola realtà artigianale fino al produttore medio in crescita.</p></div>
+<div class="es-tech"><span class="es-tech-num">03</span><h3 style="margin:0;font:var(--text-h4);color:var(--text-heading);text-transform:uppercase">Servizio post-vendita dedicato</h3><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Con assistenza tecnica anche da remoto.</p></div>
+<div class="es-tech"><span class="es-tech-num">04</span><h3 style="margin:0;font:var(--text-h4);color:var(--text-heading);text-transform:uppercase">Anche macchine revisionate</h3><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Pronte alla consegna, per chi ha bisogno di partire subito senza attendere i tempi di produzione di una macchina nuova.</p></div>
 </div>
-<nav aria-label="Paginazione" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" hint-size="auto,52px">Mostra altri articoli</x-import>
-</nav>
+</div>
+</section>
+
+<!-- Le due famiglie -->
+<section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">La gamma</x-import>
+<h2 style="margin:16px 0 12px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:18ch">Le due famiglie di macchine</h2>
+<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Gamma esatta da confermare con Eurostar.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+<div style="background:var(--surface-light);padding:clamp(28px,3vw,40px)">
+<h3 style="margin:0 0 12px;font:var(--text-h2);color:var(--text-heading);text-transform:uppercase">EXACTA</h3>
+<p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Monoblocchi isobarici semiautomatici, adatti a birra e bevande gassate.</p>
+</div>
+<div style="background:var(--surface-light);padding:clamp(28px,3vw,40px)">
+<h3 style="margin:0 0 12px;font:var(--text-h2);color:var(--text-heading);text-transform:uppercase">OLYMPIA / OLYMPIA S</h3>
+<p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Monoblocchi e uniblocchi automatici, con versioni per tappo sughero dritto, tappo a T e capsula a vite in alluminio.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Settori serviti -->
+<section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<h2 style="margin:0 0 24px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase">Settori serviti</h2>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<span style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-tint);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:8px 18px">Acqua, succhi e soft drink</span>
+<span style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-tint);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:8px 18px">Alimentare</span>
+<span style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-tint);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:8px 18px">Vino e distillati</span>
+<span style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-tint);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:8px 18px">Birra e lattine</span>
+<span style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-tint);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:8px 18px">Fusti (kegs)</span>
+<span style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-tint);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:8px 18px">Chimico</span>
+</div>
+</div>
+</section>
+
+<!-- Quando passare a Eurostar -->
+<section style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max-narrow);margin:0 auto;text-align:center">
+<h2 style="margin:0 0 24px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Quando passare a Eurostar</h2>
+<p style="margin:0;font:var(--text-body-lg);color:var(--text-on-dark-muted)">Man mano che la produzione cresce e servono velocità più elevate, tecnologie più specializzate (isobarico elettropneumatico, volumetrico a flowmetro) o linee completamente su misura, il passaggio naturale è verso la gamma Eurostar.</p>
+</div>
+</section>
+
+<!-- CTA finale -->
+<section style="background:var(--surface-darkest);padding:var(--space-section-y) var(--space-section-x);text-align:center">
+<div style="max-width:var(--space-content-max-narrow);margin:0 auto">
+<h2 style="margin:0 0 28px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Richiedi un preventivo</h2>
+<p style="margin:0 0 28px;font:var(--text-body-md);color:var(--text-on-dark-muted)">Form unico Eurostar — segnala che sei interessato a Squadron nel messaggio.</p>
+<div style="display:flex;justify-content:center"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="page-contatti.html" hint-size="auto,52px">Richiedi un preventivo</x-import></div>
 </div>
 </section>
 
@@ -295,15 +336,6 @@ a:hover{color:var(--action-primary-hover)}
 
 </div>
 
-
-<template id="__bundler_thumbnail" data-bg-color="#2A2A2A">
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="800" fill="#2A2A2A"/>
-<polygon points="600,250 622,318 694,318 636,360 658,428 600,386 542,428 564,360 506,318 578,318" fill="#5A5A5A"/>
-<text x="600" y="560" font-family="Barlow, sans-serif" font-weight="900" font-size="140" fill="#FFFFFF" text-anchor="middle" letter-spacing="8">EUROSTAR</text>
-<text x="600" y="640" font-family="Barlow, sans-serif" font-weight="700" font-size="44" fill="#B5B5B5" text-anchor="middle" letter-spacing="14">NEWS</text>
-</svg>
-</template>
 </x-dc>
 <script>
 document.addEventListener('click', function(e){
