@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riepilogo Testi Eurostar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --paper:#f6f7f6;
+  --paper-raised:#ffffff;
+  --ink:#1b2224;
+  --ink-soft:#4a5457;
+  --line:#d8dcda;
+  --line-soft:#e6e9e7;
+  --accent:#2f5d62;
+  --accent-soft:#dce8e7;
+  --ok:#3a7d5c;
+  --ok-soft:#e1efe6;
+  --pending:#a9762e;
+  --pending-soft:#f4e9d8;
+  --hold:#8a4a3f;
+  --hold-soft:#f2e2de;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+  --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#15191a;
+    --paper-raised:#1c2122;
+    --ink:#e9ece9;
+    --ink-soft:#a3aeae;
+    --line:#333a3a;
+    --line-soft:#272d2d;
+    --accent:#7fb3ae;
+    --accent-soft:#233230;
+    --ok:#7fc79e;
+    --ok-soft:#1f2f26;
+    --pending:#d9a95f;
+    --pending-soft:#332a1c;
+    --hold:#dd8c7d;
+    --hold-soft:#332420;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15191a;
+  --paper-raised:#1c2122;
+  --ink:#e9ece9;
+  --ink-soft:#a3aeae;
+  --line:#333a3a;
+  --line-soft:#272d2d;
+  --accent:#7fb3ae;
+  --accent-soft:#233230;
+  --ok:#7fc79e;
+  --ok-soft:#1f2f26;
+  --pending:#d9a95f;
+  --pending-soft:#332a1c;
+  --hold:#dd8c7d;
+  --hold-soft:#332420;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.55;
+}
+.wrap{max-width:920px;margin:0 auto;padding:64px 28px 120px}
+
+.masthead{margin-bottom:56px}
+.masthead .kicker{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 14px;
+}
+.masthead h1{
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:clamp(30px,4.4vw,44px);
+  line-height:1.1;
+  margin:0 0 16px;
+  text-wrap:balance;
+  letter-spacing:-.01em;
+}
+.masthead .sub{
+  font-size:16px;
+  color:var(--ink-soft);
+  max-width:62ch;
+  margin:0;
+}
+.meta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 28px;
+  margin-top:28px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+  font-family:var(--mono);
+  font-size:12.5px;
+  color:var(--ink-soft);
+}
+.meta-row b{color:var(--ink);font-weight:600}
+.meta-row a{color:var(--accent)}
+
+/* dashboard */
+.dash{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  margin:40px 0 56px;
+}
+.dash-cell{
+  background:var(--paper-raised);
+  padding:22px 20px;
+}
+.dash-cell .num{
+  font-family:var(--mono);
+  font-weight:700;
+  font-size:32px;
+  font-variant-numeric:tabular-nums;
+  line-height:1;
+}
+.dash-cell .lbl{
+  margin-top:10px;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  letter-spacing:.02em;
+}
+.dash-cell.ok .num{color:var(--ok)}
+.dash-cell.pending .num{color:var(--pending)}
+.dash-cell.hold .num{color:var(--hold)}
+
+@media (max-width:640px){
+  .dash{grid-template-columns:1fr 1fr}
+}
+
+/* section list */
+h2.section-title{
+  font-family:var(--mono);
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:64px 0 20px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--line);
+}
+h2.section-title:first-of-type{margin-top:0}
+
+.row{
+  display:grid;
+  grid-template-columns:230px 1fr;
+  gap:20px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line-soft);
+  align-items:start;
+}
+.row:last-child{border-bottom:none}
+@media (max-width:640px){
+  .row{grid-template-columns:1fr;gap:10px}
+}
+
+.row-head{display:flex;flex-direction:column;gap:8px}
+.row-head .name{font-weight:600;font-size:15px}
+.row-head .file{
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--ink-soft);
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  padding:4px 10px;
+  border-radius:3px;
+  width:fit-content;
+}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.pending{background:var(--pending-soft);color:var(--pending)}
+.chip.hold{background:var(--hold-soft);color:var(--hold)}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+
+.row-body p{margin:0 0 10px;font-size:14.5px;color:var(--ink)}
+.row-body p:last-child{margin-bottom:0}
+.row-body .note{
+  font-size:13px;
+  color:var(--ink-soft);
+  border-left:2px solid var(--line);
+  padding-left:12px;
+  margin-top:10px;
+}
+
+/* checklist */
+.checklist{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.checklist li{
+  background:var(--paper-raised);
+  padding:16px 20px;
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:14px;
+  align-items:start;
+  font-size:14.5px;
+}
+.checklist .idx{
+  font-family:var(--mono);
+  font-weight:700;
+  font-size:13px;
+  color:var(--hold);
+}
+.checklist .txt b{display:block;margin-bottom:3px}
+.checklist .txt span{color:var(--ink-soft);font-size:13.5px}
+
+/* decisions */
+.decisions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin:24px 0 0;
+}
+@media (max-width:640px){.decisions{grid-template-columns:1fr}}
+.decision{
+  background:var(--paper-raised);
+  border:1px solid var(--line);
+  padding:18px 20px;
+}
+.decision .letter{
+  font-family:var(--mono);
+  font-weight:700;
+  font-size:12px;
+  color:var(--accent);
+  letter-spacing:.08em;
+  margin-bottom:8px;
+}
+.decision p{margin:0;font-size:14px;color:var(--ink)}
+
+footer.closing{
+  margin-top:72px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  color:var(--ink-soft);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  font-family:var(--mono);
+}
+footer.closing a{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <p class="kicker">Wireframe Eurostar — Rapporto di allineamento</p>
+    <h1>Testi definitivi dal documento cliente: cosa è stato inserito, cosa resta aperto</h1>
+    <p class="sub">Riepilogo di quanto implementato nel wireframe Hi-Fi a partire da <i>Testi_Sito_Web_Eurostar.docx</i>, sezione per sezione, con lo stato reale di ciascuna e i punti ancora in attesa di materiali dal cliente.</p>
+    <div class="meta-row">
+      <span><b>23</b> pagine toccate</span>
+      <span><b>21</b> commit pubblicati</span>
+      <span><b>1</b> pagina creata da zero — Squadron</span>
+      <span>Repo <a href="https://github.com/mauromandala/eurostar-wireframe">eurostar-wireframe</a> · branch main</span>
+      <span><a href="home.html">Vai al sito →</a></span>
+    </div>
+  </div>
+
+  <div class="dash">
+    <div class="dash-cell ok">
+      <div class="num">10</div>
+      <div class="lbl">Sezioni del documento completamente riportate</div>
+    </div>
+    <div class="dash-cell pending">
+      <div class="num">6</div>
+      <div class="lbl">Sezioni con un esempio pubblicato, testo restante pronto ma non impaginato</div>
+    </div>
+    <div class="dash-cell hold">
+      <div class="num">6</div>
+      <div class="lbl">Contenuti che il documento stesso segna come mancanti dal cliente</div>
+    </div>
+    <div class="dash-cell">
+      <div class="num">4</div>
+      <div class="lbl">Decisioni di scope confermate con te (A–D)</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">01 — Sezioni riportate integralmente</h2>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Home</span>
+      <span class="file">home.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Utility bar, hero (eyebrow/H1/sottotitolo/CTA), strip numeri, trust bar, i due percorsi, bande Servizi &amp; Innovazione, citazione del fondatore, discover strip macchine (Riempimento/Sciacquatura/Tappatura/Linee complete), CTA finale.</p>
+      <p class="note">La griglia "Macchine in evidenza" (Can Fill / MEC LD / Squadron) non è nel documento come sezione dedicata: ho corretto solo la scheda MEC LD, che riportava per errore il testo di Can Fill copiato.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Chi siamo</span>
+      <span class="file">page-chi-siamo.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Storia (dal 1996 a oggi), "La nostra storia in breve" (Alessandro Castagno, seconda generazione, monoblocco ABRAU), sostenibilità (fotovoltaico, raccolta differenziata, erogatori d'acqua), persone/territorio/ATPICA/DAE, gli 8 membri reali del team con ruolo e bio.</p>
+      <p class="note">Testimonianza cliente sostituita con un placeholder esplicito — il documento la segna "DEVONO FORNIRCELA".</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Catalogo macchine</span>
+      <span class="file">archive-macchine.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Eyebrow/H1/intro, filtri allineati alla lista del documento (Tutte / Riempitrici / Sciacquatrici / Linee complete / Usate), griglia con i nomi macchina reali (MEC LD, MEC LP, MEC AV, MEC ISO, SKILLFILL, POWERFILL).</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Categoria Riempitrici</span>
+      <span class="file">taxonomy-macchina-riempitrici.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1/intro, i 4 step "Come funziona" (alimentazione, ingresso/posizionamento, riempimento, controllo touch-screen), gamma completa citata, CTA di chiusura.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Categoria Sciacquatrici</span>
+      <span class="file">taxonomy-macchina-sciacquatrici.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1/intro, i 4 step reali (presa pinza brevettata, iniezione con "No Bottle – No Spray", sgocciolamento, controllo servoassistito), gamma ridotta all'unico modello reale — sciacquatrice mod. SI nelle tre configurazioni (acqua / aria filtrata / gas inerte).</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Categoria Linee complete</span>
+      <span class="file">taxonomy-macchina-linee-complete.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1/intro con la definizione reale di monoblocco/uniblocco, configurazioni (free-standing, monoblocco, uniblocco), CTA di chiusura corretta ("Non hai ancora un layout di linea definito? Lo progettiamo insieme.").</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Macchine usate</span>
+      <span class="file">taxonomy-macchina-usate.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Il documento chiedeva di far capire che la categoria esiste ma al momento non ci sono macchine disponibili: sostituita la griglia di 6 macchine fittizie con uno stato onesto e un invito a essere avvisati.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Scheda MEC LD</span>
+      <span class="file">single-macchina.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Sottotitolo, "adatta per", contenitori, le 4 card di processo, descrizione tecnica, dati tecnici (sollevamento, materiale AISI 304, contenitori, prodotto) — tutti presi dal testo reale, sostituendo i valori inventati (produttività, valvole, precisione ±1mm) che il documento segnala come non confermati.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Soluzioni per settore</span>
+      <span class="file">archive-settori.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Eyebrow/H1/intro, griglia ridotta ai 6 settori del perimetro di lancio confermati dal Documento di Progetto (Vino, Distillati e liquori, Birra, Olio EVO e aceto, Succhi e RTD, Acqua e bevande gassate) — rimosse le card Soft drink/Farmaceutico/Chimico.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Settore Vino</span>
+      <span class="file">taxonomy-settore.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1/intro, le 4 sfide del settore, tecnologie di riempimento reali (MEC LD, MAXIMA, MEC ISO, CANFILL/DUALFILL, SKILLFILL), più un blocco nuovo con configurazioni/contenitori/materiali/chiusure preso dal documento.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Servizi e post-vendita</span>
+      <span class="file">archive-servizi.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1 vero ("L'assistenza post-vendita non è un servizio...") con il sottotitolo sul database matricole dal 2016, le 3 aree di servizio con testo reale, strip numeri corretta (2.000+ macchine, 8.000 interventi, 16.000 telefonate, risposta 24h).</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Scheda Assistenza tecnica</span>
+      <span class="file">single-servizio.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1 e testo allineati al servizio "Assistenza" del documento, stessa strip numeri corretta.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Referenze</span>
+      <span class="file">page-referenze.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1/intro/filtri/CTA di chiusura già coincidenti col testo del documento — solo menu e footer allineati.</p>
+      <p class="note">Mancano gli 8–10 case study reali: vedi checklist in fondo.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Squadron</span>
+      <span class="file">page-squadron.html <i>(nuova)</i></span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Pagina creata da zero: box di disambiguazione, "Perché Squadron" (4 punti reali), le due famiglie EXACTA / OLYMPIA-OLYMPIA S, settori serviti, "Quando passare a Eurostar", CTA verso il form unico. Voce di menu aggiunta su tutte le pagine del sito.</p>
+      <p class="note">Gamma esatta e velocità per modello ancora da confermare con Eurostar, come segnalato nel documento.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">News</span>
+      <span class="file">archive-news.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>H1/intro reali ("Novità, guide tecniche e aggiornamenti Eurostar").</p>
+      <p class="note">I 3 articoli restano gli esempi originali del wireframe: il documento dice che i contenuti editoriali sono ancora da scrivere.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Contatti</span>
+      <span class="file">page-contatti.html</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Eyebrow, sottotitolo ("team commerciale"), le 4 opzioni del form allineate ai percorsi del documento (Sono un produttore / Sono un distributore / Sono già cliente / Cerco lavoro / Altro).</p>
+      <p class="note">Indirizzo, telefono ed email lasciati come placeholder — per tua scelta esplicita (decisione D), in attesa di un'unica fonte ufficiale.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Menu &amp; footer sitewide</span>
+      <span class="file">tutte le pagine</span>
+      <span class="chip ok">Fatto</span>
+    </div>
+    <div class="row-body">
+      <p>Rimossi Tappatrici/Etichettatrici da footer, mega-menu "Per tipologia" e filtri catalogo; perimetro settori allineato ai 6 di lancio in mega-menu e footer; voce Squadron aggiunta in nav e footer su tutte le 22 pagine condivise.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">02 — Un esempio pubblicato, resto del testo pronto ma non impaginato</h2>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Altre 8 schede macchina</span>
+      <span class="file">MEC LP, MEC AV, MEC ISO, SKILLFILL, MAXIMA, POWERFILL, sciacquatrice SI…</span>
+      <span class="chip pending">Testo pronto</span>
+    </div>
+    <div class="row-body">
+      <p>Il wireframe ha un solo template <code>single-macchina.html</code>, per ora popolato con MEC LD. Il documento fornisce testo completo per le altre 8 macchine — per decisione tua (B) non ho duplicato il file finché non serve mostrarle tutte.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Altri 5 settori di lancio</span>
+      <span class="file">Distillati, Birra, Olio EVO e aceto, Succhi e RTD, Acqua e bevande gassate</span>
+      <span class="chip pending">Testo pronto</span>
+    </div>
+    <div class="row-body">
+      <p>Stesso caso: un solo template <code>taxonomy-settore.html</code>, oggi impostato su Vino. Testo pronto nel documento per gli altri 5.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-head">
+      <span class="name">Schede Ricambi / Remote view</span>
+      <span class="file">single-servizio.html</span>
+      <span class="chip pending">Testo pronto</span>
+    </div>
+    <div class="row-body">
+      <p>Template unico, oggi popolato con "Assistenza tecnica". Testo pronto per gli altri due servizi.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">03 — Contenuti che il documento segna come mancanti dal cliente</h2>
+
+  <ul class="checklist">
+    <li>
+      <span class="idx">01</span>
+      <span class="txt"><b>Categorie Tappatrici / Etichettatrici</b><span>Nessuna scheda tecnica trovata tra i materiali: link rimossi da menu e footer finché non si chiarisce se sono linee prodotto autonome.</span></span>
+    </li>
+    <li>
+      <span class="idx">02</span>
+      <span class="txt"><b>Testimonianza cliente</b><span>Placeholder in Chi siamo, in attesa di una citazione reale e autorizzata.</span></span>
+    </li>
+    <li>
+      <span class="idx">03</span>
+      <span class="txt"><b>Dati tecnici mancanti</b><span>Produttività complessiva, numero valvole e precisione di livello per MEC LD/LP/AV; scheda tecnica CANFILL, DUALFILL, MEC VOL; differenziazione delle varianti MEC ISO (S/PS/SL/PSL/FS/DPS).</span></span>
+    </li>
+    <li>
+      <span class="idx">04</span>
+      <span class="txt"><b>Settori Farmaceutico, Chimico, Cosmetica</b><span>Fuori dal perimetro di lancio: da aggiungere solo con referenze installate da raccontare.</span></span>
+    </li>
+    <li>
+      <span class="idx">05</span>
+      <span class="txt"><b>Case study Referenze</b><span>Servono 8–10 casi reali (cliente, Paese, macchina, sfida, risultato) più mappa installazioni e parete loghi.</span></span>
+    </li>
+    <li>
+      <span class="idx">06</span>
+      <span class="txt"><b>Articoli News</b><span>I 3 pezzi richiedono contenuti editoriali completi dal reparto marketing.</span></span>
+    </li>
+    <li>
+      <span class="idx">07</span>
+      <span class="txt"><b>Contatti e footer</b><span>Serve un'unica fonte ufficiale per indirizzo/i, telefono, email, P.IVA e Codice Fiscale — oggi coesistono due versioni diverse nel wireframe.</span></span>
+    </li>
+    <li>
+      <span class="idx">08</span>
+      <span class="txt"><b>Gamma e dati tecnici Squadron</b><span>Velocità corrette per modello, testi e immagini in attesa dal cliente.</span></span>
+    </li>
+  </ul>
+
+  <h2 class="section-title">04 — Decisioni di scope confermate</h2>
+
+  <div class="decisions">
+    <div class="decision">
+      <div class="letter">A</div>
+      <p>Tappatrici/Etichettatrici rimosse da menu e footer finché non è chiarito lo status di queste categorie.</p>
+    </div>
+    <div class="decision">
+      <div class="letter">B</div>
+      <p>Un solo template aggiornato per macchina e per settore (MEC LD, Vino); gli altri testi restano pronti nel documento, non impaginati.</p>
+    </div>
+    <div class="decision">
+      <div class="letter">C</div>
+      <p>Pagina Squadron creata da zero, con voce di menu estesa a tutto il sito.</p>
+    </div>
+    <div class="decision">
+      <div class="letter">D</div>
+      <p>Indirizzo, telefono ed email lasciati come placeholder in attesa di una fonte ufficiale unica.</p>
+    </div>
+  </div>
+
+  <footer class="closing">
+    <span>Wireframe Hi-Fi Eurostar</span>
+    <span><a href="https://github.com/mauromandala/eurostar-wireframe">github.com/mauromandala/eurostar-wireframe</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
