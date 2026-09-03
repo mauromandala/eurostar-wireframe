@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handoff WordPress + Elementor</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --paper:#f6f7f6;
+  --paper-raised:#ffffff;
+  --ink:#1b2224;
+  --ink-soft:#4a5457;
+  --line:#d8dcda;
+  --line-soft:#e6e9e7;
+  --accent:#2f5d62;
+  --accent-soft:#dce8e7;
+  --ok:#3a7d5c;
+  --ok-soft:#e1efe6;
+  --pending:#a9762e;
+  --pending-soft:#f4e9d8;
+  --hold:#8a4a3f;
+  --hold-soft:#f2e2de;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+  --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#15191a; --paper-raised:#1c2122; --ink:#e9ece9; --ink-soft:#a3aeae;
+    --line:#333a3a; --line-soft:#272d2d; --accent:#7fb3ae; --accent-soft:#233230;
+    --ok:#7fc79e; --ok-soft:#1f2f26; --pending:#d9a95f; --pending-soft:#332a1c;
+    --hold:#dd8c7d; --hold-soft:#332420;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15191a; --paper-raised:#1c2122; --ink:#e9ece9; --ink-soft:#a3aeae;
+  --line:#333a3a; --line-soft:#272d2d; --accent:#7fb3ae; --accent-soft:#233230;
+  --ok:#7fc79e; --ok-soft:#1f2f26; --pending:#d9a95f; --pending-soft:#332a1c;
+  --hold:#dd8c7d; --hold-soft:#332420;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding:64px 28px 120px}
+
+.masthead{margin-bottom:56px}
+.masthead .kicker{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.masthead h1{font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.12;margin:0 0 16px;text-wrap:balance;letter-spacing:-.01em}
+.masthead .sub{font-size:16px;color:var(--ink-soft);max-width:66ch;margin:0}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
+.meta-row b{color:var(--ink);font-weight:600}
+.meta-row a{color:var(--accent)}
+
+h2.section-title{font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:64px 0 8px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+h2.section-title:first-of-type{margin-top:0}
+.section-intro{font-size:14.5px;color:var(--ink-soft);max-width:72ch;margin:14px 0 28px}
+
+/* generic table */
+.tbl{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:13.5px}
+.tbl th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;padding:0 14px 10px 0;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px 14px 12px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td:first-child, .tbl th:first-child{padding-left:0}
+.tbl code{font-family:var(--mono);font-size:12px;background:var(--accent-soft);color:var(--accent);padding:1px 6px;border-radius:3px;white-space:nowrap}
+.tbl .swatch{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:8px;vertical-align:-1px;border:1px solid var(--line)}
+.table-scroll{overflow-x:auto}
+
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:3px;white-space:nowrap}
+.chip.native{background:var(--ok-soft);color:var(--ok)}
+.chip.pro{background:var(--pending-soft);color:var(--pending)}
+.chip.custom{background:var(--hold-soft);color:var(--hold)}
+
+/* field group cards */
+.fieldgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:8px 0 12px}
+.fieldgroup{background:var(--paper-raised);border:1px solid var(--line);padding:20px 22px}
+.fieldgroup h3{margin:0 0 4px;font-size:15px;font-weight:600}
+.fieldgroup .slug{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-bottom:14px;display:block}
+.fieldgroup ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.fieldgroup li{font-size:13.5px;padding-left:14px;position:relative}
+.fieldgroup li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;background:var(--accent);border-radius:1px}
+.fieldgroup li b{font-weight:600}
+.fieldgroup li .ftype{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin-left:6px}
+
+.note-box{background:var(--pending-soft);border-left:3px solid var(--pending);padding:16px 18px;font-size:13.5px;color:var(--ink);margin:20px 0}
+.note-box b{display:block;margin-bottom:4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pending)}
+
+.checklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
+.checklist li{background:var(--paper-raised);padding:16px 20px;display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:start;font-size:14px}
+.checklist .idx{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--hold)}
+.checklist .txt b{display:block;margin-bottom:3px}
+.checklist .txt span{color:var(--ink-soft);font-size:13.5px}
+
+footer.closing{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono)}
+footer.closing a{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <p class="kicker">Wireframe Eurostar — Documentazione tecnica</p>
+    <h1>Handoff sviluppo: da wireframe Hi-Fi a WordPress + Elementor</h1>
+    <p class="sub">Mappa completa di token, componenti, struttura contenuti (CPT/ACF) e template ricavata dal wireframe statico, pronta per chi imposta il sito reale in WordPress con Elementor (Pro) + Advanced Custom Fields (Pro).</p>
+    <div class="meta-row">
+      <span>Sorgente: <a href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/">design tokens</a> + 23 pagine HTML</span>
+      <span>Vedi anche <a href="riepilogo-testi.html">riepilogo testi</a></span>
+      <span><a href="home.html">Vai al sito →</a></span>
+    </div>
+  </div>
+
+  <h2 class="section-title">01 — Design token → Global Settings Elementor</h2>
+  <p class="section-intro">Il wireframe è volutamente in scala di grigi ("structure only, no brand color", commento originale in <code>colors.css</code>): i valori qui sotto vanno impostati come Global Colors/Fonts in Elementor, poi sostituiti con la palette brand reale quando disponibile — la struttura semantica (surface/text/action) resta invariata.</p>
+
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>Colori</th><th>Token wireframe</th><th>Valore</th><th>Global Color Elementor</th></tr>
+  <tr><td><span class="swatch" style="background:#242424"></span>Testo titoli</td><td><code>--text-heading</code></td><td><code>#242424</code></td><td>Text / Heading</td></tr>
+  <tr><td><span class="swatch" style="background:#666666"></span>Testo corpo</td><td><code>--text-body</code></td><td><code>#666666</code></td><td>Text</td></tr>
+  <tr><td><span class="swatch" style="background:#1A1A1A"></span>Azione primaria</td><td><code>--action-primary</code></td><td><code>#1A1A1A</code></td><td>Primary — <b>da sostituire col brand</b></td></tr>
+  <tr><td><span class="swatch" style="background:#171717"></span>Superficie scura</td><td><code>--surface-dark</code> / <code>-darker</code> / <code>-darkest</code></td><td><code>#242424 / #171717 / #0A0A0A</code></td><td>3 Global Color aggiuntivi (non coperti dai 4 default Elementor)</td></tr>
+  <tr><td><span class="swatch" style="background:#F6F6F6;border-color:#ccc"></span>Superficie chiara/tint</td><td><code>--surface-light</code> / <code>-tint</code></td><td><code>#FFFFFF / #F6F6F6</code></td><td>Background / Background-alt</td></tr>
+  <tr><td><span class="swatch" style="background:#B5B5B5"></span>Accento su sfondo scuro</td><td><code>--text-accent-on-dark</code></td><td><code>#B5B5B5</code></td><td>Secondary</td></tr>
+  </table>
+  </div>
+
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>Tipografia</th><th>Font</th><th>Uso</th><th>Global Font Elementor</th></tr>
+  <tr><td>Titoli / bottoni / etichette</td><td><code>Barlow</code>, peso 700–900, maiuscolo, tracking negativo</td><td>H1–H4, kicker, nav, bottoni</td><td>"Primary" — H1 clamp(38–110px), H2 clamp(26–42px), H3 clamp(19–23px)</td></tr>
+  <tr><td>Testo corpo</td><td><code>Roboto</code>, peso 300/400</td><td>Paragrafi, caption, form</td><td>"Text" — body-lg clamp(16–20px), body-sm 14px, caption 12px</td></tr>
+  </table>
+  </div>
+
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>Spaziatura &amp; layout</th><th>Token</th><th>Valore</th><th>Impostazione Elementor</th></tr>
+  <tr><td>Padding orizzontale sezione</td><td><code>--space-section-x</code></td><td><code>clamp(20px,6vw,80px)</code></td><td>Container padding preset "Section X"</td></tr>
+  <tr><td>Padding verticale sezione</td><td><code>--space-section-y</code> / <code>-y-lg</code></td><td><code>clamp(64px,10vh,140px)</code> / <code>clamp(96px,16vh,190px)</code></td><td>Container padding preset "Section Y" / "Section Y Large"</td></tr>
+  <tr><td>Larghezza massima contenuto</td><td><code>--space-content-max</code> / <code>-narrow</code></td><td><code>1360px</code> / <code>1180px</code></td><td>Content Width preset "Boxed" / "Boxed Narrow"</td></tr>
+  <tr><td>Taglio diagonale bottone</td><td><code>--clip-cut-tr</code></td><td><code>polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)</code></td><td>Non nativo — Custom CSS su una classe globale <code>.es-cut-btn</code></td></tr>
+  <tr><td>Taglio diagonale pannelli</td><td><code>--clip-diag</code></td><td><code>polygon(0 0, 100% 0, calc(100% - 56px) 100%, 0 100%)</code></td><td>Shape Divider nativo ("Tilt") copre il caso semplice; il taglio della hero attuale (percentuale, non px fissi) resta Custom CSS</td></tr>
+  <tr><td>Raggio angoli</td><td><code>--radius-none</code> / <code>-full</code></td><td><code>0</code> / <code>9999px</code></td><td>Il brand non arrotonda nulla tranne badge/avatar: impostare border-radius globale a 0 e override puntuale sui pochi elementi "pill"</td></tr>
+  </table>
+  </div>
+
+  <h2 class="section-title">02 — Componenti: cosa è nativo, cosa serve Pro, cosa è custom</h2>
+  <p class="section-intro">Il wireframe usa 4 componenti riutilizzabili (<code>Button</code>, <code>StatBlock</code>, <code>SectionKicker</code>, <code>MachineCard</code>) più una decina di pattern ricorrenti costruiti a mano in HTML/CSS. Legenda: <span class="chip native">Nativo</span> Elementor free · <span class="chip pro">Serve Pro</span> Elementor Pro o ACF Pro · <span class="chip custom">Custom</span> nessun widget copre il caso, serve CSS/snippet dedicato.</p>
+
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>Pattern nel wireframe</th><th>Dove compare</th><th>Equivalente Elementor</th><th></th></tr>
+  <tr><td>Bottone con angolo tagliato</td><td>Tutte le CTA primarie</td><td>Button widget + classe Custom CSS per il clip-path</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Strip di numeri (StatBlock)</td><td>Home, Servizi, scheda macchina</td><td>Heading + Text ripetuti in un Loop Grid, o Counter widget se serve l'animazione al conteggio</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Eyebrow/kicker</td><td>Ovunque sopra gli H1/H2</td><td>Text widget con Global Style dedicato ("Eyebrow")</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Card macchina (MachineCard)</td><td>Catalogo, categorie, settori</td><td>Loop Item Template legato al CPT Macchina</td><td><span class="chip pro">Serve Pro</span></td></tr>
+  <tr><td>Mega-menu Macchine/Settori (4 colonne + card in evidenza)</td><td>Header, tutte le pagine</td><td>Nessun widget nativo per un vero mega-menu a colonne con card; serve Elementor Pro Theme Builder + un plugin mega-menu (es. HFE, o Nav Menu custom in Container)</td><td><span class="chip pro">Serve Pro</span></td></tr>
+  <tr><td>Hero con taglio diagonale + bottiglia sovrapposta</td><td>Home</td><td>Container con Shape Divider "Tilt" per il taglio; l'overlap dell'immagine richiede posizionamento assoluto via Custom CSS (non gestibile solo da UI)</td><td><span class="chip custom">Custom</span></td></tr>
+  <tr><td>Breadcrumb</td><td>Tutte le pagine interne</td><td>Elementor Pro Breadcrumb widget, o shortcode Yoast/RankMath se già installato per la SEO</td><td><span class="chip pro">Serve Pro</span></td></tr>
+  <tr><td>Tabs (Caratteristiche/Dati tecnici/Contenitori)</td><td>Scheda macchina</td><td>Tabs widget nativo</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Gallery con thumbnail cliccabili</td><td>Scheda macchina</td><td>Image Gallery / Carousel widget nativo, alimentato da campo ACF gallery</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Carosello news orizzontale</td><td>Home, archivio News</td><td>Loop Carousel legato al CPT News</td><td><span class="chip pro">Serve Pro</span></td></tr>
+  <tr><td>Marquee loghi clienti</td><td>Home (trust bar)</td><td>Nessun widget nativo per lo scroll infinito: snippet CSS/JS dedicato (il wireframe lo ha già pronto, riusabile)</td><td><span class="chip custom">Custom</span></td></tr>
+  <tr><td>Filtri catalogo/tab categoria</td><td>Catalogo macchine, Referenze</td><td>Loop Grid + Query filter widget (richiede relazione ACF verso la tassonomia)</td><td><span class="chip pro">Serve Pro</span></td></tr>
+  <tr><td>Form richiesta/preventivo</td><td>Contatti, scheda macchina</td><td>Nessun form nel wireframe è funzionante: va rifatto con Elementor Pro Forms, WPForms o Fluent Forms</td><td><span class="chip pro">Serve Pro</span></td></tr>
+  <tr><td>Ricerca sito (icona lente)</td><td>Utility bar, tutte le pagine</td><td>Statica nel wireframe — in WP serve il Search widget nativo collegato a WP_Query (o SearchWP se serve full-text sui campi ACF)</td><td><span class="chip native">Nativo</span></td></tr>
+  </table>
+  </div>
+
+  <h2 class="section-title">03 — Custom Post Type e tassonomie</h2>
+  <p class="section-intro">I nomi dei file <code>taxonomy-macchina-*.html</code> e <code>taxonomy-settore.html</code> nel wireframe suggeriscono una tassonomia WordPress, ma nei fatti si comportano da pagine di contenuto ricco (sfide di settore, tecnologie, "come funziona") — più vicine a un CPT con relazione, che a un termine di tassonomia semplice. Struttura consigliata:</p>
+
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>CPT</th><th>Slug</th><th>Archivio</th><th>Singolo</th><th>Tassonomie collegate</th></tr>
+  <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html</td><td>Categoria macchina (Riempitrici, Sciacquatrici, Tappatrici*, Etichettatrici*, Linee complete, Usate) + relazione a Settore</td></tr>
+  <tr><td>Settore</td><td><code>settori</code></td><td>archive-settori.html</td><td>taxonomy-settore.html <i>(diventa CPT singolo, non termine)</i></td><td>—</td></tr>
+  <tr><td>Servizio</td><td><code>servizi</code></td><td>archive-servizi.html</td><td>single-servizio.html</td><td>—</td></tr>
+  <tr><td>Referenza / caso studio</td><td><code>referenze</code></td><td>page-referenze.html <i>(solo archivio nel wireframe)</i></td><td>da creare — non esiste ancora nel wireframe</td><td>Settore, Macchina installata (relazioni)</td></tr>
+  <tr><td>News</td><td><code>news</code></td><td>archive-news.html</td><td>single-news-articolo.html / single-news-editoriale.html <i>(due varianti di template)</i></td><td>Categoria news (Guida tecnica / Caso studio / Aggiornamento)</td></tr>
+  <tr><td>Squadron</td><td>—</td><td>—</td><td>page-squadron.html <i>(pagina statica, non CPT)</i></td><td>—</td></tr>
+  </table>
+  </div>
+  <p class="section-intro" style="margin-top:-6px">* Tappatrici/Etichettatrici: registrare comunque il termine di tassonomia per non rompere gli URL già linkati altrove, ma senza pubblicarlo in menu/footer finché non si conferma con Eurostar (vedi <a href="riepilogo-testi.html">riepilogo testi</a>, punto 01).</p>
+
+  <h2 class="section-title">04 — Campi ACF per CPT</h2>
+  <p class="section-intro">Elenco ricavato dai contenuti realmente presenti nel wireframe (non solo l'esempio pubblicato — MEC LD/Vino — ma tutti i campi che il testo del documento cliente richiede, così i field group non vanno riaperti quando si aggiungono le altre schede).</p>
+
+  <div class="fieldgroups">
+    <div class="fieldgroup">
+      <h3>Macchina</h3>
+      <span class="slug">single-macchina.html</span>
+      <ul>
+        <li><b>Sottotitolo</b><span class="ftype">testo</span></li>
+        <li><b>Adatta per</b><span class="ftype">relazione → Settore</span></li>
+        <li><b>Contenitori</b><span class="ftype">checkbox (Vetro/PET/HDPE/Lattina/Alluminio)</span></li>
+        <li><b>Dati chiave testata</b><span class="ftype">repeater: etichetta + valore ×4</span></li>
+        <li><b>Card di processo</b><span class="ftype">repeater: icona + titolo + testo ×4</span></li>
+        <li><b>Galleria</b><span class="ftype">repeater: immagine + didascalia</span></li>
+        <li><b>Descrizione tecnica</b><span class="ftype">wysiwyg</span></li>
+        <li><b>Caratteristiche</b><span class="ftype">repeater: testo</span></li>
+        <li><b>Dati tecnici</b><span class="ftype">repeater: etichetta + valore</span></li>
+        <li><b>Download center</b><span class="ftype">repeater: file + etichetta</span></li>
+        <li><b>Referente commerciale</b><span class="ftype">relazione → utente/Team</span></li>
+      </ul>
+    </div>
+    <div class="fieldgroup">
+      <h3>Settore</h3>
+      <span class="slug">taxonomy-settore.html</span>
+      <ul>
+        <li><b>Intro</b><span class="ftype">wysiwyg</span></li>
+        <li><b>Sfide del settore</b><span class="ftype">repeater: numero + titolo + testo ×4</span></li>
+        <li><b>Tecnologie di riempimento</b><span class="ftype">relazione multipla → Macchina, con nota tecnologia</span></li>
+        <li><b>Configurazioni</b><span class="ftype">testo</span></li>
+        <li><b>Contenitori e materiali</b><span class="ftype">testo</span></li>
+        <li><b>Chiusure</b><span class="ftype">testo</span></li>
+        <li><b>Macchine consigliate</b><span class="ftype">relazione multipla → Macchina</span></li>
+      </ul>
+    </div>
+    <div class="fieldgroup">
+      <h3>Servizio</h3>
+      <span class="slug">single-servizio.html</span>
+      <ul>
+        <li><b>Eyebrow</b><span class="ftype">testo</span></li>
+        <li><b>Descrizione</b><span class="ftype">wysiwyg</span></li>
+        <li><b>Icona</b><span class="ftype">immagine</span></li>
+      </ul>
+    </div>
+    <div class="fieldgroup">
+      <h3>Referenza / caso studio</h3>
+      <span class="slug">non ancora nel wireframe</span>
+      <ul>
+        <li><b>Cliente</b><span class="ftype">testo (autorizzato)</span></li>
+        <li><b>Paese</b><span class="ftype">testo</span></li>
+        <li><b>Macchina installata</b><span class="ftype">relazione → Macchina</span></li>
+        <li><b>Settore</b><span class="ftype">relazione → Settore</span></li>
+        <li><b>Sfida</b><span class="ftype">wysiwyg</span></li>
+        <li><b>Risultato</b><span class="ftype">wysiwyg</span></li>
+        <li><b>Logo cliente</b><span class="ftype">immagine (autorizzato)</span></li>
+      </ul>
+    </div>
+    <div class="fieldgroup">
+      <h3>News</h3>
+      <span class="slug">archive/single-news-*.html</span>
+      <ul>
+        <li><b>Categoria editoriale</b><span class="ftype">tassonomia nativa</span></li>
+        <li><b>Data</b><span class="ftype">nativo WP</span></li>
+        <li><b>Immagine in evidenza</b><span class="ftype">nativo WP</span></li>
+        <li><b>Estratto</b><span class="ftype">nativo WP</span></li>
+      </ul>
+    </div>
+    <div class="fieldgroup">
+      <h3>Team (Chi siamo)</h3>
+      <span class="slug">page-chi-siamo.html</span>
+      <ul>
+        <li><b>Membri del team</b><span class="ftype">repeater sulla pagina: nome, ruolo, lingue, bio, foto ×8 — non serve CPT dedicato</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section-title">05 — Relazioni dinamiche tra contenuti</h2>
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>Da</th><th>Campo</th><th>A</th><th>Uso in pagina</th></tr>
+  <tr><td>Macchina</td><td>Adatta per</td><td>Settore</td><td>Tag cliccabili in testata scheda macchina</td></tr>
+  <tr><td>Settore</td><td>Macchine consigliate</td><td>Macchina</td><td>Griglia "Macchine consigliate" a fondo pagina settore</td></tr>
+  <tr><td>Referenza</td><td>Macchina installata / Settore</td><td>Macchina, Settore</td><td>Filtro Referenze per settore; badge macchina nel case study</td></tr>
+  <tr><td>Home</td><td>Macchina in evidenza</td><td>Macchina</td><td>Sezione "Macchine in evidenza" — oggi hardcoded (Can Fill/MEC LD/Squadron), da rendere una relazione manuale curata</td></tr>
+  <tr><td>Header mega-menu</td><td>Macchina/Settore in evidenza</td><td>Macchina, Settore</td><td>La card "featured" nel mega-menu (oggi fissa su MEC LD/Vino) — relazione singola impostabile da opzioni tema</td></tr>
+  </table>
+  </div>
+
+  <h2 class="section-title">06 — Template richiesti in Elementor Theme Builder</h2>
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>Template</th><th>Condizione</th><th>Note</th></tr>
+  <tr><td>Header</td><td>Tutto il sito</td><td>Utility bar + nav + mega-menu Macchine/Settori — il pattern più complesso del sito, vedi sezione 02</td></tr>
+  <tr><td>Footer</td><td>Tutto il sito</td><td>5 colonne + riga legale; dati contatto oggi placeholder (vedi riepilogo testi, punto 07)</td></tr>
+  <tr><td>Single — Macchina</td><td>CPT Macchina</td><td>Un solo template dinamico sostituisce le 9 pagine oggi previste dal documento cliente</td></tr>
+  <tr><td>Single — Settore</td><td>CPT Settore</td><td>Un solo template dinamico sostituisce le 6 pagine settore di lancio</td></tr>
+  <tr><td>Single — Servizio</td><td>CPT Servizio</td><td>Copre Assistenza/Ricambi/Remote view</td></tr>
+  <tr><td>Single — News</td><td>CPT News</td><td>Due varianti nel wireframe (articolo tecnico vs editoriale) → un solo template con un campo "layout" ACF, oppure due Theme Builder template condizionati per categoria</td></tr>
+  <tr><td>Archive — Macchina/Settore/Servizio/News</td><td>rispettivi CPT</td><td>Con Loop Grid + filtro tassonomia dove previsto</td></tr>
+  <tr><td>404</td><td>Errore 404</td><td>Già presente come 404.html, da ricreare in Theme Builder</td></tr>
+  </table>
+  </div>
+
+  <div class="note-box">
+    <b>Attenzione — scope attuale del wireframe</b>
+    Per decisione condivisa, oggi solo un esempio per CPT è popolato (MEC LD, Vino, Assistenza tecnica). I field group ACF qui sopra vanno però creati per intero fin dall'inizio: se si aggiungono campi in corsa dopo aver già inserito i contenuti reali delle altre 8 macchine/5 settori, si rischia di dover ripassare tutti i contenuti già caricati.
+  </div>
+
+  <h2 class="section-title">07 — Cosa resta fuori dal wireframe (non deducibile)</h2>
+  <ul class="checklist">
+    <li><span class="idx">01</span><span class="txt"><b>Plugin form</b><span>Nessun form del wireframe è funzionante: va scelto e configurato un plugin (Elementor Pro Forms / WPForms / Fluent Forms) con eventuale integrazione CRM.</span></span></li>
+    <li><span class="idx">02</span><span class="txt"><b>Multilingua IT/EN</b><span>Il selettore lingua in utility bar è statico. Serve WPML o Polylang se il sito va davvero tradotto, non discusso nei materiali forniti.</span></span></li>
+    <li><span class="idx">03</span><span class="txt"><b>Ricerca sito</b><span>Serve decidere se basta WP_Query nativa o serve un plugin di ricerca full-text (utile se si vuole cercare dentro ai campi ACF tecnici).</span></span></li>
+    <li><span class="idx">04</span><span class="txt"><b>Performance/caching</b><span>Non affrontato nel wireframe: da valutare in fase di sviluppo (immagini, mega-menu con molte query, Loop Carousel).</span></span></li>
+    <li><span class="idx">05</span><span class="txt"><b>Contenuti reali mancanti</b><span>Testimonianza cliente, case study Referenze, articoli News, dati tecnici da verificare, indirizzo/telefono ufficiali — stessi punti già elencati nel <a href="riepilogo-testi.html">riepilogo testi</a>, sezione 03: bloccano il popolamento dei CPT, non lo sviluppo del tema.</span></span></li>
+  </ul>
+
+  <footer class="closing">
+    <span>Wireframe Hi-Fi Eurostar — Handoff WordPress + Elementor</span>
+    <span><a href="https://github.com/mauromandala/eurostar-wireframe">github.com/mauromandala/eurostar-wireframe</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
