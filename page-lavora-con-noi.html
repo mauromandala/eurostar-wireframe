@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<title>News e guide tecniche | Eurostar</title>
+<title>Lavora con noi | Eurostar</title>
 </head>
 <body>
 <x-dc>
@@ -66,15 +66,6 @@ a:hover{color:var(--action-primary-hover)}
 .es-mega-featured h4{margin:0 0 4px;font:var(--text-h4);font-size:15px;color:var(--text-heading);text-transform:uppercase}
 .es-mega-featured p{margin:0 0 12px;font:var(--text-body-sm);color:var(--text-body)}
 @media (max-width:1024px){.es-mega-caret{display:none}.es-mega{display:none}}
-.es-tab{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);background:none;border:none;padding:16px 4px;cursor:pointer;border-bottom:2px solid transparent}
-.es-tab[aria-selected="true"]{color:var(--text-heading);border-bottom-color:var(--action-primary)}
-.es-tab:hover{color:var(--text-heading)}
-.es-art{background:var(--surface-light);text-decoration:none;display:flex;flex-direction:column;transition:transform var(--duration-base) var(--ease-standard),box-shadow var(--duration-base) var(--ease-standard)}
-.es-art:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover)}
-.es-art .es-frame{aspect-ratio:16/10;overflow:hidden;background:var(--gray-100)}
-.es-art img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-standard)}
-.es-art:hover img{transform:scale(1.05)}
-
 .es-util-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-on-dark-muted);text-decoration:none;font:var(--text-caption);letter-spacing:.02em}
 .es-util-link:hover{color:#fff}
 .es-util-link:focus-visible{outline:2px solid #fff;outline-offset:2px}
@@ -93,6 +84,13 @@ a:hover{color:var(--action-primary-hover)}
 .es-search-submit:hover{background:var(--action-primary-hover)}
 .es-search-submit:focus-visible{outline:2px solid var(--action-primary);outline-offset:2px}
 @media (max-width:560px){.es-util-support{display:none !important}}
+.es-job{background:var(--surface-tint);padding:clamp(28px,4vw,44px)}
+.es-job h3{margin:0 0 10px;font:var(--text-h2);font-size:24px;color:var(--text-heading);text-transform:uppercase}
+.es-job .es-job-loc{display:block;margin:0 0 18px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary)}
+.es-job p.es-job-intro{margin:0 0 24px;font:var(--text-body-md);color:var(--text-body)}
+.es-job h4{margin:20px 0 10px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)}
+.es-job ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.es-job li{font:var(--text-body-sm);color:var(--text-body)}
 </style>
 </helmet>
 
@@ -130,7 +128,7 @@ a:hover{color:var(--action-primary-hover)}
 <div class="es-mega-col es-mega-featured">
 <div class="es-mega-frame" aria-hidden="true">[IMG: MEC LD]</div>
 <h4>MEC LD</h4>
-<p>Monoblocco a gravità, 24k bottiglie/ora.</p>
+<p>Monoblocco a gravità, fino a 10.000 bottiglie/ora.</p>
 <a href="single-macchina.html" class="es-textlink">Scopri la macchina →</a>
 </div>
 </div>
@@ -177,49 +175,124 @@ a:hover{color:var(--action-primary-hover)}
 <a class="es-navlink" href="archive-servizi.html">Servizi</a>
 <a class="es-navlink" href="page-referenze.html">Referenze</a>
 <a class="es-navlink" href="page-squadron.html">Squadron</a>
-<a class="es-navlink active" href="archive-news.html">News</a>
+<a class="es-navlink" href="archive-news.html">News</a>
 <a class="es-navlink-cta" href="page-contatti.html">Richiedi una consulenza</a>
 </div>
 </nav>
 
 <main id="main-content">
 
-<section style="position:relative;min-height:42vh;display:flex;align-items:flex-end;background:var(--surface-dark);overflow:hidden">
+<!-- Hero -->
+<section style="position:relative;min-height:38vh;display:flex;align-items:flex-end;background:var(--surface-dark);overflow:hidden">
 <div style="position:absolute;inset:0;width:100%;height:100%;opacity:.45;background:var(--gray-150)" aria-hidden="true"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.5) 100%)"></div>
-<div style="position:relative;padding:clamp(40px,8vh,90px) var(--space-section-x);width:100%;box-sizing:border-box">
+<div style="position:relative;padding:clamp(40px,7vh,80px) var(--space-section-x);width:100%;box-sizing:border-box">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li style="color:#fff">News</li></ol>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Editoriale</x-import>
-<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Novità, guide tecniche e aggiornamenti Eurostar</h1>
-<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Approfondimenti tecnici sull'imbottigliamento, casi studio e aggiornamenti sull'azienda, dal reparto tecnico e dal team marketing Eurostar.</p>
+<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="page-chi-siamo.html" style="color:var(--text-on-dark-faint)">Azienda</a></li><li aria-hidden="true">/</li><li style="color:#fff">Lavora con noi</li></ol>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Carriere</x-import>
+<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase;max-width:16ch">Lavora con noi</h1>
 </div>
 </div>
 </section>
 
-<div style="border-bottom:1px solid var(--border-subtle);background:var(--surface-light);position:sticky;top:0;z-index:40">
-<div style="max-width:var(--space-content-max);margin:0 auto;padding:0 var(--space-section-x)">
-<div role="tablist" aria-label="Categorie news" style="display:flex;gap:28px;flex-wrap:wrap">
-<button role="tab" aria-selected="true" class="es-tab">Tutte</button>
-<button role="tab" aria-selected="false" class="es-tab">Guide tecniche</button>
-<button role="tab" aria-selected="false" class="es-tab">Aggiornamenti</button>
-<button role="tab" aria-selected="false" class="es-tab">Fiere ed eventi</button>
+<!-- Intro -->
+<section style="background:var(--surface-light);padding:clamp(32px,5vh,56px) var(--space-section-x)">
+<div style="max-width:var(--space-content-max-narrow);margin:0 auto">
+<p style="margin:0 0 20px;font:var(--text-body-lg);color:var(--text-body)">Da oltre 30 anni progettiamo e realizziamo soluzioni innovative per il settore del bottling e del packaging, portando l'eccellenza del Made in Italy sui mercati internazionali.</p>
+<p style="margin:0 0 20px;font:var(--text-body-lg);color:var(--text-body)">Le persone sono il motore della nostra crescita: per questo siamo alla ricerca di professionisti competenti, appassionati e pronti a mettersi in gioco in un contesto dinamico e orientato all'innovazione.</p>
+<p style="margin:0;font:var(--text-body-lg);color:var(--text-body)">Scopri le opportunità aperte o inviaci la tua candidatura spontanea. Siamo sempre interessati a incontrare nuovi talenti che desiderano costruire il futuro insieme a noi.</p>
 </div>
-</div>
+</section>
+
+<!-- Posizioni aperte -->
+<section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Opportunità</x-import>
+<h2 style="margin:16px 0 40px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">Posizioni aperte</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px">
+
+<div class="es-job">
+<h3>Area Manager</h3>
+<span class="es-job-loc">San Marzano Oliveto (AT) · Tempo indeterminato</span>
+<p class="es-job-intro">Per ampliare il nostro team commerciale, cerchiamo una figura che si occupi dello sviluppo dei mercati assegnati, della ricerca di nuove opportunità di business e della gestione dei rapporti con clienti e partner internazionali.</p>
+<h4>Attività principali</h4>
+<ul>
+<li>Sviluppo commerciale e acquisizione di nuovi clienti nei mercati assegnati.</li>
+<li>Gestione e fidelizzazione dei clienti esistenti.</li>
+<li>Analisi delle esigenze del cliente, in collaborazione con l'ufficio tecnico.</li>
+<li>Preparazione delle offerte commerciali e gestione delle trattative.</li>
+<li>Gestione dei rapporti con agenti e partner commerciali.</li>
+<li>Partecipazione a fiere di settore e visite presso clienti.</li>
+<li>Monitoraggio delle opportunità commerciali e delle attività di vendita.</li>
+</ul>
+<h4>Requisiti richiesti</h4>
+<ul>
+<li>Ottima padronanza della lingua inglese, scritta e parlata, per gestire in autonomia incontri e trattative commerciali.</li>
+<li>Capacità relazionali, commerciali e di negoziazione.</li>
+<li>Orientamento al cliente e al raggiungimento degli obiettivi.</li>
+<li>Disponibilità a trasferte internazionali.</li>
+<li>Autonomia organizzativa, proattività e attitudine al lavoro in team.</li>
+</ul>
+<h4>Requisiti preferenziali</h4>
+<ul>
+<li>Conoscenza di ulteriori lingue straniere.</li>
+<li>Esperienza commerciale B2B sui mercati internazionali.</li>
+<li>Provenienza dal settore dei macchinari industriali, dell'automazione o del bottling &amp; packaging.</li>
+<li>Interesse e predisposizione alla comprensione di prodotti tecnici.</li>
+</ul>
+<h4>Cosa offriamo</h4>
+<ul>
+<li>Contratto a tempo indeterminato.</li>
+</ul>
 </div>
 
-<section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Marzo 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempimento isobarico: come scegliere i BPH giusti</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Una guida pratica per dimensionare la linea sulla base di produttività, formato e tipo di contenitore.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Caso studio</span><span style="color:var(--gray-500)">Febbraio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Cantine Ferrari: precisione sullo spumante</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Come un monoblocco dedicato ha ridotto gli scarti sul riempimento di spumante metodo classico.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Gennaio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Eurostar supera le 2.000 installazioni nel mondo</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un traguardo che conferma la crescita internazionale e la solidità del supporto post-vendita.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Fiere ed eventi</span><span style="color:var(--gray-500)">Maggio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Ci vediamo a SIMEI 2026, Milano</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Vieni a scoprire le novità di gamma allo stand Eurostar. Prenota un appuntamento tecnico.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Dicembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempire prodotti viscosi: olio EVO e aceto</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Le accortezze costruttive per gestire viscosità e schiuma senza perdere precisione di livello.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Novembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Recupero acqua: -50% di consumo idrico in linea</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Il nuovo gruppo di risciacquo a recupero applicato alle linee di nuova generazione.</p></div></a>
+<div class="es-job">
+<h3>Elettricista industriale / Programmatore PLC</h3>
+<span class="es-job-loc">San Marzano Oliveto (AT) · Tempo indeterminato</span>
+<p class="es-job-intro">Per ampliamento del team, cerchiamo una figura tecnica da inserire nel reparto elettrico e automazione a tempo indeterminato.</p>
+<h4>Attività principali</h4>
+<ul>
+<li>Cablaggio elettrico di macchinari industriali.</li>
+<li>Installazione e collaudo degli impianti.</li>
+<li>Programmazione e modifica di software PLC.</li>
+<li>Assistenza tecnica e risoluzione dei guasti.</li>
+<li>Avviamento delle macchine presso i clienti.</li>
+</ul>
+<h4>Requisiti richiesti</h4>
+<ul>
+<li>Esperienza nel settore elettrico industriale.</li>
+<li>Conoscenza dei PLC Siemens, Omron, Mitsubishi o equivalenti.</li>
+<li>Capacità di lettura degli schemi elettrici.</li>
+<li>Disponibilità a trasferte occasionali.</li>
+<li>Precisione e attitudine al lavoro in team.</li>
+</ul>
+<h4>Requisiti preferenziali</h4>
+<ul>
+<li>Esperienza su macchine automatiche.</li>
+<li>Conoscenza base della lingua inglese.</li>
+<li>Diploma tecnico elettrico/elettronico.</li>
+</ul>
+<h4>Cosa offriamo</h4>
+<ul>
+<li>Contratto a tempo indeterminato.</li>
+<li>Lavoro su macchinari progettati e costruiti internamente.</li>
+<li>Formazione continua sul campo.</li>
+<li>Inserimento in un team tecnico specializzato.</li>
+</ul>
 </div>
-<nav aria-label="Paginazione" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" hint-size="auto,52px">Mostra altri articoli</x-import>
-</nav>
+
+</div>
+</div>
+</section>
+
+<!-- Candidatura spontanea -->
+<section style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x);text-align:center">
+<div style="max-width:var(--space-content-max-narrow);margin:0 auto">
+<h2 style="margin:0 0 20px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Candidatura spontanea</h2>
+<p style="margin:0 0 28px;font:var(--text-body-lg);color:var(--text-on-dark-muted)">Non trovi una posizione in linea con il tuo profilo? Inviaci comunque il tuo curriculum, raccontandoci le tue competenze e l'ambito in cui ti piacerebbe lavorare. Valuteremo il tuo profilo in relazione alle opportunità in azienda.</p>
+<div style="display:flex;justify-content:center"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="#" hint-size="auto,52px">Invia candidatura</x-import></div>
+<p style="margin:16px 0 0;font:var(--text-caption);color:var(--text-on-dark-faint)">[Indirizzo email per le candidature in attesa di conferma dal cliente]</p>
 </div>
 </section>
 
@@ -243,8 +316,9 @@ a:hover{color:var(--action-primary-hover)}
 <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
 <a href="page-chi-siamo.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Chi siamo</a>
 <a href="archive-servizi.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Servizi e post-vendita</a>
+<a href="page-referenze.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Referenze</a>
 <a href="page-contatti.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Contatti</a>
-<a href="page-lavora-con-noi.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark-muted);text-decoration:none">Lavora con noi</a>
+<a href="page-lavora-con-noi.html" style="font:400 16px/1.4 var(--font-body);color:var(--text-on-dark);text-decoration:none">Lavora con noi</a>
 </div>
 </div>
 <div>
@@ -309,15 +383,6 @@ a:hover{color:var(--action-primary-hover)}
 
 </div>
 
-
-<template id="__bundler_thumbnail" data-bg-color="#2A2A2A">
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="800" fill="#2A2A2A"/>
-<polygon points="600,250 622,318 694,318 636,360 658,428 600,386 542,428 564,360 506,318 578,318" fill="#5A5A5A"/>
-<text x="600" y="560" font-family="Barlow, sans-serif" font-weight="900" font-size="140" fill="#FFFFFF" text-anchor="middle" letter-spacing="8">EUROSTAR</text>
-<text x="600" y="640" font-family="Barlow, sans-serif" font-weight="700" font-size="44" fill="#B5B5B5" text-anchor="middle" letter-spacing="14">NEWS</text>
-</svg>
-</template>
 </x-dc>
 <script>
 document.addEventListener('click', function(e){
