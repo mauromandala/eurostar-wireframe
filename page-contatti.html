@@ -201,26 +201,44 @@ select.es-field::-ms-expand{display:none}
 <form id="es-contact-form" style="max-width:560px">
 <div style="margin-bottom:20px">
 <label for="es-tipo" class="es-flabel">Tipo di richiesta <span class="es-req">*</span></label>
-<select id="es-tipo" class="es-field" required><option>Sono un produttore</option><option>Sono un distributore</option><option>Sono già cliente</option><option>Cerco lavoro</option><option>Altro</option></select>
-</div>
-<div style="margin-bottom:20px;background:var(--surface-tint);border-left:3px solid var(--action-primary);padding:16px 18px">
-<div style="font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px">Campi mostrati per "Richiesta ricambi"</div>
-<div style="margin-bottom:14px"><label for="es-mat" class="es-flabel">Numero di matricola macchina</label><input id="es-mat" class="es-field" placeholder="Es. MECLD-2019-0421" /></div>
-<div><label for="es-file" class="es-flabel">Foto del componente</label><input id="es-file" type="file" class="es-field" style="padding:10px 15px" /></div>
+<select id="es-tipo" class="es-field" required><option>Sono un produttore</option><option>Sono un distributore</option><option>Sono già cliente</option><option>Altro</option></select>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
 <div><label for="es-nome" class="es-flabel">Nome <span class="es-req">*</span></label><input id="es-nome" class="es-field" required /></div>
-<div><label for="es-az" class="es-flabel">Azienda <span class="es-req">*</span></label><input id="es-az" class="es-field" required /></div>
+<div><label for="es-cognome" class="es-flabel">Cognome <span class="es-req">*</span></label><input id="es-cognome" class="es-field" required /></div>
 </div>
-<div style="margin-bottom:20px">
-<label for="es-em" class="es-flabel">Email <span class="es-req">*</span></label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+<div><label for="es-az" class="es-flabel">Azienda <span class="es-req">*</span></label><input id="es-az" class="es-field" required /></div>
+<div><label for="es-indirizzo" class="es-flabel">Indirizzo</label><input id="es-indirizzo" class="es-field" /></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+<div><label for="es-em" class="es-flabel">Email <span class="es-req">*</span></label>
 <input id="es-em" type="email" class="es-field" required aria-describedby="es-em-err" style="border-color:var(--flag-red)" />
 <p id="es-em-err" style="margin:8px 0 0;font:var(--text-body-sm);color:var(--flag-red)">Inserisci un indirizzo email valido.</p>
+</div>
+<div><label for="es-tel" class="es-flabel">Telefono</label><input id="es-tel" type="tel" class="es-field" /></div>
+</div>
+<div style="margin-bottom:20px">
+<label for="es-oggetto" class="es-flabel">Oggetto richiesta <span class="es-req">*</span></label>
+<input id="es-oggetto" class="es-field" required />
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+<div><label for="es-prodotto" class="es-flabel">Tipo di prodotto</label><input id="es-prodotto" class="es-field" placeholder="Es. vino, birra, olio…" /></div>
+<div><label for="es-contenitore" class="es-flabel">Tipo di contenitore</label><input id="es-contenitore" class="es-field" placeholder="Es. vetro, PET, lattina…" /></div>
+</div>
+<div style="margin-bottom:20px">
+<label for="es-bph" class="es-flabel">BPH (bottiglie/ora indicative)</label>
+<input id="es-bph" class="es-field" />
 </div>
 <div style="margin-bottom:28px">
 <label for="es-msg" class="es-flabel">Messaggio <span class="es-req">*</span></label>
 <textarea id="es-msg" class="es-field" style="height:120px;resize:vertical" required></textarea>
 </div>
+<div style="margin-bottom:24px;display:flex;align-items:flex-start;gap:10px">
+<input id="es-privacy" type="checkbox" required style="margin-top:3px" />
+<label for="es-privacy" style="font:var(--text-body-sm);color:var(--text-body)">Ho letto e accetto la <a href="#" style="color:var(--action-primary)">Privacy Policy</a> <span class="es-req">*</span></label>
+</div>
+<div style="margin-bottom:28px;height:78px;border:1px dashed var(--gray-400);background:var(--surface-tint);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box">[reCAPTCHA — placeholder, da collegare in sviluppo]</div>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" size="lg" hint-size="auto,56px">Invia richiesta</x-import>
 </form>
 </div>
