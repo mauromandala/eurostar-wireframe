@@ -91,6 +91,8 @@ a:hover{color:var(--action-primary-hover)}
 .es-job h4{margin:20px 0 10px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)}
 .es-job ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 .es-job li{font:var(--text-body-sm);color:var(--text-body)}
+.es-job-apply{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--action-primary);text-decoration:none}
+.es-job-apply:hover{color:var(--action-primary-hover)}
 .es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:13px 15px;font:var(--text-body-md);color:var(--text-heading);box-sizing:border-box}
 .es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
 select.es-field{appearance:none;-webkit-appearance:none;-moz-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px 12px}
@@ -251,6 +253,7 @@ select.es-field::-ms-expand{display:none}
 <ul>
 <li>Contratto a tempo indeterminato.</li>
 </ul>
+<a href="#candidatura" class="es-job-apply" data-position="Area Manager">Candidati per questa posizione →</a>
 </div>
 
 <div class="es-job">
@@ -286,6 +289,7 @@ select.es-field::-ms-expand{display:none}
 <li>Formazione continua sul campo.</li>
 <li>Inserimento in un team tecnico specializzato.</li>
 </ul>
+<a href="#candidatura" class="es-job-apply" data-position="Elettricista industriale / Programmatore PLC">Candidati per questa posizione →</a>
 </div>
 
 </div>
@@ -293,7 +297,7 @@ select.es-field::-ms-expand{display:none}
 </section>
 
 <!-- Candidatura spontanea -->
-<section style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x)">
+<section id="candidatura" style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x)">
 <div style="max-width:640px;margin:0 auto;text-align:center">
 <h2 style="margin:0 0 20px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Candidatura spontanea</h2>
 <p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-on-dark-muted)">Non trovi una posizione in linea con il tuo profilo? Inviaci comunque il tuo curriculum, raccontandoci le tue competenze e l'ambito in cui ti piacerebbe lavorare. Valuteremo il tuo profilo in relazione alle opportunità in azienda.</p>
@@ -528,6 +532,15 @@ document.addEventListener('keydown', function(e){
     panel.classList.remove('is-open');
     if (trigger) { trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); }
   }
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var link = e.target.closest && e.target.closest('.es-job-apply');
+  if (!link) return;
+  var position = link.getAttribute('data-position');
+  var select = document.getElementById('es-j-posizione');
+  if (select && position) select.value = position;
 });
 </script>
 </body>
