@@ -298,6 +298,27 @@ footer.closing a{color:var(--ink-soft)}
     <li><span class="idx">05</span><span class="txt"><b>Contenuti reali mancanti</b><span>Testimonianza cliente, case study Referenze, articoli News, dati tecnici da verificare, indirizzo/telefono ufficiali — stessi punti già elencati nel <a href="riepilogo-testi.html">riepilogo testi</a>, sezione 03: bloccano il popolamento dei CPT, non lo sviluppo del tema.</span></span></li>
   </ul>
 
+  <h2 class="section-title">08 — Novamira: esecuzione diretta invece di handoff manuale</h2>
+  <p class="section-intro">Novamira è il plugin che collega Claude Code a un'installazione WordPress via MCP: espone all'agente un set di "abilities" per leggere e scrivere direttamente nel sito — ACF, Elementor, Gutenberg, Rank Math — invece di limitarsi a descrivere cosa fare. Le sezioni 01–06 di questo documento restano valide come piano di lavoro; con Novamira collegato al sito Eurostar reale, gran parte di quel piano diventa eseguibile dall'agente stesso, non solo documentabile per uno sviluppatore.</p>
+
+  <div class="note-box">
+    <b>Stato attuale</b>
+    In questa sessione Novamira risulta connesso solo ad altre installazioni (non quella di Eurostar). Per passare dalla documentazione all'esecuzione serve collegare Novamira al sito WordPress reale del progetto — a quel punto le abilities sotto diventano disponibili su quell'installazione specifica.
+  </div>
+
+  <div class="table-scroll">
+  <table class="tbl">
+  <tr><th>Namespace abilities</th><th>Copre</th><th>Sezione di questo documento</th></tr>
+  <tr><td><code>novamira/acf-*</code></td><td>CRUD completo su field group, custom post type e tassonomie ACF</td><td>03 — CPT e tassonomie, 04 — Campi ACF</td></tr>
+  <tr><td><code>novamira/elementor-*</code></td><td>Contenuti/elementi Elementor, stili v3, colori e tipografia globali, dynamic tags</td><td>01 — Design token, 02 — Componenti, 06 — Template Theme Builder</td></tr>
+  <tr><td><code>novamira/posts-*</code></td><td>CRUD su contenuti (post, pagine, meta)</td><td>Popolamento dei CPT con i testi già validati nel wireframe</td></tr>
+  <tr><td><code>novamira/gutenberg-*</code></td><td>Lettura/scrittura contenuto a blocchi, se si sceglie quella via invece di Elementor puro</td><td>Alternativa a 06, da valutare in fase di setup</td></tr>
+  <tr><td><code>rank-math/*</code></td><td>SEO meta, schema, sitemap, breadcrumbs, audit</td><td>Non coperto da questo documento — da affrontare a parte</td></tr>
+  </table>
+  </div>
+
+  <p class="section-intro">Novamira Pro espone anche skill dedicate che strutturano il lavoro invece di chiamare le abilities una per una: <code>content-model-schema</code> per definire CPT/campi (sezioni 03–04), <code>content-model-migration</code> per popolare i contenuti, <code>elementor-build-page</code> per i template (sezione 06), <code>acf-integration</code> per collegare i campi ACF ai dynamic tag Elementor (sezione 05). Prima di qualsiasi lavoro visivo la guida Novamira stessa chiede di caricare la skill <code>novamira-design</code> e di far scegliere all'utente l'approccio di building (Elementor / Gutenberg / child theme / tema custom) prima di procedere.</p>
+
   <footer class="closing">
     <span>Wireframe Hi-Fi Eurostar — Handoff WordPress + Elementor</span>
     <span><a href="https://github.com/mauromandala/eurostar-wireframe">github.com/mauromandala/eurostar-wireframe</a></span>
