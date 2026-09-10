@@ -91,6 +91,12 @@ a:hover{color:var(--action-primary-hover)}
 .es-job h4{margin:20px 0 10px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)}
 .es-job ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 .es-job li{font:var(--text-body-sm);color:var(--text-body)}
+.es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:13px 15px;font:var(--text-body-md);color:var(--text-heading);box-sizing:border-box}
+.es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
+select.es-field{appearance:none;-webkit-appearance:none;-moz-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px 12px}
+select.es-field::-ms-expand{display:none}
+.es-flabel{display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-600);margin-bottom:8px}
+.es-req{color:var(--flag-red)}
 </style>
 </helmet>
 
@@ -287,12 +293,44 @@ a:hover{color:var(--action-primary-hover)}
 </section>
 
 <!-- Candidatura spontanea -->
-<section style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x);text-align:center">
-<div style="max-width:var(--space-content-max-narrow);margin:0 auto">
+<section style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:640px;margin:0 auto;text-align:center">
 <h2 style="margin:0 0 20px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Candidatura spontanea</h2>
-<p style="margin:0 0 28px;font:var(--text-body-lg);color:var(--text-on-dark-muted)">Non trovi una posizione in linea con il tuo profilo? Inviaci comunque il tuo curriculum, raccontandoci le tue competenze e l'ambito in cui ti piacerebbe lavorare. Valuteremo il tuo profilo in relazione alle opportunità in azienda.</p>
-<div style="display:flex;justify-content:center"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="#" hint-size="auto,52px">Invia candidatura</x-import></div>
-<p style="margin:16px 0 0;font:var(--text-caption);color:var(--text-on-dark-faint)">[Indirizzo email per le candidature in attesa di conferma dal cliente]</p>
+<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-on-dark-muted)">Non trovi una posizione in linea con il tuo profilo? Inviaci comunque il tuo curriculum, raccontandoci le tue competenze e l'ambito in cui ti piacerebbe lavorare. Valuteremo il tuo profilo in relazione alle opportunità in azienda.</p>
+</div>
+<div style="max-width:560px;margin:0 auto;background:var(--surface-light);padding:clamp(28px,4vw,44px);text-align:left">
+<form id="es-jobs-form">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+<div><label for="es-j-nome" class="es-flabel">Nome <span class="es-req">*</span></label><input id="es-j-nome" class="es-field" required /></div>
+<div><label for="es-j-cognome" class="es-flabel">Cognome <span class="es-req">*</span></label><input id="es-j-cognome" class="es-field" required /></div>
+</div>
+<div style="margin-bottom:20px">
+<label for="es-j-email" class="es-flabel">Email <span class="es-req">*</span></label>
+<input id="es-j-email" type="email" class="es-field" required />
+</div>
+<div style="margin-bottom:20px">
+<label for="es-j-posizione" class="es-flabel">Posizione di interesse <span class="es-req">*</span></label>
+<select id="es-j-posizione" class="es-field" required>
+<option>Area Manager</option>
+<option>Elettricista industriale / Programmatore PLC</option>
+<option>Candidatura spontanea</option>
+</select>
+</div>
+<div style="margin-bottom:20px">
+<label for="es-j-cv" class="es-flabel">Curriculum vitae (PDF) <span class="es-req">*</span></label>
+<input id="es-j-cv" type="file" class="es-field" style="padding:10px 15px" required />
+</div>
+<div style="margin-bottom:24px">
+<label for="es-j-msg" class="es-flabel">Messaggio</label>
+<textarea id="es-j-msg" class="es-field" style="height:100px;resize:vertical"></textarea>
+</div>
+<div style="margin-bottom:24px;display:flex;align-items:flex-start;gap:10px">
+<input id="es-j-privacy" type="checkbox" required style="margin-top:3px" />
+<label for="es-j-privacy" style="font:var(--text-body-sm);color:var(--text-body)">Ho letto e accetto la <a href="#" style="color:var(--action-primary)">Privacy Policy</a> <span class="es-req">*</span></label>
+</div>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" size="lg" hint-size="auto,56px">Invia candidatura</x-import>
+<p style="margin:14px 0 0;font:var(--text-caption);color:var(--gray-500)">La candidatura, con CV allegato e posizione indicata, viene inviata a <a href="mailto:eurostarinfo@eurostar.it" style="color:var(--action-primary)">eurostarinfo@eurostar.it</a>.</p>
+</form>
 </div>
 </section>
 
