@@ -202,19 +202,28 @@ footer.closing a{color:var(--ink-soft)}
         <li><b>Download center</b><span class="ftype">repeater: file + etichetta — formato scheda tecnica PDF (non più DWG)</span></li>
         <li><b>Modulo preventivo</b><span class="ftype">widget Form nativo — nessun campo "referente commerciale" nominativo (rimosso il riferimento a persona specifica)</span></li>
       </ul>
+      <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Mappatura completa in <a href="acf-elementor-mapping.md">acf-elementor-mapping.md</a>, sezione 3</p>
+    </div>
+    <div class="fieldgroup">
+      <h3>Categoria macchina</h3>
+      <span class="slug">taxonomy-macchina-*.html — termine tassonomia</span>
+      <ul>
+        <li><b>Intro categoria</b><span class="ftype">testo (term field)</span></li>
+        <li><b>Ordine nel menu/catalogo</b><span class="ftype">numero (term field)</span></li>
+        <li><b>Campi preview card</b><span class="ftype">nessun campo diretto — pesca 2 campi dalla Scheda macchina, variabili per tipologia (Riempitrici: prodotto/velocità · Tappatrici: chiusura/velocità · Sciacquatrici: contenitori/bottiglie-ora)</span></li>
+      </ul>
+      <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Mappatura completa in <a href="acf-elementor-mapping.md">acf-elementor-mapping.md</a>, sezione 1</p>
     </div>
     <div class="fieldgroup">
       <h3>Settore</h3>
-      <span class="slug">taxonomy-settore.html</span>
+      <span class="slug">taxonomy-settore*.html — 10 istanze</span>
       <ul>
-        <li><b>Intro</b><span class="ftype">wysiwyg</span></li>
-        <li><b>Sfide del settore</b><span class="ftype">repeater: numero + titolo + testo ×4</span></li>
-        <li><b>Tecnologie di riempimento</b><span class="ftype">relazione multipla → Macchina, con nota tecnologia</span></li>
-        <li><b>Configurazioni</b><span class="ftype">testo</span></li>
-        <li><b>Contenitori e materiali</b><span class="ftype">testo</span></li>
-        <li><b>Chiusure</b><span class="ftype">testo</span></li>
-        <li><b>Macchine consigliate</b><span class="ftype">relazione multipla → Macchina</span></li>
+        <li><b>Ordine di visualizzazione</b><span class="ftype">numero</span></li>
+        <li><b>Intro</b><span class="ftype">testo</span></li>
+        <li><b>Sfide del settore</b><span class="ftype">wysiwyg o 2 campi testo (sempre 2 paragrafi nell'Excel)</span></li>
+        <li><b>Le nostre macchine</b><span class="ftype">relazione multipla → Macchina (fino a 3, dal foglio "Macchine per settore")</span></li>
       </ul>
+      <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Mappatura completa in <a href="acf-elementor-mapping.md">acf-elementor-mapping.md</a>, sezione 2</p>
     </div>
     <div class="fieldgroup">
       <h3>Servizio</h3>
