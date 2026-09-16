@@ -19,10 +19,10 @@ Tutte le pagine condividono header (utility bar + nav + mega-menu Macchine/Setto
 
 **Pagine uniche**: home, Chi siamo, Catalogo macchine, Settori (elenco), Servizi (overview), Referenze, Cataloghi (download), News (elenco), Contatti, Conferma invio form, 404, Squadron.
 
-**Archetipi / template dinamici** (un solo esempio popolato per tipo, testo per gli altri pronto nel documento cliente ma non ancora impaginato):
-- Categoria macchina × 6 (Riempitrici, Tappatrici, Etichettatrici, Sciacquatrici/Soffiatrici, Linee complete, Usate)
-- Scheda macchina singola (oggi: MEC LD) — altre 8 macchine da fare
-- Scheda settore (oggi: Vino) — altri 5 settori di lancio da fare
+**Archetipi / template dinamici**:
+- Categoria macchina × 7 (Riempitrici, Tappatrici, Etichettatrici, Sciacquatrici/Soffiatrici, Sistemi movimentazione contenitori, Linee complete, Usate)
+- Scheda macchina: 20 istanze reali popolate (10 Riempitrici, 6 Tappatrici, 1 Sciacquatrici/Soffiatrici, 3 Sistemi movimentazione contenitori) — dettaglio in [acf-elementor-mapping.md](acf-elementor-mapping.md)
+- Scheda settore: tutti e 10 i settori di lancio popolati
 - Scheda servizio (oggi: Assistenza tecnica) — Ricambi e Remote view da fare
 - Articolo/guida tecnica e Caso studio editoriale (News)
 
@@ -43,8 +43,8 @@ Componenti riutilizzabili via `x-import`: `Button`, `StatBlock`, `SectionKicker`
 
 ## Decisioni di scope confermate con l'utente
 
-- **A** — Categorie Tappatrici/Etichettatrici rimosse da menu/footer/filtri finché non è chiarito con Eurostar se sono linee prodotto autonome.
-- **B** — Per macchine e settori, solo un template è popolato con contenuto reale (MEC LD, Vino); gli altri restano il testo pronto nel documento cliente, non ancora impaginato in pagine duplicate.
+- **A** — Etichettatrici resta rimossa da menu/footer/filtri finché non è chiarito con Eurostar se è una linea prodotto autonoma. Tappatrici invece è stata riattivata ovunque su indicazione esplicita del cliente/PM, con 6 modelli reali popolati.
+- **B** — Superata: sia per le Macchine (20 istanze reali: 10 Riempitrici, 6 Tappatrici, 1 Sciacquatrici/Soffiatrici, 3 Sistemi movimentazione contenitori) sia per i Settori (tutti e 10 quelli di lancio) sono stati popolati con contenuto reale, non solo un esempio per tipo. Resta valida solo per Servizio (un solo esempio, Assistenza tecnica, su 3 previsti).
 - **C** — Squadron è una pagina/voce di menu a sé, creata da zero e collegata su tutto il sito.
 - **D** — Indirizzo, telefono ed email restano placeholder finché il cliente non fornisce un'unica fonte ufficiale (oggi coesistono due versioni diverse tra pagina Contatti e footer).
 

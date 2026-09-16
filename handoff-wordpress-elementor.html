@@ -102,7 +102,7 @@ footer.closing a{color:var(--ink-soft)}
     <h1>Handoff sviluppo: da wireframe Hi-Fi a WordPress + Elementor</h1>
     <p class="sub">Mappa completa di token, componenti, struttura contenuti (CPT/ACF) e template ricavata dal wireframe statico, pronta per chi imposta il sito reale in WordPress con Elementor (Pro) + Advanced Custom Fields (Pro).</p>
     <div class="meta-row">
-      <span>Sorgente: <a href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/">design tokens</a> + 53 pagine HTML</span>
+      <span>Sorgente: <a href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/">design tokens</a> + 57 pagine HTML</span>
       <span>Vedi anche <a href="riepilogo-testi.html">riepilogo testi</a></span>
       <span><a href="home.html">Vai al sito →</a></span>
     </div>
@@ -174,7 +174,7 @@ footer.closing a{color:var(--ink-soft)}
   <div class="table-scroll">
   <table class="tbl">
   <tr><th>CPT</th><th>Slug</th><th>Archivio</th><th>Singolo</th><th>Tassonomie collegate</th></tr>
-  <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html + 16 varianti <code>single-macchina-*.html</code></td><td>Categoria macchina (Riempitrici, Tappatrici, Sciacquatrici/Soffiatrici, Etichettatrici*, Linee complete, Usate) + relazione a Settore (solo per Riempitrici, vedi sez. 04)</td></tr>
+  <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html + 19 varianti <code>single-macchina-*.html</code></td><td>Categoria macchina (Riempitrici, Tappatrici, Sciacquatrici/Soffiatrici, Sistemi movimentazione contenitori, Etichettatrici*, Linee complete, Usate) + relazione a Settore (solo per Riempitrici, vedi sez. 04)</td></tr>
   <tr><td>Settore</td><td><code>settori</code></td><td>archive-settori.html</td><td>taxonomy-settore.html <i>(diventa CPT singolo, non termine)</i></td><td>10 settori di lancio (Vino, Birra, Liquori, Bevande e succhi, Acqua, Olio alimentare, Alimenti e condimenti, Cosmetica e cura della persona, Detergenza e cura della casa, Chimico/farmaceutico/sanitario)</td></tr>
   <tr><td>Servizio</td><td><code>servizi</code></td><td>archive-servizi.html</td><td>single-servizio.html</td><td>—</td></tr>
   <tr><td>Referenza / caso studio</td><td><code>referenze</code></td><td>page-referenze.html <i>(solo archivio nel wireframe)</i></td><td>da creare — non esiste ancora nel wireframe</td><td>Settore, Macchina installata (relazioni)</td></tr>
@@ -182,7 +182,7 @@ footer.closing a{color:var(--ink-soft)}
   <tr><td>Squadron</td><td>—</td><td>—</td><td>page-squadron.html <i>(pagina statica, non CPT)</i></td><td>—</td></tr>
   </table>
   </div>
-  <p class="section-intro" style="margin-top:-6px">* Etichettatrici: registrare comunque il termine di tassonomia per non rompere gli URL già linkati altrove, ma senza pubblicarlo in menu/footer finché non si conferma con Eurostar. Tappatrici invece è già stato riattivato in menu/footer/filtri su indicazione esplicita di Serena, con i 6 modelli reali (GEMINI/F-IES, GEMINI/R-IES, GEMINI RF-IES, EAGLE/VA-IES, EAGLE PK, EAGLE C) — vedi <a href="riepilogo-testi.html">riepilogo testi</a>, punto 01.</p>
+  <p class="section-intro" style="margin-top:-6px">* Etichettatrici: registrare comunque il termine di tassonomia per non rompere gli URL già linkati altrove, ma senza pubblicarlo in menu/footer finché non si conferma con Eurostar. Tappatrici invece è già stato riattivato in menu/footer/filtri su indicazione esplicita di Serena, con i 6 modelli reali (GEMINI/F-IES, GEMINI/R-IES, GEMINI RF-IES, EAGLE/VA-IES, EAGLE PK, EAGLE C) — vedi <a href="riepilogo-testi.html">riepilogo testi</a>, punto 01. Sciacquatrici è stata rinominata "Sciacquatrici/Soffiatrici" su richiesta del cliente (solo etichetta, slug/URL invariati). Aggiunta una settima categoria, "Sistemi movimentazione contenitori" (Sistema Neck Handling, Stelle universali, Stelle a geometria variabile): queste 3 macchine non hanno scheda tecnica né allegato CAD, solo descrizione e galleria — vedi fieldgroup dedicato sotto.</p>
 
   <h2 class="section-title">04 — Campi ACF per CPT</h2>
   <p class="section-intro">Aggiornato secondo lo schema confermato da Serena (SEZIONE MACCHINE.xlsx, foglio "IMPOSTAZIONE CATALOGO MACCHINE") e i 17 esempi ora popolati (MEC LD + 16 nuove schede). La struttura non è più uniforme per tutte le macchine: la tabella "Caratteristiche principali" e il campo "Adatta per" cambiano forma per tipologia — vedi nota tecnologia sotto la tabella.</p>
@@ -193,16 +193,27 @@ footer.closing a{color:var(--ink-soft)}
       <span class="slug">single-macchina.html + 16 varianti</span>
       <ul>
         <li><b>Sottotitolo</b><span class="ftype">testo</span></li>
-        <li><b>Adatta per</b><span class="ftype">Riempitrici: relazione → Settore · Tappatrici: testo/checkbox tipo di tappo · Sciacquatrici/Soffiatrici: campo assente, omesso in pagina</span></li>
-        <li><b>Contenitori</b><span class="ftype">checkbox (Vetro/PET/HDPE/Lattina/Alluminio)</span></li>
-        <li><b>Stats testata</b><span class="ftype">ripete un sottoinsieme di "Caratteristiche principali" — 4 campi per Riempitrici, 2 per Tappatrici/Sciacquatrici/Soffiatrici</span></li>
+        <li><b>Adatta per</b><span class="ftype">Riempitrici: relazione → Settore (letta dallo schema Excel, non testo libero) · Tappatrici: testo/checkbox tipo di tappo (tag "Adatta per (tappi)") · Sciacquatrici/Soffiatrici: campo assente, omesso in pagina</span></li>
+        <li><b>Contenitori</b><span class="ftype">checkbox (Vetro/PET/HDPE/Lattina/Alluminio) — solo Riempitrici e Sciacquatrici/Soffiatrici; su Tappatrici il campo è stato rimosso ovunque (header e tabella) su richiesta del cliente</span></li>
+        <li><b>Stats testata</b><span class="ftype">ripete un sottoinsieme di "Caratteristiche principali" — 4 campi per Riempitrici, 1 per Tappatrici (Contenitori/ora — "Tipologia chiusura" è stata tolta dalla testata e resta solo in tabella), 2 per Sciacquatrici/Soffiatrici</span></li>
         <li><b>Descrizione tecnica</b><span class="ftype">wysiwyg</span></li>
-        <li><b>Caratteristiche principali</b><span class="ftype">gruppo di campi a schema fisso per tipologia — Riempitrici 5 campi (Tipo riempimento, Contenitori, Prodotto, Materiale a contatto, Velocità); Tappatrici 3 campi (Tipologia chiusura, Contenitori, Velocità); Sciacquatrici/Soffiatrici 2 campi (Contenitori, Bottiglie/ora)</span></li>
+        <li><b>Caratteristiche principali</b><span class="ftype">gruppo di campi a schema fisso per tipologia — Riempitrici 5 campi (Tipo riempimento, Contenitori, Prodotto, Materiale a contatto, Velocità); Tappatrici 2 campi (Tipologia chiusura, Contenitori/ora — rinominato da "Velocità", "Contenitori" rimosso); Sciacquatrici/Soffiatrici 2 campi (Contenitori, Bottiglie/ora — nessun campo "Diametro-altezza contenitore": non è mai stato presente nello schema dati, va escluso anche in ACF)</span></li>
         <li><b>Galleria</b><span class="ftype">repeater: immagine + didascalia</span></li>
-        <li><b>Download center</b><span class="ftype">repeater: file + etichetta — formato scheda tecnica PDF (non più DWG)</span></li>
+        <li><b>Download center</b><span class="ftype">repeater: file + etichetta — solo scheda tecnica PDF. Nessun allegato CAD per Riempitrici, Tappatrici e Sciacquatrici/Soffiatrici (rimosso su richiesta del cliente); Sistemi movimentazione contenitori non ha né scheda tecnica né CAD, vedi fieldgroup dedicato sotto</span></li>
         <li><b>Modulo preventivo</b><span class="ftype">widget Form nativo — nessun campo "referente commerciale" nominativo (rimosso il riferimento a persona specifica)</span></li>
       </ul>
       <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Mappatura completa in <a href="acf-elementor-mapping.md">acf-elementor-mapping.md</a>, sezione 3</p>
+    </div>
+    <div class="fieldgroup">
+      <h3>Macchina — Sistemi movimentazione contenitori</h3>
+      <span class="slug">single-macchina-neck-handling.html, single-macchina-stelle-universali.html, single-macchina-stelle-variabile.html</span>
+      <ul>
+        <li><b>Sottotitolo</b><span class="ftype">testo</span></li>
+        <li><b>Descrizione tecnica</b><span class="ftype">wysiwyg</span></li>
+        <li><b>Galleria</b><span class="ftype">repeater: immagine + didascalia</span></li>
+        <li><b>Modulo preventivo</b><span class="ftype">widget Form nativo (condiviso con le altre schede macchina)</span></li>
+      </ul>
+      <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Archetipo volutamente ridotto rispetto alle altre schede macchina: nessun campo "Adatta per", "Contenitori", "Caratteristiche principali" né Download center — il cliente ha chiesto solo testo e foto per queste 3 macchine, senza scheda tecnica né layout CAD.</p>
     </div>
     <div class="fieldgroup">
       <h3>Categoria macchina</h3>
@@ -210,7 +221,7 @@ footer.closing a{color:var(--ink-soft)}
       <ul>
         <li><b>Intro categoria</b><span class="ftype">testo (term field)</span></li>
         <li><b>Ordine nel menu/catalogo</b><span class="ftype">numero (term field)</span></li>
-        <li><b>Campi preview card</b><span class="ftype">nessun campo diretto — pesca 2 campi dalla Scheda macchina, variabili per tipologia (Riempitrici: prodotto/velocità · Tappatrici: chiusura/velocità · Sciacquatrici/Soffiatrici: contenitori/bottiglie-ora)</span></li>
+        <li><b>Campi preview card</b><span class="ftype">nessun campo diretto — pesca 2 campi dalla Scheda macchina, variabili per tipologia (Riempitrici: prodotto/velocità · Tappatrici: chiusura/contenitori-ora · Sciacquatrici/Soffiatrici: contenitori/bottiglie-ora · Sistemi movimentazione contenitori: 2 campi descrittivi liberi, non presi dalle Caratteristiche perché quella scheda non le ha)</span></li>
       </ul>
       <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Mappatura completa in <a href="acf-elementor-mapping.md">acf-elementor-mapping.md</a>, sezione 1</p>
     </div>
