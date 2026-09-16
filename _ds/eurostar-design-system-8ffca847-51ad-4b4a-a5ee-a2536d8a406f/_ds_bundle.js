@@ -155,7 +155,7 @@ try { (() => {
 const statSizes = {
   lg: { value: 'clamp(40px,5vw,74px)', lineHeight: 0.9, labelTop: 10, label: 12, labelSpacing: '0.14em' },
   md: { value: 'clamp(28px,2.8vw,40px)', lineHeight: 1, labelTop: 6, label: 11, labelSpacing: '0.08em' },
-  sm: { value: 'clamp(22px,2.2vw,30px)', lineHeight: 1, labelTop: 0, label: 11, labelSpacing: '0.06em' }
+  sm: { value: 'clamp(15px,1.5vw,18px)', lineHeight: 1.2, labelTop: 4, label: 11, labelSpacing: '0.06em' }
 };
 function StatBlock({
   value,
