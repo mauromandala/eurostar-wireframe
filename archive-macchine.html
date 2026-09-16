@@ -208,12 +208,12 @@ a:hover{color:var(--action-primary-hover)}
 <section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LD" subtitle="Gravità / leggero vuoto" stat1="{{ s24k }}" stat2="{{ smm }}" href="single-macchina.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="MEC LP" subtitle="Leggera pressione" stat1="{{ s12k }}" stat2="{{ sml }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="MEC AV" subtitle="Alto vuoto" stat1="{{ s36k }}" stat2="{{ sbar }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC ISO" subtitle="Isobarica meccanica" stat1="{{ s8k }}" stat2="{{ smm }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="SKILLFILL" subtitle="Isobarica elettropneumatica" stat1="{{ s16k }}" stat2="{{ sml }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Volumetrica a flowmetro" stat1="{{ s48k }}" stat2="{{ sbar }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LD" subtitle="Gravità / leggero vuoto" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="MEC LP" subtitle="Leggera pressione" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="MEC AV" subtitle="Alto vuoto" stat1="{{ prodViscosi }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC ISO" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="SKILLFILL" subtitle="Isobarica elettropneumatica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Volumetrica a flowmetro" stat1="{{ prodDensi }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
 </div>
 <nav aria-label="Paginazione" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" hint-size="auto,52px">Mostra altre macchine</x-import>
@@ -323,15 +323,11 @@ a:hover{color:var(--action-primary-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      s24k: { value: '24k', label: 'Bottiglie / ora' },
-      s12k: { value: '12k', label: 'Bottiglie / ora' },
-      s36k: { value: '36k', label: 'Bottiglie / ora' },
-      s8k: { value: '8k', label: 'Bottiglie / ora' },
-      s16k: { value: '16k', label: 'Bottiglie / ora' },
-      s48k: { value: '48k', label: 'Bottiglie / ora' },
-      smm: { value: '±1 mm', label: 'Precisione livello' },
-      sml: { value: '±2 ml', label: 'Precisione dosaggio' },
-      sbar: { value: '6 bar', label: 'Pressione isobarica' }
+      prodPiatti: { value: 'Liquidi piatti', label: 'Prodotto' },
+      prodGassati: { value: 'Liquidi gassati', label: 'Prodotto' },
+      prodViscosi: { value: 'Prodotti viscosi', label: 'Prodotto' },
+      prodDensi: { value: 'Liquidi piatti semi-densi e densi', label: 'Prodotto' },
+      vel25k: { value: 'Fino a 25.000 BPH', label: 'Velocità' }
     };
   }
 }
