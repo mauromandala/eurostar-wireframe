@@ -102,26 +102,28 @@ footer.closing a{color:var(--ink-soft)}
     <h1>Handoff sviluppo: da wireframe Hi-Fi a WordPress + Elementor</h1>
     <p class="sub">Mappa completa di token, componenti, struttura contenuti (CPT/ACF) e template ricavata dal wireframe statico, pronta per chi imposta il sito reale in WordPress con Elementor (Pro) + Advanced Custom Fields (Pro).</p>
     <div class="meta-row">
-      <span>Sorgente: <a href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/">design tokens</a> + 23 pagine HTML</span>
+      <span>Sorgente: <a href="_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens/">design tokens</a> + 44 pagine HTML</span>
       <span>Vedi anche <a href="riepilogo-testi.html">riepilogo testi</a></span>
       <span><a href="home.html">Vai al sito →</a></span>
     </div>
   </div>
 
   <h2 class="section-title">01 — Design token → Global Settings Elementor</h2>
-  <p class="section-intro">Il wireframe è volutamente in scala di grigi ("structure only, no brand color", commento originale in <code>colors.css</code>): i valori qui sotto vanno impostati come Global Colors/Fonts in Elementor, poi sostituiti con la palette brand reale quando disponibile — la struttura semantica (surface/text/action) resta invariata.</p>
+  <p class="section-intro">Il wireframe è passato dalla palette segnaposto in scala di grigi alla palette brand reale (Ilaria, Proposta 1) integrata in <code>colors.css</code>: i valori qui sotto sono quelli definitivi da impostare come Global Colors/Fonts in Elementor — la struttura semantica (surface/text/action) è la stessa di prima, sono cambiati solo i valori esadecimali.</p>
 
   <div class="table-scroll">
   <table class="tbl">
   <tr><th>Colori</th><th>Token wireframe</th><th>Valore</th><th>Global Color Elementor</th></tr>
-  <tr><td><span class="swatch" style="background:#242424"></span>Testo titoli</td><td><code>--text-heading</code></td><td><code>#242424</code></td><td>Text / Heading</td></tr>
-  <tr><td><span class="swatch" style="background:#666666"></span>Testo corpo</td><td><code>--text-body</code></td><td><code>#666666</code></td><td>Text</td></tr>
-  <tr><td><span class="swatch" style="background:#1A1A1A"></span>Azione primaria</td><td><code>--action-primary</code></td><td><code>#1A1A1A</code></td><td>Primary — <b>da sostituire col brand</b></td></tr>
-  <tr><td><span class="swatch" style="background:#171717"></span>Superficie scura</td><td><code>--surface-dark</code> / <code>-darker</code> / <code>-darkest</code></td><td><code>#242424 / #171717 / #0A0A0A</code></td><td>3 Global Color aggiuntivi (non coperti dai 4 default Elementor)</td></tr>
-  <tr><td><span class="swatch" style="background:#F6F6F6;border-color:#ccc"></span>Superficie chiara/tint</td><td><code>--surface-light</code> / <code>-tint</code></td><td><code>#FFFFFF / #F6F6F6</code></td><td>Background / Background-alt</td></tr>
-  <tr><td><span class="swatch" style="background:#B5B5B5"></span>Accento su sfondo scuro</td><td><code>--text-accent-on-dark</code></td><td><code>#B5B5B5</code></td><td>Secondary</td></tr>
+  <tr><td><span class="swatch" style="background:#1C265A"></span>Testo titoli</td><td><code>--text-heading</code></td><td><code>#1C265A</code> (navy-800)</td><td>Text / Heading</td></tr>
+  <tr><td><span class="swatch" style="background:#4A4F5E"></span>Testo corpo</td><td><code>--text-body</code></td><td><code>#4A4F5E</code> (gray-500)</td><td>Text</td></tr>
+  <tr><td><span class="swatch" style="background:#25387E"></span>Azione primaria</td><td><code>--action-primary</code></td><td><code>#25387E</code> (blue-600) — hover <code>#1C265A</code></td><td>Primary</td></tr>
+  <tr><td><span class="swatch" style="background:#1C265A"></span>Superficie scura</td><td><code>--surface-dark</code> / <code>-darker</code> / <code>-darkest</code></td><td><code>#1C265A / #0D1633 / #000A23</code> (navy-800/900/950)</td><td>3 Global Color aggiuntivi (non coperti dai 4 default Elementor)</td></tr>
+  <tr><td><span class="swatch" style="background:#F2F4FA;border-color:#ccc"></span>Superficie chiara/tint/card</td><td><code>--surface-light</code> / <code>-tint</code> / <code>-card</code></td><td><code>#FFFFFF / #F2F4FA / #EDEFF4</code></td><td>Background / Background-alt</td></tr>
+  <tr><td><span class="swatch" style="background:#9FB0D8"></span>Accento su sfondo scuro</td><td><code>--text-accent-on-dark</code></td><td><code>#9FB0D8</code> (blue-300)</td><td>Secondary</td></tr>
+  <tr><td><span class="swatch" style="background:#008C45"></span>Colori bandiera IT</td><td><code>--flag-green</code> / <code>--flag-red</code></td><td><code>#008C45</code> / <code>#CD212A</code></td><td>Uso puntuale (selettore lingua) — non Global Color, solo dove serve</td></tr>
   </table>
   </div>
+  <p class="section-intro" style="margin-top:-6px">Consegna verificata riga per riga contro l'originale (solo valori cambiati in <code>colors.css</code>, nessuna variabile rinominata) — vedi handoff seq 3 per il metodo di verifica da riusare su consegne future di design.</p>
 
   <div class="table-scroll">
   <table class="tbl">
@@ -156,7 +158,7 @@ footer.closing a{color:var(--ink-soft)}
   <tr><td>Mega-menu Macchine/Settori (4 colonne + card in evidenza)</td><td>Header, tutte le pagine</td><td>Nessun widget nativo per un vero mega-menu a colonne con card; serve Elementor Pro Theme Builder + un plugin mega-menu (es. HFE, o Nav Menu custom in Container)</td><td><span class="chip pro">Serve Pro</span></td></tr>
   <tr><td>Hero con taglio diagonale + bottiglia sovrapposta</td><td>Home</td><td>Container con Shape Divider "Tilt" per il taglio; l'overlap dell'immagine richiede posizionamento assoluto via Custom CSS (non gestibile solo da UI)</td><td><span class="chip custom">Custom</span></td></tr>
   <tr><td>Breadcrumb</td><td>Tutte le pagine interne</td><td>Elementor Pro Breadcrumb widget, o shortcode Yoast/RankMath se già installato per la SEO</td><td><span class="chip pro">Serve Pro</span></td></tr>
-  <tr><td>Tabs (Caratteristiche/Dati tecnici/Contenitori)</td><td>Scheda macchina</td><td>Tabs widget nativo</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Tabella "Caratteristiche principali" (5/3/2 campi per tipologia)</td><td>Scheda macchina</td><td>Table widget nativo, o righe Text ripetute con Dynamic Tag — i tab "Dati tecnici"/"Contenitori" del wireframe iniziale sono stati rimossi perché non funzionanti e non previsti dallo schema</td><td><span class="chip native">Nativo</span></td></tr>
   <tr><td>Gallery con thumbnail cliccabili</td><td>Scheda macchina</td><td>Image Gallery / Carousel widget nativo, alimentato da campo ACF gallery</td><td><span class="chip native">Nativo</span></td></tr>
   <tr><td>Carosello news orizzontale</td><td>Home, archivio News</td><td>Loop Carousel legato al CPT News</td><td><span class="chip pro">Serve Pro</span></td></tr>
   <tr><td>Marquee loghi clienti</td><td>Home (trust bar)</td><td>Nessun widget nativo per lo scroll infinito: snippet CSS/JS dedicato (il wireframe lo ha già pronto, riusabile)</td><td><span class="chip custom">Custom</span></td></tr>
@@ -172,35 +174,33 @@ footer.closing a{color:var(--ink-soft)}
   <div class="table-scroll">
   <table class="tbl">
   <tr><th>CPT</th><th>Slug</th><th>Archivio</th><th>Singolo</th><th>Tassonomie collegate</th></tr>
-  <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html</td><td>Categoria macchina (Riempitrici, Sciacquatrici, Tappatrici*, Etichettatrici*, Linee complete, Usate) + relazione a Settore</td></tr>
-  <tr><td>Settore</td><td><code>settori</code></td><td>archive-settori.html</td><td>taxonomy-settore.html <i>(diventa CPT singolo, non termine)</i></td><td>—</td></tr>
+  <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html + 16 varianti <code>single-macchina-*.html</code></td><td>Categoria macchina (Riempitrici, Tappatrici, Sciacquatrici, Etichettatrici*, Linee complete, Usate) + relazione a Settore (solo per Riempitrici, vedi sez. 04)</td></tr>
+  <tr><td>Settore</td><td><code>settori</code></td><td>archive-settori.html</td><td>taxonomy-settore.html <i>(diventa CPT singolo, non termine)</i></td><td>10 settori di lancio (Vino, Birra, Liquori, Bevande e succhi, Acqua, Olio alimentare, Alimenti e condimenti, Cosmetica e cura della persona, Detergenza e cura della casa, Chimico/farmaceutico/sanitario)</td></tr>
   <tr><td>Servizio</td><td><code>servizi</code></td><td>archive-servizi.html</td><td>single-servizio.html</td><td>—</td></tr>
   <tr><td>Referenza / caso studio</td><td><code>referenze</code></td><td>page-referenze.html <i>(solo archivio nel wireframe)</i></td><td>da creare — non esiste ancora nel wireframe</td><td>Settore, Macchina installata (relazioni)</td></tr>
   <tr><td>News</td><td><code>news</code></td><td>archive-news.html</td><td>single-news-articolo.html / single-news-editoriale.html <i>(due varianti di template)</i></td><td>Categoria news (Guida tecnica / Caso studio / Aggiornamento)</td></tr>
   <tr><td>Squadron</td><td>—</td><td>—</td><td>page-squadron.html <i>(pagina statica, non CPT)</i></td><td>—</td></tr>
   </table>
   </div>
-  <p class="section-intro" style="margin-top:-6px">* Tappatrici/Etichettatrici: registrare comunque il termine di tassonomia per non rompere gli URL già linkati altrove, ma senza pubblicarlo in menu/footer finché non si conferma con Eurostar (vedi <a href="riepilogo-testi.html">riepilogo testi</a>, punto 01).</p>
+  <p class="section-intro" style="margin-top:-6px">* Etichettatrici: registrare comunque il termine di tassonomia per non rompere gli URL già linkati altrove, ma senza pubblicarlo in menu/footer finché non si conferma con Eurostar. Tappatrici invece è già stato riattivato in menu/footer/filtri su indicazione esplicita di Serena, con i 6 modelli reali (GEMINI/F-IES, GEMINI/R-IES, GEMINI RF-IES, EAGLE/VA-IES, EAGLE PK, EAGLE C) — vedi <a href="riepilogo-testi.html">riepilogo testi</a>, punto 01.</p>
 
   <h2 class="section-title">04 — Campi ACF per CPT</h2>
-  <p class="section-intro">Elenco ricavato dai contenuti realmente presenti nel wireframe (non solo l'esempio pubblicato — MEC LD/Vino — ma tutti i campi che il testo del documento cliente richiede, così i field group non vanno riaperti quando si aggiungono le altre schede).</p>
+  <p class="section-intro">Aggiornato secondo lo schema confermato da Serena (SEZIONE MACCHINE.xlsx, foglio "IMPOSTAZIONE CATALOGO MACCHINE") e i 17 esempi ora popolati (MEC LD + 16 nuove schede). La struttura non è più uniforme per tutte le macchine: la tabella "Caratteristiche principali" e il campo "Adatta per" cambiano forma per tipologia — vedi nota tecnologia sotto la tabella.</p>
 
   <div class="fieldgroups">
     <div class="fieldgroup">
       <h3>Macchina</h3>
-      <span class="slug">single-macchina.html</span>
+      <span class="slug">single-macchina.html + 16 varianti</span>
       <ul>
         <li><b>Sottotitolo</b><span class="ftype">testo</span></li>
-        <li><b>Adatta per</b><span class="ftype">relazione → Settore</span></li>
+        <li><b>Adatta per</b><span class="ftype">Riempitrici: relazione → Settore · Tappatrici: testo/checkbox tipo di tappo · Sciacquatrici: campo assente, omesso in pagina</span></li>
         <li><b>Contenitori</b><span class="ftype">checkbox (Vetro/PET/HDPE/Lattina/Alluminio)</span></li>
-        <li><b>Dati chiave testata</b><span class="ftype">repeater: etichetta + valore ×4</span></li>
-        <li><b>Card di processo</b><span class="ftype">repeater: icona + titolo + testo ×4</span></li>
-        <li><b>Galleria</b><span class="ftype">repeater: immagine + didascalia</span></li>
+        <li><b>Stats testata</b><span class="ftype">2 campi StatBlock (etichetta + valore), non più 4</span></li>
         <li><b>Descrizione tecnica</b><span class="ftype">wysiwyg</span></li>
-        <li><b>Caratteristiche</b><span class="ftype">repeater: testo</span></li>
-        <li><b>Dati tecnici</b><span class="ftype">repeater: etichetta + valore</span></li>
-        <li><b>Download center</b><span class="ftype">repeater: file + etichetta</span></li>
-        <li><b>Referente commerciale</b><span class="ftype">relazione → utente/Team</span></li>
+        <li><b>Caratteristiche principali</b><span class="ftype">gruppo di campi a schema fisso per tipologia — Riempitrici 5 campi (Tipo riempimento, Contenitori, Prodotto, Materiale a contatto, Velocità); Tappatrici 3 campi (Tipologia chiusura, Contenitori, Velocità); Sciacquatrici 2 campi (Contenitori, Bottiglie/ora)</span></li>
+        <li><b>Galleria</b><span class="ftype">repeater: immagine + didascalia</span></li>
+        <li><b>Download center</b><span class="ftype">repeater: file + etichetta — formato scheda tecnica PDF (non più DWG)</span></li>
+        <li><b>Modulo preventivo</b><span class="ftype">widget Form nativo — nessun campo "referente commerciale" nominativo (rimosso il riferimento a persona specifica)</span></li>
       </ul>
     </div>
     <div class="fieldgroup">
@@ -275,8 +275,8 @@ footer.closing a{color:var(--ink-soft)}
   <tr><th>Template</th><th>Condizione</th><th>Note</th></tr>
   <tr><td>Header</td><td>Tutto il sito</td><td>Utility bar + nav + mega-menu Macchine/Settori — il pattern più complesso del sito, vedi sezione 02</td></tr>
   <tr><td>Footer</td><td>Tutto il sito</td><td>5 colonne + riga legale; dati contatto oggi placeholder (vedi riepilogo testi, punto 07)</td></tr>
-  <tr><td>Single — Macchina</td><td>CPT Macchina</td><td>Un solo template dinamico sostituisce le 9 pagine oggi previste dal documento cliente</td></tr>
-  <tr><td>Single — Settore</td><td>CPT Settore</td><td>Un solo template dinamico sostituisce le 6 pagine settore di lancio</td></tr>
+  <tr><td>Single — Macchina</td><td>CPT Macchina</td><td>Un solo template dinamico, con gruppo di campi condizionale per tipologia (5/3/2 campi in "Caratteristiche principali"), sostituisce le 17 pagine oggi duplicate a mano</td></tr>
+  <tr><td>Single — Settore</td><td>CPT Settore</td><td>Un solo template dinamico sostituisce le 10 pagine settore di lancio (oggi solo Vino è popolata)</td></tr>
   <tr><td>Single — Servizio</td><td>CPT Servizio</td><td>Copre Assistenza/Ricambi/Remote view</td></tr>
   <tr><td>Single — News</td><td>CPT News</td><td>Due varianti nel wireframe (articolo tecnico vs editoriale) → un solo template con un campo "layout" ACF, oppure due Theme Builder template condizionati per categoria</td></tr>
   <tr><td>Archive — Macchina/Settore/Servizio/News</td><td>rispettivi CPT</td><td>Con Loop Grid + filtro tassonomia dove previsto</td></tr>
@@ -286,7 +286,7 @@ footer.closing a{color:var(--ink-soft)}
 
   <div class="note-box">
     <b>Attenzione — scope attuale del wireframe</b>
-    Per decisione condivisa, oggi solo un esempio per CPT è popolato (MEC LD, Vino, Assistenza tecnica). I field group ACF qui sopra vanno però creati per intero fin dall'inizio: se si aggiungono campi in corsa dopo aver già inserito i contenuti reali delle altre 8 macchine/5 settori, si rischia di dover ripassare tutti i contenuti già caricati.
+    La decisione "un solo esempio popolato" è stata superata per il CPT Macchina su richiesta diretta: oggi ci sono 17 schede reali (MEC LD + 16 nuove, tutte le Riempitrici/Tappatrici/Sciacquatrici dello schema Excel). Resta invece valida per Settore (solo Vino popolato sui 10 di lancio) e per Servizio (solo Assistenza tecnica su 3). I field group ACF vanno comunque creati per intero fin dall'inizio anche per questi ultimi, per non dover ripassare i contenuti già caricati quando si aggiungono gli altri settori/servizi.
   </div>
 
   <h2 class="section-title">07 — Cosa resta fuori dal wireframe (non deducibile)</h2>
