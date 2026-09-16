@@ -174,7 +174,7 @@ footer.closing a{color:var(--ink-soft)}
   <div class="table-scroll">
   <table class="tbl">
   <tr><th>CPT</th><th>Slug</th><th>Archivio</th><th>Singolo</th><th>Tassonomie collegate</th></tr>
-  <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html + 16 varianti <code>single-macchina-*.html</code></td><td>Categoria macchina (Riempitrici, Tappatrici, Sciacquatrici, Etichettatrici*, Linee complete, Usate) + relazione a Settore (solo per Riempitrici, vedi sez. 04)</td></tr>
+  <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html + 16 varianti <code>single-macchina-*.html</code></td><td>Categoria macchina (Riempitrici, Tappatrici, Sciacquatrici/Soffiatrici, Etichettatrici*, Linee complete, Usate) + relazione a Settore (solo per Riempitrici, vedi sez. 04)</td></tr>
   <tr><td>Settore</td><td><code>settori</code></td><td>archive-settori.html</td><td>taxonomy-settore.html <i>(diventa CPT singolo, non termine)</i></td><td>10 settori di lancio (Vino, Birra, Liquori, Bevande e succhi, Acqua, Olio alimentare, Alimenti e condimenti, Cosmetica e cura della persona, Detergenza e cura della casa, Chimico/farmaceutico/sanitario)</td></tr>
   <tr><td>Servizio</td><td><code>servizi</code></td><td>archive-servizi.html</td><td>single-servizio.html</td><td>—</td></tr>
   <tr><td>Referenza / caso studio</td><td><code>referenze</code></td><td>page-referenze.html <i>(solo archivio nel wireframe)</i></td><td>da creare — non esiste ancora nel wireframe</td><td>Settore, Macchina installata (relazioni)</td></tr>
@@ -193,11 +193,11 @@ footer.closing a{color:var(--ink-soft)}
       <span class="slug">single-macchina.html + 16 varianti</span>
       <ul>
         <li><b>Sottotitolo</b><span class="ftype">testo</span></li>
-        <li><b>Adatta per</b><span class="ftype">Riempitrici: relazione → Settore · Tappatrici: testo/checkbox tipo di tappo · Sciacquatrici: campo assente, omesso in pagina</span></li>
+        <li><b>Adatta per</b><span class="ftype">Riempitrici: relazione → Settore · Tappatrici: testo/checkbox tipo di tappo · Sciacquatrici/Soffiatrici: campo assente, omesso in pagina</span></li>
         <li><b>Contenitori</b><span class="ftype">checkbox (Vetro/PET/HDPE/Lattina/Alluminio)</span></li>
-        <li><b>Stats testata</b><span class="ftype">ripete un sottoinsieme di "Caratteristiche principali" — 4 campi per Riempitrici, 2 per Tappatrici/Sciacquatrici</span></li>
+        <li><b>Stats testata</b><span class="ftype">ripete un sottoinsieme di "Caratteristiche principali" — 4 campi per Riempitrici, 2 per Tappatrici/Sciacquatrici/Soffiatrici</span></li>
         <li><b>Descrizione tecnica</b><span class="ftype">wysiwyg</span></li>
-        <li><b>Caratteristiche principali</b><span class="ftype">gruppo di campi a schema fisso per tipologia — Riempitrici 5 campi (Tipo riempimento, Contenitori, Prodotto, Materiale a contatto, Velocità); Tappatrici 3 campi (Tipologia chiusura, Contenitori, Velocità); Sciacquatrici 2 campi (Contenitori, Bottiglie/ora)</span></li>
+        <li><b>Caratteristiche principali</b><span class="ftype">gruppo di campi a schema fisso per tipologia — Riempitrici 5 campi (Tipo riempimento, Contenitori, Prodotto, Materiale a contatto, Velocità); Tappatrici 3 campi (Tipologia chiusura, Contenitori, Velocità); Sciacquatrici/Soffiatrici 2 campi (Contenitori, Bottiglie/ora)</span></li>
         <li><b>Galleria</b><span class="ftype">repeater: immagine + didascalia</span></li>
         <li><b>Download center</b><span class="ftype">repeater: file + etichetta — formato scheda tecnica PDF (non più DWG)</span></li>
         <li><b>Modulo preventivo</b><span class="ftype">widget Form nativo — nessun campo "referente commerciale" nominativo (rimosso il riferimento a persona specifica)</span></li>
@@ -210,7 +210,7 @@ footer.closing a{color:var(--ink-soft)}
       <ul>
         <li><b>Intro categoria</b><span class="ftype">testo (term field)</span></li>
         <li><b>Ordine nel menu/catalogo</b><span class="ftype">numero (term field)</span></li>
-        <li><b>Campi preview card</b><span class="ftype">nessun campo diretto — pesca 2 campi dalla Scheda macchina, variabili per tipologia (Riempitrici: prodotto/velocità · Tappatrici: chiusura/velocità · Sciacquatrici: contenitori/bottiglie-ora)</span></li>
+        <li><b>Campi preview card</b><span class="ftype">nessun campo diretto — pesca 2 campi dalla Scheda macchina, variabili per tipologia (Riempitrici: prodotto/velocità · Tappatrici: chiusura/velocità · Sciacquatrici/Soffiatrici: contenitori/bottiglie-ora)</span></li>
       </ul>
       <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Mappatura completa in <a href="acf-elementor-mapping.md">acf-elementor-mapping.md</a>, sezione 1</p>
     </div>
@@ -295,7 +295,7 @@ footer.closing a{color:var(--ink-soft)}
 
   <div class="note-box">
     <b>Attenzione — scope attuale del wireframe</b>
-    La decisione "un solo esempio popolato" è stata superata sia per il CPT Macchina (17 schede reali: MEC LD + 16 nuove, tutte le Riempitrici/Tappatrici/Sciacquatrici dello schema Excel) sia per il CPT Settore (tutti e 10 i settori di lancio popolati con i contenuti reali di SETTORI MACCHINE 14-09-26.xlsx). Resta valida solo per Servizio (solo Assistenza tecnica su 3). Il field group ACF va comunque creato per intero fin dall'inizio anche per quest'ultimo, per non dover ripassare i contenuti già caricati quando si aggiungono gli altri servizi.
+    La decisione "un solo esempio popolato" è stata superata sia per il CPT Macchina (17 schede reali: MEC LD + 16 nuove, tutte le Riempitrici/Tappatrici/Sciacquatrici/Soffiatrici dello schema Excel) sia per il CPT Settore (tutti e 10 i settori di lancio popolati con i contenuti reali di SETTORI MACCHINE 14-09-26.xlsx). Resta valida solo per Servizio (solo Assistenza tecnica su 3). Il field group ACF va comunque creato per intero fin dall'inizio anche per quest'ultimo, per non dover ripassare i contenuti già caricati quando si aggiungono gli altri servizi.
   </div>
 
   <h2 class="section-title">07 — Cosa resta fuori dal wireframe (non deducibile)</h2>

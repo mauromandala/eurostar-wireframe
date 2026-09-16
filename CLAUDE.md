@@ -20,7 +20,7 @@ Tutte le pagine condividono header (utility bar + nav + mega-menu Macchine/Setto
 **Pagine uniche**: home, Chi siamo, Catalogo macchine, Settori (elenco), Servizi (overview), Referenze, Cataloghi (download), News (elenco), Contatti, Conferma invio form, 404, Squadron.
 
 **Archetipi / template dinamici** (un solo esempio popolato per tipo, testo per gli altri pronto nel documento cliente ma non ancora impaginato):
-- Categoria macchina × 6 (Riempitrici, Tappatrici, Etichettatrici, Sciacquatrici, Linee complete, Usate)
+- Categoria macchina × 6 (Riempitrici, Tappatrici, Etichettatrici, Sciacquatrici/Soffiatrici, Linee complete, Usate)
 - Scheda macchina singola (oggi: MEC LD) — altre 8 macchine da fare
 - Scheda settore (oggi: Vino) — altri 5 settori di lancio da fare
 - Scheda servizio (oggi: Assistenza tecnica) — Ricambi e Remote view da fare
