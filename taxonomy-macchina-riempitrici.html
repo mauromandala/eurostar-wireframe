@@ -192,7 +192,7 @@ a:hover{color:var(--action-primary-hover)}
 <section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <h2 style="margin:0 0 12px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">La gamma riempitrici</h2>
-<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Modelli per portata e formato, dal monoblocco compatto alla linea ad alta velocità: MEC LD, MEC LP, MEC AV, famiglia MEC ISO (S / PS / SL / PSL / FS / DPS), CANFILL, DUALFILL, SKILLFILL, MAXIMA, POWERFILL.</p>
+<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Modelli per portata e formato, dal monoblocco compatto alla linea ad alta velocità: MEC LD, MEC LP, MEC AV, MEC VOL, famiglia MEC ISO (S / PS / SL / PSL / FS / DPS), CANFILL, DUALFILL, SKILLFILL, MAXIMA, POWERFILL.</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LD" subtitle="Gravità / leggero vuoto" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina.html" hint-size="260px,400px"></x-import>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LP" subtitle="Leggera pressione" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
@@ -200,6 +200,10 @@ a:hover{color:var(--action-primary-hover)}
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="MEC ISO" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="SKILLFILL" subtitle="Isobarica elettropneumatica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Volumetrica a flowmetro" stat1="{{ prodDensi }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-maxima.png" name="MAXIMA" subtitle="Gravità / leggero vuoto elettropneumatico" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-vol.png" name="MEC VOL" subtitle="Volumetrica meccanica" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-canfill.png" name="CANFILL" subtitle="Monoblocco isobarico + aggraffatura" stat1="{{ prodGassati }}" stat2="{{ velCanfill }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-dualfill.png" name="DUALFILL" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" hint-size="260px,400px"></x-import>
 </div>
 <nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
@@ -320,7 +324,8 @@ class Component extends DCLogic {
       prodGassati: { value: 'Liquidi gassati', label: 'Prodotto' },
       prodViscosi: { value: 'Prodotti viscosi', label: 'Prodotto' },
       prodDensi: { value: 'Liquidi piatti semi-densi e densi', label: 'Prodotto' },
-      vel25k: { value: 'Fino a 25.000 BPH', label: 'Velocità' }
+      vel25k: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
+      velCanfill: { value: 'Fino a 6.000 BPH', label: 'Velocità' }
     };
   }
 }

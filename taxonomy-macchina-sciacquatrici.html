@@ -194,9 +194,9 @@ a:hover{color:var(--action-primary-hover)}
 <h2 style="margin:0 0 12px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">La gamma sciacquatrici</h2>
 <p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Sciacquatrice mod. SI, configurabile con acqua, aria filtrata o gas inerte, con un'ampia gamma di optional per formati speciali, doppio trattamento e materiali premium.</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-rns-water.png" name="Sciacquatrice SI" subtitle="Configurazione ad acqua" stat1="{{ rn2v }}" stat2="{{ rn2p }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-rns-air.png" name="Sciacquatrice SI" subtitle="Configurazione ad aria filtrata" stat1="{{ rn1v }}" stat2="{{ rn1p }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-rns-n2.png" name="Sciacquatrice SI" subtitle="Configurazione a gas inerte" stat1="{{ rn3v }}" stat2="{{ rn3p }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-water.png" name="MEC SI" subtitle="Configurazione ad acqua" stat1="{{ rnCont }}" stat2="{{ rnVel }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-air.png" name="MEC SI" subtitle="Configurazione ad aria filtrata" stat1="{{ rnCont }}" stat2="{{ rnVel }}" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-n2.png" name="MEC SI" subtitle="Configurazione a gas inerte" stat1="{{ rnCont }}" stat2="{{ rnVel }}" hint-size="260px,400px"></x-import>
 </div>
 <nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
@@ -313,12 +313,8 @@ a:hover{color:var(--action-primary-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      rn1v: { value: '24k', label: 'Bottiglie / ora' },
-      rn1p: { value: '2', label: 'Stazioni' },
-      rn2v: { value: '18k', label: 'Bottiglie / ora' },
-      rn2p: { value: '4', label: 'Stazioni' },
-      rn3v: { value: '12k', label: 'Bottiglie / ora' },
-      rn3p: { value: 'N2', label: 'Flussaggio' },
+      rnCont: { value: 'Bottiglie e lattine', label: 'Tipo contenitore' },
+      rnVel: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
       rn4v: { value: '16k', label: 'Bottiglie / ora' },
       rn4p: { value: '6', label: 'Stazioni' },
       rn5v: { value: '6k', label: 'Bottiglie / ora' },
