@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<title>Riempitrici | Eurostar</title>
+<title>MAXIMA | Eurostar</title>
 </head>
 <body>
 <x-dc>
@@ -66,7 +66,21 @@ a:hover{color:var(--action-primary-hover)}
 .es-mega-featured h4{margin:0 0 4px;font:var(--text-h4);font-size:15px;color:var(--text-heading);text-transform:uppercase}
 .es-mega-featured p{margin:0 0 12px;font:var(--text-body-sm);color:var(--text-body)}
 @media (max-width:1024px){.es-mega-caret{display:none}.es-mega{display:none}}
-.es-tech{padding-top:24px;border-top:1px solid var(--border-subtle)}
+.es-tab{font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);background:none;border:none;padding:12px 4px;cursor:pointer;border-bottom:2px solid transparent}
+.es-tab[aria-selected="true"]{color:var(--text-heading);border-bottom-color:var(--action-primary)}
+.es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:12px 14px;font:var(--text-body-sm);color:var(--text-heading);box-sizing:border-box}
+.es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
+.es-dl-link{display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid var(--border-subtle);font:var(--text-body-md);color:var(--action-primary);font-weight:500}
+.es-product-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,72px);align-items:start}
+@media (max-width:900px){.es-product-hero{grid-template-columns:1fr}}
+.es-gallery{display:flex;flex-direction:column;gap:12px}
+.es-gallery-main{aspect-ratio:4/3;background:var(--gray-100)}
+.es-gallery-frame{width:100%;height:100%;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box}
+.es-gallery-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.es-gallery-thumb{aspect-ratio:1/1;background:var(--gray-150);border:1px dashed var(--gray-400);color:var(--gray-500);font:700 11px var(--font-display);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.es-gallery-thumb.is-active{border-color:var(--action-primary);color:var(--action-primary)}
+.es-gallery-thumb:focus-visible{outline:2px solid var(--action-primary);outline-offset:2px}
+.es-container-tag{display:inline-flex;align-items:center;gap:6px;font:400 13px var(--font-body);color:var(--text-heading)}
 
 .es-util-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-on-dark-muted);text-decoration:none;font:var(--text-caption);letter-spacing:.02em}
 .es-util-link:hover{color:#fff}
@@ -174,47 +188,101 @@ a:hover{color:var(--action-primary-hover)}
 
 <main id="main-content">
 
-<!-- Category hero -->
-<section style="position:relative;min-height:42vh;display:flex;align-items:flex-end;background:var(--surface-dark);overflow:hidden">
-<div style="position:absolute;inset:0;width:100%;height:100%;opacity:.45;background:var(--gray-150)" aria-hidden="true"></div>
-<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.5) 100%)"></div>
-<div style="position:relative;padding:clamp(40px,7vh,80px) var(--space-section-x);width:100%;box-sizing:border-box">
+<!-- Product header -->
+<section style="background:var(--surface-tint);padding:clamp(40px,6vh,64px) var(--space-section-x) clamp(56px,8vh,88px)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="archive-macchine.html" style="color:var(--text-on-dark-faint)">Macchine</a></li><li aria-hidden="true">/</li><li style="color:#fff">Riempitrici</li></ol>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Categoria</x-import>
-<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Riempitrici</h1>
-<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Monoblocchi a gravità, leggera pressione, alto vuoto, isobarici e volumetrici a flowmetro, per ogni tipo di prodotto e contenitore — dalla piccola produzione artigianale alle linee ad alta capacità.</p>
+<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 24px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)"><li><a href="home.html" style="color:var(--gray-500)">Home</a></li><li aria-hidden="true">/</li><li><a href="archive-macchine.html" style="color:var(--gray-500)">Macchine</a></li><li aria-hidden="true">/</li><li><a href="taxonomy-macchina-riempitrici.html" style="color:var(--gray-500)">Riempitrici</a></li><li aria-hidden="true">/</li><li style="color:var(--text-heading)">MAXIMA</li></ol>
+<div class="es-product-hero">
+<div>
+<h1 style="margin:0 0 14px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase">MAXIMA</h1>
+<p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--action-primary);font-weight:500">Riempitrice a leggera depressione/gravità, elettropneumatica</p>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+<span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Adatta per</span>
+<a href="taxonomy-settore.html" style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:6px 16px;text-decoration:none">Vino</a>
+<a href="archive-settori.html" style="font:400 13px var(--font-body);letter-spacing:.02em;color:var(--text-heading);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-full);padding:6px 16px;text-decoration:none">Liquori</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:18px">
+<span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Contenitori</span>
+<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>Vetro</span>
+<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>PET</span>
+<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>Altri polimeri</span>
+<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>Alluminio</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px 24px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border-subtle)">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Fino a 25.000 BPH" label="Velocità" dark="{{ false }}" size="md" hint-size="auto,60px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Liquidi piatti" label="Prodotto" dark="{{ false }}" size="md" hint-size="auto,60px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Leggera depressione/gravità — elettropneumatico" label="Tipo riempimento" dark="{{ false }}" size="md" hint-size="auto,60px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Vetro" label="Materiale a contatto" dark="{{ false }}" size="md" hint-size="auto,60px"></x-import>
+</div>
+</div>
+<div class="es-gallery" data-gallery-main>
+<div class="es-gallery-main"><div class="es-gallery-frame" aria-hidden="true">[IMG: Riempitrice MAXIMA, vista completa]</div></div>
+<div class="es-gallery-thumbs" role="tablist" aria-label="Galleria immagini MAXIMA">
+<button type="button" class="es-gallery-thumb is-active" role="tab" aria-selected="true" data-gallery-label="Riempitrice MAXIMA, vista completa">01</button>
+<button type="button" class="es-gallery-thumb" role="tab" aria-selected="false" data-gallery-label="Dettaglio gruppo di riempimento">02</button>
+<button type="button" class="es-gallery-thumb" role="tab" aria-selected="false" data-gallery-label="Pannello di controllo touch-screen">03</button>
+<button type="button" class="es-gallery-thumb" role="tab" aria-selected="false" data-gallery-label="Stazione di tappatura integrata">04</button>
+</div>
+</div>
 </div>
 </div>
 </section>
 
-<!-- Machine range -->
-<section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto">
-<h2 style="margin:0 0 12px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">La gamma riempitrici</h2>
-<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Modelli per portata e formato, dal monoblocco compatto alla linea ad alta velocità: MEC LD, MEC LP, MEC AV, MEC VOL, famiglia MEC ISO (S / PS / SL / PSL / FS / DPS), CANFILL, DUALFILL, SKILLFILL, MAXIMA, POWERFILL.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LD" subtitle="Gravità / leggero vuoto" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LP" subtitle="Leggera pressione" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-mec-lp.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="MEC AV" subtitle="Alto vuoto" stat1="{{ prodViscosi }}" stat2="{{ vel25k }}" href="single-macchina-mec-av.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="MEC ISO" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-mec-iso.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="SKILLFILL" subtitle="Isobarica elettropneumatica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-skillfill.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Volumetrica a flowmetro" stat1="{{ prodDensi }}" stat2="{{ vel25k }}" href="single-macchina-powerfill.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-maxima.png" name="MAXIMA" subtitle="Gravità / leggero vuoto elettropneumatico" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-maxima.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-vol.png" name="MEC VOL" subtitle="Volumetrica meccanica" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-mec-vol.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-canfill.png" name="CANFILL" subtitle="Monoblocco isobarico + aggraffatura" stat1="{{ prodGassati }}" stat2="{{ velCanfill }}" href="single-macchina-canfill.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-dualfill.png" name="DUALFILL" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-dualfill.html" hint-size="260px,400px"></x-import>
+<!-- Body 65/35 -->
+<section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:minmax(0,65fr) minmax(0,35fr);gap:clamp(48px,5vw,88px);align-items:start">
+
+<!-- Left -->
+<div>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Descrizione tecnica</x-import>
+<p style="margin:20px 0 48px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch;line-height:1.7">La MAXIMA è una riempitrice a leggera depressione/gravità con azionamento elettropneumatico, pensata per il riempimento preciso di prodotti liquidi piatti in bottiglie e lattine, con particolare attenzione ai settori vino e liquori.</p>
+
+<div style="display:flex;gap:32px;border-bottom:1px solid var(--border-subtle);margin-bottom:16px">
+<span class="es-tab" aria-selected="true">Caratteristiche</span>
 </div>
-<nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
-</nav>
+
+<table style="width:100%;border-collapse:collapse;margin:16px 0 56px">
+<caption style="text-align:left;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);padding:12px 0">Dati tecnici di performance</caption>
+<tbody>
+<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-top:1px solid var(--border-subtle)">Tipo riempimento</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-top:1px solid var(--border-subtle)">Leggera depressione/gravità — elettropneumatico</td></tr>
+<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-top:1px solid var(--border-subtle)">Contenitori</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-top:1px solid var(--border-subtle)">Vetro, PET, Altri polimeri, Alluminio</td></tr>
+<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-top:1px solid var(--border-subtle)">Prodotto</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-top:1px solid var(--border-subtle)">Liquidi piatti</td></tr>
+<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-top:1px solid var(--border-subtle)">Materiale a contatto prodotto</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-top:1px solid var(--border-subtle)">Vetro, PET, altri polimeri, alluminio</td></tr>
+<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">Velocità</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">Fino a 25.000 BPH</td></tr>
+</tbody>
+</table>
+
+<h2 style="margin:0 0 16px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Download center</h2>
+<div>
+<a href="#" class="es-dl-link"><span aria-hidden="true">↓</span> Scheda tecnica MAXIMA (PDF, 1.8 MB)</a>
+<a href="#" class="es-dl-link" style="border-bottom:1px solid var(--border-subtle)"><span aria-hidden="true">↓</span> Layout CAD di ingombro (PDF, 0.9 MB)</a>
+</div>
+</div>
+
+<!-- Sidebar sticky -->
+<aside style="position:sticky;top:96px;display:flex;flex-direction:column;gap:28px">
+<div style="background:var(--surface-card);padding:32px">
+<h2 style="margin:0 0 22px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Richiedi un preventivo</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div><label for="es-n" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Nome e azienda *</label><input id="es-n" class="es-field" required /></div>
+<div><label for="es-e" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Email *</label><input id="es-e" type="email" class="es-field" required /></div>
+<div><label for="es-m" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Messaggio</label><textarea id="es-m" class="es-field" style="height:80px;resize:vertical"></textarea></div>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" hint-size="100%,48px" style="{{ fullBtn }}">Invia richiesta</x-import>
+<p style="margin:2px 0 0;font:var(--text-caption);color:var(--gray-500)">Risposta del reparto tecnico entro 24h lavorative.</p>
+</div>
+</div>
+</aside>
+
 </div>
 </section>
 
 <section style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x);text-align:center">
 <div style="max-width:var(--space-content-max-narrow);margin:0 auto">
-<h2 style="margin:0 0 28px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Non trovi la riempitrice giusta? Progettiamo su misura.</h2>
-<div style="display:flex;justify-content:center"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="page-contatti.html" hint-size="auto,52px">Richiedi una consulenza</x-import></div>
+<h2 style="margin:0 0 28px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Configura la tua MAXIMA</h2>
+<div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="page-contatti.html" hint-size="auto,52px">Richiedi preventivo</x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" dark="{{ true }}" href="page-contatti.html" hint-size="auto,52px">Parla con un tecnico</x-import>
+</div>
 </div>
 </section>
 
@@ -319,14 +387,7 @@ a:hover{color:var(--action-primary-hover)}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   renderVals() {
-    return {
-      prodPiatti: { value: 'Liquidi piatti', label: 'Prodotto' },
-      prodGassati: { value: 'Liquidi gassati', label: 'Prodotto' },
-      prodViscosi: { value: 'Prodotti viscosi', label: 'Prodotto' },
-      prodDensi: { value: 'Liquidi piatti semi-densi e densi', label: 'Prodotto' },
-      vel25k: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
-      velCanfill: { value: 'Fino a 6.000 BPH', label: 'Velocità' }
-    };
+    return { fullBtn: { width: '100%' } };
   }
 }
 </script>
@@ -404,6 +465,19 @@ document.addEventListener('click', function(e){
   e.preventDefault();
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var thumb = e.target.closest && e.target.closest('.es-gallery-thumb');
+  if (!thumb) return;
+  var gallery = thumb.closest('.es-gallery');
+  if (!gallery) return;
+  gallery.querySelectorAll('.es-gallery-thumb').forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+  thumb.classList.add('is-active');
+  thumb.setAttribute('aria-selected', 'true');
+  var frame = gallery.querySelector('.es-gallery-frame');
+  if (frame) frame.textContent = '[IMG: ' + thumb.getAttribute('data-gallery-label') + ']';
 });
 </script>
 <script>
