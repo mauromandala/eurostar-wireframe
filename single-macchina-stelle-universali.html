@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<title>Referenze | Eurostar</title>
+<title>Stelle universali | Eurostar</title>
 </head>
 <body>
 <x-dc>
@@ -66,14 +66,21 @@ a:hover{color:var(--action-primary-hover)}
 .es-mega-featured h4{margin:0 0 4px;font:var(--text-h4);font-size:15px;color:var(--text-heading);text-transform:uppercase}
 .es-mega-featured p{margin:0 0 12px;font:var(--text-body-sm);color:var(--text-body)}
 @media (max-width:1024px){.es-mega-caret{display:none}.es-mega{display:none}}
-.es-tab{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);background:none;border:none;padding:16px 4px;cursor:pointer;border-bottom:2px solid transparent}
+.es-tab{font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);background:none;border:none;padding:12px 4px;cursor:pointer;border-bottom:2px solid transparent}
 .es-tab[aria-selected="true"]{color:var(--text-heading);border-bottom-color:var(--action-primary)}
-.es-tab:hover{color:var(--text-heading)}
-.es-art{background:var(--surface-light);text-decoration:none;display:flex;flex-direction:column;transition:transform var(--duration-base) var(--ease-standard),box-shadow var(--duration-base) var(--ease-standard)}
-.es-art:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover)}
-.es-art .es-frame{aspect-ratio:16/10;overflow:hidden;background:var(--gray-100)}
-.es-art img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-standard)}
-.es-art:hover img{transform:scale(1.05)}
+.es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:12px 14px;font:var(--text-body-sm);color:var(--text-heading);box-sizing:border-box}
+.es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
+.es-dl-link{display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid var(--border-subtle);font:var(--text-body-md);color:var(--action-primary);font-weight:500}
+.es-product-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,72px);align-items:start}
+@media (max-width:900px){.es-product-hero{grid-template-columns:1fr}}
+.es-gallery{display:flex;flex-direction:column;gap:12px}
+.es-gallery-main{aspect-ratio:4/3;background:var(--gray-100)}
+.es-gallery-frame{width:100%;height:100%;background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 11px/1.3 var(--font-body);text-align:center;padding:8px;box-sizing:border-box}
+.es-gallery-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.es-gallery-thumb{aspect-ratio:1/1;background:var(--gray-150);border:1px dashed var(--gray-400);color:var(--gray-500);font:700 11px var(--font-display);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.es-gallery-thumb.is-active{border-color:var(--action-primary);color:var(--action-primary)}
+.es-gallery-thumb:focus-visible{outline:2px solid var(--action-primary);outline-offset:2px}
+.es-container-tag{display:inline-flex;align-items:center;gap:6px;font:400 13px var(--font-body);color:var(--text-heading)}
 
 .es-util-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-on-dark-muted);text-decoration:none;font:var(--text-caption);letter-spacing:.02em}
 .es-util-link:hover{color:#fff}
@@ -176,75 +183,66 @@ a:hover{color:var(--action-primary-hover)}
 <a href="home.html" style="display:flex;align-items:center;gap:16px"><img src="assets/logo-white.png" alt="Eurostar" style="height:40px;cursor:pointer" /><span aria-hidden="true" style="width:1px;height:28px;background:rgba(255,255,255,.3)"></span><img src="assets/logo-30-white.png" alt="30 anni, 1996-2026" style="height:32px" /></a>
 <button type="button" class="es-nav-toggle" id="es-nav-toggle" aria-expanded="false" aria-controls="es-nav-links" aria-label="Apri il menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
 <div style="display:flex;gap:clamp(16px,2.2vw,32px);align-items:center;align-self:stretch" class="es-nav-links" id="es-nav-links">
-<a class="es-navlink" href="page-chi-siamo.html">Azienda</a>
-<span class="es-navlink-group" style="display:inline-flex;align-items:center;gap:2px"><a class="es-navlink" href="archive-macchine.html">Macchine</a><button type="button" class="es-mega-caret" id="es-mega-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="es-mega-panel" aria-label="Mostra sottomenu Macchine"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></span>
-<span class="es-navlink-group" style="display:inline-flex;align-items:center;gap:2px"><a class="es-navlink" href="archive-settori.html">Settori</a><button type="button" class="es-mega-caret" id="es-mega-trigger-settori" aria-expanded="false" aria-haspopup="true" aria-controls="es-mega-panel-settori" aria-label="Mostra sottomenu Settori"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></span>
-<a class="es-navlink" href="archive-servizi.html">Servizi</a>
-<a class="es-navlink active" href="page-referenze.html">Referenze</a>
-<a class="es-navlink" href="page-squadron.html">Squadron</a>
-<a class="es-navlink" href="archive-news.html">News</a>
-<a class="es-navlink-cta" href="page-contatti.html">Richiedi una consulenza</a>
+<a class="es-navlink" href="page-chi-siamo.html">Azienda</a><span class="es-navlink-group" style="display:inline-flex;align-items:center;gap:2px"><a class="es-navlink active" href="archive-macchine.html">Macchine</a><button type="button" class="es-mega-caret" id="es-mega-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="es-mega-panel" aria-label="Mostra sottomenu Macchine"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></span><span class="es-navlink-group" style="display:inline-flex;align-items:center;gap:2px"><a class="es-navlink" href="archive-settori.html">Settori</a><button type="button" class="es-mega-caret" id="es-mega-trigger-settori" aria-expanded="false" aria-haspopup="true" aria-controls="es-mega-panel-settori" aria-label="Mostra sottomenu Settori"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></span><a class="es-navlink" href="archive-servizi.html">Servizi</a><a class="es-navlink" href="page-referenze.html">Referenze</a><a class="es-navlink" href="page-squadron.html">Squadron</a><a class="es-navlink" href="archive-news.html">News</a><a class="es-navlink-cta" href="page-contatti.html">Richiedi una consulenza</a>
 </div>
 </nav>
 
 <main id="main-content">
 
-<section style="position:relative;min-height:42vh;display:flex;align-items:flex-end;background:var(--surface-dark);overflow:hidden">
-<div style="position:absolute;inset:0;width:100%;height:100%;opacity:.45;background:var(--gray-150)" aria-hidden="true"></div>
-<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.5) 100%)"></div>
-<div style="position:relative;padding:clamp(40px,8vh,90px) var(--space-section-x);width:100%;box-sizing:border-box">
+<!-- Product header -->
+<section style="background:var(--surface-tint);padding:clamp(40px,6vh,64px) var(--space-section-x) clamp(56px,8vh,88px)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li style="color:#fff">Referenze</li></ol>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Casi studio</x-import>
-<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Oltre 2.000 linee installate nel mondo</h1>
-<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Dalle piccole cantine artigianali ai grandi gruppi industriali: scopri come i nostri clienti hanno risolto le loro sfide di imbottigliamento.</p>
+<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 24px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)"><li><a href="home.html" style="color:var(--gray-500)">Home</a></li><li aria-hidden="true">/</li><li><a href="archive-macchine.html" style="color:var(--gray-500)">Macchine</a></li><li aria-hidden="true">/</li><li><a href="taxonomy-macchina-movimentazione.html" style="color:var(--gray-500)">Sistemi movimentazione contenitori</a></li><li aria-hidden="true">/</li><li style="color:var(--text-heading)">Stelle universali</li></ol>
+<div class="es-product-hero">
+<div>
+<h1 style="margin:0 0 14px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase">Stelle universali</h1>
+<p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--action-primary);font-weight:500">Attrezzatura regolabile multiformato</p>
+</div>
+<div class="es-gallery" data-gallery-main>
+<div class="es-gallery-main"><div class="es-gallery-frame" aria-hidden="true">[IMG: Stelle universali, vista completa]</div></div>
+<div class="es-gallery-thumbs" role="tablist" aria-label="Galleria immagini Stelle universali">
+<button type="button" class="es-gallery-thumb is-active" role="tab" aria-selected="true" data-gallery-label="Stelle universali, vista completa">01</button>
+</div>
+</div>
 </div>
 </div>
 </section>
 
-<section style="background:var(--surface-light);padding:clamp(32px,5vh,56px) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;text-align:center">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="2.000+" label="Linee installate" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="60+" label="Paesi serviti" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="9" label="Settori applicativi" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="35" label="Anni di esperienza" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-</div>
-</section>
-
-<div style="border-bottom:1px solid var(--border-subtle);background:var(--surface-light);position:sticky;top:0;z-index:40">
-<div style="max-width:var(--space-content-max);margin:0 auto;padding:0 var(--space-section-x)">
-<div role="tablist" aria-label="Filtra per settore" style="display:flex;gap:28px;flex-wrap:wrap">
-<button role="tab" aria-selected="true" class="es-tab">Tutti i settori</button>
-<button role="tab" aria-selected="false" class="es-tab">Vino</button>
-<button role="tab" aria-selected="false" class="es-tab">Birra</button>
-<button role="tab" aria-selected="false" class="es-tab">Acqua</button>
-<button role="tab" aria-selected="false" class="es-tab">Distillati</button>
-<button role="tab" aria-selected="false" class="es-tab">Succhi</button>
-<button role="tab" aria-selected="false" class="es-tab">Olio</button>
-</div>
-</div>
-</div>
-
+<!-- Body 65/35 -->
 <section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Birra</span><span style="color:var(--gray-500)">Italia</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Birrificio Alpino: +25% di capacità senza ampliare il reparto</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Monoblocco MEC LD ed etichettatrice per crescere nello stesso ingombro, senza fermare la produzione.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Vino</span><span style="color:var(--gray-500)">Trentino</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Cantine Ferrari: precisione sullo spumante metodo classico</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un monoblocco dedicato ha ridotto gli scarti sul riempimento isobarico.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Acqua</span><span style="color:var(--gray-500)">Spagna</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Fuente Real: linea PET ad alta velocità</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Riempimento a gravità e tappatura integrata per formati PET fino a 2 litri.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Distillati</span><span style="color:var(--gray-500)">Scozia</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Highland Distillery: dosaggio di precisione per bottiglie pregiate</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un sistema volumetrico a bassa tolleranza per lotti di alto valore.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Succhi</span><span style="color:var(--gray-500)">Brasile</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Tropical Fruit Co.: riempimento a caldo su scala industriale</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Una linea asettica per succhi pastorizzati, pensata per climi caldi.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Olio</span><span style="color:var(--gray-500)">Puglia</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Frantoio San Vito: precisione di livello sull'olio EVO</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Gestione della viscosità e della schiuma senza perdere precisione.</p></div></a>
+<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:minmax(0,65fr) minmax(0,35fr);gap:clamp(48px,5vw,88px);align-items:start">
+
+<!-- Left -->
+<div>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Descrizione tecnica</x-import>
+<p style="margin:20px 0 48px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch;line-height:1.7">Il formato universale è una soluzione progettata per gestire contenitori di diverse dimensioni e geometrie utilizzando un'unica attrezzatura regolabile. Il sistema si adatta rapidamente al formato della bottiglia, riducendo o eliminando la necessità di sostituire componenti durante il cambio produzione. Questo consente di ridurre i tempi di cambio formato, semplificare le operazioni dell'operatore e aumentare la flessibilità e l'efficienza complessiva della macchina.</p>
+
 </div>
-<nav aria-label="Paginazione" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" hint-size="auto,52px">Mostra altri casi studio</x-import>
-</nav>
+
+<!-- Sidebar sticky -->
+<aside style="position:sticky;top:96px;display:flex;flex-direction:column;gap:28px">
+<div style="background:var(--surface-card);padding:32px">
+<h2 style="margin:0 0 22px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Richiedi un preventivo</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div><label for="es-n" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Nome e azienda *</label><input id="es-n" class="es-field" required /></div>
+<div><label for="es-e" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Email *</label><input id="es-e" type="email" class="es-field" required /></div>
+<div><label for="es-m" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Messaggio</label><textarea id="es-m" class="es-field" style="height:80px;resize:vertical"></textarea></div>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" hint-size="100%,48px" style="{{ fullBtn }}">Invia richiesta</x-import>
+<p style="margin:2px 0 0;font:var(--text-caption);color:var(--gray-500)">Risposta del reparto tecnico entro 24h lavorative.</p>
+</div>
+</div>
+</aside>
+
 </div>
 </section>
 
-<section style="background:var(--surface-darkest);padding:clamp(56px,8vh,96px) var(--space-section-x);text-align:center">
-<div style="max-width:60ch;margin:0 auto">
-<h2 style="margin:0 0 16px;font:var(--text-display-3);color:#fff;text-transform:uppercase">Parliamo del tuo prossimo progetto</h2>
-<p style="margin:0 0 32px;font:var(--text-body-lg);color:var(--text-on-dark-muted)">Il nostro team tecnico ti aiuta a trovare la configurazione giusta per il tuo prodotto e la tua linea.</p>
-<a href="page-contatti.html"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" hint-size="auto,52px">Contatta un tecnico</x-import></a>
+<section style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x);text-align:center">
+<div style="max-width:var(--space-content-max-narrow);margin:0 auto">
+<h2 style="margin:0 0 28px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Configura le tue stelle universali</h2>
+<div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" dark="{{ true }}" href="page-contatti.html" hint-size="auto,52px">Richiedi preventivo</x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" dark="{{ true }}" href="page-contatti.html" hint-size="auto,52px">Parla con un tecnico</x-import>
+</div>
 </div>
 </section>
 
@@ -346,16 +344,14 @@ a:hover{color:var(--action-primary-hover)}
 
 </div>
 
-
-<template id="__bundler_thumbnail" data-bg-color="#2A2A2A">
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="800" fill="#2A2A2A"/>
-<polygon points="600,250 622,318 694,318 636,360 658,428 600,386 542,428 564,360 506,318 578,318" fill="#5A5A5A"/>
-<text x="600" y="560" font-family="Barlow, sans-serif" font-weight="900" font-size="140" fill="#FFFFFF" text-anchor="middle" letter-spacing="8">EUROSTAR</text>
-<text x="600" y="640" font-family="Barlow, sans-serif" font-weight="700" font-size="44" fill="#B5B5B5" text-anchor="middle" letter-spacing="14">REFERENZE</text>
-</svg>
-</template>
 </x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { fullBtn: { width: '100%' } };
+  }
+}
+</script>
 <script>
 document.addEventListener('click', function(e){
   var btn = e.target.closest && e.target.closest('#es-nav-toggle');
@@ -430,6 +426,19 @@ document.addEventListener('click', function(e){
   e.preventDefault();
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var thumb = e.target.closest && e.target.closest('.es-gallery-thumb');
+  if (!thumb) return;
+  var gallery = thumb.closest('.es-gallery');
+  if (!gallery) return;
+  gallery.querySelectorAll('.es-gallery-thumb').forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+  thumb.classList.add('is-active');
+  thumb.setAttribute('aria-selected', 'true');
+  var frame = gallery.querySelector('.es-gallery-frame');
+  if (frame) frame.textContent = '[IMG: ' + thumb.getAttribute('data-gallery-label') + ']';
 });
 </script>
 <script>
