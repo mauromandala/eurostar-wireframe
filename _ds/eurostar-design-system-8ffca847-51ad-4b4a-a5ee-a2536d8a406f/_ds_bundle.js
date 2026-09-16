@@ -153,7 +153,7 @@ Object.assign(__ds_scope, { SpecRow, SpecList });
 // components/core/StatBlock.jsx
 try { (() => {
 const statSizes = {
-  lg: { value: 'clamp(40px,5vw,74px)', lineHeight: 0.9, labelTop: 10, label: 12, labelSpacing: '0.14em' },
+  lg: { value: 'clamp(32px,4vw,59px)', lineHeight: 0.9, labelTop: 10, label: 12, labelSpacing: '0.14em' },
   md: { value: 'clamp(17px,1.7vw,22px)', lineHeight: 1.15, labelTop: 6, label: 11, labelSpacing: '0.08em' },
   sm: { value: 'clamp(11px,1.1vw,13px)', lineHeight: 1.25, labelTop: 4, label: 11, labelSpacing: '0.06em' }
 };
