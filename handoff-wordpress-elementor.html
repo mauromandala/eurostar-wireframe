@@ -165,8 +165,10 @@ footer.closing a{color:var(--ink-soft)}
   <tr><td>Filtri catalogo/tab categoria</td><td>Catalogo macchine, Referenze</td><td>Loop Grid + Query filter widget (richiede relazione ACF verso la tassonomia)</td><td><span class="chip pro">Serve Pro</span></td></tr>
   <tr><td>Form richiesta/preventivo</td><td>Contatti, scheda macchina</td><td>Nessun form nel wireframe è funzionante: va rifatto con Elementor Pro Forms, WPForms o Fluent Forms</td><td><span class="chip pro">Serve Pro</span></td></tr>
   <tr><td>Ricerca sito (icona lente)</td><td>Utility bar, tutte le pagine</td><td>Statica nel wireframe — in WP serve il Search widget nativo collegato a WP_Query (o SearchWP se serve full-text sui campi ACF)</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Barra CTA "Hai già una macchina Eurostar?" (testo + bottone ghost, centrati, sfondo scuro, larghezza piena)</td><td>Servizi — subito sotto il menu principale, prima dell'hero</td><td>Container full-width con Heading/Text + Button widget, entrambi centrati; nessun dato dinamico, testo statico. Punta all'ancora <code>#assistenza</code> nella stessa pagina — in Elementor va sostituita con lo scroll-to-section nativo del Button widget</td><td><span class="chip native">Nativo</span></td></tr>
   </table>
   </div>
+  <p class="section-intro" style="margin-top:-6px">Nota: questa barra CTA è stata rimossa dall'hero della Home (dove duplicava lo stesso messaggio) e vive solo su Servizi. Non replicarla nella Home in fase di sviluppo.</p>
 
   <h2 class="section-title">03 — Custom Post Type e tassonomie</h2>
   <p class="section-intro">I nomi dei file <code>taxonomy-macchina-*.html</code> e <code>taxonomy-settore.html</code> nel wireframe suggeriscono una tassonomia WordPress, ma nei fatti si comportano da pagine di contenuto ricco (sfide di settore, tecnologie, "come funziona") — più vicine a un CPT con relazione, che a un termine di tassonomia semplice. Struttura consigliata:</p>
