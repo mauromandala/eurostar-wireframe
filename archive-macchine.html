@@ -194,12 +194,12 @@ a:hover{color:var(--action-primary-hover)}
 <!-- Tabs / filtri -->
 <div style="border-bottom:1px solid var(--border-subtle);background:var(--surface-light);position:sticky;top:0;z-index:40">
 <div style="max-width:var(--space-content-max);margin:0 auto;padding:0 var(--space-section-x)">
-<div role="tablist" aria-label="Categorie macchine" style="display:flex;gap:28px;flex-wrap:wrap">
-<button role="tab" aria-selected="true" class="es-tab">Tutte</button>
-<a role="tab" aria-selected="false" class="es-tab" href="taxonomy-macchina-sciacquatrici.html" style="text-decoration:none;display:inline-block">Sciacquatrici/Soffiatrici</a>
-<a role="tab" aria-selected="false" class="es-tab" href="taxonomy-macchina-riempitrici.html" style="text-decoration:none;display:inline-block">Riempitrici</a>
-<a role="tab" aria-selected="false" class="es-tab" href="taxonomy-macchina-tappatrici.html" style="text-decoration:none;display:inline-block">Tappatrici</a>
-<a role="tab" aria-selected="false" class="es-tab" href="taxonomy-macchina-movimentazione.html" style="text-decoration:none;display:inline-block">Sistemi movimentazione contenitori</a>
+<div role="tablist" aria-label="Categorie macchine" class="es-machine-filter-tabs" style="display:flex;gap:28px;flex-wrap:wrap">
+<button role="tab" aria-selected="true" class="es-tab" data-filter="all">Tutte</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="sciacquatrici">Sciacquatrici/Soffiatrici</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="riempitrici">Riempitrici</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="tappatrici">Tappatrici</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="movimentazione">Sistemi movimentazione contenitori</button>
 <a role="tab" aria-selected="false" class="es-tab" href="taxonomy-macchina-linee-complete.html" style="text-decoration:none;display:inline-block">Linee complete</a>
 <a role="tab" aria-selected="false" class="es-tab" href="taxonomy-macchina-usate.html" style="text-decoration:none;display:inline-block">Usate</a>
 </div>
@@ -209,18 +209,31 @@ a:hover{color:var(--action-primary-hover)}
 <!-- Results grid -->
 <section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LD" subtitle="Gravità / leggero vuoto" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="MEC LP" subtitle="Leggera pressione" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-mec-lp.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="MEC AV" subtitle="Alto vuoto" stat1="{{ prodViscosi }}" stat2="{{ vel25k }}" href="single-macchina-mec-av.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC ISO" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-mec-iso.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="SKILLFILL" subtitle="Isobarica elettropneumatica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-skillfill.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Volumetrica a flowmetro" stat1="{{ prodDensi }}" stat2="{{ vel25k }}" href="single-macchina-powerfill.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-maxima.png" name="MAXIMA" subtitle="Gravità / leggero vuoto elettropneumatico" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-maxima.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-vol.png" name="MEC VOL" subtitle="Volumetrica meccanica" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-mec-vol.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-canfill.png" name="CANFILL" subtitle="Monoblocco isobarico + aggraffatura" stat1="{{ prodGassati }}" stat2="{{ velCanfill }}" href="single-macchina-canfill.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-dualfill.png" name="DUALFILL" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-dualfill.html" hint-size="260px,400px"></x-import>
+<div id="es-machine-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC LD" subtitle="Gravità / leggero vuoto" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="MEC LP" subtitle="Leggera pressione" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-mec-lp.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="MEC AV" subtitle="Alto vuoto" stat1="{{ prodViscosi }}" stat2="{{ vel25k }}" href="single-macchina-mec-av.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-ld.png" name="MEC ISO" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-mec-iso.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-pv.png" name="SKILLFILL" subtitle="Isobarica elettropneumatica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-skillfill.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Volumetrica a flowmetro" stat1="{{ prodDensi }}" stat2="{{ vel25k }}" href="single-macchina-powerfill.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-maxima.png" name="MAXIMA" subtitle="Gravità / leggero vuoto elettropneumatico" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-maxima.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-vol.png" name="MEC VOL" subtitle="Volumetrica meccanica" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-mec-vol.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-canfill.png" name="CANFILL" subtitle="Monoblocco isobarico + aggraffatura" stat1="{{ prodGassati }}" stat2="{{ velCanfill }}" href="single-macchina-canfill.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="riempitrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-dualfill.png" name="DUALFILL" subtitle="Isobarica meccanica" stat1="{{ prodGassati }}" stat2="{{ vel25k }}" href="single-macchina-dualfill.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="tappatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-gemini-f.png" name="GEMINI/F-IES" subtitle="Torretta tappante automatica monotesta" stat1="{{ chGmF }}" stat2="{{ vel3k }}" href="single-macchina-gemini-f.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="tappatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-gemini-r.png" name="GEMINI/R-IES" subtitle="Torretta tappante automatica monotesta" stat1="{{ chGmR }}" stat2="{{ vel3k }}" href="single-macchina-gemini-r.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="tappatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-gemini-rf.png" name="GEMINI RF-IES" subtitle="Torretta tappante automatica monotesta" stat1="{{ chGmRF }}" stat2="{{ vel3kb }}" href="single-macchina-gemini-rf.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="tappatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-eagle-va.png" name="EAGLE/VA-IES" subtitle="Torretta tappante automatica monotesta" stat1="{{ chEaVA }}" stat2="{{ vel3k }}" href="single-macchina-eagle-va.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="tappatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-eagle-pk.png" name="EAGLE PK" subtitle="Torretta tappante automatica monotesta" stat1="{{ chEaPK }}" stat2="{{ vel25c }}" href="single-macchina-eagle-pk.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="tappatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-eagle-c.png" name="EAGLE C" subtitle="Torretta tappante automatica monotesta" stat1="{{ chEaC }}" stat2="{{ vel3k }}" href="single-macchina-eagle-c.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-water.png" name="MEC SI" subtitle="Configurazione ad acqua" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-air.png" name="MEC SI" subtitle="Configurazione ad aria filtrata" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-n2.png" name="MEC SI" subtitle="Configurazione a gas inerte" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="movimentazione" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-neck-handling.png" name="Sistema Neck Handling" subtitle="Movimentazione per presa sul collo" stat1="{{ mvContPet }}" stat2="{{ mvFlusso }}" href="single-macchina-neck-handling.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="movimentazione" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-universali.png" name="Stelle universali" subtitle="Attrezzatura regolabile multiformato" stat1="{{ mvContUniv }}" stat2="{{ mvCambio }}" href="single-macchina-stelle-universali.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="movimentazione" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-variabile.png" name="Stelle a geometria variabile" subtitle="Tasche regolabili senza cambio stella" stat1="{{ mvContVar }}" stat2="{{ mvCambio }}" href="single-macchina-stelle-variabile.html" hint-size="260px,400px"></x-import></div>
 </div>
+<p id="es-machine-empty" hidden style="margin:40px 0 0;text-align:center;font:var(--text-body-md);color:var(--gray-500)">Nessuna macchina in questa categoria.</p>
 <nav aria-label="Paginazione" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" hint-size="auto,52px">Mostra altre macchine</x-import>
 </nav>
@@ -335,7 +348,23 @@ class Component extends DCLogic {
       prodViscosi: { value: 'Prodotti viscosi', label: 'Prodotto' },
       prodDensi: { value: 'Liquidi piatti semi-densi e densi', label: 'Prodotto' },
       vel25k: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
-      velCanfill: { value: 'Fino a 6.000 BPH', label: 'Velocità' }
+      velCanfill: { value: 'Fino a 6.000 BPH', label: 'Velocità' },
+      chGmF: { value: 'Sughero fungo', label: 'Tipo di chiusura' },
+      chGmR: { value: 'Sughero raso bidirezionale', label: 'Tipo di chiusura' },
+      chGmRF: { value: 'Sughero raso e fungo', label: 'Tipo di chiusura' },
+      chEaVA: { value: 'Capsule vite alluminio ROPP', label: 'Tipo di chiusura' },
+      chEaPK: { value: 'Capsule prefilettate plastica', label: 'Tipo di chiusura' },
+      chEaC: { value: 'Tappi corona', label: 'Tipo di chiusura' },
+      vel3k: { value: 'Fino a 3.000 BPH', label: 'Contenitori/ora' },
+      vel3kb: { value: 'Fino a 2.500–3.000 BPH', label: 'Contenitori/ora' },
+      vel25c: { value: 'Fino a 2.500 BPH', label: 'Contenitori/ora' },
+      rnCont: { value: 'Bottiglie e lattine', label: 'Tipo contenitore' },
+      rnVel: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
+      mvContPet: { value: 'Bottiglie in PET', label: 'Contenitori' },
+      mvFlusso: { value: 'Presa sul collo', label: 'Movimentazione' },
+      mvContUniv: { value: 'Multiformato', label: 'Contenitori' },
+      mvContVar: { value: 'Multiformato', label: 'Contenitori' },
+      mvCambio: { value: 'Senza cambio attrezzatura', label: 'Cambio formato' }
     };
   }
 }
@@ -445,6 +474,24 @@ document.addEventListener('keydown', function(e){
     panel.classList.remove('is-open');
     if (trigger) { trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); }
   }
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var tab = e.target.closest && e.target.closest('.es-machine-filter-tabs [data-filter]');
+  if (!tab) return;
+  var filter = tab.getAttribute('data-filter');
+  document.querySelectorAll('.es-machine-filter-tabs [role="tab"]').forEach(function(t){
+    t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+  });
+  var visibleCount = 0;
+  document.querySelectorAll('#es-machine-grid .es-machine-item').forEach(function(item){
+    var show = filter === 'all' || item.getAttribute('data-cat') === filter;
+    item.style.display = show ? 'contents' : 'none';
+    if (show) visibleCount++;
+  });
+  var empty = document.getElementById('es-machine-empty');
+  if (empty) empty.hidden = visibleCount !== 0;
 });
 </script>
 </body>
