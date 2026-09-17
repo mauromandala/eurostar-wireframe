@@ -204,24 +204,26 @@ a:hover{color:var(--action-primary-hover)}
 
 <div style="border-bottom:1px solid var(--border-subtle);background:var(--surface-light);position:sticky;top:0;z-index:40">
 <div style="max-width:var(--space-content-max);margin:0 auto;padding:0 var(--space-section-x)">
-<div role="tablist" aria-label="Categorie news" style="display:flex;gap:28px;flex-wrap:wrap">
-<button role="tab" aria-selected="true" class="es-tab">Tutte</button>
-<button role="tab" aria-selected="false" class="es-tab">Guide tecniche</button>
-<button role="tab" aria-selected="false" class="es-tab">Aggiornamenti</button>
-<button role="tab" aria-selected="false" class="es-tab">Fiere ed eventi</button>
+<div role="tablist" aria-label="Categorie news" class="es-news-filter-tabs" style="display:flex;gap:28px;flex-wrap:wrap">
+<button role="tab" aria-selected="true" class="es-tab" data-filter="all">Tutte</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="guide-tecniche">Guide tecniche</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="casi-studio">Casi studio</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="aggiornamenti">Aggiornamenti</button>
+<button role="tab" aria-selected="false" class="es-tab" data-filter="fiere-eventi">Fiere ed eventi</button>
 </div>
 </div>
 </div>
 
 <section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Marzo 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempimento isobarico: come scegliere i BPH giusti</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Una guida pratica per dimensionare la linea sulla base di produttività, formato e tipo di contenitore.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Caso studio</span><span style="color:var(--gray-500)">Febbraio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Cantine Ferrari: precisione sullo spumante</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Come un monoblocco dedicato ha ridotto gli scarti sul riempimento di spumante metodo classico.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Gennaio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Eurostar supera le 2.000 installazioni nel mondo</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un traguardo che conferma la crescita internazionale e la solidità del supporto post-vendita.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Fiere ed eventi</span><span style="color:var(--gray-500)">Maggio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Ci vediamo a SIMEI 2026, Milano</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Vieni a scoprire le novità di gamma allo stand Eurostar. Prenota un appuntamento tecnico.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Dicembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempire prodotti viscosi: olio EVO e aceto</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Le accortezze costruttive per gestire viscosità e schiuma senza perdere precisione di livello.</p></div></a>
-<a href="single-news-articolo.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Novembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Recupero acqua: -50% di consumo idrico in linea</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Il nuovo gruppo di risciacquo a recupero applicato alle linee di nuova generazione.</p></div></a>
+<div id="es-news-grid" style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+<a href="single-news-articolo.html" class="es-art es-news-item" data-cat="guide-tecniche"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Marzo 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempimento isobarico: come scegliere i BPH giusti</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Una guida pratica per dimensionare la linea sulla base di produttività, formato e tipo di contenitore.</p></div></a>
+<a href="single-news-articolo.html" class="es-art es-news-item" data-cat="casi-studio"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Caso studio</span><span style="color:var(--gray-500)">Febbraio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Cantine Ferrari: precisione sullo spumante</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Come un monoblocco dedicato ha ridotto gli scarti sul riempimento di spumante metodo classico.</p></div></a>
+<a href="single-news-articolo.html" class="es-art es-news-item" data-cat="aggiornamenti"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Gennaio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Eurostar supera le 2.000 installazioni nel mondo</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un traguardo che conferma la crescita internazionale e la solidità del supporto post-vendita.</p></div></a>
+<a href="single-news-articolo.html" class="es-art es-news-item" data-cat="fiere-eventi"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Fiere ed eventi</span><span style="color:var(--gray-500)">Maggio 2026</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Ci vediamo a SIMEI 2026, Milano</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Vieni a scoprire le novità di gamma allo stand Eurostar. Prenota un appuntamento tecnico.</p></div></a>
+<a href="single-news-articolo.html" class="es-art es-news-item" data-cat="guide-tecniche"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Guida tecnica</span><span style="color:var(--gray-500)">Dicembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Riempire prodotti viscosi: olio EVO e aceto</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Le accortezze costruttive per gestire viscosità e schiuma senza perdere precisione di livello.</p></div></a>
+<a href="single-news-articolo.html" class="es-art es-news-item" data-cat="aggiornamenti"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Aggiornamento</span><span style="color:var(--gray-500)">Novembre 2025</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Recupero acqua: -50% di consumo idrico in linea</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Il nuovo gruppo di risciacquo a recupero applicato alle linee di nuova generazione.</p></div></a>
 </div>
+<p id="es-news-empty" hidden style="margin:40px 0 0;text-align:center;font:var(--text-body-md);color:var(--gray-500)">Nessun articolo in questa categoria.</p>
 <nav aria-label="Paginazione" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" hint-size="auto,52px">Mostra altri articoli</x-import>
 </nav>
@@ -441,6 +443,24 @@ document.addEventListener('keydown', function(e){
     panel.classList.remove('is-open');
     if (trigger) { trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); }
   }
+});
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var tab = e.target.closest && e.target.closest('.es-news-filter-tabs [data-filter]');
+  if (!tab) return;
+  var filter = tab.getAttribute('data-filter');
+  document.querySelectorAll('.es-news-filter-tabs [role="tab"]').forEach(function(t){
+    t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+  });
+  var visibleCount = 0;
+  document.querySelectorAll('#es-news-grid .es-news-item').forEach(function(item){
+    var show = filter === 'all' || item.getAttribute('data-cat') === filter;
+    item.style.display = show ? 'flex' : 'none';
+    if (show) visibleCount++;
+  });
+  var empty = document.getElementById('es-news-empty');
+  if (empty) empty.hidden = visibleCount !== 0;
 });
 </script>
 </body>
