@@ -21,7 +21,7 @@ Tutte le pagine condividono header (utility bar + nav + mega-menu Macchine/Setto
 
 **Archetipi / template dinamici**:
 - Categoria macchina × 7 (Riempitrici, Tappatrici, Etichettatrici, Sciacquatrici/Soffiatrici, Sistemi movimentazione contenitori, Linee complete, Usate)
-- Scheda macchina: 20 istanze reali popolate (10 Riempitrici, 6 Tappatrici, 1 Sciacquatrici/Soffiatrici, 3 Sistemi movimentazione contenitori) — dettaglio in [acf-elementor-mapping.md](acf-elementor-mapping.md)
+- Scheda macchina: 21 istanze reali popolate (10 Riempitrici, 6 Tappatrici, 2 Sciacquatrici/Soffiatrici — MEC SI e Twist Rinser —, 3 Sistemi movimentazione contenitori) — dettaglio in [acf-elementor-mapping.md](acf-elementor-mapping.md)
 - Scheda settore: tutti e 10 i settori di lancio popolati
 - Scheda servizio (oggi: Assistenza tecnica) — Ricambi e Remote view da fare
 - Articolo/guida tecnica e Caso studio editoriale (News)
@@ -44,10 +44,10 @@ Componenti riutilizzabili via `x-import`: `Button`, `StatBlock`, `SectionKicker`
 ## Decisioni di scope confermate con l'utente
 
 - **A** — Etichettatrici resta rimossa da menu/footer/filtri finché non è chiarito con Eurostar se è una linea prodotto autonoma. Tappatrici invece è stata riattivata ovunque su indicazione esplicita del cliente/PM, con 6 modelli reali popolati.
-- **B** — Superata: sia per le Macchine (20 istanze reali: 10 Riempitrici, 6 Tappatrici, 1 Sciacquatrici/Soffiatrici, 3 Sistemi movimentazione contenitori) sia per i Settori (tutti e 10 quelli di lancio) sono stati popolati con contenuto reale, non solo un esempio per tipo. Resta valida solo per Servizio (un solo esempio, Assistenza tecnica, su 3 previsti).
+- **B** — Superata: sia per le Macchine (21 istanze reali: 10 Riempitrici, 6 Tappatrici, 2 Sciacquatrici/Soffiatrici — MEC SI e Twist Rinser —, 3 Sistemi movimentazione contenitori) sia per i Settori (tutti e 10 quelli di lancio) sono stati popolati con contenuto reale, non solo un esempio per tipo. Resta valida solo per Servizio (un solo esempio, Assistenza tecnica, su 3 previsti).
 - **C** — Squadron è una pagina/voce di menu a sé, creata da zero e collegata su tutto il sito.
 - **D** — Indirizzo, telefono ed email restano placeholder finché il cliente non fornisce un'unica fonte ufficiale (oggi coesistono due versioni diverse tra pagina Contatti e footer).
 
 ## Contenuti ancora mancanti dal cliente
 
-Testimonianza cliente, 8–10 case study Referenze, 3 articoli News, alcuni dati tecnici macchina (produttività complessiva, numero valvole, varianti MEC ISO), dati ufficiali di contatto, gamma esatta e velocità Squadron. Dettaglio completo in [riepilogo-testi.html](riepilogo-testi.html).
+Testimonianza cliente, 8–10 case study Referenze (il cliente ha chiesto nel frattempo di sostituirli con una parete loghi clienti, in raccolta), 3 articoli News, alcuni dati tecnici macchina (produttività complessiva, numero valvole), dati ufficiali di contatto, gamma esatta e velocità Squadron oltre EXACTA/ATHENA (che hanno dati reali completi). Dettaglio completo in [riepilogo-testi.html](riepilogo-testi.html).
