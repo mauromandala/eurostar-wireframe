@@ -87,11 +87,16 @@ a:hover{color:var(--action-primary-hover)}
 .es-job-meta-strip{display:flex;flex-wrap:wrap;gap:24px 40px;margin:28px 0 0}
 .es-job-meta-strip .es-job-meta-row{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:14px;color:#fff}
 .es-job-meta-strip .es-job-meta-row svg{flex-shrink:0;color:var(--blue-300)}
-.es-job-body h2{margin:0 0 10px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:20ch}
-.es-job-section h3{margin:36px 0 12px;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-heading)}
+.es-job-body h2{margin:0 0 20px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:20ch}
+.es-job-lead{margin:0 0 48px;padding-bottom:48px;border-bottom:1px solid var(--border-subtle)}
+.es-job-section h3{margin:48px 0 16px;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-heading)}
 .es-job-section h3:first-child{margin-top:0}
-.es-job-section ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
-.es-job-section li{font:var(--text-body-md);color:var(--text-body)}
+.es-job-section ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:12px}
+.es-job-section li{font:var(--text-body-md);line-height:1.6;color:var(--text-body)}
+.es-job-sidebar{position:sticky;top:110px}
+@media (max-width:900px){.es-job-sidebar{position:static}}
+.es-job-back{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:var(--surface-light);border:2px solid var(--action-primary);font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--action-primary);transition:background var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard)}
+.es-job-back:hover{background:var(--action-primary);color:#fff}
 .es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:13px 15px;font:var(--text-body-md);color:var(--text-heading);box-sizing:border-box}
 .es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
 .es-flabel{display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-600);margin-bottom:8px}
@@ -211,11 +216,11 @@ a:hover{color:var(--action-primary-hover)}
 
 <!-- Descrizione posizione -->
 <section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start">
+<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr;gap:72px;align-items:start">
 
 <div class="es-job-body">
 <h2>La posizione</h2>
-<p style="margin:0;font:var(--text-body-lg);color:var(--text-body)">Per ampliare il nostro team commerciale, cerchiamo una figura che si occupi dello sviluppo dei mercati assegnati, della ricerca di nuove opportunità di business e della gestione dei rapporti con clienti e partner internazionali.</p>
+<p class="es-job-lead" style="font:var(--text-body-lg);color:var(--text-body)">Per ampliare il nostro team commerciale, cerchiamo una figura che si occupi dello sviluppo dei mercati assegnati, della ricerca di nuove opportunità di business e della gestione dei rapporti con clienti e partner internazionali.</p>
 
 <div class="es-job-section">
 <h3>Attività principali</h3>
@@ -252,8 +257,8 @@ a:hover{color:var(--action-primary-hover)}
 </div>
 </div>
 
-<div style="background:var(--surface-tint);padding:clamp(28px,3vw,36px)">
-<h2 style="margin:0 0 24px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Candidati per questa posizione</h2>
+<div class="es-job-sidebar" style="background:var(--surface-tint);padding:clamp(32px,3.6vw,44px)">
+<h2 style="margin:0 0 28px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Candidati per questa posizione</h2>
 <form id="es-jobs-form">
 <input type="hidden" id="es-j-posizione" value="Area Manager" />
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
@@ -285,9 +290,9 @@ a:hover{color:var(--action-primary-hover)}
 </section>
 
 <!-- Torna alle posizioni -->
-<section style="background:var(--surface-tint);padding:0 var(--space-section-x) var(--space-section-y)">
+<section style="background:var(--surface-tint);padding:0 var(--space-section-x) clamp(56px,7vh,88px)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<a href="page-lavora-con-noi.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Vedi tutte le posizioni aperte</a>
+<a href="page-lavora-con-noi.html" class="es-job-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Vedi tutte le posizioni aperte</a>
 </div>
 </section>
 
