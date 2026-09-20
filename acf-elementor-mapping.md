@@ -67,6 +67,24 @@ Il blocco "Come funziona" (griglia a 4 card) sulle pagine categoria, i blocchi "
 
 ---
 
+## 4. Posizione di lavoro (`page-lavora-con-noi.html` + `single-posizione-lavoro-*.html`)
+
+CPT: **Posizione di lavoro** come CPT singolo (non termine di tassonomia) — stesso ragionamento già fatto per Settore: ogni posizione ha contenuto proprio (descrizione, attività, requisiti, cosa offriamo) troppo ricco per un termine di tassonomia, e serve una pagina singola dedicata con URL propria in cui far confluire la candidatura specifica.
+
+Introdotto in questa sessione sostituendo il precedente pattern ad accordion (`<details>/<summary>` in pagina) con riquadri cliccabili in stile Ferrero Careers che portano a una pagina di dettaglio dedicata, su richiesta esplicita del cliente/PM.
+
+| Elemento | Campo ACF | Componente Elementor | Note |
+|---|---|---|---|
+| Riquadro posizione in `archive`/listing (`page-lavora-con-noi.html`) | Titolo = post title CPT; Reparto/dipartimento = ACF Text; Rif./Job ID = ACF Text; Sede = ACF Text; Tipo di contratto = ACF Select (Tempo indeterminato / determinato / stage, ecc.) | Loop Grid con Loop Item cliccabile (intera card come link alla singola) — icone sede/contratto da Icon List o SVG statico via HTML widget | Nel wireframe è un `<a class="es-job-card">` con hover (`translateY` + ombra) e freccia cerchiata in basso a destra; in Elementor l'intera Loop Item va resa cliccabile con link dinamico al post CPT |
+| H1 / meta strip in hero (`single-posizione-lavoro-*.html`) | Titolo = post title; Reparto, Rif., Sede, Tipo di contratto = stessi campi del punto sopra | Heading + Icon List con Dynamic Tag → ACF Field | Stessa logica header/hero già in uso per `single-macchina*.html` e `single-servizio.html` |
+| Corpo scheda (La posizione, Attività principali, Requisiti richiesti, Requisiti preferenziali, Cosa offriamo) | ACF Wysiwyg/Repeater per sezione (una lista per sezione, numero di voci variabile) | Text Editor / Icon List ripetuta via Loop | Contenuto realmente variabile in numero di voci → repeater, non campi singoli, coerente col principio guida in cima a questo file |
+| Form di candidatura per la posizione | Nessun campo ACF: il form invia a `page-conferma.html` con oggetto contenente il titolo della posizione (variabile letta dal post, non più da un menu a tendina) | Elementor Pro Form widget, con campo nascosto "Posizione" precompilato dal Dynamic Tag del post title | **Cambio rispetto a prima**: il form non è più unico e condiviso in fondo a `page-lavora-con-noi.html` con un menu a tendina "Posizione di interesse" — ora ogni posizione ha il proprio form, scoperto sulla sua pagina singola, senza bisogno di far scegliere la posizione all'utente |
+| Form "Candidatura spontanea" | Nessun campo ACF: form statico, non legato a un post CPT | Elementor Pro Form widget su pagina "Lavora con noi" | Resta sulla pagina listing (decisione esplicita del cliente/PM di questa sessione): serve per chi non trova una posizione aperta in linea con il proprio profilo, quindi non ha senso spostarlo dentro una singola posizione |
+
+Applicabilità e stato: validata sui 2 esempi reali già popolati nel wireframe (Area Manager, Elettricista industriale/Programmatore PLC), stesso approccio "un solo esempio per tipologia quando serve" già in uso altrove nel prototipo. Job ID (`Rif. EU-2026-0x`) è un segnaposto di formato, non un dato fornito dal cliente.
+
+---
+
 ## Applicabilità e stato
 
 Per il CPT Macchina la struttura è validata su tutte e 4 le tipologie coperte dallo schema dati (21 istanze reali: 10 Riempitrici, 6 Tappatrici, 2 Sciacquatrici/Soffiatrici — MEC SI e la nuova Twist Rinser — e 3 Sistemi movimentazione contenitori, categoria aggiunta dopo la consegna del primo Excel). Per il CPT Settore è validata su tutti e 10 i settori di lancio, con tutti i testi allineati all'ultimo Excel "Schema dati catalogo" del 19-09. Restano fuori dallo schema — quindi non ancora mappati come CPT qui — **Squadron** e **Linee complete**: per Squadron, ATHENA ed EXACTA hanno dati tecnici reali e sono ora impaginati come contenuto statico nella pagina `page-squadron.html` (non ancora come post CPT Macchina con pagina singola dedicata); il resto della gamma Squadron (Olympia A/SA, Olympia AV A/SA, VOL, VOL.L Grandi formati, Easykeg, Evox/Evox Plus, Riempitrice a peso, Dosatore volumetrico) ha solo i settori di applicazione noti, nessun dato tecnico strutturato — impaginato come card sintetiche, non come schede complete.

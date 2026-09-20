@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<title>Lavora con noi | Eurostar</title>
+<title>Area Manager | Lavora con noi | Eurostar</title>
 </head>
 <body>
 <x-dc>
@@ -84,23 +84,16 @@ a:hover{color:var(--action-primary-hover)}
 .es-search-submit:hover{background:var(--action-primary-hover)}
 .es-search-submit:focus-visible{outline:2px solid var(--action-primary);outline-offset:2px}
 @media (max-width:560px){.es-util-support{display:none !important}}
-.es-job-card{display:flex;flex-direction:column;background:var(--surface-tint);padding:clamp(26px,3.4vw,36px);text-decoration:none;min-height:280px;box-sizing:border-box;transition:transform var(--duration-base) var(--ease-standard),box-shadow var(--duration-base) var(--ease-standard)}
-.es-job-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover)}
-.es-job-card:focus-visible{outline:2px solid var(--action-primary);outline-offset:-2px}
-.es-job-card h3{margin:0 0 8px;font:var(--text-h2);font-size:22px;color:var(--text-heading);text-transform:uppercase}
-.es-job-dept{display:block;margin:0 0 6px;font:var(--text-body-md);color:var(--text-body)}
-.es-job-id{display:block;margin:0 0 24px;font:var(--text-caption);letter-spacing:.04em;color:var(--gray-500)}
-.es-job-meta{display:flex;flex-direction:column;gap:10px;margin:0 0 28px}
-.es-job-meta-row{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--text-heading)}
-.es-job-meta-row svg{flex-shrink:0;color:var(--action-primary)}
-.es-job-footer{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:auto}
-.es-job-footer span{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)}
-.es-job-arrow{width:36px;height:36px;border-radius:var(--radius-full);border:1px solid var(--text-heading);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-heading);transition:background var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard)}
-.es-job-card:hover .es-job-arrow{background:var(--action-primary);border-color:var(--action-primary);color:#fff}
+.es-job-meta-strip{display:flex;flex-wrap:wrap;gap:24px 40px;margin:28px 0 0}
+.es-job-meta-strip .es-job-meta-row{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:14px;color:#fff}
+.es-job-meta-strip .es-job-meta-row svg{flex-shrink:0;color:var(--blue-300)}
+.es-job-body h2{margin:0 0 10px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:20ch}
+.es-job-section h3{margin:36px 0 12px;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-heading)}
+.es-job-section h3:first-child{margin-top:0}
+.es-job-section ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.es-job-section li{font:var(--text-body-md);color:var(--text-body)}
 .es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:13px 15px;font:var(--text-body-md);color:var(--text-heading);box-sizing:border-box}
 .es-field:focus-visible{outline:2px solid var(--action-primary);outline-offset:1px}
-select.es-field{appearance:none;-webkit-appearance:none;-moz-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px 12px}
-select.es-field::-ms-expand{display:none}
 .es-flabel{display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-600);margin-bottom:8px}
 .es-req{color:var(--flag-red)}
 </style>
@@ -205,64 +198,64 @@ select.es-field::-ms-expand{display:none}
 <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.5) 100%)"></div>
 <div style="position:relative;padding:clamp(40px,7vh,80px) var(--space-section-x);width:100%;box-sizing:border-box">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="page-chi-siamo.html" style="color:var(--text-on-dark-faint)">Azienda</a></li><li aria-hidden="true">/</li><li style="color:#fff">Lavora con noi</li></ol>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Carriere</x-import>
-<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase;max-width:16ch">Lavora con noi</h1>
-</div>
-</div>
-</section>
-
-<!-- Intro -->
-<section style="background:var(--surface-light);padding:clamp(32px,5vh,56px) var(--space-section-x)">
-<div style="max-width:var(--space-content-max-narrow);margin:0 auto">
-<p style="margin:0 0 20px;font:var(--text-body-lg);color:var(--text-body)">Da oltre 30 anni progettiamo e realizziamo soluzioni innovative per il settore del bottling e del packaging, portando l'eccellenza del Made in Italy sui mercati internazionali.</p>
-<p style="margin:0 0 20px;font:var(--text-body-lg);color:var(--text-body)">Le persone sono il motore della nostra crescita: per questo siamo alla ricerca di professionisti competenti, appassionati e pronti a mettersi in gioco in un contesto dinamico e orientato all'innovazione.</p>
-<p style="margin:0;font:var(--text-body-lg);color:var(--text-body)">Scopri le opportunità aperte o inviaci la tua candidatura spontanea. Siamo sempre interessati a incontrare nuovi talenti che desiderano costruire il futuro insieme a noi.</p>
-</div>
-</section>
-
-<!-- Posizioni aperte -->
-<section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Opportunità</x-import>
-<h2 style="margin:16px 0 40px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">Posizioni aperte</h2>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px">
-
-<a class="es-job-card" href="single-posizione-lavoro-area-manager.html">
-<h3>Area Manager</h3>
-<span class="es-job-dept">Commerciale estero</span>
-<span class="es-job-id">Rif. EU-2026-01</span>
-<div class="es-job-meta">
+<ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="page-lavora-con-noi.html" style="color:var(--text-on-dark-faint)">Lavora con noi</a></li><li aria-hidden="true">/</li><li style="color:#fff">Area Manager</li></ol>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Commerciale estero · Rif. EU-2026-01</x-import>
+<h1 style="margin:18px 0 0;font:var(--text-display-2);color:#fff;text-transform:uppercase;max-width:20ch">Area Manager</h1>
+<div class="es-job-meta-strip">
 <span class="es-job-meta-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>San Marzano Oliveto (AT), IT</span>
 <span class="es-job-meta-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/><path d="M8 6V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/></svg>Tempo indeterminato</span>
 </div>
-<div class="es-job-footer"><span>Dettagli</span><span class="es-job-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</a>
-
-<a class="es-job-card" href="single-posizione-lavoro-elettricista-plc.html">
-<h3>Elettricista industriale / Programmatore PLC</h3>
-<span class="es-job-dept">Elettrico e automazione</span>
-<span class="es-job-id">Rif. EU-2026-02</span>
-<div class="es-job-meta">
-<span class="es-job-meta-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>San Marzano Oliveto (AT), IT</span>
-<span class="es-job-meta-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/><path d="M8 6V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/></svg>Tempo indeterminato</span>
-</div>
-<div class="es-job-footer"><span>Dettagli</span><span class="es-job-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</a>
-
 </div>
 </div>
 </section>
 
-<!-- Candidatura spontanea -->
-<section id="candidatura" style="background:var(--surface-darker);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:640px;margin:0 auto;text-align:center">
-<h2 style="margin:0 0 20px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Candidatura spontanea</h2>
-<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-on-dark-muted)">Non trovi una posizione in linea con il tuo profilo? Inviaci comunque il tuo curriculum, raccontandoci le tue competenze e l'ambito in cui ti piacerebbe lavorare. Valuteremo il tuo profilo in relazione alle opportunità in azienda.</p>
+<!-- Descrizione posizione -->
+<section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
+<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start">
+
+<div class="es-job-body">
+<h2>La posizione</h2>
+<p style="margin:0;font:var(--text-body-lg);color:var(--text-body)">Per ampliare il nostro team commerciale, cerchiamo una figura che si occupi dello sviluppo dei mercati assegnati, della ricerca di nuove opportunità di business e della gestione dei rapporti con clienti e partner internazionali.</p>
+
+<div class="es-job-section">
+<h3>Attività principali</h3>
+<ul>
+<li>Sviluppo commerciale e acquisizione di nuovi clienti nei mercati assegnati.</li>
+<li>Gestione e fidelizzazione dei clienti esistenti.</li>
+<li>Analisi delle esigenze del cliente, in collaborazione con l'ufficio tecnico.</li>
+<li>Preparazione delle offerte commerciali e gestione delle trattative.</li>
+<li>Gestione dei rapporti con agenti e partner commerciali.</li>
+<li>Partecipazione a fiere di settore e visite presso clienti.</li>
+<li>Monitoraggio delle opportunità commerciali e delle attività di vendita.</li>
+</ul>
+<h3>Requisiti richiesti</h3>
+<ul>
+<li>Ottima padronanza della lingua inglese, scritta e parlata, per gestire in autonomia incontri e trattative commerciali.</li>
+<li>Capacità relazionali, commerciali e di negoziazione.</li>
+<li>Orientamento al cliente e al raggiungimento degli obiettivi.</li>
+<li>Disponibilità a trasferte internazionali.</li>
+<li>Autonomia organizzativa, proattività e attitudine al lavoro in team.</li>
+</ul>
+<h3>Requisiti preferenziali</h3>
+<ul>
+<li>Conoscenza di ulteriori lingue straniere.</li>
+<li>Esperienza commerciale B2B sui mercati internazionali.</li>
+<li>Provenienza dal settore dei macchinari industriali, dell'automazione o del bottling &amp; packaging.</li>
+<li>Interesse e predisposizione alla comprensione di prodotti tecnici.</li>
+</ul>
+<h3>Cosa offriamo</h3>
+<ul>
+<li>Contratto a tempo indeterminato.</li>
+<li>Formazione sul prodotto direttamente in officina, dove le macchine vengono progettate e costruite.</li>
+<li>Trasferte internazionali presso clienti e fiere di settore, a contatto con produttori di tutto il mondo.</li>
+</ul>
 </div>
-<div style="max-width:560px;margin:0 auto;background:var(--surface-light);padding:clamp(28px,4vw,44px);text-align:left">
+</div>
+
+<div style="background:var(--surface-tint);padding:clamp(28px,3vw,36px)">
+<h2 style="margin:0 0 24px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Candidati per questa posizione</h2>
 <form id="es-jobs-form">
+<input type="hidden" id="es-j-posizione" value="Area Manager" />
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
 <div><label for="es-j-nome" class="es-flabel">Nome <span class="es-req">*</span></label><input id="es-j-nome" class="es-field" required /></div>
 <div><label for="es-j-cognome" class="es-flabel">Cognome <span class="es-req">*</span></label><input id="es-j-cognome" class="es-field" required /></div>
@@ -270,10 +263,6 @@ select.es-field::-ms-expand{display:none}
 <div style="margin-bottom:20px">
 <label for="es-j-email" class="es-flabel">Email <span class="es-req">*</span></label>
 <input id="es-j-email" type="email" class="es-field" required />
-</div>
-<div style="margin-bottom:20px">
-<label for="es-j-posizione" class="es-flabel">Ambito di interesse</label>
-<input id="es-j-posizione" class="es-field" placeholder="Es. commerciale, tecnico, produzione…" />
 </div>
 <div style="margin-bottom:20px">
 <label for="es-j-cv" class="es-flabel">Curriculum vitae (PDF) <span class="es-req">*</span></label>
@@ -288,8 +277,17 @@ select.es-field::-ms-expand{display:none}
 <label for="es-j-privacy" style="font:var(--text-body-sm);color:var(--text-body)">Ho letto e accetto la <a href="#" style="color:var(--action-primary)">Privacy Policy</a> <span class="es-req">*</span></label>
 </div>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" size="lg" hint-size="auto,56px">Invia candidatura</x-import>
-<p style="margin:14px 0 0;font:var(--text-caption);color:var(--gray-500)">Proposta da confermare con Eurostar: la candidatura, con CV allegato, viene inviata a <a href="mailto:eurostarinfo@eurostar.it" style="color:var(--action-primary)">eurostarinfo@eurostar.it</a> con oggetto "[Sito] Candidatura spontanea"; dopo l'invio l'utente arriva sulla pagina di conferma.</p>
+<p style="margin:14px 0 0;font:var(--text-caption);color:var(--gray-500)">Proposta da confermare con Eurostar: la candidatura, con CV allegato, viene inviata a <a href="mailto:eurostarinfo@eurostar.it" style="color:var(--action-primary)">eurostarinfo@eurostar.it</a> con oggetto "[Sito] Candidatura — Area Manager"; dopo l'invio l'utente arriva sulla pagina di conferma.</p>
 </form>
+</div>
+
+</div>
+</section>
+
+<!-- Torna alle posizioni -->
+<section style="background:var(--surface-tint);padding:0 var(--space-section-x) var(--space-section-y)">
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<a href="page-lavora-con-noi.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Vedi tutte le posizioni aperte</a>
 </div>
 </section>
 
