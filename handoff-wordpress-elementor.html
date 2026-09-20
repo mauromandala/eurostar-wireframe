@@ -162,13 +162,15 @@ footer.closing a{color:var(--ink-soft)}
   <tr><td>Gallery con thumbnail cliccabili</td><td>Scheda macchina</td><td>Image Gallery / Carousel widget nativo, alimentato da campo ACF gallery</td><td><span class="chip native">Nativo</span></td></tr>
   <tr><td>Carosello news orizzontale</td><td>Home, archivio News</td><td>Loop Carousel legato al CPT News</td><td><span class="chip pro">Serve Pro</span></td></tr>
   <tr><td>Marquee loghi clienti</td><td>Home (trust bar)</td><td>Nessun widget nativo per lo scroll infinito: snippet CSS/JS dedicato (il wireframe lo ha già pronto, riusabile)</td><td><span class="chip custom">Custom</span></td></tr>
-  <tr><td>Filtri catalogo/tab categoria</td><td>Catalogo macchine, News, Referenze</td><td>Loop Grid + Query filter widget (richiede relazione ACF verso la tassonomia). Sia su Catalogo macchine sia su News il filtro è <b>in pagina, senza reload</b>: i tab mostrano/nascondono le card della stessa Loop Grid via query filter — non sono link. Su Catalogo macchine questo vale per Sciacquatrici/Soffiatrici, Riempitrici, Tappatrici e Sistemi movimentazione contenitori; Linee complete e Usate restano link alla pagina categoria dedicata perché non hanno CPT sotto da filtrare. Su News vale per tutti e 4 i termini (Guide tecniche, Casi studio, Aggiornamenti, Fiere ed eventi). Nel wireframe è JS custom: su Catalogo macchine con wrapper <code>data-cat</code> attorno a ogni <code>MachineCard</code> (il componente non inoltra attributi arbitrari al nodo renderizzato), su News direttamente sull'attributo <code>data-cat</code> della card (è markup semplice, non un componente) — in Elementor Pro il behavior equivalente è nativo (Query Filter collegato al campo tassonomia)</td><td><span class="chip pro">Serve Pro</span></td></tr>
+  <tr><td>Filtri catalogo/tab categoria</td><td>Catalogo macchine, News</td><td>Loop Grid + Query filter widget (richiede relazione ACF verso la tassonomia). Sia su Catalogo macchine sia su News il filtro è <b>in pagina, senza reload</b>: i tab mostrano/nascondono le card della stessa Loop Grid via query filter — non sono link. Su Catalogo macchine questo vale per Sciacquatrici/Soffiatrici, Riempitrici, Tappatrici e Sistemi movimentazione contenitori; Linee complete e Usate restano link alla pagina categoria dedicata perché non hanno CPT sotto da filtrare. Su News vale per tutti e 4 i termini (Guide tecniche, Casi studio, Aggiornamenti, Fiere ed eventi). Nel wireframe è JS custom: su Catalogo macchine con wrapper <code>data-cat</code> attorno a ogni <code>MachineCard</code> (il componente non inoltra attributi arbitrari al nodo renderizzato), su News direttamente sull'attributo <code>data-cat</code> della card (è markup semplice, non un componente) — in Elementor Pro il behavior equivalente è nativo (Query Filter collegato al campo tassonomia)</td><td><span class="chip pro">Serve Pro</span></td></tr>
   <tr><td>Form richiesta/preventivo</td><td>Contatti, scheda macchina</td><td>Nessun form nel wireframe è funzionante: va rifatto con Elementor Pro Forms, WPForms o Fluent Forms</td><td><span class="chip pro">Serve Pro</span></td></tr>
   <tr><td>Ricerca sito (icona lente)</td><td>Utility bar, tutte le pagine</td><td>Statica nel wireframe — in WP serve il Search widget nativo collegato a WP_Query (o SearchWP se serve full-text sui campi ACF)</td><td><span class="chip native">Nativo</span></td></tr>
   <tr><td>Barra CTA "Hai già una macchina Eurostar?" (testo + bottone ghost, centrati, sfondo scuro, larghezza piena)</td><td>Servizi — subito sotto il menu principale, prima dell'hero</td><td>Container full-width con Heading/Text + Button widget, entrambi centrati; nessun dato dinamico, testo statico. Punta all'ancora <code>#assistenza</code> nella stessa pagina — in Elementor va sostituita con lo scroll-to-section nativo del Button widget</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Box posizione aperta a espansione (Lavora con noi)</td><td>Lavora con noi — Posizioni aperte</td><td>Nel wireframe è <code>&lt;details&gt;/&lt;summary&gt;</code> nativo HTML (titolo, sede e intro sempre visibili, dettaglio completo mostrato al click). In Elementor equivale a un Accordion/Toggle widget, un elemento per posizione, con il pannello che contiene attività/requisiti/cosa offriamo/CTA candidatura</td><td><span class="chip native">Nativo</span></td></tr>
+  <tr><td>Parete loghi clienti (griglia statica)</td><td>Referenze</td><td>Griglia di tile con nome/logo cliente, senza filtri né paginazione — sostituisce temporaneamente i case study in attesa dei file forniti dal cliente. Image widget ripetuti in un Loop Grid (o Basic Gallery se non ancora collegata a un CPT), diversa dal Marquee scorrevole della Home</td><td><span class="chip native">Nativo</span></td></tr>
   </table>
   </div>
-  <p class="section-intro" style="margin-top:-6px">Nota: questa barra CTA è stata rimossa dall'hero della Home (dove duplicava lo stesso messaggio) e vive solo su Servizi. Non replicarla nella Home in fase di sviluppo.</p>
+  <p class="section-intro" style="margin-top:-6px">Nota: la barra CTA "Hai già una macchina Eurostar?" è stata rimossa dall'hero della Home (dove duplicava lo stesso messaggio) e vive solo su Servizi. Non replicarla nella Home in fase di sviluppo.</p>
 
   <h2 class="section-title">03 — Custom Post Type e tassonomie</h2>
   <p class="section-intro">I nomi dei file <code>taxonomy-macchina-*.html</code> e <code>taxonomy-settore.html</code> nel wireframe suggeriscono una tassonomia WordPress, ma nei fatti si comportano da pagine di contenuto ricco (sfide di settore, tecnologie, "come funziona") — più vicine a un CPT con relazione, che a un termine di tassonomia semplice. Struttura consigliata:</p>
@@ -179,7 +181,7 @@ footer.closing a{color:var(--ink-soft)}
   <tr><td>Macchina</td><td><code>macchine</code></td><td>archive-macchine.html</td><td>single-macchina.html + 20 varianti <code>single-macchina-*.html</code></td><td>Categoria macchina (Riempitrici, Tappatrici, Sciacquatrici/Soffiatrici, Sistemi movimentazione contenitori, Etichettatrici*, Linee complete, Usate) + relazione a Settore (solo per Riempitrici, vedi sez. 04)</td></tr>
   <tr><td>Settore</td><td><code>settori</code></td><td>archive-settori.html</td><td>taxonomy-settore.html <i>(diventa CPT singolo, non termine)</i></td><td>10 settori di lancio (Vino, Birra, Liquori, Bevande e succhi, Acqua, Olio alimentare, Alimenti e condimenti, Cosmetica e cura della persona, Detergenza e cura della casa, Chimico/farmaceutico/sanitario)</td></tr>
   <tr><td>Servizio</td><td><code>servizi</code></td><td>archive-servizi.html</td><td>single-servizio.html</td><td>—</td></tr>
-  <tr><td>Referenza / caso studio</td><td><code>referenze</code></td><td>page-referenze.html <i>(solo archivio nel wireframe)</i></td><td>da creare — non esiste ancora nel wireframe</td><td>Settore, Macchina installata (relazioni)</td></tr>
+  <tr><td>Referenza / caso studio</td><td><code>referenze</code></td><td>page-referenze.html <i>(oggi una parete loghi statica, non un archivio Loop Grid)</i></td><td>da creare — nessun caso studio singolo nel wireframe</td><td>Settore, Macchina installata (relazioni) — usate solo quando si passerà ai case study completi</td></tr>
   <tr><td>News</td><td><code>news</code></td><td>archive-news.html</td><td>single-news-articolo.html / single-news-editoriale.html <i>(due varianti di template)</i></td><td>Categoria news (Guida tecnica / Caso studio / Aggiornamento / Fiere ed eventi — 4° termine aggiunto per allineare i tab filtro alle card esistenti, vedi sez. 02)</td></tr>
   <tr><td>Squadron</td><td>—</td><td>—</td><td>page-squadron.html <i>(pagina statica, non CPT)</i></td><td>—</td></tr>
   </table>
@@ -246,10 +248,22 @@ footer.closing a{color:var(--ink-soft)}
         <li><b>Eyebrow</b><span class="ftype">testo</span></li>
         <li><b>Descrizione</b><span class="ftype">wysiwyg</span></li>
         <li><b>Icona</b><span class="ftype">immagine</span></li>
+        <li><b>Fasi dell'intervento</b><span class="ftype">repeater: titolo + testo — solo su Assistenza tecnica (4 fasi: Segnalazione guasto, Diagnosi da remoto, Intervento in-loco, Report)</span></li>
       </ul>
     </div>
     <div class="fieldgroup">
-      <h3>Referenza / caso studio</h3>
+      <h3>Pagina Servizi (overview)</h3>
+      <span class="slug">archive-servizi.html — pagina di contenuto, non CPT</span>
+      <ul>
+        <li><b>Percorso in 8 tappe</b><span class="ftype">repeater: numero, titolo, testo</span></li>
+        <li><b>Card servizi</b><span class="ftype">4 card statiche (Assistenza tecnica, Ricambi, Assistenza da remoto, Manutenzione programmata), non da CPT Servizio — solo la prima card linka a single-servizio.html</span></li>
+        <li><b>Mappa interventi nel mondo</b><span class="ftype">immagine (planisfero) o mappa interattiva — nel wireframe è un frame placeholder</span></li>
+        <li><b>Volti del servizio</b><span class="ftype">repeater: foto + nome + ruolo — oggi popolato solo con Antonio Landolfi</span></li>
+      </ul>
+      <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Da gestire con ACF Options Page (contenuto unico di questa pagina), non con un field group legato a un CPT</p>
+    </div>
+    <div class="fieldgroup">
+      <h3>Referenza / caso studio (futuro)</h3>
       <span class="slug">non ancora nel wireframe</span>
       <ul>
         <li><b>Cliente</b><span class="ftype">testo (autorizzato)</span></li>
@@ -260,6 +274,7 @@ footer.closing a{color:var(--ink-soft)}
         <li><b>Risultato</b><span class="ftype">wysiwyg</span></li>
         <li><b>Logo cliente</b><span class="ftype">immagine (autorizzato)</span></li>
       </ul>
+      <p style="margin:10px 0 0;font-size:12px;color:var(--ink-soft)">Field group completo per quando arriveranno gli 8–10 case study reali. Nel frattempo, in Referenze c'è solo una parete loghi: campo minimo "Nome azienda" + "Logo" (immagine), ripetuto, senza relazione a Macchina/Settore</p>
     </div>
     <div class="fieldgroup">
       <h3>News</h3>
@@ -302,7 +317,8 @@ footer.closing a{color:var(--ink-soft)}
   <tr><td>Single — Settore</td><td>CPT Settore</td><td>Un solo template dinamico sostituisce le 10 pagine settore di lancio, tutte popolate con contenuti reali</td></tr>
   <tr><td>Single — Servizio</td><td>CPT Servizio</td><td>Copre Assistenza/Ricambi/Remote view</td></tr>
   <tr><td>Single — News</td><td>CPT News</td><td>Due varianti nel wireframe (articolo tecnico vs editoriale) → un solo template con un campo "layout" ACF, oppure due Theme Builder template condizionati per categoria</td></tr>
-  <tr><td>Archive — Macchina/Settore/Servizio/News</td><td>rispettivi CPT</td><td>Con Loop Grid + filtro tassonomia dove previsto</td></tr>
+  <tr><td>Archive — Macchina/Settore/News</td><td>rispettivi CPT</td><td>Con Loop Grid + filtro tassonomia dove previsto</td></tr>
+  <tr><td>Archive — Servizi (overview)</td><td>pagina di contenuto, non archivio CPT</td><td>Non è una Loop Grid sul CPT Servizio: percorso in 8 tappe, mappa interventi e volti del servizio sono contenuto ACF Options di questa pagina (vedi sez. 04); solo le 4 card servizi linkano ai singoli CPT Servizio</td></tr>
   <tr><td>404</td><td>Errore 404</td><td>Già presente come 404.html, da ricreare in Theme Builder</td></tr>
   </table>
   </div>
@@ -318,7 +334,7 @@ footer.closing a{color:var(--ink-soft)}
     <li><span class="idx">02</span><span class="txt"><b>Multilingua IT/EN</b><span>Il selettore lingua in utility bar è statico. Serve WPML o Polylang se il sito va davvero tradotto, non discusso nei materiali forniti.</span></span></li>
     <li><span class="idx">03</span><span class="txt"><b>Ricerca sito</b><span>Serve decidere se basta WP_Query nativa o serve un plugin di ricerca full-text (utile se si vuole cercare dentro ai campi ACF tecnici).</span></span></li>
     <li><span class="idx">04</span><span class="txt"><b>Performance/caching</b><span>Non affrontato nel wireframe: da valutare in fase di sviluppo (immagini, mega-menu con molte query, Loop Carousel).</span></span></li>
-    <li><span class="idx">05</span><span class="txt"><b>Contenuti reali mancanti</b><span>Testimonianza cliente, case study Referenze, articoli News, dati tecnici da verificare, indirizzo/telefono ufficiali — stessi punti già elencati nel <a href="riepilogo-testi.html">riepilogo testi</a>, sezione 03: bloccano il popolamento dei CPT, non lo sviluppo del tema.</span></span></li>
+    <li><span class="idx">05</span><span class="txt"><b>Contenuti reali mancanti</b><span>Testimonianza cliente, loghi e case study Referenze, articoli News, dati tecnici da verificare, indirizzo/telefono ufficiali, gamma Squadron oltre ATHENA/EXACTA — stessi punti già elencati nel <a href="riepilogo-testi.html">riepilogo testi</a>, sezione 02: bloccano il popolamento dei CPT, non lo sviluppo del tema.</span></span></li>
   </ul>
 
   <h2 class="section-title">08 — Novamira: esecuzione diretta invece di handoff manuale</h2>
