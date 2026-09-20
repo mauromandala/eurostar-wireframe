@@ -84,13 +84,21 @@ a:hover{color:var(--action-primary-hover)}
 .es-search-submit:hover{background:var(--action-primary-hover)}
 .es-search-submit:focus-visible{outline:2px solid var(--action-primary);outline-offset:2px}
 @media (max-width:560px){.es-util-support{display:none !important}}
-.es-job{background:var(--surface-tint);padding:clamp(28px,4vw,44px)}
-.es-job h3{margin:0 0 10px;font:var(--text-h2);font-size:24px;color:var(--text-heading);text-transform:uppercase}
-.es-job .es-job-loc{display:block;margin:0 0 18px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary)}
-.es-job p.es-job-intro{margin:0 0 24px;font:var(--text-body-md);color:var(--text-body)}
-.es-job h4{margin:20px 0 10px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)}
-.es-job ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
-.es-job li{font:var(--text-body-sm);color:var(--text-body)}
+.es-job{background:var(--surface-tint);padding:0}
+.es-job-summary{cursor:pointer;list-style:none;padding:clamp(24px,3.4vw,36px);display:block;position:relative}
+.es-job-summary::-webkit-details-marker{display:none}
+.es-job-summary::marker{content:""}
+.es-job-summary:focus-visible{outline:2px solid var(--action-primary);outline-offset:-2px}
+.es-job h3{margin:0 0 10px;padding-right:36px;font:var(--text-h2);font-size:22px;color:var(--text-heading);text-transform:uppercase}
+.es-job .es-job-loc{display:block;margin:0 0 14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary)}
+.es-job p.es-job-intro{margin:0;font:var(--text-body-md);color:var(--text-body)}
+.es-job-chevron{position:absolute;top:clamp(24px,3.4vw,36px);right:clamp(24px,3.4vw,36px);color:var(--text-heading);transition:transform var(--duration-base) var(--ease-standard);flex-shrink:0}
+.es-job[open] .es-job-chevron{transform:rotate(180deg)}
+.es-job-body{padding:0 clamp(24px,3.4vw,36px) clamp(24px,3.4vw,36px)}
+.es-job-body h4{margin:20px 0 10px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-heading)}
+.es-job-body h4:first-child{margin-top:4px}
+.es-job-body ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.es-job-body li{font:var(--text-body-sm);color:var(--text-body)}
 .es-job-apply{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--action-primary);text-decoration:none}
 .es-job-apply:hover{color:var(--action-primary-hover)}
 .es-field{width:100%;border:1px solid var(--border-subtle);background:#fff;padding:13px 15px;font:var(--text-body-md);color:var(--text-heading);box-sizing:border-box}
@@ -225,10 +233,14 @@ select.es-field::-ms-expand{display:none}
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px">
 
-<div class="es-job">
+<details class="es-job">
+<summary class="es-job-summary">
 <h3>Area Manager</h3>
 <span class="es-job-loc">San Marzano Oliveto (AT) · Tempo indeterminato</span>
 <p class="es-job-intro">Per ampliare il nostro team commerciale, cerchiamo una figura che si occupi dello sviluppo dei mercati assegnati, della ricerca di nuove opportunità di business e della gestione dei rapporti con clienti e partner internazionali.</p>
+<svg class="es-job-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+</summary>
+<div class="es-job-body">
 <h4>Attività principali</h4>
 <ul>
 <li>Sviluppo commerciale e acquisizione di nuovi clienti nei mercati assegnati.</li>
@@ -262,11 +274,16 @@ select.es-field::-ms-expand{display:none}
 </ul>
 <a href="#candidatura" class="es-job-apply" data-position="Area Manager">Candidati per questa posizione →</a>
 </div>
+</details>
 
-<div class="es-job">
+<details class="es-job">
+<summary class="es-job-summary">
 <h3>Elettricista industriale / Programmatore PLC</h3>
 <span class="es-job-loc">San Marzano Oliveto (AT) · Tempo indeterminato</span>
 <p class="es-job-intro">Per ampliamento del team, cerchiamo una figura tecnica da inserire nel reparto elettrico e automazione a tempo indeterminato.</p>
+<svg class="es-job-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+</summary>
+<div class="es-job-body">
 <h4>Attività principali</h4>
 <ul>
 <li>Cablaggio elettrico di macchinari industriali.</li>
@@ -298,6 +315,7 @@ select.es-field::-ms-expand{display:none}
 </ul>
 <a href="#candidatura" class="es-job-apply" data-position="Elettricista industriale / Programmatore PLC">Candidati per questa posizione →</a>
 </div>
+</details>
 
 </div>
 </div>
