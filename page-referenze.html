@@ -66,6 +66,7 @@ a:hover{color:var(--action-primary-hover)}
 .es-mega-featured h4{margin:0 0 4px;font:var(--text-h4);font-size:15px;color:var(--text-heading);text-transform:uppercase}
 .es-mega-featured p{margin:0 0 12px;font:var(--text-body-sm);color:var(--text-body)}
 @media (max-width:1024px){.es-mega-caret{display:none}.es-mega{display:none}}
+.es-logo-tile{display:flex;align-items:center;justify-content:center;text-align:center;min-height:88px;padding:16px;background:var(--surface-tint);border:1px solid var(--border-subtle);font:600 13px/1.3 var(--font-body);color:var(--text-body)}
 .es-tab{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);background:none;border:none;padding:16px 4px;cursor:pointer;border-bottom:2px solid transparent}
 .es-tab[aria-selected="true"]{color:var(--text-heading);border-bottom-color:var(--action-primary)}
 .es-tab:hover{color:var(--text-heading)}
@@ -195,9 +196,9 @@ a:hover{color:var(--action-primary-hover)}
 <div style="position:relative;padding:clamp(40px,8vh,90px) var(--space-section-x);width:100%;box-sizing:border-box">
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li style="color:#fff">Referenze</li></ol>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Casi studio</x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">I nostri clienti</x-import>
 <h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Oltre 2.000 linee installate nel mondo</h1>
-<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Dalle piccole cantine artigianali ai grandi gruppi industriali: scopri come i nostri clienti hanno risolto le loro sfide di imbottigliamento.</p>
+<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Dalle piccole cantine artigianali ai grandi gruppi industriali: aziende in oltre 60 Paesi si affidano a Eurostar per le proprie linee di imbottigliamento.</p>
 </div>
 </div>
 </section>
@@ -206,37 +207,47 @@ a:hover{color:var(--action-primary-hover)}
 <div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;text-align:center">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="2.000+" label="Linee installate" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="60+" label="Paesi serviti" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="9" label="Settori applicativi" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="35" label="Anni di esperienza" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="10" label="Settori applicativi" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Dal 1996" label="Anni di esperienza" dark="{{ false }}" size="lg" hint-size="auto,110px"></x-import>
 </div>
 </section>
 
-<div style="border-bottom:1px solid var(--border-subtle);background:var(--surface-light);position:sticky;top:0;z-index:40">
-<div style="max-width:var(--space-content-max);margin:0 auto;padding:0 var(--space-section-x)">
-<div role="tablist" aria-label="Filtra per settore" style="display:flex;gap:28px;flex-wrap:wrap">
-<button role="tab" aria-selected="true" class="es-tab">Tutti i settori</button>
-<button role="tab" aria-selected="false" class="es-tab">Vino</button>
-<button role="tab" aria-selected="false" class="es-tab">Birra</button>
-<button role="tab" aria-selected="false" class="es-tab">Acqua</button>
-<button role="tab" aria-selected="false" class="es-tab">Distillati</button>
-<button role="tab" aria-selected="false" class="es-tab">Succhi</button>
-<button role="tab" aria-selected="false" class="es-tab">Olio</button>
-</div>
-</div>
-</div>
-
 <section style="background:var(--surface-light);padding:var(--space-section-y) var(--space-section-x)">
-<div style="max-width:var(--space-content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Birra</span><span style="color:var(--gray-500)">Italia</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Birrificio Alpino: +25% di capacità senza ampliare il reparto</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Monoblocco MEC LD ed etichettatrice per crescere nello stesso ingombro, senza fermare la produzione.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Vino</span><span style="color:var(--gray-500)">Trentino</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Cantine Ferrari: precisione sullo spumante metodo classico</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un monoblocco dedicato ha ridotto gli scarti sul riempimento isobarico.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Acqua</span><span style="color:var(--gray-500)">Spagna</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Fuente Real: linea PET ad alta velocità</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Riempimento a gravità e tappatura integrata per formati PET fino a 2 litri.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Distillati</span><span style="color:var(--gray-500)">Scozia</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Highland Distillery: dosaggio di precisione per bottiglie pregiate</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Un sistema volumetrico a bassa tolleranza per lotti di alto valore.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Succhi</span><span style="color:var(--gray-500)">Brasile</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Tropical Fruit Co.: riempimento a caldo su scala industriale</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Una linea asettica per succhi pastorizzati, pensata per climi caldi.</p></div></a>
-<a href="single-news-editoriale.html" class="es-art"><div class="es-frame"><div style="width:100%;height:100%;background:var(--gray-150)" aria-hidden="true"></div></div><div style="padding:24px"><div style="display:flex;gap:14px;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--action-primary);margin-bottom:12px"><span>Olio</span><span style="color:var(--gray-500)">Puglia</span></div><h2 style="margin:0 0 10px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Frantoio San Vito: precisione di livello sull'olio EVO</h2><p style="margin:0;font:var(--text-body-md);color:var(--text-body)">Gestione della viscosità e della schiuma senza perdere precisione.</p></div></a>
+<div style="max-width:var(--space-content-max);margin:0 auto">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Chi si affida a Eurostar</x-import>
+<h2 style="margin:16px 0 20px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:20ch">I nostri clienti nel mondo</h2>
+<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:70ch">Stiamo raccogliendo i casi studio completi (cliente, sfida, soluzione, risultato): saranno pubblicati appena pronti. Nel frattempo, ecco alcune delle aziende che utilizzano macchine Eurostar.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px">
+<div class="es-logo-tile">Al Rawdatain</div>
+<div class="es-logo-tile">San Miguel</div>
+<div class="es-logo-tile">CCU – Compañía Cervecerías Unidas S.A.</div>
+<div class="es-logo-tile">Abrau-Durso</div>
+<div class="es-logo-tile">Bottled in Cumbria</div>
+<div class="es-logo-tile">Prestige Production</div>
+<div class="es-logo-tile">Ginstberg</div>
+<div class="es-logo-tile">NigerBev</div>
+<div class="es-logo-tile">MIB</div>
+<div class="es-logo-tile">WDV</div>
+<div class="es-logo-tile">Kuban Vino</div>
+<div class="es-logo-tile">Louisiana Spirits</div>
+<div class="es-logo-tile">Better Jusage AB</div>
+<div class="es-logo-tile">Del Monte</div>
+<div class="es-logo-tile">La Spina Santa</div>
+<div class="es-logo-tile">Biofruits</div>
+<div class="es-logo-tile">Balholm</div>
+<div class="es-logo-tile">Biogroupe</div>
+<div class="es-logo-tile">Olisur</div>
+<div class="es-logo-tile">Castello di Verrazzano</div>
+<div class="es-logo-tile">Donatella Cinelli Colombini</div>
+<div class="es-logo-tile">Frantoio Bonamini</div>
+<div class="es-logo-tile">Cantina Padovan</div>
+<div class="es-logo-tile">Villa Bys – Domaine Mont d'Oraàs</div>
+<div class="es-logo-tile">Vigezzo – Gruppo Lauretana</div>
+<div class="es-logo-tile">Fattoria La Vialla</div>
+<div class="es-logo-tile">Birrificio Exit</div>
+<div class="es-logo-tile">Brasserie Apal</div>
+<div class="es-logo-tile">Embotelladora Capri</div>
 </div>
-<nav aria-label="Paginazione" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" hint-size="auto,52px">Mostra altri casi studio</x-import>
-</nav>
 </div>
 </section>
 
