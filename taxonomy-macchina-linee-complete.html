@@ -193,13 +193,19 @@ a:hover{color:var(--action-primary-hover)}
 <!-- Machine range -->
 <section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
-<h2 style="margin:0 0 12px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">Le configurazioni disponibili</h2>
-<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Riempitrici free-standing, monoblocchi, uniblocchi — per bottiglie in vetro, PET, altri polimeri, alluminio e lattine.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-linea-compact.png" name="Free-standing" subtitle="Riempitrice singola stazione" stat1="{{ ln1v }}" stat2="{{ ln1p }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-linea-standard.png" name="Monoblocco" subtitle="2 torrette integrate" stat1="{{ ln2v }}" stat2="{{ ln2p }}" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-linea-full.png" name="Uniblocco" subtitle="Oltre 2 torrette integrate" stat1="{{ ln3v }}" stat2="{{ ln3p }}" hint-size="260px,400px"></x-import>
+<h2 style="margin:0 0 12px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">Esempi di layout linea</h2>
+<p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Ogni linea è progettata sulla configurazione di stabilimento e sul processo del cliente. Ecco alcuni layout reali realizzati da Eurostar.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px">
+<figure style="margin:0;background:var(--surface-card);border:1px solid var(--border-subtle)">
+<img src="assets/layout-linea-completa-1.png" alt="Layout linea completa — esempio con etichettatrice, riempitrice e tappatrice" style="display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)" />
+<figcaption style="padding:18px 22px 22px"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--text-heading);text-transform:uppercase">Linea con etichettatura, riempimento e tappatura</span><span style="display:block;margin-top:4px;font:var(--text-body-sm);color:var(--text-body)">Layout tecnico di progetto</span></figcaption>
+</figure>
+<figure style="margin:0;background:var(--surface-card);border:1px solid var(--border-subtle)">
+<img src="assets/layout-linea-completa-2.png" alt="Layout linea completa — esempio con confezionamento shrink wrapper e palletizzazione" style="display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)" />
+<figcaption style="padding:18px 22px 22px"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--text-heading);text-transform:uppercase">Linea con confezionamento e palletizzazione</span><span style="display:block;margin-top:4px;font:var(--text-body-sm);color:var(--text-body)">Layout tecnico di progetto</span></figcaption>
+</figure>
 </div>
+<p style="margin:28px 0 0;font:var(--text-body-sm);color:var(--text-body-muted,var(--gray-500))">Altri esempi di layout in arrivo dal cliente.</p>
 <nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
 </nav>
@@ -317,12 +323,6 @@ a:hover{color:var(--action-primary-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      ln1v: { value: '8k', label: 'Bottiglie / ora' },
-      ln1p: { value: '2', label: 'Operatori richiesti' },
-      ln2v: { value: '16k', label: 'Bottiglie / ora' },
-      ln2p: { value: '3', label: 'Operatori richiesti' },
-      ln3v: { value: '24k', label: 'Bottiglie / ora' },
-      ln3p: { value: '4', label: 'Operatori richiesti' },
       ln4v: { value: '12k', label: 'Bottiglie / ora' },
       ln4p: { value: '6 bar', label: 'Pressione di esercizio' },
       ln5v: { value: '36k', label: 'Bottiglie / ora' },

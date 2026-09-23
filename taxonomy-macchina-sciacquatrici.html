@@ -197,7 +197,7 @@ a:hover{color:var(--action-primary-hover)}
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-water.png" name="MEC SI" subtitle="Configurazione ad acqua" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-air.png" name="MEC SI" subtitle="Configurazione ad aria filtrata" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-n2.png" name="MEC SI" subtitle="Configurazione a gas inerte" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-twist-rinser.png" name="TWIST RINSER" subtitle="Sciacquatrice/soffiatrice lineare per lattine" stat1="Lattine in alluminio/PET" stat2="Fino a 6.000/ora" href="single-macchina-twist-rinser.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-twist-rinser.png" name="TWIST RINSER" subtitle="Sciacquatrice/soffiatrice lineare per lattine" stat1="{{ trCont }}" stat2="{{ trVel }}" href="single-macchina-twist-rinser.html" hint-size="260px,400px"></x-import>
 </div>
 <nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
@@ -317,7 +317,9 @@ class Component extends DCLogic {
   renderVals() {
     return {
       rnCont: { value: 'Bottiglie e lattine', label: 'Tipo contenitore' },
-      rnVel: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
+      rnVel: { value: 'Fino a 25.000', label: 'Contenitori/ora' },
+      trCont: { value: 'Lattine in alluminio/PET', label: 'Contenitori' },
+      trVel: { value: 'Fino a 6.000', label: 'Contenitori/ora' },
       rn4v: { value: '16k', label: 'Bottiglie / ora' },
       rn4p: { value: '6', label: 'Stazioni' },
       rn5v: { value: '6k', label: 'Bottiglie / ora' },

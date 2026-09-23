@@ -229,7 +229,7 @@ a:hover{color:var(--action-primary-hover)}
 <div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-water.png" name="MEC SI" subtitle="Configurazione ad acqua" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import></div>
 <div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-air.png" name="MEC SI" subtitle="Configurazione ad aria filtrata" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import></div>
 <div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-n2.png" name="MEC SI" subtitle="Configurazione a gas inerte" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import></div>
-<div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-twist-rinser.png" name="TWIST RINSER" subtitle="Sciacquatrice/soffiatrice lineare per lattine" stat1="Lattine in alluminio/PET" stat2="Fino a 6.000/ora" href="single-macchina-twist-rinser.html" hint-size="260px,400px"></x-import></div>
+<div class="es-machine-item" data-cat="sciacquatrici" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-twist-rinser.png" name="TWIST RINSER" subtitle="Sciacquatrice/soffiatrice lineare per lattine" stat1="{{ trCont }}" stat2="{{ trVel }}" href="single-macchina-twist-rinser.html" hint-size="260px,400px"></x-import></div>
 <div class="es-machine-item" data-cat="movimentazione" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-neck-handling.png" name="Sistema Neck Handling" subtitle="Movimentazione per presa sul collo" stat1="{{ mvContPet }}" stat2="{{ mvFlusso }}" href="single-macchina-neck-handling.html" hint-size="260px,400px"></x-import></div>
 <div class="es-machine-item" data-cat="movimentazione" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-universali.png" name="Stelle universali" subtitle="Attrezzatura regolabile multiformato" stat1="{{ mvContUniv }}" stat2="{{ mvCambio }}" href="single-macchina-stelle-universali.html" hint-size="260px,400px"></x-import></div>
 <div class="es-machine-item" data-cat="movimentazione" style="display:contents"><x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-variabile.png" name="Stelle a geometria variabile" subtitle="Tasche regolabili senza cambio stella" stat1="{{ mvContVar }}" stat2="{{ mvCambio }}" href="single-macchina-stelle-variabile.html" hint-size="260px,400px"></x-import></div>
@@ -349,19 +349,21 @@ class Component extends DCLogic {
       prodGassati: { value: 'Liquidi gassati', label: 'Prodotto' },
       prodViscosi: { value: 'Prodotti viscosi', label: 'Prodotto' },
       prodDensi: { value: 'Liquidi piatti semi-densi e densi', label: 'Prodotto' },
-      vel25k: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
-      velCanfill: { value: 'Fino a 6.000 BPH', label: 'Velocità' },
+      vel25k: { value: 'Fino a 25.000', label: 'Contenitori/ora' },
+      velCanfill: { value: 'Fino a 6.000', label: 'Contenitori/ora' },
       chGmF: { value: 'Sughero fungo', label: 'Tipo di chiusura' },
       chGmR: { value: 'Sughero raso bidirezionale', label: 'Tipo di chiusura' },
       chGmRF: { value: 'Sughero raso e fungo', label: 'Tipo di chiusura' },
       chEaVA: { value: 'Capsule vite alluminio ROPP', label: 'Tipo di chiusura' },
       chEaPK: { value: 'Capsule prefilettate plastica', label: 'Tipo di chiusura' },
       chEaC: { value: 'Tappi corona', label: 'Tipo di chiusura' },
-      vel3k: { value: 'Fino a 3.000 BPH', label: 'Contenitori/ora' },
-      vel3kb: { value: 'Fino a 2.500–3.000 BPH', label: 'Contenitori/ora' },
-      vel25c: { value: 'Fino a 2.500 BPH', label: 'Contenitori/ora' },
+      vel3k: { value: 'Fino a 3.000', label: 'Contenitori/ora' },
+      vel3kb: { value: 'Fino a 2.500–3.000', label: 'Contenitori/ora' },
+      vel25c: { value: 'Fino a 2.500', label: 'Contenitori/ora' },
       rnCont: { value: 'Bottiglie e lattine', label: 'Tipo contenitore' },
-      rnVel: { value: 'Fino a 25.000 BPH', label: 'Velocità' },
+      rnVel: { value: 'Fino a 25.000', label: 'Contenitori/ora' },
+      trCont: { value: 'Lattine in alluminio/PET', label: 'Contenitori' },
+      trVel: { value: 'Fino a 6.000', label: 'Contenitori/ora' },
       mvContPet: { value: 'Bottiglie in PET', label: 'Contenitori' },
       mvFlusso: { value: 'Presa sul collo', label: 'Movimentazione' },
       mvContUniv: { value: 'Multiformato', label: 'Contenitori' },
