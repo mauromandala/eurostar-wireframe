@@ -72,7 +72,7 @@ a:hover{color:var(--action-primary-hover)}
 .es-diag-left{clip-path:var(--clip-diag);position:relative;z-index:1}
 .es-diag-right{margin-left:-56px;clip-path:polygon(56px 0,100% 0,100% 100%,0 100%)}
 .es-diag-media{background:var(--gray-150);border:1px dashed var(--gray-400);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font:400 11px/1.3 var(--font-body);text-align:center;padding:2px}
-.es-diag-cta{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--action-primary);color:#fff;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 24px;clip-path:var(--clip-cut-tr);transition:background var(--duration-base) var(--ease-standard)}
+.es-diag-cta{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--action-primary);color:#fff;font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 30px;transition:background var(--duration-base) var(--ease-standard)}
 .es-diag-cta:hover{background:var(--action-primary-hover);color:#fff}
 .es-diag-cta:focus-visible{outline:2px solid var(--action-primary);outline-offset:3px}
 @media (max-width:900px){
@@ -182,15 +182,16 @@ a:hover{color:var(--action-primary-hover)}
   .es-textlink:hover .es-arrow{transform:translateX(5px)}
   .es-bivi:hover{transform:translateY(-3px)}
 }
-/* CTA blu con taglio d'angolo (.es-diag-cta): riempimento bianco diagonale, testo blu,
-   1px di blu lasciato scoperto sui bordi come contorno; freccia ↗ che si sposta in diagonale */
-.es-diag-cta{position:relative;isolation:isolate}
-.es-diag-cta::before{content:"";position:absolute;inset:1px;z-index:-1;background:#fff;
-  clip-path:polygon(0 0,0 0,-30px 100%,0 100%);transition:clip-path var(--duration-base) var(--ease-standard)}
-.es-diag-cta span{display:inline-block;transition:transform var(--duration-base) var(--ease-standard)}
+/* CTA blu con freccia (.es-diag-cta): stesso effetto dei pulsanti blu del design system
+   (riempimento bianco diagonale, testo e contorno blu); freccia ↗ che si sposta in diagonale */
+.es-diag-cta{position:relative;isolation:isolate;overflow:hidden}
+.es-diag-cta::before{content:"";position:absolute;inset:0 -30px 0 -30px;z-index:-1;background:#fff;
+  clip-path:polygon(0 0,calc(100% - 30px) 0,100% 100%,0 100%);transform:translateX(-101%);
+  transition:transform var(--duration-base) var(--ease-standard)}
+.es-diag-cta span{display:inline-block;line-height:1;transition:transform var(--duration-base) var(--ease-standard)}
 @media (hover:hover) and (pointer:fine){
-  .es-diag-cta:hover{background:var(--action-primary);color:var(--action-primary)}
-  .es-diag-cta:hover::before{clip-path:polygon(0 0,calc(100% + 30px) 0,100% 100%,0 100%)}
+  .es-diag-cta:hover{background:var(--action-primary);color:var(--action-primary);outline:1px solid var(--action-primary);outline-offset:-1px}
+  .es-diag-cta:hover::before{transform:translateX(0)}
   .es-diag-cta:hover span{transform:translate(3px,-3px)}
 }
 /* CTA "Contattaci" nell'header (blu): stesso riempimento bianco diagonale, testo blu */
