@@ -198,15 +198,18 @@ a:hover{color:var(--action-primary-hover)}
 <div>
 <h1 style="margin:0 0 14px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase">MEC SI</h1>
 <p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--action-primary);font-weight:500">Sciacquatrice / soffiatrice rotativa per il trattamento interno dei contenitori prima del riempimento</p>
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:18px">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
 <span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Contenitori</span>
-<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>Alluminio</span>
-<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>PET</span>
-<span class="es-container-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg>HDPE</span>
+<span title="Vetro" style="display:inline-flex;color:var(--text-heading)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Vetro"><path d="M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z"/><path d="M9 2h6"/></svg></span>
+<span title="PET" style="display:inline-flex;color:var(--text-heading)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="PET"><path d="M10 2h4v2l1.5 2v3l-1 1.25 1 1.25v2.5l-1 1.25 1 1.25V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-3.5l1-1.25-1-1.25v-2.5l1-1.25-1-1.25V6L10 4V2z"/></svg></span>
+<span title="HDPE" style="display:inline-flex;color:var(--text-heading)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="HDPE"><path d="M8 2h4v3h2.5A3.5 3.5 0 0 1 18 8.5V20a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8.5L8 5V2z"/><path d="M14 5v5h4"/></svg></span>
+<span title="Lattina alluminio" style="display:inline-flex;color:var(--text-heading)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Lattina alluminio"><path d="M7 5.5L8 3h8l1 2.5v13L16 21H8l-1-2.5z"/><path d="M7 5.5h10M7 18.5h10"/></svg></span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px 24px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border-subtle)">
+<p style="margin:0;font:400 15px/1.5 var(--font-body);color:var(--text-heading)">Bottiglie in vetro, lattine in alluminio e contenitori PET/HDPE</p>
+</div>
+<div style="display:grid;grid-template-columns:max-content;gap:28px 24px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border-subtle)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Fino a 25.000" label="Contenitori/ora" dark="{{ false }}" size="md" hint-size="auto,60px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Bottiglie, lattine" label="Contenitori" dark="{{ false }}" size="md" hint-size="auto,60px"></x-import>
 </div>
 </div>
 <div class="es-gallery" data-gallery-main>
@@ -229,7 +232,7 @@ a:hover{color:var(--action-primary-hover)}
 <!-- Left -->
 <div>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Descrizione tecnica</x-import>
-<p style="margin:20px 0 48px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch;line-height:1.7">Trattamento interno di bottiglie, lattine in alluminio e contenitori PET/HDPE prima del riempimento, mediante risciacquo con acqua oppure soffiatura con aria filtrata, secondo la configurazione selezionata. Il ciclo automatico accompagna il contenitore dalla presa fino al rilascio.</p>
+<p style="margin:20px 0 48px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch;line-height:1.7">Trattamento interno di bottiglie, lattine in alluminio/PET e contenitori PET/HDPE prima del riempimento, mediante risciacquo con acqua oppure soffiatura con aria filtrata, secondo la configurazione selezionata. Il ciclo automatico accompagna il contenitore dalla presa fino al rilascio.</p>
 
 <div style="display:flex;gap:32px;border-bottom:1px solid var(--border-subtle);margin-bottom:16px">
 <span class="es-tab" aria-selected="true">Caratteristiche</span>
@@ -237,12 +240,11 @@ a:hover{color:var(--action-primary-hover)}
 
 <table style="width:100%;border-collapse:collapse;margin:16px 0 56px">
 <tbody>
-<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500)">Contenitori</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading)">Bottiglie, lattine</td></tr>
-<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">Contenitori/ora</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">Fino a 25.000 </td></tr>
+<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-bottom:1px solid var(--border-subtle)">Campo di produzione della gamma</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-bottom:1px solid var(--border-subtle)">Fino a 25.000 contenitori/ora</td></tr>
 </tbody>
 </table>
 
-<h2 style="margin:0 0 16px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Download center</h2>
+<h2 style="margin:0 0 16px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Download</h2>
 <div>
 <a href="#" class="es-dl-link" style="border-bottom:1px solid var(--border-subtle)"><span aria-hidden="true">↓</span> Scheda tecnica MEC SI (PDF, 1.4 MB)</a>
 </div>
@@ -252,13 +254,7 @@ a:hover{color:var(--action-primary-hover)}
 <aside style="position:sticky;top:96px;display:flex;flex-direction:column;gap:28px">
 <div style="background:var(--surface-card);padding:32px">
 <h2 style="margin:0 0 22px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Richiedi un preventivo</h2>
-<div style="display:flex;flex-direction:column;gap:16px">
-<div><label for="es-n" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Nome e azienda *</label><input id="es-n" class="es-field" required /></div>
-<div><label for="es-e" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Email *</label><input id="es-e" type="email" class="es-field" required /></div>
-<div><label for="es-m" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Messaggio</label><textarea id="es-m" class="es-field" style="height:80px;resize:vertical"></textarea></div>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" hint-size="100%,48px" style="{{ fullBtn }}">Invia richiesta</x-import>
-<p style="margin:2px 0 0;font:var(--text-caption);color:var(--gray-500)">Risposta del reparto tecnico entro 24h lavorative.</p>
-</div>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" href="page-contatti.html" hint-size="100%,48px" style="{{ fullBtn }}">Contattaci</x-import>
 </div>
 </aside>
 

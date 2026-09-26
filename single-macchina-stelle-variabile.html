@@ -197,7 +197,14 @@ a:hover{color:var(--action-primary-hover)}
 <div class="es-product-hero">
 <div>
 <h1 style="margin:0 0 14px;font:var(--text-display-2);color:var(--text-heading);text-transform:uppercase">Stelle a geometria variabile</h1>
-<p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--action-primary);font-weight:500">Tasche regolabili senza cambio stella</p>
+<p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--action-primary);font-weight:500">Stelle regolabili in base al formato utilizzato</p>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+<span style="font:var(--text-caption);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)">Contenitori</span>
+<span style="font:400 15px/1.5 var(--font-body);color:var(--text-heading)">Cilindrici/Conici</span>
+</div>
+<div style="display:grid;grid-template-columns:max-content;gap:28px 24px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border-subtle)">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.StatBlock" value="Cambio parziale attrezzatura" label="Cambio formato" dark="{{ false }}" size="md" hint-size="auto,60px"></x-import>
+</div>
 </div>
 <div class="es-gallery" data-gallery-main>
 <div class="es-gallery-main"><div class="es-gallery-frame" aria-hidden="true">[IMG: Stella a geometria variabile, vista completa]</div></div>
@@ -216,21 +223,24 @@ a:hover{color:var(--action-primary-hover)}
 <!-- Left -->
 <div>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Descrizione tecnica</x-import>
-<p style="margin:20px 0 48px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch;line-height:1.7">La stella a geometria variabile è un sistema universale progettato per movimentare contenitori di diversi diametri e formati senza sostituire la stella durante il cambio produzione. Grazie a elementi mobili o profili regolabili, la geometria delle tasche si adatta rapidamente alle dimensioni del contenitore, mantenendone il corretto posizionamento. La soluzione consente di ridurre drasticamente i tempi di cambio formato, aumentare la flessibilità della macchina e limitare il numero di attrezzature dedicate necessarie.</p>
+<p style="margin:20px 0 48px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch;line-height:1.7">La stella a geometria variabile è un sistema progettato per movimentare contenitori di diversi diametri e formati senza sostituire la stella durante il cambio produzione. Grazie a elementi mobili o profili regolabili, la geometria delle stelle si adatta rapidamente alle dimensioni del contenitore, mantenendone il corretto posizionamento. La soluzione consente di ridurre drasticamente i tempi di cambio formato, aumentare la flessibilità della macchina e limitare il numero di attrezzature dedicate necessarie.</p>
 
+<div style="display:flex;gap:32px;border-bottom:1px solid var(--border-subtle);margin-bottom:16px">
+<span class="es-tab" aria-selected="true">Caratteristiche</span>
+</div>
+
+<table style="width:100%;border-collapse:collapse;margin:16px 0 56px">
+<tbody>
+<tr><th scope="row" style="text-align:left;padding:15px 14px 15px 0;font:var(--text-spec-label);letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);border-bottom:1px solid var(--border-subtle)">Cambio formato</th><td style="padding:15px 0;font:var(--text-body-md);color:var(--text-heading);border-bottom:1px solid var(--border-subtle)">Cambio parziale attrezzatura</td></tr>
+</tbody>
+</table>
 </div>
 
 <!-- Sidebar sticky -->
 <aside style="position:sticky;top:96px;display:flex;flex-direction:column;gap:28px">
 <div style="background:var(--surface-card);padding:32px">
 <h2 style="margin:0 0 22px;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Richiedi un preventivo</h2>
-<div style="display:flex;flex-direction:column;gap:16px">
-<div><label for="es-n" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Nome e azienda *</label><input id="es-n" class="es-field" required /></div>
-<div><label for="es-e" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Email *</label><input id="es-e" type="email" class="es-field" required /></div>
-<div><label for="es-m" style="display:block;font:var(--text-spec-label);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px">Messaggio</label><textarea id="es-m" class="es-field" style="height:80px;resize:vertical"></textarea></div>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" hint-size="100%,48px" style="{{ fullBtn }}">Invia richiesta</x-import>
-<p style="margin:2px 0 0;font:var(--text-caption);color:var(--gray-500)">Risposta del reparto tecnico entro 24h lavorative.</p>
-</div>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="primary" href="page-contatti.html" hint-size="100%,48px" style="{{ fullBtn }}">Contattaci</x-import>
 </div>
 </aside>
 
