@@ -20,7 +20,7 @@ Tutte le pagine condividono header (utility bar + nav + mega-menu Macchine/Setto
 **Pagine uniche**: home, Chi siamo, Catalogo macchine, Settori (elenco), Servizi (overview), Referenze, Cataloghi (download), News (elenco), Contatti, Conferma invio form, 404, Squadron.
 
 **Archetipi / template dinamici**:
-- Categoria macchina × 7 (Riempitrici, Tappatrici, Etichettatrici, Sciacquatrici/Soffiatrici, Sistemi movimentazione contenitori, Linee complete, Usate)
+- Categoria macchina × 6 (Sciacquatrici/Soffiatrici, Riempitrici, Tappatrici, Linee complete, Sistemi movimentazione contenitori, Usate) — ordine confermato dalla PM il 25/09; Etichettatrici eliminata il 26/09
 - Scheda macchina: 21 istanze reali popolate (10 Riempitrici, 6 Tappatrici, 2 Sciacquatrici/Soffiatrici — MEC SI e Twist Rinser —, 3 Sistemi movimentazione contenitori) — dettaglio in [acf-elementor-mapping.md](acf-elementor-mapping.md)
 - Scheda settore: tutti e 10 i settori di lancio popolati
 - Scheda servizio (oggi: Assistenza tecnica) — Ricambi e Remote view da fare
@@ -43,10 +43,14 @@ Componenti riutilizzabili via `x-import`: `Button`, `StatBlock`, `SectionKicker`
 
 ## Decisioni di scope confermate con l'utente
 
-- **A** — Etichettatrici resta rimossa da menu/footer/filtri finché non è chiarito con Eurostar se è una linea prodotto autonoma. Tappatrici invece è stata riattivata ovunque su indicazione esplicita del cliente/PM, con 6 modelli reali popolati.
+- **A** — Superata (26/09): la PM conferma che le Etichettatrici "non esistono" come linea prodotto: pagina `taxonomy-macchina-etichettatrici.html` eliminata e rimossa da index e Cataloghi. Tappatrici resta attiva con 6 modelli reali.
 - **B** — Superata: sia per le Macchine (21 istanze reali: 10 Riempitrici, 6 Tappatrici, 2 Sciacquatrici/Soffiatrici — MEC SI e Twist Rinser —, 3 Sistemi movimentazione contenitori) sia per i Settori (tutti e 10 quelli di lancio) sono stati popolati con contenuto reale, non solo un esempio per tipo. Resta valida solo per Servizio (un solo esempio, Assistenza tecnica, su 3 previsti).
 - **C** — Squadron è una pagina/voce di menu a sé, creata da zero e collegata su tutto il sito.
 - **D** — Superata (23/09): indirizzo, telefono ed email sono quelli forniti da Serena via mail, dato ufficiale confermato. Corretto un bug per cui in pagina Contatti, accanto al numero WhatsApp, veniva mostrato per errore il numero fisso invece del numero WhatsApp reale.
+
+## Fonte dati catalogo (dal 25/09)
+
+L'Excel della PM "Eurostar - Schema dati catalogo_VER 25.09.xlsx" (+ Word "Modifiche sito 25.9" e risposte email di Serena del 26/09) è la fonte di verità per schede macchina, categorie e settori. Struttura scheda: Sezione intro (Adatta per, Contenitori con icone + dicitura unica, Contenitori/ora, Prodotto) + Caratteristiche; niente form laterale (solo "Richiedi un preventivo" + Contattaci), "Download" al posto di "Download center". Nei settori "Le nostre macchine" mostra tutte le macchine indicate dalla PM: prima Eurostar (card), poi i modelli Squadron in un gruppo dedicato.
 
 ## Contenuti ancora mancanti dal cliente
 
