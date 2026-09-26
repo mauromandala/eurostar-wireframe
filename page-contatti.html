@@ -190,7 +190,7 @@ select.es-field::-ms-expand{display:none}
 <div style="background:var(--surface-dark);padding:clamp(40px,7vh,90px) clamp(24px,4vw,64px);color:#fff">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Come possiamo aiutarti?</x-import>
 <h1 style="margin:18px 0 20px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Contatti</h1>
-<p style="margin:0 0 36px;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:44ch">Il nostro team commerciale risponde in italiano e inglese entro 24 ore lavorative. Raccontaci cosa imbottigli e ti indirizziamo al reparto corretto.</p>
+<p style="margin:0 0 36px;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:44ch">Il nostro team commerciale risponde in italiano, inglese, francese, spagnolo e portoghese entro 24 ore lavorative. Raccontaci cosa imbottigli e ti indirizziamo al reparto corretto.</p>
 <div style="display:flex;flex-direction:column;gap:14px;font:var(--text-body-md);color:rgba(255,255,255,.9);margin-bottom:36px">
 <div>Regione Leiso, 86<br>14050 San Marzano Oliveto (AT), Italia</div>
 <div><a href="tel:+390141856032" style="color:#fff;text-decoration:underline">+39 0141 856032</a></div>
@@ -216,26 +216,26 @@ select.es-field::-ms-expand{display:none}
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
 <div><label for="es-az" class="es-flabel">Azienda <span class="es-req">*</span></label><input id="es-az" class="es-field" required /></div>
-<div><label for="es-paese" class="es-flabel">Paese</label><input id="es-paese" class="es-field" /></div>
+<div><label for="es-paese" class="es-flabel">Paese <span class="es-req">*</span></label><input id="es-paese" class="es-field" required /></div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
 <div><label for="es-em" class="es-flabel">Email <span class="es-req">*</span></label>
 <input id="es-em" type="email" class="es-field" required aria-describedby="es-em-err" style="border-color:var(--flag-red)" />
 <p id="es-em-err" style="margin:8px 0 0;font:var(--text-body-sm);color:var(--flag-red)">Inserisci un indirizzo email valido.</p>
 </div>
-<div><label for="es-tel" class="es-flabel">Telefono</label><input id="es-tel" type="tel" class="es-field" /></div>
+<div><label for="es-tel" class="es-flabel">Telefono <span class="es-req">*</span></label><input id="es-tel" type="tel" class="es-field" required /></div>
 </div>
 <div style="margin-bottom:20px">
 <label for="es-oggetto" class="es-flabel">Oggetto richiesta <span class="es-req">*</span></label>
 <input id="es-oggetto" class="es-field" required />
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
-<div><label for="es-prodotto" class="es-flabel">Tipo di prodotto</label><input id="es-prodotto" class="es-field" placeholder="Es. vino, birra, olio…" /></div>
-<div><label for="es-contenitore" class="es-flabel">Tipo di contenitore</label><input id="es-contenitore" class="es-field" placeholder="Es. vetro, PET, lattina…" /></div>
+<div><label for="es-prodotto" class="es-flabel">Tipo di prodotto <span class="es-req">*</span></label><input id="es-prodotto" class="es-field" placeholder="Es. vino, birra, olio…" required /></div>
+<div><label for="es-contenitore" class="es-flabel">Tipo di contenitore <span class="es-req">*</span></label><input id="es-contenitore" class="es-field" placeholder="Es. vetro, PET, lattina…" required /></div>
 </div>
 <div style="margin-bottom:20px">
-<label for="es-bph" class="es-flabel">Contenitori/ora indicativi</label>
-<input id="es-bph" class="es-field" />
+<label for="es-bph" class="es-flabel">Contenitori/ora indicativi <span class="es-req">*</span></label>
+<input id="es-bph" class="es-field" required />
 </div>
 <div style="margin-bottom:28px">
 <label for="es-msg" class="es-flabel">Messaggio <span class="es-req">*</span></label>
