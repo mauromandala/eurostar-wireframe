@@ -35,6 +35,8 @@ Token in `_ds/eurostar-design-system-8ffca847-51ad-4b4a-a5ee-a2536d8a406f/tokens
 
 Componenti riutilizzabili via `x-import`: `Button`, `StatBlock`, `SectionKicker`, `MachineCard`.
 
+Effetti hover desktop (sitewide dal 26/09): `assets/es-hover.css`, collegato in fondo all'`<head>` di ogni pagina (dopo gli stili inline, così ne sovrascrive i `:hover`). Pulsanti: riempimento con taglio diagonale che scorre da sinistra (pulsanti blu → riempimento bianco + testo/contorno blu; bianchi/trasparenti su scuro → riempimento blu o bianco); link `.es-textlink` con freccia in `<span class="es-arrow">` che scivola a destra; frecce ↓ dei download che scendono. Solo `(hover:hover) and (pointer:fine)`, rispetta `prefers-reduced-motion`. Ogni nuova pagina deve includere il `<link>`; le frecce dei nuovi `.es-textlink` vanno avvolte nello span. In WordPress diventa una classe globale (`es-btn` + variante) in Site Settings > Custom CSS.
+
 ## Documentazione tecnica (handoff sviluppo)
 
 - [handoff-wordpress-elementor.html](handoff-wordpress-elementor.html) — mappa token → Global Settings Elementor, componenti (nativo/Pro/custom), CPT + campi ACF, relazioni dinamiche, template Theme Builder, cosa resta fuori dal wireframe
