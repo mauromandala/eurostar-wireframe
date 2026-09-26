@@ -195,8 +195,8 @@ a:hover{color:var(--action-primary-hover)}
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <h2 style="margin:0 0 40px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">La nostra gamma</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-water.png" name="MEC SI" subtitle="Sciacquatrice/soffiatrice rotativa per il trattamento interno dei contenitori prima del riempimento" stat1="{{ rnCont }}" stat2="{{ rnVel }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-twist-rinser.png" name="TWIST RINSER" subtitle="Sciacquatrice/soffiatrice lineare per il trattamento interno delle lattine prima del riempimento" stat1="{{ trCont }}" stat2="{{ trVel }}" href="single-macchina-twist-rinser.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-si-water.png" name="MEC SI" subtitle="Sciacquatrice / soffiatrice rotativa per il trattamento interno dei contenitori prima del riempimento" stat1="{{ cmecsi1 }}" stat2="{{ cmecsi2 }}" href="single-macchina-mec-si.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-twist-rinser.png" name="TWIST RINSER" subtitle="Sciacquatrice / soffiatrice lineare per il trattamento interno delle lattine prima del riempimento" stat1="{{ ctwistrinser1 }}" stat2="{{ ctwistrinser2 }}" href="single-macchina-twist-rinser.html" hint-size="260px,400px"></x-import>
 </div>
 <nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
@@ -313,16 +313,10 @@ a:hover{color:var(--action-primary-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      rnCont: { value: 'Bottiglie e lattine', label: 'Tipo contenitore' },
-      rnVel: { value: 'Fino a 25.000', label: 'Contenitori/ora' },
-      trCont: { value: 'Lattine in alluminio/PET', label: 'Tipo contenitore' },
-      trVel: { value: 'Fino a 6.000', label: 'Contenitori/ora' },
-      rn4v: { value: '16k', label: 'Bottiglie / ora' },
-      rn4p: { value: '6', label: 'Stazioni' },
-      rn5v: { value: '6k', label: 'Bottiglie / ora' },
-      rn5p: { value: '2', label: 'Stazioni' },
-      rn6v: { value: '36k', label: 'Bottiglie / ora' },
-      rn6p: { value: '8', label: 'Stazioni' }
+      cmecsi1: { value: 'Bottiglie in vetro, lattine in alluminio e contenitori PET/HDPE', label: 'Tipo contenitore' },
+      cmecsi2: { value: 'Fino a 25.000', label: 'Contenitori/ora' },
+      ctwistrinser1: { value: 'Lattine in alluminio/PET', label: 'Tipo contenitore' },
+      ctwistrinser2: { value: 'Fino a 6.000', label: 'Contenitori/ora' }
     };
   }
 }

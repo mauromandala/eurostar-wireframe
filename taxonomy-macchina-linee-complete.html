@@ -184,9 +184,9 @@ a:hover{color:var(--action-primary-hover)}
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="archive-macchine.html" style="color:var(--text-on-dark-faint)">Macchine</a></li><li aria-hidden="true">/</li><li style="color:#fff">Linee complete</li></ol>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Categoria</x-import>
-<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Linee complete di imbottigliamento da 1.000 a 10.000 contenitori/ora</h1>
+<h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Linee complete di imbottigliamento fino a 15.000 contenitori/ora</h1>
 <p style="margin:0 0 16px;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Progettiamo e realizziamo impianti costruiti sulle tue esigenze produttive, dalla singola macchina alla linea integrata, collegando ogni fase del processo in un flusso continuo e affidabile.</p>
-<p style="margin:0;font:600 18px/1.5 var(--font-body);color:#fff;max-width:60ch">Dalla progettazione all'integrazione delle apparecchiature, un unico interlocutore.</p>
+<p style="margin:0;font:600 18px/1.5 var(--font-body);color:#fff;max-width:60ch">Dalla progettazione all'integrazione dei sistemi, un unico interlocutore.</p>
 </div>
 </div>
 </section>
@@ -198,12 +198,12 @@ a:hover{color:var(--action-primary-hover)}
 <p style="margin:0 0 40px;font:var(--text-body-lg);color:var(--text-body);max-width:60ch">Ogni linea è progettata sulla configurazione di stabilimento e sul processo del cliente. Ecco alcuni layout reali realizzati da Eurostar.</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px">
 <figure style="margin:0;background:var(--surface-card);border:1px solid var(--border-subtle)">
-<img src="assets/layout-linea-completa-1.png" alt="Layout linea completa — esempio con etichettatrice, riempitrice e tappatrice" style="display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)" />
-<figcaption style="padding:18px 22px 22px"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--text-heading);text-transform:uppercase">Linea con etichettatura, riempimento e tappatura</span><span style="display:block;margin-top:4px;font:var(--text-body-sm);color:var(--text-body)">Layout tecnico di progetto</span></figcaption>
+<img src="assets/layout-linea-completa-1.png" alt="Layout linea completa per birra da 6.000 bottiglie/ora" style="display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)" />
+<figcaption style="padding:18px 22px 22px"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--text-heading);text-transform:uppercase">Linea completa per birra da 6.000 bottiglie/ora</span><span style="display:block;margin-top:4px;font:var(--text-body-sm);color:var(--text-body)">Layout tecnico di progetto</span></figcaption>
 </figure>
 <figure style="margin:0;background:var(--surface-card);border:1px solid var(--border-subtle)">
-<img src="assets/layout-linea-completa-2.png" alt="Layout linea completa — esempio con confezionamento shrink wrapper e palletizzazione" style="display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)" />
-<figcaption style="padding:18px 22px 22px"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--text-heading);text-transform:uppercase">Linea con confezionamento e palletizzazione</span><span style="display:block;margin-top:4px;font:var(--text-body-sm);color:var(--text-body)">Layout tecnico di progetto</span></figcaption>
+<img src="assets/layout-linea-completa-2.png" alt="Layout linea completa per energy drink da 3.000 lattine/ora" style="display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)" />
+<figcaption style="padding:18px 22px 22px"><span style="display:block;font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--text-heading);text-transform:uppercase">Linea completa per energy drink da 3.000 lattine/ora</span><span style="display:block;margin-top:4px;font:var(--text-body-sm);color:var(--text-body)">Layout tecnico di progetto</span></figcaption>
 </figure>
 </div>
 <p style="margin:28px 0 0;font:var(--text-body-sm);color:var(--text-body-muted,var(--gray-500))">Altri esempi di layout in arrivo dal cliente.</p>
@@ -322,12 +322,7 @@ a:hover{color:var(--action-primary-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      ln4v: { value: '12k', label: 'Bottiglie / ora' },
-      ln4p: { value: '6 bar', label: 'Pressione di esercizio' },
-      ln5v: { value: '36k', label: 'Bottiglie / ora' },
-      ln5p: { value: '< 20 min', label: 'Cambio formato' },
-      ln6v: { value: '100%', label: 'Personalizzazione' },
-      ln6p: { value: '—', label: 'Su specifiche cliente' }
+
     };
   }
 }

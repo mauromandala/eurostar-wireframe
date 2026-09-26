@@ -185,7 +185,7 @@ a:hover{color:var(--action-primary-hover)}
 <ol class="es-breadcrumb" aria-label="Breadcrumb" style="list-style:none;display:flex;gap:8px;padding:0;margin:0 0 20px;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-dark-faint)"><li><a href="home.html" style="color:var(--text-on-dark-faint)">Home</a></li><li aria-hidden="true">/</li><li><a href="archive-macchine.html" style="color:var(--text-on-dark-faint)">Macchine</a></li><li aria-hidden="true">/</li><li style="color:#fff">Sistemi movimentazione contenitori</li></ol>
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" dark="{{ true }}" hint-size="auto,20px">Categoria</x-import>
 <h1 style="margin:18px 0 16px;font:var(--text-display-2);color:#fff;text-transform:uppercase">Sistemi movimentazione contenitori</h1>
-<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Soluzioni per la movimentazione precisa e sicura dei contenitori lungo la linea, dalla presa sul collo ai sistemi a stelle universali e a geometria variabile, per garantire continuità di flusso e massima flessibilità di formato.</p>
+<p style="margin:0;font:var(--text-body-lg);color:rgba(255,255,255,.82);max-width:60ch">Dalla presa collo alle soluzioni universali. I sistemi di movimentazione contenitori Eurostar sono studiati per garantire continuità operativa, massima versatilità e tempi di cambio formato rapidi.</p>
 </div>
 </div>
 </section>
@@ -195,9 +195,9 @@ a:hover{color:var(--action-primary-hover)}
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <h2 style="margin:0 0 40px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">La nostra gamma</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-neck-handling.png" name="Sistema Neck Handling" subtitle="Movimentazione per presa sul collo" stat1="{{ mvContPet }}" stat2="{{ mvFlusso }}" href="single-macchina-neck-handling.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-universali.png" name="Stelle universali" subtitle="Attrezzatura regolabile multiformato" stat1="{{ mvContUniv }}" stat2="{{ mvCambio }}" href="single-macchina-stelle-universali.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-variabile.png" name="Stelle a geometria variabile" subtitle="Tasche regolabili senza cambio stella" stat1="{{ mvContVar }}" stat2="{{ mvCambio }}" href="single-macchina-stelle-variabile.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-neck-handling.png" name="Sistema Neck Handling" subtitle="Movimentazione per presa collo" stat1="{{ cneckhandling1 }}" stat2="{{ cneckhandling2 }}" href="single-macchina-neck-handling.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-universali.png" name="Stelle universali" subtitle="Attrezzatura regolabile multiformato" stat1="{{ cstelleuniversali1 }}" stat2="{{ cstelleuniversali2 }}" href="single-macchina-stelle-universali.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-stelle-variabile.png" name="Stelle a geometria variabile" subtitle="Stelle regolabili in base al formato utilizzato" stat1="{{ cstelleageometriavariabile1 }}" stat2="{{ cstelleageometriavariabile2 }}" href="single-macchina-stelle-variabile.html" hint-size="260px,400px"></x-import>
 </div>
 <nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
@@ -314,11 +314,12 @@ a:hover{color:var(--action-primary-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      mvContPet: { value: 'Bottiglie in PET', label: 'Contenitori' },
-      mvFlusso: { value: 'Presa sul collo', label: 'Movimentazione' },
-      mvContUniv: { value: 'Multiformato', label: 'Contenitori' },
-      mvContVar: { value: 'Multiformato', label: 'Contenitori' },
-      mvCambio: { value: 'Senza cambio attrezzatura', label: 'Cambio formato' }
+      cneckhandling1: { value: 'Bottiglie in PET', label: 'Contenitori' },
+      cneckhandling2: { value: 'Presa collo', label: 'Cambio formato' },
+      cstelleuniversali1: { value: 'Cilindrici/Conici', label: 'Contenitori' },
+      cstelleuniversali2: { value: 'Senza cambio attrezzatura', label: 'Cambio formato' },
+      cstelleageometriavariabile1: { value: 'Cilindrici/Conici', label: 'Contenitori' },
+      cstelleageometriavariabile2: { value: 'Cambio parziale attrezzatura', label: 'Cambio formato' }
     };
   }
 }

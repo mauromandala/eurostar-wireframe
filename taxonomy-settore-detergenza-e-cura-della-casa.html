@@ -203,8 +203,8 @@ a:hover{color:var(--action-primary-hover)}
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.SectionKicker" hint-size="auto,20px">Esigenze di processo</x-import>
 <h2 style="margin:16px 0 40px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:18ch">Le sfide del settore detergenza e cura della casa</h2>
 <div>
-<p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--text-body);line-height:1.7">I prodotti per la cura della casa presentano formulazioni molto diverse tra loro, spesso caratterizzate da viscosità elevate, componenti schiumogene o ingredienti chimicamente aggressivi. Per questo motivo è necessario impiegare tecnologie robuste e materiali compatibili con ogni tipologia di prodotto.</p>
-<p style="margin:0;font:var(--text-body-lg);color:var(--text-body);line-height:1.7">La precisione di riempimento e la gestione della schiuma rappresentano aspetti fondamentali per garantire efficienza produttiva e qualità costante. Inoltre, la continua evoluzione del packaging richiede linee flessibili e facilmente riconfigurabili. Sistemi affidabili e automatizzati consentono di massimizzare la produttività mantenendo elevati standard qualitativi.</p>
+<p style="margin:0 0 24px;font:var(--text-body-lg);color:var(--text-body);line-height:1.7">I prodotti per la cura della casa presentano formulazioni molto diverse tra loro, spesso caratterizzate da elevata viscosità, componenti schiumogene o ingredienti chimicamente aggressivi. Per questo motivo, è necessario impiegare tecnologie affidabili e materiali compatibili con le diverse tipologie di prodotto.</p>
+<p style="margin:0;font:var(--text-body-lg);color:var(--text-body);line-height:1.7">La precisione di riempimento e la gestione della schiuma sono fondamentali per garantire efficienza produttiva e qualità costante. Inoltre, la continua evoluzione del packaging richiede linee flessibili e facilmente riconfigurabili. Sistemi affidabili e automatizzati consentono di massimizzare la produttività mantenendo elevati standard qualitativi.</p>
 </div>
 </div>
 </section>
@@ -213,9 +213,20 @@ a:hover{color:var(--action-primary-hover)}
 <section style="background:var(--surface-tint);padding:var(--space-section-y) var(--space-section-x)">
 <div style="max-width:var(--space-content-max);margin:0 auto">
 <h2 style="margin:0 0 40px;font:var(--text-display-1);color:var(--text-heading);text-transform:uppercase;max-width:16ch">Le nostre macchine</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-vol.png" name="MEC VOL" subtitle="Volumetrica meccanica" stat1="{{ prodPiatti }}" stat2="{{ vel25k }}" href="single-macchina-mec-vol.html" hint-size="260px,400px"></x-import>
-<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Volumetrica a flussimetri" stat1="{{ prodDensi }}" stat2="{{ vel25k }}" href="single-macchina-powerfill.html" hint-size="260px,400px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px">
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-mec-vol.png" name="MEC VOL" subtitle="Riempitrice volumetrica a pistone" stat1="{{ cmecvol1 }}" stat2="{{ cmecvol2 }}" href="single-macchina-mec-vol.html" hint-size="260px,400px"></x-import>
+<x-import component-from-global-scope="EurostarDesignSystem_8ffca8.MachineCard" image="assets/machine-powerfill.png" name="POWERFILL" subtitle="Riempitrice volumetrica elettronica a flussimetri" stat1="{{ cpowerfill1 }}" stat2="{{ cpowerfill2 }}" href="single-macchina-powerfill.html" hint-size="260px,400px"></x-import>
+</div>
+<div style="margin-top:clamp(48px,7vh,72px)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border-subtle)">
+<h3 style="margin:0;font:var(--text-h3);color:var(--text-heading);text-transform:uppercase">Linea Squadron <span style="font:var(--text-caption);letter-spacing:.1em;color:var(--gray-500)">— piccole e medie produzioni</span></h3>
+<a href="page-squadron.html" class="es-textlink">Scopri Squadron →</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">
+<a href="page-squadron.html" style="display:block;padding:18px 20px;background:var(--surface-card);border:1px solid var(--border-subtle);text-decoration:none"><span style="display:block;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)">Squadron</span><span style="display:block;margin-top:6px;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.02em;text-transform:uppercase;color:var(--text-heading)">VOL</span></a>
+<a href="page-squadron.html" style="display:block;padding:18px 20px;background:var(--surface-card);border:1px solid var(--border-subtle);text-decoration:none"><span style="display:block;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)">Squadron</span><span style="display:block;margin-top:6px;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.02em;text-transform:uppercase;color:var(--text-heading)">VOL.L GRANDI FORMATI</span></a>
+<a href="page-squadron.html" style="display:block;padding:18px 20px;background:var(--surface-card);border:1px solid var(--border-subtle);text-decoration:none"><span style="display:block;font:var(--text-caption);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)">Squadron</span><span style="display:block;margin-top:6px;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.02em;text-transform:uppercase;color:var(--text-heading)">RIEMPITRICE A PESO</span></a>
+</div>
 </div>
 <nav aria-label="Vai al catalogo completo" style="display:flex;justify-content:center;margin-top:clamp(40px,6vh,64px)">
 <x-import component-from-global-scope="EurostarDesignSystem_8ffca8.Button" variant="ghost" href="archive-macchine.html" hint-size="auto,52px">Vedi tutto il catalogo</x-import>
@@ -332,12 +343,10 @@ a:hover{color:var(--action-primary-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      prodPiatti: { value: 'Liquidi piatti', label: 'Prodotto' },
-      prodGassati: { value: 'Liquidi gassati', label: 'Prodotto' },
-      prodViscosi: { value: 'Prodotti viscosi', label: 'Prodotto' },
-      prodDensi: { value: 'Liquidi piatti semi-densi e densi', label: 'Prodotto' },
-      vel25k: { value: 'Fino a 25.000', label: 'Contenitori/ora' },
-      velCanfill: { value: 'Fino a 6.000', label: 'Contenitori/ora' }
+      cmecvol1: { value: 'Liquidi piatti, semi-densi e densi', label: 'Prodotto' },
+      cmecvol2: { value: 'Fino a 25.000', label: 'Contenitori/ora' },
+      cpowerfill1: { value: 'Liquidi piatti, semi-densi e densi', label: 'Prodotto' },
+      cpowerfill2: { value: 'Fino a 25.000', label: 'Contenitori/ora' }
     };
   }
 }
