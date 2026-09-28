@@ -201,7 +201,24 @@ Nel wireframe queste parti non hanno regole responsive e su mobile si rompono (s
 
 | Elemento | Problema nel wireframe | Soluzione nei template |
 |---|---|---|
-| Footer (5 colonne, tutte le pagine) | Resta a 5 colonne: pagina larga ~970px a 375, ~995px a 768 | 5 colonne sopra i 1024 → 2 colonne su tablet e mobile extra (logo e sedi a tutta riga) → 1 colonna su mobile |
+| Footer (5 colonne, tutte le pagine) | Resta a 5 colonne: pagina larga ~970px a 375, ~995px a 768; già a 1025 la griglia sfora il container (950px su 902) | Vedi "Footer — specifica" sotto (validata con prototipo CSS in browser, 28/09) |
+| Header — menu desktop | Tra 1025 e ~1180px voci + "Contattaci" non ci stanno: sfora di ~110px a 1025, ~20px a 1140; entra da ~1180 | **Da decidere**: hamburger fino a 1200 (attivare il breakpoint Elementor "tablet extra" = 1200 e usarlo come soglia del menu) oppure compattare spaziature/tracking delle voci tra 1025 e 1200 |
 | Corpo scheda macchina 65/35 (descrizione + "Richiedi un preventivo") | A 375 resta 183/99px | 1 colonna sotto i 900: box preventivo sotto la descrizione, non più sticky |
 | Corpo news editoriale 70/30 | A 375 resta 209/89px | 1 colonna sotto i 900, colonna laterale sotto |
 | Form a 2 colonne (Contatti, candidatura posizioni) | Campi larghi 71–90px a 375 | Campi a tutta larghezza su mobile |
+
+### Footer — specifica
+
+Blocchi: **Marchio** (logo + 30 anni, sedi operativa e legale), **Azienda** (4 link), **Macchine** (7), **Settori** (10), **Contatti** (email, telefono, 6 icone social).
+
+Vincoli di larghezza: "eurostarinfo@eurostar.it" (~200px) e "Sciacquatrici/Soffiatrici" (~190px) non vanno a capo; le 6 icone social in riga occupano ~266px.
+
+| Breakpoint | Griglia | Disposizione |
+|---|---|---|
+| Desktop (> 1024) | 5 colonne `1.4fr 1fr 1fr 1fr 1fr` | Marchio · Azienda · Macchine · Settori · Contatti (come il wireframe) |
+| Tablet e mobile extra (768–1024) | 3 colonne uguali | Riga 1: Marchio (2 colonne) · Contatti — Riga 2: Azienda · Macchine · Settori |
+| Mobile (≤ 767) | 2 colonne uguali | Marchio (tutta riga) → Macchine (tutta riga) → Azienda · Settori → Contatti (tutta riga) |
+
+Su tutti i breakpoint la riga delle icone social va a capo (`flex-wrap: wrap`): è quello che a 1025 fa rientrare le 5 colonne nel container, e a 768 le icone si dispongono su due righe (4 + 2). Contatti sale in prima riga su tablet e Macchine prima di Azienda su mobile: in Elementor si ottiene con l'ordine per breakpoint dei container, senza duplicare blocchi.
+
+Verificato con il prototipo a 375, 768, 900, 1025, 1280 e 1440px: nessuno scroll orizzontale, nessun testo fuori dalla propria cella.
