@@ -136,3 +136,25 @@ Modello validato su tutte le 21 macchine Eurostar del wireframe (10 Riempitrici,
 Punti aperti con la PM che possono toccare i campi: capacità ATHENA (Excel "fino a 850" vs PDF "da definire in offerta") ed EXACTA (range 200–600?), valvole Squadron (Excel "S - PS - DPS" vs PDF solo "S"), "Cambio formato" del Neck Handling, schede di dettaglio Servizi (se sì → CPT `servizio` a sé, fuori da questo file).
 
 Stessa logica (fisso → campo singolo; variabile → repeater; condizionale per tipologia) per gli altri archetipi (`single-servizio.html`, `single-news-*.html`) quando arriveranno i contenuti definitivi.
+
+---
+
+## Stato implementazione su WordPress (staging, 28/09)
+
+Tutto registrato da ACF Pro (menu ACF → Tipi di contenuto / Tassonomie / Gruppi di campi), niente codice custom: modificabile dall'admin.
+
+| Oggetto | URL | Note |
+|---|---|---|
+| CPT `macchina` | `/macchine/` (archivio), `/macchine/mec-ld/` | supports: titolo, immagine in evidenza, attributi (menu_order), revisioni. Niente editor: la descrizione è il campo ACF |
+| CPT `posizione_lavoro` | `/lavora-con-noi/<posizione>/` | Nessun archivio: il listing è la pagina "Lavora con noi" |
+| `categoria_macchina` | `/categoria-macchina/riempitrici/` | 6 termini: sciacquatrici, riempitrici, tappatrici, linee-complete, movimentazione, usate ("Macchine usate") |
+| `settore` | `/settori/vino/` | 10 termini, slug come i file del wireframe |
+| `linea` | — (non pubblica) | eurostar, squadron |
+
+Permalink del sito impostati su `/%postname%/` (erano "semplici") e `.htaccess` scritto con il blocco standard di WordPress: senza, nginx di Plesk restituiva 404 su ogni URL parlante.
+
+Field group (chiavi `group_es_*`): Categoria macchina, Settore, Macchina — dati comuni, Macchina — Contenitori (Sciacquatrici, Riempitrici, Movimentazione), Macchina — Capacità (Sciacquatrici, Riempitrici, Tappatrici), Macchina — Riempitrici, Macchina — Tappatrici, Macchina — Sistemi movimentazione, Posizione di lavoro. I gruppi condizionali usano la regola "Termine dell'articolo = categoria" e compaiono appena si spunta la categoria.
+
+Kit Elementor: 4 colori e 4 tipografie di sistema + 14 colori e 17 tipografie custom dai token del design system; testo, link e H1-H4 del Kit collegati ai globali. **Non ancora fatti** (dipendono dalla verifica atomic/classic): variabili/classi globali v4, CSS hover `es-btn` (porting di `assets/es-hover.css` sul markup reale dei widget), header/footer, template.
+
+Scheda pilota MEC LD: post in bozza con tutti i campi; mancano PDF scheda tecnica (mai ricevuto) e foto della galleria.
