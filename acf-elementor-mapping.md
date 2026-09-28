@@ -287,3 +287,109 @@ Il wireframe è già costruito in modo accessibile; i template devono conservarl
 ### Test consigliati per ogni template
 
 Scanner Ally Assistant + navigazione completa da tastiera (Tab/Shift+Tab/Invio/Esc, menu e hamburger compresi) + zoom al 200% e larghezza 320px + screen reader (VoiceOver) sulla scheda pilota MEC LD.
+
+---
+
+## Replica del wireframe in Elementor
+
+Obiettivo (utente, 28/09): il sito WordPress + Elementor è la **replica fedele del wireframe**, pagina per pagina e breakpoint per breakpoint. Si replica la **resa visiva e la semantica** (titoli, landmark, tabelle, attributi ARIA), non il DOM riga per riga: Elementor genera il proprio markup (container/wrapper), diverso tra widget atomic e classic. Scostamenti ammessi solo quelli decisi e documentati qui (footer responsive, hamburger fino a 1200px, bordo campi form in Gray 400, skip link di Hello).
+
+### Componenti del design system
+
+Nel wireframe 4 componenti sono generati da `_ds/…/_ds_bundle.js` (non sono scritti nell'HTML). Specifiche dal codice del bundle; token da `tokens/*.css` (il `readme.md` del design system descrive un prototipo precedente e ha alcuni valori superati, es. navy `#14213F`: **fanno fede i token**). In Elementor diventano classi globali (atomic) o stili salvati/preset di widget (classic), decisi dopo la verifica atomic/classic.
+
+**Button** (124 usi) — `<a>` se ha link, altrimenti `<button>`.
+
+| Proprietà | Valore |
+|---|---|
+| Base | inline-flex, centrato, gap 10px, Barlow 700, uppercase, letter-spacing .08em, nessun bordo, nessun raggio, nessun taglio d'angolo (`clip-path: none`) |
+| Taglia `lg` (default, l'unica usata) | padding 16px 30px, 14px |
+| Taglia `md` (prevista, non usata) | padding 11px 20px, 12px |
+| Transizione | background, color, transform — 0.35s `cubic-bezier(0.22,1,0.36,1)` |
+
+| Variante (usi) | Riposo | Hover (da `assets/es-hover.css`, solo mouse) |
+|---|---|---|
+| primary su chiaro (32) | fondo Blue 600 `#25387E`, testo bianco | riempimento bianco diagonale da sinistra, testo Blue 600, contorno 1px Blue 600 (`outline-offset:-1px`) |
+| primary su scuro (50) | fondo bianco, testo Navy 800 | riempimento Blue 600 diagonale, testo bianco |
+| ghost su chiaro (19) | fondo `rgba(0,0,0,.08)`, testo Navy 800 | riempimento Blue 600 diagonale, testo bianco |
+| ghost su scuro (23) | fondo `rgba(255,255,255,.1)`, testo bianco | riempimento bianco diagonale, testo Navy 800 |
+
+Riempimento diagonale: pseudo-elemento `::before` con `inset: 0 -30px`, `clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)`, da `translateX(-101%)` a `translateX(0)`; `isolation:isolate; overflow:hidden` sul pulsante. Solo `(hover:hover) and (pointer:fine)`; con riduci movimento nessuna transizione.
+
+**StatBlock** (43 usi, sempre su chiaro) — valore sopra, etichetta sotto.
+
+| Taglia | Valore | Etichetta |
+|---|---|---|
+| `lg` (12) | Barlow 900, clamp(32px,4vw,59px), line-height 0.9, Navy 800 | Roboto 400 12px, uppercase, ls .14em, Gray 500, margin-top 10px |
+| `md` (31) | Barlow 900, clamp(17px,1.7vw,22px), lh 1.15 | 11px, ls .08em, margin-top 6px |
+| `sm` (dentro MachineCard) | Barlow 900, clamp(11px,1.1vw,13px), lh 1.25 | 11px, ls .06em, margin-top 4px |
+| Su scuro (non usata) | valore bianco | etichetta Blue 300 |
+
+**SectionKicker** (81 usi) — `<p>` (non un titolo), Barlow 600 13px, uppercase, letter-spacing .26em, Blue 600 su chiaro (51) / Blue 300 su scuro (28); allineamento sinistra, centro (2) o destra.
+
+**MachineCard** (83 usi) — intera card cliccabile (`<a>`), nessun hover nel wireframe.
+
+| Parte | Specifica |
+|---|---|
+| Card | flex colonna, fondo Gray 100 `#EDEFF4`, nessun bordo/raggio/ombra |
+| Immagine | riquadro `aspect-ratio: 4/3.2`, `overflow:hidden` (nel wireframe segnaposto tratteggiato → in WP immagine in evidenza, `object-fit: cover`) |
+| Corpo | padding 20px 22px 0; nome H3 Barlow 800 clamp(22px,2vw,28px) uppercase Navy 800, margin 0 0 4px; sottotitolo (`tipologia`) Roboto 500 14px Blue 600 |
+| Riga dati | flex, gap 24px, padding 18px 22px 22px, margin-top 14px, bordo superiore 1px `--border-subtle`; 2 StatBlock `sm` a larghezza uguale (i due valori dipendono dalla categoria, vedi sez. 1) |
+
+Altri token usati dai template: ombra card in hover `0 18px 44px rgba(0,0,0,.12)` (card news, servizi, posizioni: `translateY(-6px)`), ombra pannello mega-menu `0 30px 60px rgba(0,0,0,.4)`, ombra nav `0 1px 0 rgba(0,0,0,.08)`, `--action-primary-hover` = Navy 800 (colore hover dei link).
+
+### Comportamenti interattivi
+
+Nel wireframe ci sono script inline per i comportamenti; `support.js` e `_ds_bundle.js` servono solo a disegnare i componenti del wireframe e **non vanno portati** in WordPress.
+
+| Comportamento | Dove | Nel wireframe | In WordPress (proposta) |
+|---|---|---|---|
+| Menu hamburger | tutte | pannello a tutto schermo, chiusura con Esc, `aria-expanded` | Widget menu Elementor (soglia "tablet extra" 1200px); verificare Esc, focus e annuncio apertura |
+| Mega-menu | tutte (desktop) | pannello a tutta larghezza sotto la nav, caret con `aria-expanded`/`aria-controls`, chiusura Esc e clic fuori, riposizionato al resize | Mega Menu di Elementor Pro (contenuto = template); se non replica la chiusura con Esc/clic fuori: piccolo script |
+| Ricerca | tutte | pannello di ricerca aperto da pulsante nella barra alta | Widget Search di Elementor Pro in modalità pannello/overlay |
+| Galleria scheda macchina | 21 schede | immagine principale + 4 miniature (`role="tab"`) | Widget galleria/carosello con miniature, alimentato dal campo `galleria`; navigazione da tastiera |
+| Filtro catalogo | archivio macchine | tab per categoria che filtrano la griglia in pagina, messaggio "nessun risultato" | Loop Grid + Taxonomy Filter di Elementor Pro (Linee complete e Usate restano link) |
+| Filtro News | archivio news | tab per categoria che filtrano in pagina | Loop Grid + Taxonomy Filter |
+| Nastro loghi (marquee) | home | scorrimento continuo, pausa al passaggio del mouse, **pulsante pausa/play** | Carosello continuo o CSS + piccolo script; il pulsante pausa va mantenuto (WCAG 2.2.2) |
+| Carosello news | home | traccia scorrevole con frecce | Loop Carousel di Elementor Pro |
+| Torna su | tutte (footer) | pulsante `#es-back-to-top` | Pulsante con link a `#top` / piccolo script, rispetta riduci movimento |
+| WhatsApp flottante | tutte | cerchio verde 52px fisso in basso a destra, `aria-label="Scrivici su WhatsApp"` | Pulsante nel template footer con posizione fissa |
+| Form | Contatti, Lavora con noi, 5 posizioni | invio con validazione → `page-conferma.html` | Form di Elementor Pro, redirect alla pagina Conferma; servono destinatari e testo privacy dal cliente |
+| Sidebar posizione | 5 posizioni | sticky (statica sotto 900px) | Impostazione sticky del container |
+| Effetti hover | tutte | `es-hover.css` + regole inline (link, card, pillole) | Custom CSS del Kit / classi globali |
+
+### Inventario pagine → WordPress
+
+59 file nel wireframe: 58 pagine del sito + `index.html` (indice del wireframe, non va replicato).
+
+| Pagine wireframe | N. | In WordPress |
+|---|---|---|
+| `home.html` | 1 | Pagina "Home" (pagina iniziale) |
+| `single-macchina*.html` | 21 | **Template Single** `macchina` (linea Eurostar), dati dai 21 post già importati |
+| `taxonomy-macchina-sciacquatrici/riempitrici/tappatrici/movimentazione` | 4 | **Template Archivio** `categoria_macchina` (uno per le 4 categorie con macchine) |
+| `taxonomy-macchina-linee-complete`, `-usate` | 2 | Template archivio dedicati (contenuto proprio, nessuna macchina sotto) |
+| `taxonomy-settore*.html` | 10 | **Template Archivio** `settore` |
+| `archive-macchine.html` | 1 | Archivio del CPT (`/macchine/`) con filtro per categoria |
+| `archive-settori.html` | 1 | Pagina "Settori" (elenco dei 10 settori) |
+| `page-squadron.html` | 1 | Pagina "Squadron" (card ATHENA/EXACTA + resto della gamma, raggruppato come nel wireframe) |
+| `page-lavora-con-noi.html` | 1 | Pagina "Lavora con noi" (griglia posizioni + candidatura spontanea) |
+| `single-posizione-lavoro-*.html` | 5 | **Template Single** `posizione_lavoro` (contenuti da inserire nei 5 post) |
+| `archive-servizi.html` | 1 | Pagina "Servizi e post-vendita" |
+| `single-servizio.html` | 1 | **Da decidere**: non è linkata da nessuna pagina del sito (punto aperto dal 23/09; legato alla domanda a Serena sulle card Servizi) |
+| `archive-news.html`, `single-news-articolo.html`, `single-news-editoriale.html` | 3 | Articoli WordPress (`post`) + categorie news: archivio e 2 varianti di template single — modello dati da definire |
+| `page-chi-siamo`, `page-contatti`, `page-referenze`, `page-cataloghi` | 4 | Pagine statiche |
+| `page-conferma.html` | 1 | Pagina "Conferma" (destinazione dei form) |
+| `404.html` | 1 | Template 404 |
+| Header, footer | — | Template Theme Builder globali |
+
+### Ordine di costruzione (dopo WPML e verifica atomic/classic)
+
+1. Classi/stili globali dei 4 componenti + CSS hover (`es-hover.css` riscritto sul markup reale).
+2. Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
+3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
+4. Loop Item (4 varianti card + card compatta Squadron), archivi categoria, archivio settore, catalogo.
+5. Pagine: Home, Squadron, Servizi, Chi siamo, Contatti, Referenze, Cataloghi, Settori, Lavora con noi + posizioni, Conferma, 404.
+6. News (dopo aver definito il modello dati).
+7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
+
+Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati allo stesso viewport; screenshot + confronto degli stili calcolati per elemento (dimensioni, spaziature, colori, font).
