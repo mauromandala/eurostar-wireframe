@@ -160,3 +160,48 @@ Kit Elementor: 4 colori e 4 tipografie di sistema + 14 colori e 17 tipografie cu
 Layout a due livelli, come nel wireframe (`tokens/spacing.css`): sezione esterna a tutta larghezza (sfondo da bordo a bordo) con padding laterale `--space-section-x` clamp(20px,6vw,80px) e verticale `--space-section-y` clamp(64px,10vh,140px) / `-lg` clamp(96px,16vh,190px); dentro, contenuto centrato a 1360px, o 1180px (`--space-content-max-narrow`) nelle sezioni strette. Il padding di sezione e la variante 1180 **non** vanno nel padding di default del Kit, che si applicherebbe anche ai container annidati: si impostano sui container di sezione nei template (classe/preset, dopo la verifica atomic/classic). **Non ancora fatti** (dipendono dalla verifica atomic/classic): variabili/classi globali v4, CSS hover `es-btn` (porting di `assets/es-hover.css` sul markup reale dei widget), header/footer, template.
 
 Scheda pilota MEC LD: post in bozza con tutti i campi; mancano PDF scheda tecnica (mai ricevuto) e foto della galleria.
+
+---
+
+## Responsive
+
+Rilevato sul wireframe (media query su tutte le pagine + prova in browser a 375/768/1024px, 28/09).
+
+### Breakpoint Elementor (Kit, impostati)
+
+| Breakpoint Elementor | Valore | Soglia wireframe |
+|---|---|---|
+| Tablet | ≤ 1024px | 1024 — menu hamburger |
+| Mobile extra | ≤ 900px | 900 — layout a colonna singola |
+| Mobile | ≤ 767px | 560 del wireframe, applicata a 767 (nessun breakpoint in più) |
+
+Sistema di breakpoint unico per widget atomic e classic: non dipende dalla verifica del punto 4.
+
+### Comportamenti definiti dal wireframe
+
+| Soglia | Elemento | Comportamento |
+|---|---|---|
+| Tablet (1024) | Header | Menu → hamburger con pannello a tutto schermo (fondo Navy 950, voci 16px con divisori, CTA Contattaci a tutta larghezza in fondo); mega-menu e relativi caret nascosti |
+| Mobile extra (900) | Testata scheda macchina (`es-product-hero`) | 2 colonne → 1 (testo sopra, galleria sotto) |
+| Mobile extra (900) | Sidebar posizione di lavoro | Da sticky a statica |
+| Mobile extra (900) | Home — blocco diagonale | 1 colonna, niente taglio diagonale; pannello testo sopra, immagine sotto (min 280px) |
+| Mobile extra (900) | Home — macchine in evidenza | 1 colonna, gap 48px, senza bordo sinistro |
+| Mobile extra (900) | Griglia settori, griglia team (Chi siamo) | 2 colonne |
+| Mobile (767) | Barra alta — link assistenza | Nascosto |
+| Mobile (767) | Griglia settori, griglia team | 1 colonna |
+| Oltre 900 | Home — sezione "ingegnere" | Composizione assoluta (bottiglia centrale, claim, 4 statistiche agli angoli); sotto i 900 le statistiche tornano nel flusso |
+| Tutte | Titoli, testi, spaziature | Fluidi con `clamp()` (preset tipografici del Kit, padding sezione `--space-section-x/y`): nessuna variante per breakpoint da impostare a mano |
+| Tutte | Griglie di card | `repeat(auto-fill/auto-fit, minmax(220–340px, 1fr))`: vanno a capo da sole. In Elementor: Loop Grid/griglia con colonne per breakpoint equivalenti, o griglia CSS auto-fit su atomic |
+
+Miniature galleria: restano 4 in riga anche su mobile (voluto).
+
+### Lacune del wireframe — da risolvere nei template WordPress (decisione 28/09)
+
+Nel wireframe queste parti non hanno regole responsive e su mobile si rompono (scroll orizzontale fino a ~600px): **non si corregge il wireframe**, si risolvono direttamente nei template.
+
+| Elemento | Problema nel wireframe | Soluzione nei template |
+|---|---|---|
+| Footer (5 colonne, tutte le pagine) | Resta a 5 colonne: pagina larga ~970px a 375, ~995px a 768 | 5 colonne sopra i 1024 → 2 colonne su tablet e mobile extra (logo e sedi a tutta riga) → 1 colonna su mobile |
+| Corpo scheda macchina 65/35 (descrizione + "Richiedi un preventivo") | A 375 resta 183/99px | 1 colonna sotto i 900: box preventivo sotto la descrizione, non più sticky |
+| Corpo news editoriale 70/30 | A 375 resta 209/89px | 1 colonna sotto i 900, colonna laterale sotto |
+| Form a 2 colonne (Contatti, candidatura posizioni) | Campi larghi 71–90px a 375 | Campi a tutta larghezza su mobile |
