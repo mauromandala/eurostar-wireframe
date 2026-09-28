@@ -469,3 +469,14 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati allo stesso viewport; screenshot + confronto degli stili calcolati per elemento (dimensioni, spaziature, colori, font).
 
 **Novamira Design (DESIGN.md) non usato** (decisione 28/09): la specifica resta il wireframe + Kit Elementor + questa mappatura. Un design attivo in Novamira sarebbe una seconda fonte di verità da tenere allineata, e i suoi controlli "anti-slop" fissi segnalano come errore il trattino lungo (—), presente in molti testi approvati del wireframe.
+
+---
+
+## Scheda pilota MEC LD — stato (28/09, in corso)
+
+- **Template Theme Builder** "Scheda macchina" (ID 237, tipo single-post, condizione `include/singular/macchina`). Costruzione mista: struttura, titoli, testi, pulsanti atomic con 28 classi globali `es-*` (il label diventa il nome della classe nell'HTML); dati per categoria via shortcode FluentSnippets (`1-eurostar-scheda-macchina-shortcode.php`: breadcrumb, adatta per, contenitori, descrizione+valvole, caratteristiche, download, galleria; etichette in WPML String Translation, contesto "Eurostar template"). Valori in evidenza atomic con condizioni "campo non vuoto". CSS componenti + hover diagonale pulsanti nel Custom CSS del Kit.
+- **Verificato a 1440px contro il wireframe**: coordinate, dimensioni, font e colori coincidono al pixel (testata, corpo 65/35, tabella, riquadro laterale, invito finale). Scostamenti voluti: galleria senza miniature finché mancano le foto (testata −155px); sezione Download nascosta senza PDF. Responsive: 1 colonna sotto 900px, nessun overflow a 768/375/320px. Provate anche EAGLE C, Stelle universali, Twist Rinser, DUALFILL (righe tabella, adatta per, valvole, download corretti).
+- **Correzioni Kit fatte**: preset titoli senza letter-spacing (il wireframe non lo usa); body Roboto 400 16px, `line-height: normal`.
+- **Stato contenuti**: MEC LD **pubblicata** (staging non indicizzato); le altre 34 in bozza.
+- **Attenzione FluentSnippets**: il codice di uno snippet PHP deve iniziare con `<?php` (l'intestazione chiude il blocco PHP); senza, il codice viene stampato in pagina — successo per ~2 minuti il 28/09, corretto.
+- **Da fare**: verificare in browser l'hover dei pulsanti; registrare le stringhe del template in WPML (`wpml_page_builder_register_strings` sul post 237) e provare la versione EN; link pulsanti ora a `/contatti/` (URL fisso) → collegare alla pagina Contatti quando esiste; redirect delle singole Squadron verso la pagina Squadron; controllo accessibilità (tastiera, scanner Ally); poi header/footer.
