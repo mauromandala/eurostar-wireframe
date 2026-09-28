@@ -465,3 +465,5 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
 
 Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati allo stesso viewport; screenshot + confronto degli stili calcolati per elemento (dimensioni, spaziature, colori, font).
+
+**Novamira Design (DESIGN.md) non usato** (decisione 28/09): la specifica resta il wireframe + Kit Elementor + questa mappatura. Un design attivo in Novamira sarebbe una seconda fonte di verità da tenere allineata, e i suoi controlli "anti-slop" fissi segnalano come errore il trattino lungo (—), presente in molti testi approvati del wireframe.
