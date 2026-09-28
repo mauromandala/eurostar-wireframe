@@ -171,7 +171,8 @@ Rilevato sul wireframe (media query su tutte le pagine + prova in browser a 375/
 
 | Breakpoint Elementor | Valore | Soglia wireframe |
 |---|---|---|
-| Tablet | ≤ 1024px | 1024 — menu hamburger |
+| Tablet extra | ≤ 1200px | Nessuna nel wireframe: soglia del menu hamburger (vedi lacune) |
+| Tablet | ≤ 1024px | 1024 — nel wireframe soglia del menu hamburger, anticipata a 1200 |
 | Mobile extra | ≤ 900px | 900 — layout a colonna singola |
 | Mobile | ≤ 767px | 560 del wireframe, applicata a 767 (nessun breakpoint in più) |
 
@@ -181,7 +182,7 @@ Sistema di breakpoint unico per widget atomic e classic: non dipende dalla verif
 
 | Soglia | Elemento | Comportamento |
 |---|---|---|
-| Tablet (1024) | Header | Menu → hamburger con pannello a tutto schermo (fondo Navy 950, voci 16px con divisori, CTA Contattaci a tutta larghezza in fondo); mega-menu e relativi caret nascosti |
+| Tablet extra (1200; 1024 nel wireframe) | Header | Menu → hamburger con pannello a tutto schermo (fondo Navy 950, voci 16px con divisori, CTA Contattaci a tutta larghezza in fondo); mega-menu e relativi caret nascosti |
 | Mobile extra (900) | Testata scheda macchina (`es-product-hero`) | 2 colonne → 1 (testo sopra, galleria sotto) |
 | Mobile extra (900) | Sidebar posizione di lavoro | Da sticky a statica |
 | Mobile extra (900) | Home — blocco diagonale | 1 colonna, niente taglio diagonale; pannello testo sopra, immagine sotto (min 280px) |
@@ -202,7 +203,7 @@ Nel wireframe queste parti non hanno regole responsive e su mobile si rompono (s
 | Elemento | Problema nel wireframe | Soluzione nei template |
 |---|---|---|
 | Footer (5 colonne, tutte le pagine) | Resta a 5 colonne: pagina larga ~970px a 375, ~995px a 768; già a 1025 la griglia sfora il container (950px su 902) | Vedi "Footer — specifica" sotto (validata con prototipo CSS in browser, 28/09) |
-| Header — menu desktop | Tra 1025 e ~1180px voci + "Contattaci" non ci stanno: sfora di ~110px a 1025, ~20px a 1140; entra da ~1180 | **Da decidere**: hamburger fino a 1200 (attivare il breakpoint Elementor "tablet extra" = 1200 e usarlo come soglia del menu) oppure compattare spaziature/tracking delle voci tra 1025 e 1200 |
+| Header — menu desktop | Tra 1025 e ~1180px voci + "Contattaci" non ci stanno: sfora di ~110px a 1025, ~20px a 1140; entra da ~1180 | **Hamburger fino a 1200px** (decisione 28/09): breakpoint "tablet extra" = 1200 attivo nel Kit, da usare come soglia del menu nel template header. Il pannello hamburger è lo stesso del wireframe sotto i 1024 |
 | Corpo scheda macchina 65/35 (descrizione + "Richiedi un preventivo") | A 375 resta 183/99px | 1 colonna sotto i 900: box preventivo sotto la descrizione, non più sticky |
 | Corpo news editoriale 70/30 | A 375 resta 209/89px | 1 colonna sotto i 900, colonna laterale sotto |
 | Form a 2 colonne (Contatti, candidatura posizioni) | Campi larghi 71–90px a 375 | Campi a tutta larghezza su mobile |
