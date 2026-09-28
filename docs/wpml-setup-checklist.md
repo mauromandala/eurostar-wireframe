@@ -17,6 +17,7 @@ Principio guida: **installare e configurare WPML all'inizio dello sviluppo, non 
 - [ ] Installare WPML Multilingual CMS + moduli: **WPML String Translation**, **WPML Translation Management**, **WPML CMS Nav** (per tradurre i menu), **ACF Multilingual** (modulo dedicato, separato dal core)
 - [ ] Aggiungere IT e EN in *WPML → Languages*, IT come lingua di default
 - [ ] Language switcher: attivarlo nell'header al posto del toggle statico IT/EN già presente nel wireframe (oggi è solo testo, non funzionale)
+- [ ] Language switcher accessibile (WCAG 3.1.2, 4.1.2): ogni voce con nome completo per gli screen reader ("Italiano", "English" — anche se a schermo restano "IT"/"EN"), attributi `lang` e `hreflang` sulla voce ("it"/"en"), `aria-current="true"` sulla lingua attiva, niente bandiere senza testo. Nel wireframe oggi sono link `it`/`en` senza nessuno di questi attributi
 - [ ] Verificare compatibilità nella pagina *WPML → Support*: deve risultare "compatibile" sia Elementor Pro sia ACF Pro (icona verde) prima di procedere oltre
 - [ ] **Verificare se la compatibilità copre anche i widget atomic di Elementor Pro 4.x** (il nuovo sistema, non solo la struttura classic/legacy): se *WPML → Support* segnala compatibilità solo per classic, o ci sono issue note sugli atomic, decidere subito se costruire i template in classic invece di atomic — prima di iniziare la scheda pilota MEC LD, non dopo aver costruito le 21 schede macchina
 
@@ -97,6 +98,15 @@ Se si vuole automatizzare parte del lavoro invece di tradurre tutto a mano:
 - [ ] Non affidare a ATE la traduzione dei nomi macchina (MEC LD, GEMINI/F-IES, ecc.) — sono nomi commerciali, vanno esclusi dalla coda di traduzione automatica o marcati come "non tradurre"
 
 ## 11. Test prima del go-live
+
+Accessibilità in EN (vedi sezione Accessibilità di `acf-elementor-mapping.md`):
+
+- [ ] Pagine EN con `<html lang="en-US">` (o `en`), non `it-IT`
+- [ ] Testi alternativi delle immagini tradotti (modulo **WPML Media Translation**: l'alt vive nella Libreria media, non nel post)
+- [ ] Skip link, widget Ally, messaggi di errore dei form e `aria-label` custom (breadcrumb, selettore lingua, icone social) tradotti in EN — sono stringhe, passano da String Translation
+- [ ] `<title>` delle pagine EN tradotto (Yoast + WPML SEO)
+
+Generali:
 
 - [ ] Cambiare lingua da ogni tipologia di pagina (home, categoria macchina, scheda macchina, settore, pagina statica) e verificare che il language switcher porti alla pagina EN corrispondente, non alla home EN
 - [ ] Verificare che "Le nostre macchine" dei settori e le griglie delle categorie mostrino le macchine EN e non quelle IT quando si è in lingua EN

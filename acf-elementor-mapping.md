@@ -223,3 +223,46 @@ Vincoli di larghezza: "eurostarinfo@eurostar.it" (~200px) e "Sciacquatrici/Soffi
 Su tutti i breakpoint la riga delle icone social va a capo (`flex-wrap: wrap`): è quello che a 1025 fa rientrare le 5 colonne nel container, e a 768 le icone si dispongono su due righe (4 + 2). Contatti sale in prima riga su tablet e Macchine prima di Azienda su mobile: in Elementor si ottiene con l'ordine per breakpoint dei container, senza duplicare blocchi.
 
 Verificato con il prototipo a 375, 768, 900, 1025, 1280 e 1440px: nessuno scroll orizzontale, nessun testo fuori dalla propria cella.
+
+---
+
+## Accessibilità (WCAG)
+
+Requisito del cliente: sito accessibile secondo WCAG (richiesta: 2.0). Livello di riferimento: **AA**. Versione: vedi "Decisioni aperte" in fondo alla sezione.
+
+### Già impostato sul sito (28/09)
+
+- `<html lang="it-IT">` (lingua WordPress it_IT); viewport senza blocco dello zoom.
+- Landmark del tema Hello: `header`, `main#content`, `footer`.
+- **Ally** di Elementor (`pojo-accessibility` 4.1.4, abbonamento fino al 06/2027) attivo: widget di regolazione sul front-end, skip link "Salta al contenuto" verso `#content`, modulo di correzione automatica (`remediation-module.js`), scanner Assistant nella dashboard.
+- Kit → Custom CSS: focus da tastiera visibile su tutti gli elementi interattivi (`outline: 2px solid currentColor; outline-offset: 2px`) e `prefers-reduced-motion` che annulla transizioni e animazioni.
+- Contrasto palette verificato (rapporti calcolati): tutte le coppie testo/sfondo usate nel wireframe ≥ 4,5:1 (testo body 8,2:1, footer 72% su Navy 950 10,2:1, copyright 50% su Navy 950 5,3:1). Unico colore sotto soglia: **Gray 400** (3,4:1 su bianco), mai usato per testo nel wireframe → rinominato nel Kit "solo bordi/decorazioni, NON per testo".
+- Breakpoint e specifiche responsive (sezione Responsive): nessuno scroll orizzontale fino a 375px — per il reflow a 320px (criterio 1.4.10, WCAG 2.1) i calcoli sul footer tornano, da provare sui template.
+
+### Pattern del wireframe da mantenere nei template
+
+Il wireframe è già costruito in modo accessibile; i template devono conservarlo, non semplificarlo:
+
+| Pattern | Nel wireframe | Nei template |
+|---|---|---|
+| Un solo H1 per pagina, titoli in ordine | 59/59 pagine | H1 = titolo post/termine; kicker e label non vanno fatti con tag heading |
+| Skip link | `.es-skip-link` su 58 pagine | Quello di Ally (verificarne la raggiungibilità con Tab sui template: nel DOM ha `tabindex="-1"`, e il banner cookie prende il focus per primo) |
+| Menu e mega-menu | `aria-expanded` + `aria-controls` sui caret, chiusura con Esc | Da riverificare sul widget menu scelto (atomic/classic), inclusa la navigazione da tastiera del pannello hamburger |
+| Breadcrumb | `<ol>` con `aria-label="Breadcrumb"` | Idem (widget Breadcrumb di Yoast o Elementor) + `aria-current="page"` sull'ultima voce |
+| Tab (Caratteristiche, filtri News) | `role="tablist"`/`role="tab"` + `aria-selected` | Idem; i filtri News devono annunciare il cambio di risultati |
+| Tabelle caratteristiche | `<th scope="row">` | Tabella HTML vera, non griglia di div |
+| Icone decorative (contenitori, frecce, social) | `aria-hidden="true"`; icone contenitori con `role="img"` + `aria-label` | Idem; le icone social hanno `aria-label` (LinkedIn, WhatsApp…) |
+| Link download | Tipo e peso nel testo: "Scheda tecnica MEC LD (PDF, 2.4 MB)" | Idem, generato dal campo file ACF |
+| Form | 14/14 campi con `<label for>`; focus 2px | Elementor Form: label visibili (non solo placeholder), errori testuali associati al campo, campi obbligatori indicati anche a testo |
+| Galleria | Miniature `role="tab"` con `aria-label` | Galleria navigabile da tastiera, testo alternativo per ogni immagine |
+
+### Regole di contenuto
+
+- **Testo alternativo**: ogni immagine caricata (galleria macchina, immagine settore, layout Linee complete) va compilata con il testo alternativo nella Libreria media — ACF ed Elementor lo leggono da lì. Immagini puramente decorative: alt vuoto.
+- **PDF schede tecniche**: sono documenti esterni; per WCAG vanno resi accessibili (tag, ordine di lettura) o affiancati dai dati in HTML — la tabella Caratteristiche della scheda copre già i dati principali.
+- **Lingua delle parti**: nomi commerciali delle macchine restano invariati; eventuali frasi in inglese dentro pagine IT vanno marcate con `lang="en"`.
+
+### Decisioni aperte
+
+1. **Versione WCAG**: 2.0 AA (richiesta) o 2.1 AA (riferimento attuale in Italia/UE, EN 301 549; include tutta la 2.0 + criteri mobile). Differenza pratica emersa finora: con 2.1 il bordo dei campi form (`--border-subtle`, 1,37:1) non basta per il criterio 1.4.11 → usare Gray 400 (3,43:1).
+2. **Widget Ally sul front-end**: un widget di regolazione (overlay) non rende conforme il sito e il modulo di correzione automatica può mascherare problemi durante i test. Da decidere se tenerlo visibile al lancio; lo scanner Assistant resta utile in ogni caso per controllare i template.
