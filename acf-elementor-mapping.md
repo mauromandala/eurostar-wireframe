@@ -360,6 +360,76 @@ Nel wireframe ci sono script inline per i comportamenti; `support.js` e `_ds_bun
 | Sidebar posizione | 5 posizioni | sticky (statica sotto 900px) | Impostazione sticky del container |
 | Effetti hover | tutte | `es-hover.css` + regole inline (link, card, pillole) | Custom CSS del Kit / classi globali |
 
+### Specifiche dettagliate dei comportamenti
+
+Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--duration-fast` 0.2s, `--duration-base` 0.35s, `--ease-standard` `cubic-bezier(0.22,1,0.36,1)`. Nel wireframe **non ci sono** animazioni allo scroll (nessun reveal, nessun parallax, nessun video): l'unica animazione continua è il nastro loghi in home.
+
+**Header — struttura** (tutte le pagine)
+
+- Ordine: skip link → barra alta → pannelli mega-menu (fuori dalla nav, `position: fixed`) → nav.
+- **Barra alta** (non fissa, scorre via): fondo Navy 950, padding 8px `clamp(20px,4vw,56px)`, testo caption. A sinistra punto 7px Blue 400 + "Rispondiamo entro 24 ore lavorative — assistenza tecnica IT/EN" (nascosto sotto i 560px → nel sito sotto i 767px); a destra, gap 16px: link "Catalogo" con icona, divisore 1×14px bianco 20%, selettore lingua (Barlow 700 12px, ls .14em, maiuscolo; lingua attiva bianca, l'altra bianco 50%, separatore "-" al 40%), divisore, pulsante ricerca.
+- **Nav** (`position: sticky; top: 0; z-index: 50`): fondo Navy 800, padding 18px `clamp(20px,4vw,56px)`, flex con spazio tra. Logo: bianco 40px di altezza + divisore 1×28px bianco 30% + logo "30 anni" 32px, gap 16px. Voci: gap `clamp(16px,2.2vw,32px)`, ordine Azienda · Macchine ▾ · Settori ▾ · Servizi · Referenze · Squadron · News · **Contattaci**.
+- **Voce di menu**: Barlow 700 13px, ls .14em, maiuscolo, bianco al 75% di opacità, padding-bottom 6px. Hover: bianco pieno + riga 2px bianca che cresce da sinistra (`scaleX` 0→1, 0.35s). Voce attiva (pagina corrente o sua sezione): opacità 1, peso 800, riga 2px **Blue 300** sempre visibile. Focus: contorno 2px bianco, offset 4px.
+- **CTA "Contattaci"**: blocco Blue 600 a tutta altezza della nav, attaccato al bordo destro (margini negativi pari al padding della nav), padding 18px `clamp(20px,4vw,56px)` 18px 28px. Hover: riempimento bianco diagonale da sinistra, testo Blue 600 (da `es-hover.css`).
+
+**Mega-menu** (Macchine, Settori — solo desktop)
+
+- Si apre con il **caret** (pulsante 18×18px accanto alla voce, `aria-expanded`, `aria-controls`, `aria-haspopup`, `aria-label="Mostra sottomenu …"`); la voce stessa resta un link alla pagina. Caret ruota di 180° quando aperto.
+- Pannello: `position: fixed`, a tutta larghezza, `top` = bordo inferiore della nav (ricalcolato al resize), fondo bianco, bordo superiore 1px, ombra `0 30px 60px rgba(0,0,0,.4)`, padding 44px `--space-section-x`, altezza massima `100vh − 100px` con scroll. Entrata: opacità 0→1 e `translateY(-12px)`→0 in 0.35s.
+- Contenuto su griglia 1360px, colonne `1.1fr 1fr 1fr 1fr`, gap 56px: (1) titolo + testo + link "Vedi tutto…"; (2) e (3) liste di link con titolo H3 (14px), voci Roboto 14px con riga divisoria; (4) box in evidenza su fondo Gray 050 (immagine 4:3, titolo H4 15px, testo, link "Scopri…").
+  - Macchine: Per tipologia (Sciacquatrici/Soffiatrici, Riempitrici, Tappatrici, Squadron, Sistemi movimentazione contenitori) · Per esigenza (Linee complete, Macchine usate, Ricambi e assistenza, Soluzioni per settore) · evidenza CANFILL.
+  - Settori: Bevande (Vino, Birra, Liquori, Bevande e succhi, Acqua) · Altri settori (Olio alimentare, Alimenti e condimenti, Cosmetica…, Detergenza…, Chimico…) · evidenza Vino.
+- Chiusura: nuovo clic sul caret, clic fuori dal pannello, **Esc** (il focus torna al caret). Un solo pannello aperto alla volta.
+- Sotto la soglia hamburger: caret e pannelli nascosti (nel menu mobile restano solo le voci principali, come nel wireframe).
+
+**Menu hamburger** (fino a 1200px nel sito; 1024 nel wireframe)
+
+- Pulsante 44×44px, 3 linee 24×2px bianche (gap 5px); aperto → X (prima linea `translateY(7px) rotate(45deg)`, seconda sparisce, terza `translateY(-7px) rotate(-45deg)`), 0.35s. `aria-expanded` + `aria-label` "Apri il menu" / "Chiudi il menu".
+- Pannello a tutto schermo, fondo Navy 950, padding 110px 28px 40px, entra da destra (`translateX(100%)`→0, 0.35s), scroll interno. Voci 16px, padding 18px 0, divisori 1px bianco 40%; CTA "Contattaci" in fondo, a larghezza piena, padding 16px 24px, margin-top 28px.
+- Esc chiude e riporta il focus sul pulsante.
+
+**Ricerca** (barra alta)
+
+- Pulsante 26×26px con icona, `aria-expanded`, `aria-controls`, `aria-haspopup`, `aria-label="Apri la ricerca"`.
+- Pannello sotto il pulsante, allineato a destra, 280px, fondo bianco, bordo 1px, ombra pannello, padding 16px; entrata opacità + `translateY(-8px)`→0 in 0.35s. All'apertura il focus va nel campo.
+- Form `role="search"`: label nascosta "Cerca nel sito", campo (placeholder "Cerca macchine, settori…"), pulsante invio 34×34 Blue 600 (`aria-label="Avvia la ricerca"`).
+- Chiusura: clic fuori, Esc (focus torna al pulsante). In WP la ricerca deve cercare anche nel CPT `macchina`.
+
+**Galleria scheda macchina**
+
+- Immagine principale 4:3 + 4 miniature quadrate in griglia (gap 10px), sotto 12px. Miniatura attiva: bordo e testo Blue 600; `role="tab"` + `aria-selected`; focus 2px Blue 600.
+- Clic su miniatura → cambia l'immagine principale (nessuna transizione nel wireframe). In WP le immagini vengono dal campo `galleria` (max 4); testo alternativo di ogni immagine dalla Libreria media.
+
+**Filtri catalogo e News**
+
+- Riga di tab (Barlow 700 12px, ls .1em, maiuscolo, Gray 500, padding 12px 4px, gap 28px, a capo se non entrano); tab attiva: Navy 800 con bordo inferiore 2px Blue 600.
+- Catalogo: Tutte · Sciacquatrici/Soffiatrici · Riempitrici · Tappatrici · *Linee complete* · Sistemi movimentazione contenitori · *Usate* (le due in corsivo sono link alle rispettive pagine, non filtri). News: Tutte · Novità · Fiere ed eventi · Casi studio.
+- Il filtro nasconde/mostra le card in pagina, senza ricaricare; se non resta nulla compare "Nessuna macchina in questa categoria." (centrato, Body MD, Gray 500). Sotto la griglia: paginazione.
+- Accessibilità, da migliorare rispetto al wireframe: i filtri sono marcati come `role="tab"` senza pannello associato e due "tab" sono link. Nel sito: pulsanti con `aria-pressed` (o il markup del Taxonomy Filter di Elementor) + annuncio del numero di risultati in una regione `aria-live`.
+
+**Nastro loghi clienti** (home)
+
+- Riga con etichetta a sinistra ("Scelti da produttori in oltre 100 paesi", eyebrow bianco 50%) e nastro a destra. I "loghi" sono **nomi dei clienti in testo** (29 nomi), non immagini.
+- Scorrimento continuo verso sinistra, 34s lineare, infinito (lista duplicata con la copia `aria-hidden`, animazione `translateX(0 → -50%)`), bordi sfumati con maschera (trasparente → pieno all'8% e al 92%), gap `clamp(32px,5vw,64px)`.
+- Pausa al passaggio del mouse e con il **pulsante pausa/play** (40×40 tondo, fondo bianco 10%, bordo bianco 40%, `aria-pressed`, `aria-label` "Metti in pausa…"/"Riprendi lo scorrimento dei loghi", icona che cambia). Con riduci movimento: fermo.
+
+**Carosello News** (home)
+
+- Traccia orizzontale con `scroll-snap` (x mandatory), barra di scorrimento nascosta, `role="region"` `aria-label="Ultime news"`, focalizzabile. Card: 1 per riga sotto i 760px, 3 per riga sopra (`calc(33.333% − 16px)`), gap 24px.
+- Frecce precedente/successivo: tonde 44px, bordo `--border-subtle-strong`, fondo bianco (hover Gray 050); scorrono di una card (larghezza card + 24px), scorrimento morbido.
+- Card news: immagine 16:10, padding 24px, riga categoria + data (spec label, Blue 600 / Gray 500), titolo H3, estratto Body MD; hover `translateY(-6px)` + ombra card.
+
+**Torna su** (footer) — pulsante 44×26px, bordo bianco 40%, raggio 14px; scroll in cima morbido (istantaneo con riduci movimento).
+
+**WhatsApp flottante** (tutte le 58 pagine) — link a `https://wa.me/393453450371`, nuova scheda, cerchio 52px `#25D366`, icona bianca, fisso a 20px da destra e dal basso, `z-index: 60`, ombra `0 6px 20px rgba(0,0,0,.25)`, `aria-label` e `title` "Scrivici su WhatsApp".
+
+**Form**
+
+- Contatti: 13 campi tutti obbligatori (`required`, asterisco nell'etichetta): Tipo di richiesta (select), Nome, Cognome, Azienda, Paese, Email, Telefono, Oggetto richiesta, Tipo di prodotto, Tipo di contenitore, Contenitori/ora indicativi, Messaggio (textarea), consenso "Ho letto e accetto la Privacy Policy" (il link oggi è `#`: manca la pagina Privacy).
+- Campi: fondo bianco, padding 12px 14px, Body SM, testo Navy 800, focus 2px Blue 600; bordo **Gray 400** nel sito (WCAG 2.1, vedi Accessibilità).
+- Invio → pagina Conferma. Posizioni di lavoro: campo nascosto con il titolo della posizione.
+- **Sidebar candidatura** (5 posizioni): fondo Gray 050, padding `clamp(32px,3.6vw,44px)`, `position: sticky; top: 110px` (sotto la nav fissa), statica sotto i 900px.
+
 ### Inventario pagine → WordPress
 
 59 file nel wireframe: 58 pagine del sito + `index.html` (indice del wireframe, non va replicato).
