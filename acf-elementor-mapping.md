@@ -228,13 +228,14 @@ Verificato con il prototipo a 375, 768, 900, 1025, 1280 e 1440px: nessuno scroll
 
 ## Accessibilità (WCAG)
 
-Requisito del cliente: sito accessibile secondo WCAG (richiesta: 2.0). Livello di riferimento: **AA**. Versione: vedi "Decisioni aperte" in fondo alla sezione.
+Requisito del cliente: sito accessibile. Riferimento deciso il 28/09: **WCAG 2.1 livello AA** (richiesta iniziale 2.0; la 2.1 la include e aggiunge i criteri per mobile/zoom — è il riferimento della EN 301 549).
 
 ### Già impostato sul sito (28/09)
 
 - `<html lang="it-IT">` (lingua WordPress it_IT); viewport senza blocco dello zoom.
 - Landmark del tema Hello: `header`, `main#content`, `footer`.
-- **Ally** di Elementor (`pojo-accessibility` 4.1.4, abbonamento fino al 06/2027) attivo: widget di regolazione sul front-end, skip link "Salta al contenuto" verso `#content`, modulo di correzione automatica (`remediation-module.js`), scanner Assistant nella dashboard.
+- **Ally** di Elementor (`pojo-accessibility` 4.1.4, abbonamento fino al 06/2027): **widget sul front-end spento durante lo sviluppo** (decisione 28/09, da riconsiderare al lancio). Si usa lo **scanner Assistant** per controllare i template; le correzioni automatiche proposte dall'Assistant **non vanno approvate** in sviluppo — i problemi si correggono nei template, altrimenti i test misurano le toppe e non il markup.
+- **Skip link**: quello di Ally è **spento** perché nel codice del plugin ha `tabindex="-1"` fisso — verificato in browser: con Tab non si raggiunge mai (criterio 2.4.1). Riattivato lo skip link nativo di Hello "Vai al contenuto" → `#content`: primo elemento raggiunto con Tab, visibile al focus, con Invio porta nel contenuto (verificato). **Vincolo per i template Theme Builder**: quando un template Elementor sostituisce il contenuto del tema, il `<main id="content">` di Hello non c'è più → il container principale di ogni template single/archive/pagina va impostato con tag HTML `main` e ID `content`, altrimenti lo skip link punta al vuoto.
 - Kit → Custom CSS: focus da tastiera visibile su tutti gli elementi interattivi (`outline: 2px solid currentColor; outline-offset: 2px`) e `prefers-reduced-motion` che annulla transizioni e animazioni.
 - Contrasto palette verificato (rapporti calcolati): tutte le coppie testo/sfondo usate nel wireframe ≥ 4,5:1 (testo body 8,2:1, footer 72% su Navy 950 10,2:1, copyright 50% su Navy 950 5,3:1). Unico colore sotto soglia: **Gray 400** (3,4:1 su bianco), mai usato per testo nel wireframe → rinominato nel Kit "solo bordi/decorazioni, NON per testo".
 - Breakpoint e specifiche responsive (sezione Responsive): nessuno scroll orizzontale fino a 375px — per il reflow a 320px (criterio 1.4.10, WCAG 2.1) i calcoli sul footer tornano, da provare sui template.
@@ -246,14 +247,14 @@ Il wireframe è già costruito in modo accessibile; i template devono conservarl
 | Pattern | Nel wireframe | Nei template |
 |---|---|---|
 | Un solo H1 per pagina, titoli in ordine | 59/59 pagine | H1 = titolo post/termine; kicker e label non vanno fatti con tag heading |
-| Skip link | `.es-skip-link` su 58 pagine | Quello di Ally (verificarne la raggiungibilità con Tab sui template: nel DOM ha `tabindex="-1"`, e il banner cookie prende il focus per primo) |
+| Skip link | `.es-skip-link` su 58 pagine | Quello nativo di Hello ("Vai al contenuto"), già attivo; container principale del template = `<main id="content">` |
 | Menu e mega-menu | `aria-expanded` + `aria-controls` sui caret, chiusura con Esc | Da riverificare sul widget menu scelto (atomic/classic), inclusa la navigazione da tastiera del pannello hamburger |
 | Breadcrumb | `<ol>` con `aria-label="Breadcrumb"` | Idem (widget Breadcrumb di Yoast o Elementor) + `aria-current="page"` sull'ultima voce |
 | Tab (Caratteristiche, filtri News) | `role="tablist"`/`role="tab"` + `aria-selected` | Idem; i filtri News devono annunciare il cambio di risultati |
 | Tabelle caratteristiche | `<th scope="row">` | Tabella HTML vera, non griglia di div |
 | Icone decorative (contenitori, frecce, social) | `aria-hidden="true"`; icone contenitori con `role="img"` + `aria-label` | Idem; le icone social hanno `aria-label` (LinkedIn, WhatsApp…) |
 | Link download | Tipo e peso nel testo: "Scheda tecnica MEC LD (PDF, 2.4 MB)" | Idem, generato dal campo file ACF |
-| Form | 14/14 campi con `<label for>`; focus 2px | Elementor Form: label visibili (non solo placeholder), errori testuali associati al campo, campi obbligatori indicati anche a testo |
+| Form | 14/14 campi con `<label for>`; focus 2px; bordo campi `--border-subtle` (1,37:1) | Elementor Form: label visibili (non solo placeholder), errori testuali associati al campo, campi obbligatori indicati anche a testo. **Bordo campi in Gray 400 (3,43:1)** per il criterio 1.4.11 di WCAG 2.1 — scostamento voluto dal wireframe |
 | Galleria | Miniature `role="tab"` con `aria-label` | Galleria navigabile da tastiera, testo alternativo per ogni immagine |
 
 ### Regole di contenuto
@@ -262,7 +263,12 @@ Il wireframe è già costruito in modo accessibile; i template devono conservarl
 - **PDF schede tecniche**: sono documenti esterni; per WCAG vanno resi accessibili (tag, ordine di lettura) o affiancati dai dati in HTML — la tabella Caratteristiche della scheda copre già i dati principali.
 - **Lingua delle parti**: nomi commerciali delle macchine restano invariati; eventuali frasi in inglese dentro pagine IT vanno marcate con `lang="en"`.
 
-### Decisioni aperte
+### Decisioni (28/09)
 
-1. **Versione WCAG**: 2.0 AA (richiesta) o 2.1 AA (riferimento attuale in Italia/UE, EN 301 549; include tutta la 2.0 + criteri mobile). Differenza pratica emersa finora: con 2.1 il bordo dei campi form (`--border-subtle`, 1,37:1) non basta per il criterio 1.4.11 → usare Gray 400 (3,43:1).
-2. **Widget Ally sul front-end**: un widget di regolazione (overlay) non rende conforme il sito e il modulo di correzione automatica può mascherare problemi durante i test. Da decidere se tenerlo visibile al lancio; lo scanner Assistant resta utile in ogni caso per controllare i template.
+1. **WCAG 2.1 AA.** Conseguenze pratiche finora: bordo campi form in Gray 400; reflow a 320px da verificare sui template (criterio 1.4.10).
+2. **Widget Ally spento in sviluppo**, da decidere al lancio: un widget di regolazione non rende conforme il sito, la conformità sta nel markup dei template.
+3. **Skip link di Hello al posto di quello di Ally** (vedi sopra).
+
+### Test consigliati per ogni template
+
+Scanner Ally Assistant + navigazione completa da tastiera (Tab/Shift+Tab/Invio/Esc, menu e hamburger compresi) + zoom al 200% e larghezza 320px + screen reader (VoiceOver) sulla scheda pilota MEC LD.

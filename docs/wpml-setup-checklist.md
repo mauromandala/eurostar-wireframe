@@ -103,7 +103,8 @@ Accessibilità in EN (vedi sezione Accessibilità di `acf-elementor-mapping.md`)
 
 - [ ] Pagine EN con `<html lang="en-US">` (o `en`), non `it-IT`
 - [ ] Testi alternativi delle immagini tradotti (modulo **WPML Media Translation**: l'alt vive nella Libreria media, non nel post)
-- [ ] Skip link, widget Ally, messaggi di errore dei form e `aria-label` custom (breadcrumb, selettore lingua, icone social) tradotti in EN — sono stringhe, passano da String Translation
+- [ ] Skip link di Hello: in EN deve leggere "Skip to content" (stringa del tema, segue la lingua attiva — verificare)
+- [ ] Messaggi di errore dei form e `aria-label` custom (breadcrumb, selettore lingua, icone social) tradotti in EN — sono stringhe, passano da String Translation; widget Ally solo se riattivato al lancio
 - [ ] `<title>` delle pagine EN tradotto (Yoast + WPML SEO)
 
 Generali:
