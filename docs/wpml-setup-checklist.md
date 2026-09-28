@@ -18,6 +18,7 @@ Principio guida: **installare e configurare WPML all'inizio dello sviluppo, non 
 - [ ] Aggiungere IT e EN in *WPML → Languages*, IT come lingua di default
 - [ ] Language switcher: attivarlo nell'header al posto del toggle statico IT/EN già presente nel wireframe (oggi è solo testo, non funzionale)
 - [ ] Verificare compatibilità nella pagina *WPML → Support*: deve risultare "compatibile" sia Elementor Pro sia ACF Pro (icona verde) prima di procedere oltre
+- [ ] **Verificare se la compatibilità copre anche i widget atomic di Elementor Pro 4.x** (il nuovo sistema, non solo la struttura classic/legacy): se *WPML → Support* segnala compatibilità solo per classic, o ci sono issue note sugli atomic, decidere subito se costruire i template in classic invece di atomic — prima di iniziare la scheda pilota MEC LD, non dopo aver costruito le 21 schede macchina
 
 ## 3. CPT `macchina` (tassonomia `Categoria macchina`)
 

@@ -57,7 +57,7 @@ Field group ACF con location "Taxonomy Term = Settore".
 
 ## 3. Macchina (`single-macchina*.html`)
 
-Il post `macchina` ha un field group **comune** e field group **condizionali per Categoria macchina**. Ordine = `menu_order` nativo (colonna "Ordine" dell'Excel: 2.1 → 1, 2.2 → 2…).
+Il post `macchina` ha un field group **comune** e field group **condizionali per Categoria macchina**. Ordine = `menu_order` nativo (colonna "Ordine" dell'Excel: 2.1 → 1, 2.2 → 2…), non un campo ACF: si imposta nel riquadro Attributi pagina/post standard di WP, niente plugin di riordino aggiuntivo. La Loop Grid di ogni categoria (vedi 1.) filtra già per `categoria_macchina` = quel termine, poi ordina per Menu Order ascendente — quindi i valori devono essere coerenti solo *all'interno* di ciascuna categoria, non univoci sull'intero catalogo. Vale finché ogni macchina ha una categoria primaria unica (dati Excel attuali); se in futuro una macchina comparisse in più categorie con ordini diversi, `menu_order` da solo non basterebbe (è un valore per post, non per categoria).
 
 ### 3.1 Campi comuni (tutte le macchine)
 
