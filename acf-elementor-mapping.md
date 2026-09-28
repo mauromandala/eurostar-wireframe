@@ -269,6 +269,10 @@ Il wireframe è già costruito in modo accessibile; i template devono conservarl
 2. **Widget Ally spento in sviluppo**, da decidere al lancio: un widget di regolazione non rende conforme il sito, la conformità sta nel markup dei template.
 3. **Skip link di Hello al posto di quello di Ally** (vedi sopra).
 
+### A carico del referente SEO
+
+- Titolo del sito (Impostazioni → Generali): oggi "Eurostar Handmade With Love", compare nel `<title>` di ogni pagina (criterio 2.4.2 "Titolo della pagina"). Da sostituire prima del lancio insieme alla configurazione Yoast.
+
 ### Test consigliati per ogni template
 
 Scanner Ally Assistant + navigazione completa da tastiera (Tab/Shift+Tab/Invio/Esc, menu e hamburger compresi) + zoom al 200% e larghezza 320px + screen reader (VoiceOver) sulla scheda pilota MEC LD.
