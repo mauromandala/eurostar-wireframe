@@ -20,31 +20,45 @@ Principio guida: **installare e configurare WPML all'inizio dello sviluppo, non 
 - [ ] Verificare compatibilità nella pagina *WPML → Support*: deve risultare "compatibile" sia Elementor Pro sia ACF Pro (icona verde) prima di procedere oltre
 - [ ] **Verificare se la compatibilità copre anche i widget atomic di Elementor Pro 4.x** (il nuovo sistema, non solo la struttura classic/legacy): se *WPML → Support* segnala compatibilità solo per classic, o ci sono issue note sugli atomic, decidere subito se costruire i template in classic invece di atomic — prima di iniziare la scheda pilota MEC LD, non dopo aver costruito le 21 schede macchina
 
-## 3. CPT `macchina` (tassonomia `Categoria macchina`)
+## 3. CPT `macchina` e tassonomie `categoria_macchina` / `linea`
 
-- [ ] *WPML → Settings → Post Types Translation*: impostare CPT `macchina` su **"Translatable"** (non "Translate only using Translation Editor" a meno che si scelga fin da subito ATE — vedi punto 9)
-- [ ] Stessa tassonomia `Categoria macchina` su **"Translatable"** nella stessa schermata
-- [ ] Tradurre i 5-7 termini della tassonomia (Riempitrici, Tappatrici, Sciacquatrici/Soffiatrici, Sistemi movimentazione contenitori, Linee complete, Usate, Etichettatrici se riattivata) **prima** di iniziare a tradurre i singoli post macchina — altrimenti ogni post EN nasce senza categoria assegnata e va corretto a mano
+- [ ] *WPML → Settings → Post Types Translation*: impostare CPT `macchina` su **"Translatable"** (non "Translate only using Translation Editor" a meno che si scelga fin da subito ATE — vedi punto 10)
+- [ ] Tassonomia `categoria_macchina` su **"Translatable"** nella stessa schermata
+- [ ] Tradurre i 6 termini di `categoria_macchina` (Sciacquatrici/Soffiatrici, Riempitrici, Tappatrici, Linee complete, Sistemi movimentazione contenitori, Usate) **prima** di iniziare a tradurre i singoli post macchina — altrimenti ogni post EN nasce senza categoria assegnata e va corretto a mano
+- [ ] Tassonomia `linea` (Eurostar / Squadron): **"Translatable"** con termini tradotti a nome identico — sono nomi di brand, ma il termine EN deve esistere perché le query "Le nostre macchine" e i template filtrano per `linea` anche in lingua EN
 
-## 4. CPT `settore`
+## 4. Tassonomia `settore` (campi ACF sul termine)
 
-- [ ] CPT `settore` su "Translatable"
-- [ ] Nessuna tassonomia da tradurre qui (i 10 settori sono post singoli, non termini)
+- [ ] Tassonomia `settore` su "Translatable"
+- [ ] Tradurre i 10 termini (con i loro campi ACF, vedi punto 5) **prima** delle macchine, per lo stesso motivo di `categoria_macchina`: "Adatta per" e "Le nostre macchine" leggono i settori assegnati al post
+
+## 4b. CPT Posizione di lavoro
+
+- [ ] CPT su "Translatable" — solo se le posizioni aperte vanno pubblicate anche in EN (da decidere col cliente: annunci di lavoro locali possono restare solo IT)
 
 ## 5. ACF Pro — modalità di sincronizzazione per campo
 
 Il punto dove i progetti WPML+ACF sbagliano più spesso: ogni campo va impostato esplicitamente su **Translate**, **Copy** o **Copy once**, altrimenti WPML applica un default che quasi sempre è sbagliato. Configurare in *WPML → Settings → Custom Fields Translation*:
 
+Nomi dei campi come in `acf-elementor-mapping.md`.
+
 | Campo ACF | Dove | Modalità | Perché |
 |---|---|---|---|
-| Intro categoria/settore, "Le sfide del settore", descrizione tecnica macchina, tipo riempimento/chiusura, prodotto, materiale, velocità | term field / CPT `settore` / CPT `macchina` | **Translate** | Testo da tradurre riga per riga |
-| Ordine di visualizzazione (numero) | term field / CPT `settore` | **Copy** | Stesso ordine in entrambe le lingue, non ha senso tradurlo |
-| Contenitori, "Adatta per" (se ACF Select/Checkbox su valori fissi) | CPT `macchina` | **Copy** se le opzioni restano identificatori interni tradotti a livello di label; **Translate** se il valore salvato è testo libero | Verificare come sono implementati i field choices prima di scegliere — con choices fissi tradurre le *label* in String Translation (punto 7), non il campo |
-| Relationship "Le nostre macchine" (settore → macchine correlate) | CPT `settore` | **Copy**, ma vedi nota sotto | I relationship field ACF salvano ID di post — WPML deve rimappare l'ID IT sull'equivalente EN. Serve che ogni macchina collegata abbia già la sua traduzione EN pubblicata, altrimenti la relazione punta al post IT anche nella pagina EN |
-| Repeater "Esempi di layout" (Linee complete) — sub-campo immagine | CPT `settore`/term | **Copy** | Stessa immagine in entrambe le lingue |
-| Repeater "Esempi di layout" — sub-campo didascalia | idem | **Translate** | Testo |
-| Allegati (scheda tecnica PDF, layout CAD) | CPT `macchina` | **Copy**, salvo che Eurostar fornisca PDF separati in EN | Se in futuro arrivano PDF tradotti, passare a **Translate** solo per quel campo |
-| Immagini/gallery macchina | CPT `macchina` | **Copy** | Stesse foto |
+| `intro`, `descrizione` | termine `categoria_macchina` | **Translate** | Testo |
+| `intro`, `sfide_1`, `sfide_2` | termine `settore` | **Translate** | Testo |
+| `tipologia`, `descrizione`, `contenitori`, `prodotto`, `prodotto_breve`, `tecnologia_riempimento`, `tipologia_chiusura`, `cambio_formato`, `contenitori_ora` | CPT `macchina` | **Translate** | Testo libero (anche `contenitori_ora` contiene parole, es. "Fino a 850") |
+| `ordine` | termini `categoria_macchina` e `settore` | **Copy** | Stesso ordine in entrambe le lingue |
+| `tipologia_valvole` | CPT `macchina` | **Copy** | Sigle tecniche (S - PS - DPS…), identiche in EN |
+| `contenitori_tipi` (checkbox Vetro/PET/HDPE/Lattina) | CPT `macchina` | **Copy** | Il valore salvato è un identificatore fisso: tradurre solo le *label* delle scelte in String Translation (punto 7) |
+| `immagine` | termine `settore` | **Copy** | Stessa immagine |
+| `layout` (repeater Linee complete) — sub-campo immagine | termine `categoria_macchina` | **Copy** | Stessa immagine |
+| `layout` — sub-campi titolo e didascalia | idem | **Translate** | Testo |
+| `scheda_tecnica` (PDF) | CPT `macchina` | **Copy**, salvo che Eurostar fornisca PDF separati in EN | Se arrivano PDF tradotti, passare a **Translate** solo per quel campo |
+| `galleria` | CPT `macchina` | **Copy** | Stesse foto |
+| Reparto, Sede, sezioni della scheda (repeater) | CPT Posizione di lavoro | **Translate** | Testo (solo se il CPT è tradotto, punto 4b) |
+| Rif./Job ID, Tipo di contratto (select) | CPT Posizione di lavoro | **Copy** | Identificatore / scelta fissa: label del select in String Translation |
+
+"Adatta per" e "Le nostre macchine" non sono campi ACF ma termini `settore` assegnati al post e query sulle tassonomie: non serve nessun relationship field da rimappare, basta che termini e macchine EN esistano (punti 3-4).
 
 - [ ] Rifare questo giro di configurazione ogni volta che si aggiunge un nuovo field group — non è una configurazione "una tantum", va tenuta aggiornata insieme ad `acf-elementor-mapping.md`
 
@@ -85,6 +99,6 @@ Se si vuole automatizzare parte del lavoro invece di tradurre tutto a mano:
 ## 11. Test prima del go-live
 
 - [ ] Cambiare lingua da ogni tipologia di pagina (home, categoria macchina, scheda macchina, settore, pagina statica) e verificare che il language switcher porti alla pagina EN corrispondente, non alla home EN
-- [ ] Verificare che i relationship field (settore → macchine correlate) mostrino i post EN e non quelli IT quando si è in lingua EN
+- [ ] Verificare che "Le nostre macchine" dei settori e le griglie delle categorie mostrino le macchine EN e non quelle IT quando si è in lingua EN
 - [ ] Verificare i form (Contatti, Lavora con noi) in EN: label, validazione, e-mail di conferma
 - [ ] Controllare che nessuna pagina EN sia rimasta "non tradotta" e stia silenziosamente mostrando il fallback IT (capita spesso con pagine aggiunte dopo il primo giro di configurazione)
