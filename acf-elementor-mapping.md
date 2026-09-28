@@ -159,7 +159,17 @@ Kit Elementor: 4 colori e 4 tipografie di sistema + 14 colori e 17 tipografie cu
 
 Layout a due livelli, come nel wireframe (`tokens/spacing.css`): sezione esterna a tutta larghezza (sfondo da bordo a bordo) con padding laterale `--space-section-x` clamp(20px,6vw,80px) e verticale `--space-section-y` clamp(64px,10vh,140px) / `-lg` clamp(96px,16vh,190px); dentro, contenuto centrato a 1360px, o 1180px (`--space-content-max-narrow`) nelle sezioni strette. Il padding di sezione e la variante 1180 **non** vanno nel padding di default del Kit, che si applicherebbe anche ai container annidati: si impostano sui container di sezione nei template (classe/preset, dopo la verifica atomic/classic). **Non ancora fatti** (dipendono dalla verifica atomic/classic): variabili/classi globali v4, CSS hover `es-btn` (porting di `assets/es-hover.css` sul markup reale dei widget), header/footer, template.
 
-Scheda pilota MEC LD: post in bozza con tutti i campi; mancano PDF scheda tecnica (mai ricevuto) e foto della galleria.
+**Catalogo importato (28/09)**: 35 post `macchina` in bozza — 21 Eurostar (2 Sciacquatrici, 10 Riempitrici, 6 Tappatrici, 3 Movimentazione) + 14 Squadron (categoria Riempitrici, linea Squadron). Fonte: Excel PM VER 25.09 (1), normalizzato come nel wireframe e confrontato campo per campo con le pagine del wireframe; valori riletti dal database dopo l'import, nessuna differenza. Ordine (`menu_order`) come colonna "Ordine" dell'Excel; Squadron nell'ordine delle righe Excel.
+
+Scelte dell'import:
+- Differenze Excel/wireframe risolte con il valore del wireframe (MEC SI contenitori, MAXIMA tecnologia, nome "Sistema Neck Handling"); MEC LP contenitori = "Bottiglie in vetro, PET, HDPE e alluminio" (l'Excel ha due versioni). ATHENA ed EXACTA prodotto = "Liquidi gassati e piatti" (decisione utente 28/09; il PDF ATHENA indica solo "Gassato").
+- La riga "Tipologia di valvole isobariche: …" delle descrizioni (MEC ISO, SKILLFILL, DUALFILL, ATHENA, EXACTA) è nel campo `tipologia_valvole`, non più nella descrizione.
+- Squadron: **14 post separati** (come Excel e pagine settore); il raggruppamento "Olympia A / SA", "Olympia AV A / SA", "Evox / Evox Plus / Evox CM" della pagina Squadron si risolve nel template. Nomi in maiuscolo come Excel. Contenitori (icone) di ATHENA/EXACTA ricavati dal testo; gli altri 12 modelli hanno solo nome e settori.
+- Slug dai nomi file del wireframe (`/macchine/gemini-f/`, `/macchine/eagle-va/`, `/macchine/stelle-variabile/`…); Squadron dal nome (`/macchine/vol-l-grandi-formati/`).
+- PDF nella Libreria media: TWIST RINSER (ID 157), ATHENA (158), EXACTA (159), collegati al campo `scheda_tecnica`. Le altre 18 schede elencate nell'Excel non sono mai arrivate: Download nascosto finché mancano.
+- Nessuna immagine: foto e gallerie da caricare quando disponibili (con testo alternativo).
+
+Punti aperti con Serena caricati con il valore dell'Excel: capacità ATHENA (850) ed EXACTA (600), valvole ATHENA/EXACTA (S - PS - DPS), Neck Handling "Cambio formato: Presa collo".
 
 ---
 
@@ -272,6 +282,7 @@ Il wireframe è già costruito in modo accessibile; i template devono conservarl
 ### A carico del referente SEO
 
 - Titolo del sito (Impostazioni → Generali): oggi "Eurostar Handmade With Love", compare nel `<title>` di ogni pagina (criterio 2.4.2 "Titolo della pagina"). Da sostituire prima del lancio insieme alla configurazione Yoast.
+- Slug delle macchine e basi URL (`/macchine/`, `/categoria-macchina/`, `/settori/`): impostati per lo sviluppo (vedi Stato implementazione), da confermare prima del lancio.
 
 ### Test consigliati per ogni template
 
