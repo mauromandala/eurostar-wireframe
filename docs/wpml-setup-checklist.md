@@ -6,20 +6,27 @@ Principio guida: **installare e configurare WPML all'inizio dello sviluppo, non 
 
 ---
 
+> **Stato 28/09**: sezioni 1-2 fatte (salvo language switcher, che si costruisce con l'header). Setup eseguito via codice con gli stessi endpoint della procedura guidata di WPML, dopo export del DB in `/var/www/vhosts/eurostar.demoengagemint.it/es-backup/db-pre-wpml-setup-2026-09-28.sql` (fuori dalla webroot).
+
 ## 1. Prima di installare
 
-- [ ] Confermare con Novamira/hosting che la licenza WPML è attiva (Multilingual CMS, non solo Blog — serve CMS per i CPT) e i moduli **String Translation**, **Translation Management**, **ACF Multilingual** sono inclusi nel pacchetto acquistato
-- [ ] Decidere la struttura URL: `/en/...` (sottocartella, consigliato — non richiede un secondo dominio/sottodominio) vs parametro `?lang=en` (sconsigliato, peggiore per SEO)
-- [ ] Decidere se EN userà uno slug tradotto per ogni pagina (es. `/en/machines/` invece di `/en/macchine/`) o lo stesso slug IT — impatta il lavoro di traduzione slug-by-slug più avanti
+- [x] Licenza WPML registrata sul sito. Installati e attivi: **WPML Multilingual CMS 5.0.2**, **WPML String Translation 5.0.2**, **ACF Multilingual 5.0.0**. Translation Management e la traduzione dei menu (ex CMS Nav) sono inclusi nel core da WPML 4.5
+- [x] Struttura URL: **directory** — IT alla radice, EN sotto `/en/` (verificato: `/en/` risponde 200)
+- [ ] Slug tradotti in EN o identici: la traduzione degli slug è attiva in WPML, la scelta dei singoli slug EN resta al referente SEO
 
 ## 2. Installazione e configurazione base
 
-- [ ] Installare WPML Multilingual CMS + moduli: **WPML String Translation**, **WPML Translation Management**, **WPML CMS Nav** (per tradurre i menu), **ACF Multilingual** (modulo dedicato, separato dal core)
-- [ ] Aggiungere IT e EN in *WPML → Languages*, IT come lingua di default
+- [x] Procedura guidata completata: lingua originale **italiano**, traduzione **inglese**, modalità **"Traduci alcuni contenuti"** (niente traduzione automatica di tutto), chi traduce **"io stesso"**, editor **Advanced Translation Editor**. Condivisione dati con il supporto WPML non attivata. Contenuti esistenti assegnati all'italiano (35 macchine, 6 categorie, 10 settori, 2 linee, pagine)
+- [ ] **WPML Media Translation** (traduzione dei testi alternativi): non installato — da aggiungere prima di tradurre le immagini
+- [ ] La procedura ha attivato il selettore lingua di WPML **nel footer**: disattivarlo quando l'header con il selettore vero è pronto
+- [x] Aggiungere IT e EN in *WPML → Languages*, IT come lingua di default
 - [ ] Language switcher: attivarlo nell'header al posto del toggle statico IT/EN già presente nel wireframe (oggi è solo testo, non funzionale)
 - [ ] Language switcher accessibile (WCAG 3.1.2, 4.1.2): ogni voce con nome completo per gli screen reader ("Italiano", "English" — anche se a schermo restano "IT"/"EN"), attributi `lang` e `hreflang` sulla voce ("it"/"en"), `aria-current="true"` sulla lingua attiva, niente bandiere senza testo. Nel wireframe oggi sono link `it`/`en` senza nessuno di questi attributi
 - [ ] Verificare compatibilità nella pagina *WPML → Support*: deve risultare "compatibile" sia Elementor Pro sia ACF Pro (icona verde) prima di procedere oltre
 - [ ] **Verificare se la compatibilità copre anche i widget atomic di Elementor Pro 4.x** (il nuovo sistema, non solo la struttura classic/legacy): se *WPML → Support* segnala compatibilità solo per classic, o ci sono issue note sugli atomic, decidere subito se costruire i template in classic invece di atomic — prima di iniziare la scheda pilota MEC LD, non dopo aver costruito le 21 schede macchina
+  - **Esito sul codice (28/09)**: WPML 5.0.2 supporta esplicitamente gli atomic — `AutoConfig/Processors/AtomicWidgetProcessor.php` registra per la traduzione i controlli `text`/`textarea`/`link` di ogni widget atomic; `DynamicContent/Strings.php` gestisce i dynamic tag v4 (es. campi ACF); `V4/Hooks.php` rimappa sulle traduzioni i link interni e i component v4; `media/modules/AtomicStyles.php` traduce le immagini negli stili. Classi globali e variabili non servono (sono stili).
+  - **Lato Elementor**: `e_atomic_elements` = beta, `e_opt_in_v4` = alpha, `e_pro_atomic_form` = dev. Il rischio è la maturità di Elementor v4, non WPML. Il form resta comunque il widget Form classic.
+  - **Da fare**: prova pratica su pagina di test (widget atomic + dynamic tag ACF + link interno → traduzione EN → verifica front-end), poi decisione atomic/classic
 
 ## 3. CPT `macchina` e tassonomie `categoria_macchina` / `linea`
 
