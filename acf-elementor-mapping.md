@@ -1,75 +1,119 @@
-# Mappatura ACF + Elementor Pro — Categoria macchina, Categoria settore, Scheda macchina
+# Mappatura ACF + Elementor Pro — modello dati catalogo
 
-Fonte di verità unica per lo sviluppo WordPress dei tre archetipi dinamici del catalogo — riferimento da dare in pasto a Novamira: ogni blocco del wireframe ha qui una controparte 1:1 in un campo ACF + widget Elementor Pro nativo, verificata contro i file HTML realmente pubblicati (non solo contro l'Excel). Nessuna soluzione custom dove esiste già un widget nativo. Dati macchina/settore aggiornati secondo `Eurostar - Schema dati catalogo (per PM).xlsx` (15-09), che sostituisce a sua volta `SEZIONE MACCHINE.xlsx` e `SETTORI MACCHINE 14-09-26.xlsx`, e secondo le modifiche testuali di `Modifiche sito 19.9` (Serena).
+Fonte di verità per lo sviluppo WordPress del catalogo (macchine, categorie, settori, linea Squadron). Ogni blocco del wireframe ha qui una controparte 1:1 in un campo ACF + widget Elementor Pro nativo (atomic dove disponibile). Aggiornata al 28/09 sui dati di `Eurostar - Schema dati catalogo_VER 25.09.xlsx` (versione del 26/09), `Modifiche sito 25.9.docx` e risposte email di Serena del 26/09, che sostituiscono lo schema del 15-09 e le modifiche del 19.9.
 
 ## Principio guida
 
-Dove il numero di elementi è **fisso e noto** (contenitori, stats, download) si usano campi ACF singoli o checkbox, non repeater — mantiene la struttura predicibile e i template Elementor più semplici da mantenere. Il repeater è riservato ai soli casi in cui il contenuto è realmente variabile in numero. Dove lo schema del PM differenzia i campi **per tipologia** (es. la tabella "Caratteristiche principali" ha 5 campi per le Riempitrici, 2 per le Tappatrici, 2 per le Sciacquatrici/Soffiatrici, nessuna per i Sistemi movimentazione contenitori), serve un field group ACF condizionale per tassonomia — non un unico group uguale per tutto il CPT.
+- **Un solo CPT `macchina`** per Eurostar e Squadron: nessuna eccezione scheda per scheda. Le differenze tra tipologie si gestiscono con field group ACF condizionali per Categoria macchina, non con template o post type diversi.
+- Dove il numero di elementi è **fisso e noto** (contenitori, download, righe della tabella) si usano campi singoli o checkbox, non repeater. Il repeater è riservato ai contenuti realmente variabili in numero (layout Linee complete, galleria).
+- Ogni dato si inserisce **una volta sola**: se compare sia in testata sia in tabella Caratteristiche (Contenitori, Contenitori/ora, Prodotto), il campo è uno e il template lo richiama in due punti.
+
+## Schema riassuntivo
+
+| Oggetto WP | Tipo | Rappresenta | Pagine wireframe |
+|---|---|---|---|
+| `macchina` | CPT | Ogni macchina Eurostar e Squadron (21 Eurostar + 14 Squadron) | `single-macchina*.html`, card in categorie/settori/home, `page-squadron.html` |
+| `categoria_macchina` | Tassonomia gerarchica su `macchina` | Sciacquatrici/Soffiatrici, Riempitrici, Tappatrici, Linee complete, Sistemi movimentazione contenitori, Usate | `taxonomy-macchina-*.html`, mega-menu, filtri catalogo |
+| `settore` | Tassonomia su `macchina` (con campi ACF sul termine) | I 10 settori di lancio | `taxonomy-settore*.html`, pillole "Adatta per", mega-menu |
+| `linea` | Tassonomia su `macchina` | Eurostar / Squadron | Raggruppamento in "Le nostre macchine" dei settori, pagina Squadron |
+
+Settore passa da CPT (vecchia versione di questo file) a **tassonomia con campi sul termine**: così "Le nostre macchine" si ricava in automatico dai settori assegnati a ogni macchina, senza una relazione da tenere allineata a mano in due punti. Intro e sfide stanno comodamente in campi ACF del termine.
 
 ---
 
 ## 1. Categoria macchina (`taxonomy-macchina-*.html`)
 
-Fonte: `Eurostar - Schema dati catalogo (per PM).xlsx`, foglio **Categoria macchina** (ordine voci catalogo, intro, campi preview per tipologia).
+Field group ACF con location "Taxonomy Term = Categoria macchina".
 
-CPT/tassonomia: termine della tassonomia **Categoria macchina** collegata al CPT `macchina` (Riempitrici, Tappatrici, Sciacquatrici/Soffiatrici, Sistemi movimentazione contenitori, Etichettatrici*, Linee complete, Usate). WordPress permette di agganciare campi ACF a un termine di tassonomia (Field Group con location "Taxonomy Term" = Categoria macchina): non serve un CPT separato.
-
-| Blocco wireframe | Campo ACF | Widget Elementor Pro nativo | Note |
+| Blocco wireframe | Campo | Widget Elementor | Note |
 |---|---|---|---|
-| H1 / intro categoria | Nome = term name nativo; intro = ACF Text (term field) | Heading / Text con Dynamic Tag → Taxonomy Term Field | |
-| Ordine nel menu/catalogo | ACF Number (term field) | — (governa solo l'ordinamento della query, non un widget) | Dall'Excel: 1 Sciacquatrici/Soffiatrici, 2 Riempitrici, 3 Tappatrici, 4 Linee complete, 5 Usate — "Sistemi movimentazione contenitori" è una categoria aggiunta dopo lo schema Excel, ordine da confermare col PM |
-| "La gamma {categoria}" — griglia macchine | Nessun campo diretto: relazione automatica (tutti i post CPT `macchina` con questo termine) | Loop Grid filtrato per tassonomia | |
-| Link alla categoria — **due comportamenti diversi** | — | Mega-menu Macchine e footer → link diretto alla pagina della singola categoria (archivio per quel termine di tassonomia). Tab categoria dentro `archive-macchine.html` (catalogo generale) → **non sono link**, filtrano in pagina la stessa Loop Grid senza reload (vedi riga "Filtri catalogo/tab categoria" in sez. 02) | Le due cose sembrano ridondanti ma non lo sono: dal mega-menu/footer l'utente arriva già sulla pagina categoria filtrata; dal catalogo generale filtra senza uscire dalla pagina. Eccezione: i tab "Linee complete" e "Usate" nel catalogo restano link alla pagina dedicata anche lì, perché non hanno CPT Macchina sotto da filtrare |
-| Campi mostrati sulla preview card | Nessun campo term-level: la preview pesca 2 dei campi già definiti sulla Scheda macchina (sez. 3), scelti per tipologia | Loop Item Template con Dynamic Tag condizionale | Confermato dal cliente (Modifiche sito 19.9): **Riempitrici** → nome, tipologia, prodotto da riempire, campo di produzione gamma; **Tappatrici** → nome, tipologia, tipo di chiusura, campo di produzione gamma; **Sciacquatrici/Soffiatrici** → contenitori, campo di produzione gamma (ora 2 macchine: MEC SI + Twist Rinser); **Sistemi movimentazione contenitori** → nessun campo dati strutturato da pescare (la scheda macchina non ha Caratteristiche), la preview card usa solo nome + sottotitolo — 4 varianti di Loop Item Template |
-| Categoria "Linee complete" | Descrizione (ACF Text/Wysiwyg, term field) + ACF Repeater "Esempi di layout" (immagine + didascalia per elemento), **nessuna scheda tecnica** | Text Editor + Image Gallery/Loop Grid (repeater) con caption | Esplicitamente diversa dalle altre categorie nello schema Excel — non ha CPT `macchina` sotto, resta pagina a contenuto statico/term description. Aggiornato 23/09: i 3 riquadri MachineCard segnaposto (Free-standing/Monoblocco/Uniblocco, dati fittizi) sono stati sostituiti con 2 layout tecnici reali forniti dal cliente (da PDF CAD, convertiti in immagine) più nota "Altri esempi in arrivo dal cliente" — repeater perché il numero di layout crescerà nel tempo, a differenza degli altri campi a schema fisso di questa sezione |
-| Categoria "Sistemi movimentazione contenitori" | Nessuno schema nell'Excel — categoria aggiunta dopo la consegna del file | Loop Grid filtrato per tassonomia, come le altre | 3 macchine (Sistema Neck Handling, Stelle universali, Stelle a geometria variabile), nessuna con scheda tecnica o CAD: solo descrizione + galleria, vedi sez. 3 |
-| Categoria "Usate" | Non specificata nello schema Excel | — | Da chiarire con il PM se segue lo schema Riempitrici/Tappatrici/Sciacquatrici/Soffiatrici o ha una struttura propria |
+| H1 | Term name nativo | Heading + Dynamic Tag | |
+| Intro hero | `intro` — Textarea | Text Editor + Dynamic Tag | Colonna "Intro (hero)" |
+| Ordine menu/catalogo | `ordine` — Number | — (ordina query e menu) | 1 Sciacquatrici/Soffiatrici, 2 Riempitrici, 3 Tappatrici, 4 Linee complete, 5 Sistemi movimentazione contenitori, 6 Usate (confermato PM 25/09) |
+| Griglia "La gamma …" | Nessuno: query sui post `macchina` con questo termine, `linea` = Eurostar | Loop Grid | Ordinata per `menu_order` (colonna "Ordine" dell'Excel) |
+| Campi mostrati in card | Nessuno a livello di termine: la card legge i campi della macchina | Loop Item Template per tipologia | Sciacquatrici → Contenitori + Contenitori/ora; Riempitrici → Prodotto breve + Contenitori/ora; Tappatrici → Tipologia chiusura + Contenitori/ora; Sistemi movimentazione → Contenitori + Cambio formato |
+| Linee complete | `descrizione` — Wysiwyg + `layout` — Repeater (immagine, titolo, didascalia) | Text Editor + Loop/Gallery | Nessuna macchina sotto: pagina di categoria a contenuto proprio |
+| Usate | `descrizione` — Wysiwyg | Text Editor + CTA | Parco variabile nel tempo, nessuna scheda popolata al lancio |
+
+Link alla categoria: da mega-menu e footer è un link all'archivio del termine; nel catalogo generale (`archive-macchine.html`) i tab filtrano la Loop Grid in pagina (Taxonomy Filter), tranne Linee complete e Usate che restano link.
 
 ---
 
-## 2. Categoria settore (`taxonomy-settore*.html`)
+## 2. Settore (`taxonomy-settore*.html`)
 
-Fonte: `Eurostar - Schema dati catalogo (per PM).xlsx`, foglio **Categoria settore** (ordine, nome, intro hero, 2 paragrafi sfide, fino a 3 macchine correlate per settore) — testi allineati alla revisione del 19-09 (Modifiche sito 19.9).
+Field group ACF con location "Taxonomy Term = Settore".
 
-CPT: **Settore** come CPT singolo (non termine di tassonomia) — decisione già presa in seq 1 del progetto, perché il contenuto per settore è troppo ricco per un semplice termine (intro, due paragrafi di sfide, relazione a macchine multiple).
-
-| Blocco wireframe | Campo ACF | Widget Elementor Pro nativo | Note |
+| Blocco wireframe | Campo | Widget Elementor | Note |
 |---|---|---|---|
-| H1 / intro (hero) | Nome = post title; intro = ACF Text | Heading / Text con Dynamic Tag → ACF Field | Colonna E dell'Excel |
-| Ordine di visualizzazione | ACF Number | — (governa l'ordinamento in archivio/menu) | Colonna A: 1 Acqua, 2 Bevande e succhi, 3 Birra, 4 Vino, 5 Liquori, 6 Olio alimentare, 7 Alimenti e condimenti, 8 Cosmetica, 9 Detergenza, 10 Chimico/farmaceutico/sanitario |
-| "Le sfide del settore" | ACF Wysiwyg o 2 campi Text (un campo per paragrafo) | Text Editor con Dynamic Tag | Colonna F, sempre 2 paragrafi nell'Excel per tutti i 10 settori |
-| "Le nostre macchine" | ACF Relationship multipla → CPT Macchina | Loop Grid pilotato dalla relazione (non da tassonomia) | Popolata dal foglio "Macchine per settore": fino a 3 macchine EUROSTAR per settore, tutte già coperte dalle 17 schede reali coperte dallo schema Excel (Riempitrici/Tappatrici/Sciacquatrici/Soffiatrici — le 3 macchine di Sistemi movimentazione contenitori non hanno relazione a Settore) |
-| Blocco Configurazioni/Contenitori/Chiusure | Non presente nell'Excel per nessun settore tranne il testo storico del wireframe su Vino | — | Omesso nelle 9 pagine settore create dai dati Excel — testo specifico-vino (chiusure in sughero) non generalizzabile senza dati forniti dal PM |
+| H1 | Term name nativo | Heading + Dynamic Tag | |
+| Intro hero | `intro` — Textarea | Text Editor + Dynamic Tag | |
+| Le sfide del settore | `sfide_1`, `sfide_2` — Textarea | 2 Text Editor | Sempre 2 paragrafi per tutti i 10 settori |
+| Immagine hero | `immagine` — Image | Background dinamico | |
+| Ordine | `ordine` — Number | — | Ordine sito: Vino, Birra, Liquori, Bevande e succhi, Acqua, Olio alimentare, Alimenti e condimenti, Cosmetica, Detergenza, Chimico/farmaceutico/sanitario — **non** quello della colonna Ordine dell'Excel (decisione utente) |
+| Le nostre macchine — Eurostar | Nessuno: query `macchina` con questo `settore` e `linea` = Eurostar | Loop Grid a card | Tutte le macchine indicate dalla PM, niente selezione manuale "max 3" |
+| Le nostre macchine — Linea Squadron | Nessuno: stessa query con `linea` = Squadron | Loop Grid compatta (nome + tipologia) + link a pagina Squadron | Mostrata solo se la query ha risultati |
 
 ---
 
-## 3. Scheda macchina (`single-macchina*.html`)
+## 3. Macchina (`single-macchina*.html`)
 
-Fonte: `Eurostar - Schema dati catalogo (per PM).xlsx`, fogli **Macchina - Riempitrici / Tappatrici / Sciacquatrici / Squadron / Sistemi di movimentazione** (una riga per macchina reale, dati verificati contro il wireframe pubblicato).
+Il post `macchina` ha un field group **comune** e field group **condizionali per Categoria macchina**. Ordine = `menu_order` nativo (colonna "Ordine" dell'Excel: 2.1 → 1, 2.2 → 2…).
 
-| Blocco wireframe | Campo ACF | Widget Elementor Pro nativo | Note |
+### 3.1 Campi comuni (tutte le macchine)
+
+| Blocco wireframe | Campo | Widget Elementor | Note |
 |---|---|---|---|
-| H1 / tagline | Titolo macchina = post title nativo del CPT `macchina`; tagline = ACF Text | Heading / Text Editor con Dynamic Tag → ACF Field | Il titolo resta il post title, nessun ACF necessario |
-| Tag "Adatta per" | Riempitrici: nessun campo ACF, tassonomia **Settore** assegnata al post — valorizzata leggendo la colonna "Adatta per (settore)" dello schema Excel per macchina, non a discrezione. Tappatrici: ACF Text/Checkbox a scelte fisse (tipo di tappo — non esiste una mappatura a settore per questa tipologia nell'Excel). Sciacquatrici/Soffiatrici: campo assente, blocco omesso in pagina. Sistemi movimentazione contenitori: campo assente | Widget nativo Post Info (tipo "Terms") per le Riempitrici; Icon Box/Text per le Tappatrici | Il significato del campo cambia per tipologia, non è un'unica sorgente dati per tutte le macchine |
-| Icone "Contenitori" | ACF Checkbox a scelte fisse (Vetro, Plastica, Lattina…) — **solo Riempitrici e Sciacquatrici/Soffiatrici** | Icon Box ripetuti in pagina, ciascuno con Display Conditions legata al valore checkbox | Su Tappatrici il campo "Contenitori" è stato rimosso ovunque (header e tabella Caratteristiche) su richiesta esplicita del cliente — non va registrato in ACF per quella tipologia. Set chiuso → basta la visibilità dinamica nativa, non serve loop |
-| Stats strip in testata | ACF Group a schema fisso **per tipologia**, valori duplicati da "Caratteristiche principali": Riempitrici 3 campi (Contenitori/ora, Prodotto, Tipo riempimento); Tappatrici 1 campo (Contenitori/ora); Sciacquatrici/Soffiatrici 2 campi (Contenitori/ora, Contenitori) | 1-4x StatBlock/Counter con Dynamic Tag | Non è un campo indipendente: rispecchia un sottoinsieme dei campi della tabella sottostante, per dare risalto visivo ai dati più cercati. Su Tappatrici "Tipologia chiusura" è stata tolta dalla testata (resta solo in tabella). "Velocità"/"Bottiglie/ora" è stata rinominata "Contenitori/ora" su tutte le tipologie (23/09, indicazione esplicita del cliente), ed è stata eliminata anche la sigla "BPH" dai valori numerici (es. "Fino a 25.000 BPH" → "Fino a 25.000"), sitewide incluso il form Contatti. Il campo "Materiale a contatto prodotto" **non va inserito**: risposta definitiva del cliente al punto aperto del PM (per 9 riempitrici su 10 duplicava il valore di "Contenitori") |
-| Tabella "Caratteristiche principali" | ACF Group a schema fisso **per tipologia**: Riempitrici 4 campi (Tipo riempimento, Contenitori, Prodotto, Contenitori/ora — rinominato da "Velocità"; "Materiale a contatto" escluso su indicazione del cliente); Tappatrici 2 campi (Tipologia chiusura, Contenitori/ora — rinominato da "Velocità", "Contenitori" rimosso); Sciacquatrici/Soffiatrici 2 campi (Contenitori, Contenitori/ora — rinominato da "Bottiglie/ora"); Sistemi movimentazione contenitori: **nessuna tabella Caratteristiche** | Table widget nativo, o righe ripetute con Dynamic Tag | Il numero e il nome dei campi sono fissi ma diversi per Categoria macchina, quindi conviene un field group ACF condizionale per tassonomia, non un unico group per tutto il CPT. Non esiste e non va aggiunto un campo "Diametro-altezza contenitore" per le Sciacquatrici/Soffiatrici: richiesta esplicita del cliente di escluderlo, e non è mai stato presente nello schema Excel |
-| Download center (PDF) | 1 ACF File field (solo scheda tecnica) per Riempitrici/Tappatrici/Sciacquatrici/Soffiatrici; **nessun Download center** per Sistemi movimentazione contenitori | Icon Box / Button con Dynamic Tag → URL del file | Formato scheda tecnica corretto da DWG a PDF. L'allegato CAD ("Layout CAD di ingombro") è stato rimosso su richiesta del cliente per tutte le Riempitrici, Tappatrici e Sciacquatrici/Soffiatrici: non va registrato come campo ACF per queste tipologie. Box "Dati chiave" e riferimento a persona specifica sono stati rimossi dal modulo preventivo |
-| Modulo preventivo | — | Widget nativo Form | Nessun campo ACF "referente commerciale" nominativo: il form non preseleziona più una persona specifica |
+| H1 | Post title | Heading + Dynamic Tag | |
+| Sottotitolo | `tipologia` — Text | Heading H2/Text + Dynamic Tag | Colonna "Tipologia (sottotitolo)" |
+| Linea | Tassonomia `linea` | — | Governa raggruppamenti e template (vedi 3.3) |
+| Categoria | Tassonomia `categoria_macchina` | Breadcrumb | |
+| Galleria | `galleria` — Gallery | Image Carousel/Gallery | Miniature 01–04 del wireframe |
+| Descrizione tecnica | `descrizione` — Wysiwyg | Text Editor + Dynamic Tag | |
+| Contenitori (icone) | `contenitori_tipi` — Checkbox a scelte fisse: Vetro, PET, HDPE, Lattina | Icon Box con Display Conditions sul valore | Solo icone per i materiali selezionati |
+| Contenitori (dicitura) | `contenitori` — Text | Text in testata **e** riga "Contenitori" in tabella | Dicitura unica (Serena, punto 4) — un campo, due posizioni |
+| Download | `scheda_tecnica` — File (PDF) | Button/Icon Box + Dynamic Tag URL, nascosto se vuoto | Titolo sezione "Download". Nessun CAD |
+| CTA | — | Button "Richiedi un preventivo" + "Contattaci" | Niente form laterale. Proposta aperta: precompilare l'oggetto del form Contatti con il nome macchina via query string |
+| Card | `prodotto_breve` — Text | Loop Item | Versione corta del prodotto per le card (es. "Liquidi piatti") |
 
-### Varianti macchina MEC ISO — deciso
+### 3.2 Campi per Categoria macchina
 
-Il foglio INFO CATALOGO MACCHINE elenca 6 varianti della famiglia **MEC ISO** (S, PS, SL, PSL, FS, DPS) con specifiche pressoché identiche tranne il nome. Risposta definitiva del cliente al punto aperto del PM: **un solo post** CPT Macchina, non 6 post distinti. Le 6 varianti vanno gestite con un campo ACF aggiuntivo "Varianti disponibili" (repeater o testo) sulla singola scheda `single-macchina-mec-iso.html`, non con 6 field group/post separati.
+| Categoria | Testata (Sezione intro) | Tabella Caratteristiche | Campi specifici |
+|---|---|---|---|
+| **Sciacquatrici/Soffiatrici** | Contenitori, Contenitori/ora | Contenitori, Campo di produzione della gamma | `contenitori_ora` — Text |
+| **Riempitrici** | Adatta per (settori), Contenitori, Contenitori/ora, Prodotto | Tecnologia di riempimento, Contenitori, Prodotto da riempire, Campo di produzione della gamma | `contenitori_ora` — Text; `prodotto` — Textarea; `tecnologia_riempimento` — Text; `tipologia_valvole` — Text (solo isobariche, es. MEC ISO "S - FS - PS - SL - PSL - DPS - DPSL") |
+| **Tappatrici** | Adatta per (tipologia chiusura), Contenitori/ora | Tipologia chiusura, Campo di produzione della gamma | `tipologia_chiusura` — Text (valori specifici per modello, es. "Capsule alluminio ROPP, TALOG", "Tappi corona Ø 26 e/o Ø 29 mm": non riducibili a una lista fissa) → pillola `es-chip` in testata + riga tabella; `contenitori_ora` — Text. Nessun campo Contenitori |
+| **Sistemi movimentazione contenitori** | Contenitori | Contenitori, Cambio formato | `cambio_formato` — Text. Nessun Contenitori/ora, nessun Download al momento |
 
-### Blocchi rimossi (non più nel wireframe, non serve mapparli)
+"Adatta per" delle Riempitrici = termini `settore` assegnati al post (widget Post Info → Terms, stile `es-chip`), valorizzati dalla colonna "Adatta per (settore)". Lo stesso dato alimenta "Le nostre macchine" dei settori: una sola sorgente.
 
-Il blocco "Come funziona" (griglia a 4 card) sulle pagine categoria, i blocchi "Progettata internamente" e "Focus macchina" sulla scheda macchina, i tab "Dati tecnici"/"Contenitori" (residuo di design, mai funzionanti) e il caption ridondante "Dati tecnici di performance" sopra la tabella Caratteristiche sono stati rimossi perché non previsti dallo schema IMPOSTAZIONE CATALOGO MACCHINE — non richiedono field group ACF.
+"Contenitori/ora" (testata) e "Campo di produzione della gamma" (tabella) sono **lo stesso campo**: in tabella il template aggiunge "contenitori/ora" dopo il valore. Niente sigla BPH.
+
+Campi esclusi su indicazione del cliente (non registrarli): Materiale a contatto prodotto, Diametro/altezza contenitore, Layout CAD, referente commerciale nominativo. Le varianti MEC ISO sono un solo post: le varianti sono il campo `tipologia_valvole`.
+
+### 3.3 Linea Squadron
+
+Stesso CPT e stessi field group (i modelli sono riempitrici/uniblocchi → categoria Riempitrici), con `linea` = Squadron.
+
+| Modello | Dati disponibili | Resa |
+|---|---|---|
+| ATHENA, EXACTA | Completi: tipologia, settori, contenitori, descrizione, tecnologia, prodotto, capacità, valvole, PDF | Card estesa in `page-squadron.html` con link "Scheda tecnica (PDF)" |
+| Olympia A/SA, Olympia AV A/SA, VOL, VOL.L Grandi formati, Easykeg, Evox/Evox Plus/Evox CM, Riempitrice a peso, Dosatore volumetrico e tappatore | Solo nome + settori | Card sintetica in `page-squadron.html` e nel gruppo "Linea Squadron" dei settori |
+
+Al lancio i post Squadron **non hanno pagina singola pubblica** (il wireframe non la prevede): il link della card porta all'ancora del modello in pagina Squadron. Se in futuro arrivano i dati completi basta attivare il template singolo, il modello dati è già pronto. Gamma e velocità degli altri modelli: sospese su indicazione del cliente (23/09).
+
+### 3.4 Template Theme Builder
+
+- **Single macchina**: un template unico, blocchi con Display Conditions per categoria (righe tabella, pillole Adatta per, icone contenitori, Download se il file esiste). Condizione: `macchina` con `linea` = Eurostar.
+- **Archivio categoria**: un template per termine standard + template dedicati per Linee complete e Usate.
+- **Archivio settore**: un template unico.
+- **Loop Item**: 4 varianti card (una per categoria, vedi sez. 1) + card compatta Squadron.
+- **Hover**: classe globale `es-btn` + varianti, `es-textlink`/`es-arrow`, `es-chip` in Site Settings > Custom CSS (da `assets/es-hover.css`); da verificare sul markup dei widget atomic nella scheda pilota MEC LD.
 
 ---
 
 ## 4. Posizione di lavoro (`page-lavora-con-noi.html` + `single-posizione-lavoro-*.html`)
 
-CPT: **Posizione di lavoro** come CPT singolo (non termine di tassonomia) — stesso ragionamento già fatto per Settore: ogni posizione ha contenuto proprio (descrizione, attività, requisiti, cosa offriamo) troppo ricco per un termine di tassonomia, e serve una pagina singola dedicata con URL propria in cui far confluire la candidatura specifica.
+CPT: **Posizione di lavoro** come CPT singolo (non termine di tassonomia) — ogni posizione ha contenuto proprio (descrizione, attività, requisiti, cosa offriamo) troppo ricco per un termine di tassonomia, e serve una pagina singola dedicata con URL propria in cui far confluire la candidatura specifica.
 
 Introdotto in questa sessione sostituendo il precedente pattern ad accordion (`<details>/<summary>` in pagina) con riquadri cliccabili in stile Ferrero Careers che portano a una pagina di dettaglio dedicata, su richiesta esplicita del cliente/PM.
 
@@ -87,6 +131,8 @@ Applicabilità e stato: validata su 5 istanze popolate nel wireframe (Area Manag
 
 ## Applicabilità e stato
 
-Per il CPT Macchina la struttura è validata su tutte e 4 le tipologie coperte dallo schema dati (21 istanze reali: 10 Riempitrici, 6 Tappatrici, 2 Sciacquatrici/Soffiatrici — MEC SI e la nuova Twist Rinser — e 3 Sistemi movimentazione contenitori, categoria aggiunta dopo la consegna del primo Excel). Per il CPT Settore è validata su tutti e 10 i settori di lancio, con tutti i testi allineati all'ultimo Excel "Schema dati catalogo" del 19-09. Restano fuori dallo schema — quindi non ancora mappati come CPT qui — **Squadron** e **Linee complete**: per Squadron, ATHENA ed EXACTA hanno dati tecnici reali e sono ora impaginati come contenuto statico nella pagina `page-squadron.html` (non ancora come post CPT Macchina con pagina singola dedicata); il resto della gamma Squadron (Olympia A/SA, Olympia AV A/SA, VOL, VOL.L Grandi formati, Easykeg, Evox/Evox Plus, Riempitrice a peso, Dosatore volumetrico) ha solo i settori di applicazione noti, nessun dato tecnico strutturato — impaginato come card sintetiche, non come schede complete.
+Modello validato su tutte le 21 macchine Eurostar del wireframe (10 Riempitrici, 6 Tappatrici, 2 Sciacquatrici/Soffiatrici, 3 Sistemi movimentazione contenitori), sui 10 settori e sui 14 modelli Squadron, contro l'Excel del 25/09 (273/273 campi verificati). Da provare su WordPress con la scheda pilota MEC LD prima di caricare il resto.
 
-Questa stessa logica di mappatura (fisso → campo singolo/checkbox + widget statico; variabile → repeater + Loop Grid; condizionale per tipologia dove lo schema lo richiede) va replicata per gli altri archetipi del prototipo (`single-servizio.html`, `single-news-articolo.html`, `single-news-editoriale.html`) quando il PM fornirà uno schema Excel equivalente per quei contenuti.
+Punti aperti con la PM che possono toccare i campi: capacità ATHENA (Excel "fino a 850" vs PDF "da definire in offerta") ed EXACTA (range 200–600?), valvole Squadron (Excel "S - PS - DPS" vs PDF solo "S"), "Cambio formato" del Neck Handling, schede di dettaglio Servizi (se sì → CPT `servizio` a sé, fuori da questo file).
+
+Stessa logica (fisso → campo singolo; variabile → repeater; condizionale per tipologia) per gli altri archetipi (`single-servizio.html`, `single-news-*.html`) quando arriveranno i contenuti definitivi.
