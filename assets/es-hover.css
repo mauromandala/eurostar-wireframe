@@ -55,6 +55,12 @@
 @media (hover:hover) and (pointer:fine){
   .es-dl-link.es-dl-link:hover > span[aria-hidden]{transform:translateY(3px)}
 }
+/* Pillole (settori "Adatta per", tipologia tappo, "Settori serviti"): hover leggero,
+   bordo e testo blu, fondo bianco */
+.es-chip.es-chip{transition:color var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard),background-color var(--duration-base) var(--ease-standard)}
+@media (hover:hover) and (pointer:fine){
+  .es-chip.es-chip:hover{color:var(--action-primary) !important;border-color:var(--action-primary) !important;background:#fff !important}
+}
 @media (prefers-reduced-motion:reduce){
   .sc-host-x > a[style*="letter-spacing: 0.08em"]::before{transition:none}
   .es-textlink.es-textlink .es-arrow,.es-bivi.es-bivi,.es-art,.es-diag-cta.es-diag-cta span,.es-dl-link.es-dl-link > span[aria-hidden]{transition:none;transform:none !important}
