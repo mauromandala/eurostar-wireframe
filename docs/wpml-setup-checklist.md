@@ -86,6 +86,8 @@ Nomi dei campi come in `acf-elementor-mapping.md`.
 
 ## 7. Stringhe del tema e del design system
 
+> **Lezioni dalla prova EN (28/09)**: (1) String Translation registra le stringhe come **inglesi** se non si indica la lingua (impostazione "lingua delle stringhe" = en, da lasciare così per tema e plugin) → le stringhe di codice custom vanno registrate con sorgente italiana: `do_action('wpml_register_single_string', $contesto, $nome, $valore, false, 'it')`. (2) Le traduzioni vengono lette da un file `.mo` per contesto in `wp-content/languages/wpml/`: tradotte dall'interfaccia di String Translation si rigenera da solo; se inserite via codice va rigenerato (`WPML\ST\MO\File\Manager::add($contesto, 'en_US')`). (3) Le pagine EN si verificano nel browser: le richieste del server verso se stesso ricevono la versione IT.
+
 Il wireframe ha molto testo che non passa da ACF o dal contenuto di Elementor: label di UI, testi statici nell'header/footer, microcopy dei form (es. "Adatta per", "Contenitori/ora", "Richiedi un preventivo", i messaggi di validazione). Questo testo va gestito con **WPML String Translation**, non con la traduzione dei post:
 
 - [ ] Scansionare tema/plugin per stringhe non tradotte: *WPML → Theme and plugins localization → Scan*
