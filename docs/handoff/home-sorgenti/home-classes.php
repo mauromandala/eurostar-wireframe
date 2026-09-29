@@ -107,7 +107,7 @@ $classes = [
     ['es-home-discover-item', ['display' => $T('flex'), 'flex-direction' => $T('column'), 'padding' => $PAD0, 'min-width' => $S(0)]],
     ['es-home-discover-icon', [
         'display' => $T('flex'), 'align-items' => $T('center'), 'justify-content' => $T('center'), 'flex' => $FLEX(0, 0, 'auto'),
-        'width' => $S('52px'), 'height' => $S('52px'), 'padding' => $PAD0, 'margin' => $MB(0, '20px')['margin'],
+        'width' => $S('54px'), 'height' => $S('54px'), 'padding' => $PAD0, 'margin' => $MB(0, '20px')['margin'],
         'border-width' => $S(1), 'border-style' => $T('solid'), 'border-color' => $C('bordo-sottile'), 'color' => $C('blue-600'),
     ]],
     ['es-ico-sciacquatura', ['display' => $T('flex')]],
@@ -141,7 +141,7 @@ $classes = [
     ['es-home-sq-inner', ['display' => $T('flex'), 'flex-direction' => $T('row'), 'align-items' => $T('center'), 'justify-content' => $T('space-between'), 'flex-wrap' => $T('wrap'), 'gap' => $S(24),
         'width' => $S('100%'), 'max-width' => $Z('contenuto-max'), 'margin' => $D(0, 'auto', 0, 'auto'), 'padding' => $PAD0]],
     ['es-home-sq-left', ['display' => $T('flex'), 'flex-direction' => $T('row'), 'align-items' => $T('center'), 'flex-wrap' => $T('wrap'), 'gap' => $S(24), 'width' => $S('auto'), 'padding' => $PAD0]],
-    ['es-home-sq-logo', ['width' => $S('120px'), 'height' => $S('40px'), 'flex' => $FLEX(0, 0, 'auto'), 'padding' => $PAD0, 'background' => $BG($L('rgba(255,255,255,0.1)'))]],
+    ['es-home-sq-logo', ['width' => $S('122px'), 'height' => $S('42px'), 'flex' => $FLEX(0, 0, 'auto'), 'padding' => $PAD0, 'background' => $BG($L('rgba(255,255,255,0.1)'))]],
     ['es-home-sq-title', $TXT('titoli', '800', $Z('testo-h3'), '1.1', $C('bianco'), $UP('-0.02em') + ['margin' => $S(0)])],
 
     // Blocchi diagonali Servizi / Innovazione (taglio 56px, una colonna sotto 900px: prima il testo, poi la foto)
@@ -152,10 +152,11 @@ $classes = [
         'padding' => $D('clamp(40px,6vw,72px)', 'clamp(28px,5vw,72px)', 'clamp(40px,6vw,72px)', 'clamp(28px,5vw,72px)'), 'background' => $BG($C('bianco'))],
         [[$ME, ['order' => $N(1)]]]],
     ['es-home-diag-media', ['display' => $T('block'), 'padding' => $PAD0, 'min-width' => $S(0), 'overflow' => $T('hidden'), 'background' => $BG($C('gray-150'))],
-        [[$ME, ['order' => $N(2), 'min-height' => $S('280px')]]]],
+        [[$ME, ['order' => $N(2), 'min-height' => $S('286px')]]]], // 286 = 280 + bordo e padding del segnaposto del wireframe
     ['es-home-diag-left', ['position' => $T('relative'), 'z-index' => $N(1), 'clip-path' => $T('polygon(0 0,100% 0,calc(100% - 56px) 100%,0 100%)')],
         [[$ME, ['clip-path' => $T('none')]]]],
-    ['es-home-diag-right', ['margin' => $D(0, 0, 0, '-56px'), 'clip-path' => $T('polygon(56px 0,100% 0,100% 100%,0 100%)')],
+    // width auto: senza, il contenitore atomic resta al 100% della colonna e il margine negativo non la allarga di 56px
+    ['es-home-diag-right', ['width' => $S('auto'), 'margin' => $D(0, 0, 0, '-56px'), 'clip-path' => $T('polygon(56px 0,100% 0,100% 100%,0 100%)')],
         [[$ME, ['margin' => $S(0), 'clip-path' => $T('none')]]]],
     ['es-home-diag-h2', $TXT('titoli', '900', 'clamp(28px,3.4vw,44px)', '1.1', $C('navy-800'), ['text-transform' => $T('uppercase'), 'margin' => $D('16px', 0, '20px', 0)])],
     ['es-home-diag-text', $TXT('testo', '300', $Z('testo-body-lg'), '1.65', $C('gray-500'), $MB(0, '28px') + ['max-width' => $S('42ch')])],

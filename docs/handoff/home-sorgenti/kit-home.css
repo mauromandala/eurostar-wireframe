@@ -1,9 +1,10 @@
 
 /* === Eurostar — Home (valori dal wireframe home.html) === */
+/* Frecce scritte come carattere: gli escape "\2192" perdono il backslash quando il CSS viene salvato nel Kit. Niente margine: lo spazio prima della freccia è quello a fine testo del pulsante */
 /* Link testuali con freccia (es-textlink del wireframe) e pulsanti dei blocchi diagonali con freccia ↗: la freccia non viene letta */
-.es-link-arrow.es-link-arrow::after{content:"\2192" / "";display:inline-block;margin-left:.3em;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.es-link-arrow.es-link-arrow::after{content:"→" / "";display:inline-block;margin-left:0;transition:transform .35s cubic-bezier(.22,1,.36,1)}
 @media (hover:hover) and (pointer:fine){.es-link-arrow.es-link-arrow:hover::after{transform:translateX(5px)}}
-.es-home-diag-cta.es-home-diag-cta::after{content:"\2197" / ""}
+.es-home-diag-cta.es-home-diag-cta::after{content:"↗" / "";line-height:1}
 /* Grassetti e parole in evidenza nei testi */
 .es-home-diag-text strong,.es-home-author-text strong{color:var(--navy-800)}
 .es-home-quote-lead span{color:var(--blue-600)}
@@ -33,7 +34,7 @@
 @media (prefers-reduced-motion:reduce){.es-marquee-track{animation:none}}
 @media (max-width:767px){.es-home-trust-inner>.elementor-widget-shortcode{flex:none}}
 /* News ([es_news_home], [es_news_nav]): sezione nascosta finché non ci sono articoli; 1 card sotto 760px, 3 sopra */
-.es-home-news:not(:has(.es-news-track)){display:none}
+.es-home-news.es-home-news:not(:has(.es-news-track)){display:none}
 .es-news-navs{display:flex;gap:10px}
 .es-news-nav{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%;border:1px solid rgba(28,38,90,.24);background:var(--bianco);color:var(--navy-800);cursor:pointer;flex-shrink:0}
 .es-news-nav:hover,.es-news-nav:focus{background:var(--gray-050);color:var(--navy-800)}

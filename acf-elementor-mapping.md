@@ -464,7 +464,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 2. ✅ Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
 3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
 4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro, template dedicati Linee complete e Usate.
-5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo, Referenze, 404 — da fare Home, Cataloghi, Lavora con noi + posizioni.
+5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo, Referenze, 404, Home — da fare Cataloghi, Lavora con noi + posizioni.
 6. News (dopo aver definito il modello dati).
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
 
@@ -623,7 +623,7 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 
 ## Pagina 404 — stato (29/09, validata IT + EN)
 
-- **Template Theme Builder** "Pagina 404" (ID 650 / EN 652, tipo `error-404`, condizione `include/singular/not_found404`), contenitore `main#content`. Risponde con stato HTTP 404. "404" decorativo (`aria-hidden`), kicker "Errore 404", H1 "Pagina non trovata", testo, pulsanti "Torna alla home" (primario) e "Vai al catalogo macchine" (ghost), `nav` "Sezioni principali" con Azienda, Settori, Servizi, Contatti (link di tipo pagina, tradotti da WPML: in EN `/en/about-us/`, `/en/sectors/`…). I due pulsanti sono link URL (la Home non è ancora una pagina): nel pacchetto EN puntano a `/en/` e `/en/macchine/`.
+- **Template Theme Builder** "Pagina 404" (ID 650 / EN 652, tipo `error-404`, condizione `include/singular/not_found404`), contenitore `main#content`. Risponde con stato HTTP 404. "404" decorativo (`aria-hidden`), kicker "Errore 404", H1 "Pagina non trovata", testo, pulsanti "Torna alla home" (primario) e "Vai al catalogo macchine" (ghost), `nav` "Sezioni principali" con Azienda, Settori, Servizi, Contatti (link di tipo pagina, tradotti da WPML: in EN `/en/about-us/`, `/en/sectors/`…). "Torna alla home" è un link di tipo pagina alla Home (740, EN 742), come in Conferma (574/586); "Vai al catalogo macchine" resta un link URL (`/en/macchine/` nel pacchetto EN).
 - **Classi nuove**: `es-sec-404`, `es-404-box`, `es-404-num`, `es-404-nav`, `es-link-u` (link testuale sottolineato, riusabile).
 - **Colore del "404"**: il wireframe usa `var(--gray-200)`, token **non definito** nel design system (il numero esce nero); uso un grigio chiaro `#D3D7E2`, coerente con l'intento decorativo.
 - **Verifica al pixel**: a 1440 tutti gli elementi e il footer (869,6) coincidono; a 375 scarto di 1,6px (altezza minima in `vh`). EN: "Page not found", "Back to home", "Go to the machine catalogue", "Company / Sectors / Services / Contact" (**da far rivedere**).
@@ -637,6 +637,20 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Tessere**: nel wireframe `min-height:88px` senza `border-box` = 122px reali; nel sito `min-height:122px` (CSS nel Kit, blocco "pagina Referenze").
 - **Verifica al pixel**: 1440 e 375 identici (tessere 200×122 a 1440, invito a 1546,4, footer a 2073,7). Nessuno scroll orizzontale a 320px. EN (**da far rivedere**): "Our customers", "More than 2,000 lines installed worldwide", intro, "Who relies on Eurostar", "Our customers around the world", "Let's talk about your next project".
 - **Da fare**: caricare i loghi dei clienti (cartella Drive `08-loghi-clienti`) nei campi Logo della pagina Clienti; foto di sfondo della testata.
+
+---
+
+## Pagina Home — stato (29/09, validata IT + EN)
+
+- **Pagina** "Home" (ID 740 / EN 742, modello `elementor_header_footer`, `main#content`), **pagina iniziale** in Impostazioni → Lettura (WPML abbina la EN: `/` e `/en/`). Sorgenti in `docs/handoff/home-sorgenti/`: `gen_home.py` (JSON della pagina IT, classi come `"@etichetta"` sostituite con gli ID sul server), `home-classes.php` (84 classi), `kit-home.css` (blocco "Eurostar — Home" del Kit), `snip6-home.php` (shortcode), `home-en.json` (traduzioni del pacchetto).
+- **Sezioni**: testata 80vh con H1, testo e due pulsanti; "ingegnere" (bottiglia, claim "Progettiamo soluzioni.", 4 numeri agli angoli sopra 900px, nel flusso sotto); "Scopri le macchine per:" con 4 icone (maschera SVG nel Kit, colore Blue 600) e link alle categorie; barra clienti `[es_clienti_nastro]`; bivio "Trova la tua soluzione"; fascia Squadron; due blocchi diagonali (taglio 56px, una colonna sotto 900px); citazione del fondatore; "Macchine in evidenza" (MEC SI → categoria Sciacquatrici, SKILLFILL → scheda, ATHENA → Squadron); News `[es_news_home]` + `[es_news_nav]`; invito finale.
+- **News in Home**: carosello degli ultimi 6 articoli con categoria (esclusa "Senza categoria"); **la sezione resta nascosta finché non ci sono articoli** (`.es-home-news.es-home-news:not(:has(.es-news-track))`: la classe va raddoppiata, altrimenti la classe globale, caricata dopo, la batte).
+- **Barra clienti sotto 767px**: etichetta sopra il nastro (colonna). Il wireframe a 375 tiene la riga, ma il nastro esce largo 0 e il pulsante pausa finisce fuori schermo (x 400): deviazione voluta.
+- **Frecce dei link** (`→` sui link testuali, `↗` sui pulsanti dei blocchi diagonali): `::after` nel Kit, scritte come carattere e non come escape (`"\2192"` perde il backslash quando il CSS viene salvato nel Kit e la pagina mostra "2192"). Margine 0: lo spazio prima della freccia è quello a fine testo del pulsante. `line-height:1` sul `↗`, come lo `span` del wireframe (altrimenti il pulsante cresce di 3px).
+- **Corretto in verifica**: colonna destra dei blocchi diagonali `width:auto` (il contenitore atomic resta al 100% e il margine -56px non la allarga fino a 696px); icone 54×54 e logo Squadron 122×42 (nel wireframe il bordo di 1px si aggiunge alla misura); foto dei blocchi diagonali sotto 900px `min-height:286px` (280 + bordo e padding del segnaposto).
+- **Verifica al pixel**: 1440 e 768 identici in ogni elemento (News escluse: nel wireframe sono inventate, da noi nascoste); a 375 identico tranne la barra clienti (+31px, vedi sopra). Nessuno scroll orizzontale a 320px, IT ed EN. La citazione conserva gli `<span>` in Blue 600.
+- **EN** (**da far rivedere**): H1 "Since 1996 we have been designing and building…", "We engineer solutions.", "Discover machines for:", "Find your solution", "Explore by machine type", "Choose by sector", "By your side after installation too", "Engineering built never to stop", "Featured machines", "Latest from the Eurostar blog", "Let's design your next line together"; link alle categorie EN (`rinsers-blowers`, `fillers`, `cappers`, `complete-lines`). Stringhe dello snippet ("Pause/Resume logo scrolling", "Previous/Next news", "Latest news") in String Translation, contesto "Eurostar template".
+- **Da fare**: logo Squadron (ora riquadro con velatura bianca al 10%); foto (bottiglia, blocchi diagonali, macchine in evidenza, avatar del fondatore); SKILLFILL non ha la scheda EN, quindi in EN il pulsante porta alla scheda italiana.
 
 ---
 
