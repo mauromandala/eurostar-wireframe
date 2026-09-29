@@ -32,8 +32,9 @@ Field group ACF con location "Taxonomy Term = Categoria macchina".
 | Ordine menu/catalogo | `ordine` — Number | — (ordina query e menu) | 1 Sciacquatrici/Soffiatrici, 2 Riempitrici, 3 Tappatrici, 4 Linee complete, 5 Sistemi movimentazione contenitori, 6 Usate (confermato PM 25/09) |
 | Griglia "La gamma …" | Nessuno: query sui post `macchina` con questo termine, `linea` = Eurostar | Loop Grid | Ordinata per `menu_order` (colonna "Ordine" dell'Excel) |
 | Campi mostrati in card | Nessuno a livello di termine: la card legge i campi della macchina | Loop Item Template per tipologia | Sciacquatrici → Contenitori + Contenitori/ora; Riempitrici → Prodotto breve + Contenitori/ora; Tappatrici → Tipologia chiusura + Contenitori/ora; Sistemi movimentazione → Contenitori + Cambio formato |
-| Linee complete | `descrizione` — Wysiwyg + `layout` — Repeater (immagine, titolo, didascalia) | Text Editor + Loop/Gallery | Nessuna macchina sotto: pagina di categoria a contenuto proprio |
-| Usate | `descrizione` — Wysiwyg | Text Editor + CTA | Parco variabile nel tempo, nessuna scheda popolata al lancio |
+| Linee complete | `titolo` — Text (H1, diverso dal nome del termine), `claim` — Text (frase in grassetto nella hero), `descrizione` — Wysiwyg (testo sotto "Esempi di layout linea") + `layout` — Repeater (immagine, titolo, didascalia) | Template dedicato, layout via shortcode | Nessuna macchina sotto: pagina di categoria a contenuto proprio |
+| Usate | `descrizione` — Wysiwyg (testo del riquadro "nessuna macchina disponibile") | Template dedicato: loop sulle macchine della categoria con stato vuoto | Parco variabile nel tempo, nessuna scheda popolata al lancio: quando ci saranno, compaiono come card |
+| Tutte | `titolo_cta` — Text | Invito finale | Titolo della fascia scura in fondo (per categoria) |
 
 Link alla categoria: da mega-menu e footer è un link all'archivio del termine; nel catalogo generale (`archive-macchine.html`) i tab filtrano la Loop Grid in pagina (Taxonomy Filter), tranne Linee complete e Usate che restano link.
 
@@ -462,7 +463,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 1. Classi/stili globali dei 4 componenti + CSS hover (`es-hover.css` riscritto sul markup reale).
 2. ✅ Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
 3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
-4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro — restano i template dedicati Linee complete e Usate.
+4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro, template dedicati Linee complete e Usate.
 5. Pagine: Home, Squadron, Servizi, Chi siamo, Contatti, Referenze, Cataloghi, Settori, Lavora con noi + posizioni, Conferma, 404.
 6. News (dopo aver definito il modello dati).
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
@@ -527,7 +528,7 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Accessibilità**: un H1, H2 di sezione, card H3; loop con `role="list"`/`listitem`; card raggiungibili con Tab e focus visibile 2px; breadcrumb con `aria-current`; nav del catalogo con `aria-label`.
 - **EN**: termini EN delle categorie con intro e `titolo_cta`, settore Wine completo (intro, sfide, invito) — **testi scritti da me, da far rivedere**; gli altri 9 settori EN sono vuoti. Etichette card e archivi in String Translation (contesto "Eurostar template"). Le pagine EN mostrano solo MEC LD finché le altre macchine non sono tradotte; il gruppo Squadron EN è nascosto (nessun modello tradotto).
 - **Lezioni**: (1) gli attributi dei widget atomic (es. `aria-label`) non entrano nel pacchetto WPML: aggiunto il campo con il filtro `wpml_elementor_widgets_to_translate` a priorità 1001 (dopo la config di WPML a 20) e svuotata la cache `wpml_elementor_auto_config`; valori dinamici negli attributi **non** sopravvivono al salvataggio di Elementor (diventano "Array"); (2) sul front-end EN WPML riconverte gli ID di `get_term()` nel termine tradotto: per leggere lo slug italiano serve una query diretta; (3) WPML traduce da solo gli ID dei link atomic di tipo pagina e gli ID dei componenti: usare link di tipo pagina, non URL; (4) dopo `make_duplicate` rigenerare la cache delle condizioni in una **richiesta separata**, altrimenti il duplicato può finire nella location "popup" e la pagina viene renderizzata due volte; (5) le classi globali escono come `.elementor .classe` (0,2,0): le regole del Kit che devono vincerle vanno raddoppiate.
-- **Aperti**: template dedicati Linee complete e Usate; testi EN.
+- **Aperti**: testi EN (vedi sotto per quelli scritti da me).
 - **Ordine nei settori — deciso (utente, 29/09)**: si usa il campo Ordine delle categorie (`menu_order`), non l'ordine per settore del wireframe (es. Acqua: MEC LD, MEC VOL, MEC ISO…), che il modello dati non memorizza. Un solo ordine da gestire.
 
 ---
@@ -540,3 +541,15 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Una sola riga che scorre in orizzontale** (decisione utente 29/09, al posto delle 2–5 righe del wireframe sotto ~1236px): sfumature bianche ai bordi quando c'è altro da vedere; al clic la riga scorre per mostrare la voce successiva (se voce cliccata e successiva non entrano insieme, ha la precedenza la cliccata: succede solo con "Sistemi movimentazione contenitori" a 375px); da tastiera la voce con il focus viene portata in vista; focus con `outline-offset:-3px` (con l'overflow il contorno esterno verrebbe tagliato); barra alta 51px e sticky anche su mobile. Sopra ~1236px identica al wireframe (voci a x 80/161/396/517/634/788/1104 a 1440).
 - **Scostamenti voluti dal wireframe**: niente pulsante "Mostra altre macchine" (nel wireframe non fa nulla e il catalogo mostra già tutte le 21 macchine); il messaggio "nessun risultato" nel wireframe è visibile anche quando non dovrebbe (`hidden` sovrascritto), nel sito solo a filtro vuoto.
 - **Verifica**: 1440 — hero 432px, barra a 550, card da 690, 21 card nell'ordine del wireframe; filtri Tappatrici 6, Movimentazione 3, Tutte 21; 768 e 375 card nelle stesse posizioni del wireframe; nessuno scroll orizzontale fino a 320px.
+
+---
+
+## Linee complete e Usate — stato (29/09, validati IT + EN)
+
+- **Template dedicati** con condizione sul singolo termine (più specifica di quella generale della categoria, quindi vince): **Linee complete** 524 (termine 12) / EN 529 (termine 50), **Macchine usate** 525 (termine 14) / EN 532 (termine 52). I duplicati WPML dei template ereditano la condizione con l'ID del termine italiano: nell'EN va reimpostata sul termine tradotto.
+- **Linee complete**: H1 dal nuovo campo `titolo` (`[es_term_titolo]`, se vuoto il nome del termine), intro, frase in evidenza dal nuovo campo `claim`, "Esempi di layout linea" + `descrizione` (`[es_term_descrizione]`) + griglia `[es_layout_linee]` dal repeater `layout` (immagini dalla Libreria media con `srcset`, testo alternativo della Libreria), nav catalogo, invito finale. Le due immagini dei layout reali del wireframe sono in Libreria (ID 516, 517; EN 527, 528 con testo alternativo inglese).
+- **Usate**: Collection Loop sulle macchine Eurostar della categoria con **stato vuoto** (`e-collection-loop-empty-state`) = riquadro tratteggiato con `descrizione` + "Richiedi di essere avvisato" (→ Contatti). Quando verranno caricate macchine usate compariranno come card senza intervenire sul template (la riga dati per "usate" non è definita: la card mostrerà nome e tipologia, da decidere quali dati mostrare quando arriveranno).
+- **Scostamento voluto**: tolta la nota "Altri esempi di layout in arrivo dal cliente." (appunto interno del wireframe); tutto sotto sale di 49px. La griglia dei layout ha minimo `min(320px,100%)`: a 320px il wireframe sfora, il sito no.
+- **Verifica**: 1440 — Linee complete al pixel fino alla griglia (figure 628×972 a x 80/732, didascalie), Usate identica (riquadro 738×282 a x 351, invito a 1063, footer a 1528); 768/375 stesse coordinate del wireframe; nessuno scroll orizzontale a 320px.
+- **EN** (testi scritti da me, **da far rivedere**): "Complete bottling lines up to 15,000 containers/hour", intro, claim, descrizione, titoli e didascalie dei layout, testo del riquadro Usate, "Line layout examples", "Available now", "Ask to be notified".
+- **Lezione**: i duplicati WPML degli allegati (`make_duplicate`) non copiano `_wp_attached_file` e `_wp_attachment_metadata`: vanno copiati a mano, altrimenti l'immagine EN non viene stampata.
