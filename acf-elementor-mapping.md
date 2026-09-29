@@ -464,7 +464,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 2. ✅ Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
 3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
 4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro, template dedicati Linee complete e Usate.
-5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi — da fare Home, Chi siamo, Referenze, Cataloghi, Lavora con noi + posizioni, 404.
+5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo — da fare Home, Referenze, Cataloghi, Lavora con noi + posizioni, 404.
 6. News (dopo aver definito il modello dati).
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
 
@@ -607,4 +607,15 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Scostamenti voluti**: tolto il riquadro tratteggiato **vuoto** in fondo alla sezione assistenza (segnaposto senza contenuto del wireframe): da lì in giù tutto sale di 54px. Card post-vendita su **1 colonna sotto 767px** (lacuna: il wireframe resta a 2 colonne da 193px a 375 e sfora fino a 972px).
 - **Verifica al pixel**: a 1440, 768 e 375 testata, numeri, tappe, transizione, card (628×658,6 a 1440), riquadri, mappa, invito e footer hanno le coordinate del wireframe (meno i 54px del riquadro tolto). Nessuno scroll orizzontale a 320px. Titoli: un H1, H2 di sezione e delle card (come nel wireframe), H3 delle tappe; link email/telefono con nome.
 - **EN** (testi scritti da me, **da far rivedere**): tutti i 65 testi della pagina ("From needs analysis to production start-up and after-sales support", "The process in 8 steps", "After-sales support is not an extra service…", "We know your machine", "Or write directly to …", ecc.).
+
+---
+
+## Pagina Chi siamo — stato (29/09, validata IT + EN)
+
+- **Pagina** "Chi siamo" (ID 254 / EN 352 "About us", `/chi-siamo/`, `/en/about-us/`), modello Elementor a larghezza piena, tutti i testi in widget atomic (pacchetto WPML). Sezioni come il wireframe: testata chiara (breadcrumb, "La nostra storia", H1), blocco testo + foto "Dalla progettazione al collaudo", "La nostra storia, in breve" (ultimo paragrafo con grassetto e corsivo inline, supportati da `e-paragraph`), blocco foto + testo "Sostenibilità", "Persone, formazione e territorio", team (8 schede: foto 1:1, nome H3, ruolo, lingue, descrizione) + "Il team allargato" (2 foto 16:9), invito "Vuoi conoscere lo stabilimento da vicino?" → Contatti.
+- **Classi globali nuove**: `es-sec-block` (sezione bianca con padding ridotto `clamp(32px,5vh,56px)`), `es-grid-split` (2 colonne auto-fit 320px, gap `clamp(32px,5vw,72px)`, centrate), `es-h2` (preset H2 del design system), `es-stack` (colonna flex gap 20), `es-measure-56` (56ch), `es-media-4-3`, `es-media-1-1`, `es-media-16-9` (riquadri immagine Gray 150 in attesa delle foto: da sostituire con widget Immagine atomic), `es-team-grid` (4 colonne, 2 sotto 900px, 1 sotto 767px), `es-team-body`, `es-team-name`, `es-team-role`, `es-team-lang`.
+- **Scostamenti voluti**: tolta la fascia "Testimonianza cliente — sezione oscurata in attesa di citazione reale" (segnaposto del wireframe): invito e footer salgono di 326,8px; da aggiungere quando ci sarà una citazione autorizzata. **H1 su mobile** (lacuna): a 38px "DELL'IMBOTTIGLIAMENTO" è più largo dello schermo sotto ~470px (nel wireframe la pagina sfora): sotto 767px il titolo usa `min(38px, calc(8.8vw - 4px))` (29px a 375, 24px a 320), il resto della pagina sale di ~25px a 375.
+- **Verifica al pixel**: a 1440, 768 e 375 tutte le sezioni, i titoli, i paragrafi, le schede del team e le foto hanno le coordinate del wireframe (footer a 5728,1 sotto il main a 1440, meno la fascia tolta). Nessuno scroll orizzontale a 320px. Titoli: un H1, H2 di sezione, H3 per i nomi e "Il team allargato".
+- **EN** (testi scritti da me, **da far rivedere**): tutti i 58 testi ("Bottling engineering since 1996", "From design to testing, under one roof", "The faces behind the lines", ruoli e descrizioni del team, "Want to see our plant up close?").
+- **Foto**: elencate nel documento per la grafica (artifact "Immagini sito Eurostar", sezione Chi siamo; cartella Drive `Ilaria/Immagini sito/07-chi-siamo`).
 
