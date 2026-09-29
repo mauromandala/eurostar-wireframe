@@ -116,9 +116,10 @@ $classes = [
     ['es-ico-linee', ['display' => $T('flex')]],
     ['es-home-discover-h', $TXT('titoli', '800', 16, 'normal', $C('navy-800'), $UP('0.04em') + $MB(0, '10px'))],
     ['es-home-discover-text', $TXT('testo', '400', 14, '1.5', $C('gray-500'), $MB(0, '16px') + ['flex' => $FLEX(1, 1, '0%')])],
-    // Link testuale con freccia (es-textlink del wireframe): freccia disegnata dal CSS del Kit
+    // Link testuale con freccia (es-textlink del wireframe): freccia disegnata dal CSS del Kit.
+    // text-align start: e-button è centrato di default e nelle card il link occupa tutta la colonna
     ['es-link-arrow', $TXT('titoli', '700', 13, 'normal', $C('blue-600'), $UP('0.08em') + [
-        'display' => $T('inline'), 'text-decoration' => $T('none'), 'padding' => $PAD0, 'border-width' => $S(0), 'border-radius' => $S(0),
+        'display' => $T('inline'), 'text-align' => $T('start'), 'text-decoration' => $T('none'), 'padding' => $PAD0, 'border-width' => $S(0), 'border-radius' => $S(0),
         'background' => $BG($L('transparent')),
     ]), [[$HOV, ['color' => $C('navy-800')]]]],
 

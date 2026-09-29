@@ -9,8 +9,9 @@
 .es-home-diag-text strong,.es-home-author-text strong{color:var(--navy-800)}
 .es-home-quote-lead span{color:var(--blue-600)}
 .es-home-bivio.es-home-bivio{transition:background .35s cubic-bezier(.22,1,.36,1)}
-/* Icone "Scopri le macchine per" (disegnate con maschera, colore del testo Blue 600) */
-.es-home-discover-icon::before{content:"";width:22px;height:22px;background:currentColor;-webkit-mask:var(--es-ico) center/contain no-repeat;mask:var(--es-ico) center/contain no-repeat}
+/* Icone "Scopri le macchine per" (disegnate con maschera, colore del testo Blue 600). position:static: Elementor usa il ::before
+   dei contenitori atomic per lo sfondo (position:absolute) e l'icona finirebbe nell'angolo in alto a sinistra */
+.es-home-discover-icon.es-home-discover-icon::before{content:"";position:static;inset:auto;flex-shrink:0;width:22px;height:22px;background:currentColor;-webkit-mask:var(--es-ico) center/contain no-repeat;mask:var(--es-ico) center/contain no-repeat}
 .es-ico-sciacquatura{--es-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Cpath d='M12 3c-3 3.5-5 6.2-5 9a5 5 0 0 0 10 0c0-2.8-2-5.5-5-9z'/%3E%3C/svg%3E")}
 .es-ico-riempimento{--es-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Cpath d='M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z'/%3E%3Cpath d='M9 2h6'/%3E%3C/svg%3E")}
 .es-ico-tappatura{--es-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Crect x='9' y='3' width='6' height='4' rx='1'/%3E%3Cpath d='M8 7h8l1 4H7l1-4z'/%3E%3Cpath d='M7 11h10v10H7z'/%3E%3C/svg%3E")}
