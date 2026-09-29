@@ -100,7 +100,7 @@ Stesso CPT e stessi field group (i modelli sono riempitrici/uniblocchi → categ
 | ATHENA, EXACTA | Completi: tipologia, settori, contenitori, descrizione, tecnologia, prodotto, capacità, valvole, PDF | Card estesa in `page-squadron.html` con link "Scheda tecnica (PDF)" |
 | Olympia A/SA, Olympia AV A/SA, VOL, VOL.L Grandi formati, Easykeg, Evox/Evox Plus/Evox CM, Riempitrice a peso, Dosatore volumetrico e tappatore | Solo nome + settori | Card sintetica in `page-squadron.html` e nel gruppo "Linea Squadron" dei settori |
 
-Al lancio i post Squadron **non hanno pagina singola pubblica** (il wireframe non la prevede): il link della card porta all'ancora del modello in pagina Squadron. Se in futuro arrivano i dati completi basta attivare il template singolo, il modello dati è già pronto. Gamma e velocità degli altri modelli: sospese su indicazione del cliente (23/09).
+Al lancio i post Squadron **non hanno pagina singola pubblica** (il wireframe non la prevede): il link della card porta all'ancora del modello in pagina Squadron. Raggruppamento nel "Resto della gamma": campo `gruppo_squadron` (field group "Macchina — Squadron", solo linea Squadron) — i modelli con lo stesso valore finiscono in un'unica card con quel titolo. Se in futuro arrivano i dati completi basta attivare il template singolo, il modello dati è già pronto. Gamma e velocità degli altri modelli: sospese su indicazione del cliente (23/09).
 
 ### 3.4 Template Theme Builder
 
@@ -464,7 +464,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 2. ✅ Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
 3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
 4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro, template dedicati Linee complete e Usate.
-5. Pagine: Home, Squadron, Servizi, Chi siamo, Contatti, Referenze, Cataloghi, Settori, Lavora con noi + posizioni, Conferma, 404.
+5. Pagine: ✅ Squadron — da fare Home, Servizi, Chi siamo, Contatti, Referenze, Cataloghi, Settori, Lavora con noi + posizioni, Conferma, 404.
 6. News (dopo aver definito il modello dati).
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
 
@@ -553,3 +553,17 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Verifica**: 1440 — Linee complete al pixel fino alla griglia (figure 628×972 a x 80/732, didascalie), Usate identica (riquadro 738×282 a x 351, invito a 1063, footer a 1528); 768/375 stesse coordinate del wireframe; nessuno scroll orizzontale a 320px.
 - **EN** (testi scritti da me, **da far rivedere**): "Complete bottling lines up to 15,000 containers/hour", intro, claim, descrizione, titoli e didascalie dei layout, testo del riquadro Usate, "Line layout examples", "Available now", "Ask to be notified".
 - **Lezione**: i duplicati WPML degli allegati (`make_duplicate`) non copiano `_wp_attached_file` e `_wp_attachment_metadata`: vanno copiati a mano, altrimenti l'immagine EN non viene stampata.
+
+---
+
+## Pagina Squadron — stato (29/09, validata IT + EN)
+
+- **Pagina** "Squadron" (ID 258 / EN 360), modello di pagina **Elementor a larghezza piena** (`elementor_header_footer`: header e footer del Theme Builder, niente titolo né `<main>` di Hello, il `main#content` è il contenitore atomic della pagina). Testi fissi in widget atomic (pacchetto WPML della pagina), parti legate ai dati via snippet `5-eurostar-pagina-squadron.php`:
+  - `[es_squadron_gamma]`: card estese dei modelli Squadron **con descrizione** (oggi ATHENA, EXACTA): riquadro immagine 4:3 (immagine in evidenza se presente), nome, tipologia, descrizione + valvole, tabella (Adatta per = settori nell'ordine del modello, Contenitori, Prodotto, Tecnologia, Campo di produzione), link "Scheda tecnica … (PDF, peso)".
+  - `[es_squadron_resto]`: modelli senza descrizione, raggruppati con `gruppo_squadron` ("Olympia A / SA", "Olympia AV A / SA", "Evox / Evox Plus / Evox CM"), settori = unione dei modelli del gruppo.
+  - `[es_squadron_settori]`: pillole dei settori di tutti i modelli Squadron, nell'**ordine del sito** (campo Ordine del settore: Vino, Birra, Liquori…) invece dell'ordine del wireframe (Acqua, Bevande…): stessa scelta dell'ordine unico già decisa per le macchine.
+- **Ancore**: ogni card ha `id` = slug del modello; nei gruppi il primo modello è l'`id` della card, gli altri hanno uno `span` ancora. `scroll-margin-top: 110px` (la card si ferma sotto l'header sticky). Verificato: `/macchine/olympia-sa/` → redirect 302 → `/squadron/#olympia-sa` → card "Olympia A / SA" a 34px sotto l'header; tutte le 14 ancore presenti.
+- **Breadcrumb** delle pagine: `[es_breadcrumb_archivio]` gestisce anche le pagine (Home / genitori / pagina).
+- **Verifica al pixel**: a 1440, 768 e 375 le 9 sezioni hanno le stesse coordinate e altezze del wireframe (footer a 5980.8 a 1440); card ATHENA/EXACTA coincidenti (628×1027.9, nome, tabella, download). Nessuno scroll orizzontale a 320px (griglie con minimo `min(…px,100%)`).
+- **EN**: 14 modelli Squadron EN creati (duplicati WPML, settori EN nell'ordine IT, `gruppo_squadron` copiato); ATHENA/EXACTA con tipologia, descrizione, contenitori, prodotto, tecnologia e capacità in inglese; nomi descrittivi tradotti ("WEIGHT FILLER", "VOLUMETRIC DOSER AND PNEUMATIC CAPPER", "VOL.L LARGE FORMATS"; slug invariati, quindi le ancore restano uguali). Testi della pagina tradotti nel pacchetto WPML. **Tutti i testi EN scritti da me, da far rivedere.** Le schede tecniche PDF sono in italiano anche nella versione EN.
+- **Scostamenti**: ordine delle pillole (sopra); nessun segnaposto tratteggiato nel riquadro immagine (come le altre card).
