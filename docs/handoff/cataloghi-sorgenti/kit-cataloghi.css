@@ -1,0 +1,18 @@
+
+/* === Eurostar — Cataloghi (valori dal wireframe page-cataloghi.html) === */
+/* Righe dei PDF ([es_cataloghi]): gruppo e sezione nascosti finché non c'è almeno un PDF */
+#cataloghi-elenco:not(:has(.es-catalog-row)),.es-catalog-group.es-catalog-group:not(:has(.es-catalog-row)){display:none}
+.es-catalog-list{list-style:none;margin:0;padding:0}
+.es-catalog-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--bordo-sottile)}
+.es-catalog-row:last-child{padding-bottom:0}
+.es-catalog-icon{flex-shrink:0;width:46px;height:46px;border:1px solid var(--bordo-sottile);color:var(--blue-600);display:flex;align-items:center;justify-content:center}
+.es-catalog-info{flex:1;min-width:0}
+.es-catalog-title.es-catalog-title{margin:0 0 4px;font:800 16px/1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:none;letter-spacing:normal}
+.es-catalog-meta.es-catalog-meta{margin:0;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-catalog-dl.es-catalog-dl{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font:700 12px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600);white-space:nowrap;text-decoration:none}
+.es-catalog-dl.es-catalog-dl:hover{color:var(--navy-800)}
+.es-catalog-dl.es-catalog-dl:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+.es-catalog-cat.es-catalog-cat{margin-right:12px;color:var(--gray-500);font-weight:400;text-transform:none;letter-spacing:0}
+/* Sotto 767px i link vanno a capo sotto il testo (nel wireframe la colonna del testo resta larga 54px) */
+@media (max-width:767px){.es-catalog-row{flex-wrap:wrap;gap:12px 20px}.es-catalog-info{flex:1 1 calc(100% - 66px)}.es-catalog-info+.es-catalog-dl.es-catalog-dl{margin-left:66px}}
+/* === fine Cataloghi === */

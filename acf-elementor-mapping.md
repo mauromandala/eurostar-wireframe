@@ -464,7 +464,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 2. ✅ Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
 3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
 4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro, template dedicati Linee complete e Usate.
-5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo, Referenze, 404, Home — da fare Cataloghi, Lavora con noi + posizioni.
+5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo, Referenze, 404, Home, Cataloghi — da fare Lavora con noi + posizioni.
 6. News (dopo aver definito il modello dati).
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
 
@@ -651,6 +651,18 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Verifica al pixel**: 1440 e 768 identici in ogni elemento (News escluse: nel wireframe sono inventate, da noi nascoste); a 375 identico tranne la barra clienti (+31px, vedi sopra). Nessuno scroll orizzontale a 320px, IT ed EN. La citazione conserva gli `<span>` in Blue 600.
 - **EN** (**da far rivedere**): H1 "Since 1996 we have been designing and building…", "We engineer solutions.", "Discover machines for:", "Find your solution", "Explore by machine type", "Choose by sector", "By your side after installation too", "Engineering built never to stop", "Featured machines", "Latest from the Eurostar blog", "Let's design your next line together"; link alle categorie EN (`rinsers-blowers`, `fillers`, `cappers`, `complete-lines`). Stringhe dello snippet ("Pause/Resume logo scrolling", "Previous/Next news", "Latest news") in String Translation, contesto "Eurostar template".
 - **Da fare**: logo Squadron (ora riquadro con velatura bianca al 10%); foto (bottiglia, blocchi diagonali, macchine in evidenza, avatar del fondatore); SKILLFILL non ha la scheda EN, quindi in EN il pulsante porta alla scheda italiana.
+
+---
+
+## Pagina Cataloghi — stato (29/09, validata IT + EN)
+
+- **Pagina** "Cataloghi" (ID 261 / EN 366 "Catalogues", `/cataloghi/`, `/en/catalogues/`). Testata scura (`es-cat-hero` + locale: altezza minima 32vh, padding verticale `clamp(40px,7vh,72px)`), breadcrumb, kicker "Documentazione tecnica", H1, intro; sezione `#cataloghi-elenco` con i gruppi "Catalogo generale" e "Cataloghi per categoria" (titoli e testi in widget atomic: `es-h3`, `es-body-sm`); invito "Non trovi quello che cerchi?" come Referenze. Sorgenti in `docs/handoff/cataloghi-sorgenti/`.
+- **PDF dalla pagina opzioni ACF "Cataloghi"** (menu admin "Cataloghi", `post_id` `es_cataloghi`, gruppo "Cataloghi"): gruppo `generale` (titolo, titolo_en, descrizione, descrizione_en, file, file_en) e repeater `cataloghi` (categoria = termine `categoria_macchina`, descrizione, descrizione_en, file, file_en). Titolo e link "Vedi la categoria" delle righe per categoria vengono dal termine nella lingua corrente. Precompilata con i testi del wireframe (descrizioni EN mie, **da far rivedere**), **nessun PDF caricato**: il cliente carica i file da solo. Un solo elenco per tutte le lingue (filtro `acf/validate_post_id` esteso a `es_cataloghi`).
+- **Shortcode** `[es_cataloghi tipo="generale"]` e `[es_cataloghi]` (snippet 6): `ul role="list"`, una riga **solo se c'è il PDF** (decisione utente 29/09); formato e peso letti dal file (`size_format`, "PDF, 1,9 MB" in IT, "1.9 MB" in EN). In inglese si scarica il PDF inglese se caricato, altrimenti quello italiano, con ", in Italian" nella riga e `hreflang="it"` sul link. Link "Scarica" con `download` e `type="application/pdf"`; nome accessibile completo con testo nascosto ("Scarica Riempitrici (PDF, 3,1 MB)", "Vedi la categoria: Riempitrici"). Senza righe il CSS del Kit nasconde il gruppo (`.es-catalog-group.es-catalog-group:not(:has(.es-catalog-row))`) e l'intera sezione (`#cataloghi-elenco:not(…)`): la pagina mostra testata e invito finale.
+- **Classi nuove**: `es-catalog-groups` (colonna, 56px tra i gruppi), `es-catalog-group`. Righe stilate nel CSS del Kit (blocco "Eurostar — Cataloghi"); icona 46×46 (nel wireframe il bordo si somma ai 44px).
+- **Sotto 767px** i link vanno a capo sotto il testo, allineati dopo l'icona: nel wireframe a 375 la colonna del testo resta larga 54–172px e la descrizione va su 7 righe (deviazione voluta).
+- **Verifica al pixel** (con un PDF di prova collegato temporaneamente a tutte le righe, poi tolto): 1440 e 768 identici in ogni elemento, stili calcolati compresi (footer a 1734 / 1594); 375 identico in testata e titoli. Nessuno scroll orizzontale a 320px, IT ed EN. Stringhe dello snippet ("Scarica", "Vedi la categoria", "PDF, %s", "in italiano") in String Translation, contesto "Eurostar template". EN (**da far rivedere**): "Download the Eurostar catalogues", "Technical documentation", "General catalogue", "Catalogues by category", "Can't find what you're looking for?", "Download", "View the category".
+- **Da fare**: caricare i PDF (italiani ed eventualmente inglesi) nella pagina opzioni "Cataloghi"; se serve, aggiungere la riga "Sistemi movimentazione contenitori" (non presente nel wireframe).
 
 ---
 

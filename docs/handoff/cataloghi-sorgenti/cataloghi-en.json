@@ -1,0 +1,21 @@
+{
+  "[es_breadcrumb_archivio]": "[es_breadcrumb_archivio]",
+  "Documentazione tecnica": "Technical documentation",
+  "Scarica i cataloghi Eurostar": "Download the Eurostar catalogues",
+  "Schede di gamma in PDF, aggiornate per categoria di macchina, pronte da consultare o condividere con il tuo team tecnico.": "Range brochures in PDF, updated by machine category, ready to browse or share with your technical team.",
+  "Catalogo generale": "General catalogue",
+  "La panoramica completa della gamma, in un unico documento.": "The complete overview of the range, in a single document.",
+  "[es_cataloghi tipo=\"generale\"]": "[es_cataloghi tipo=\"generale\"]",
+  "Cataloghi per categoria": "Catalogues by category",
+  "Un documento dedicato per ogni tipologia di macchina.": "A dedicated document for each machine type.",
+  "[es_cataloghi]": "[es_cataloghi]",
+  "Non trovi quello che cerchi?": "Can't find what you're looking for?",
+  "Il nostro team tecnico ti invia la documentazione specifica per la tua configurazione.": "Our technical team will send you the documentation specific to your configuration.",
+  "Contattaci": "Contact us",
+  "_snippet": {
+    "Scarica": "Download",
+    "Vedi la categoria": "View the category",
+    "PDF, %s": "PDF, %s",
+    "in italiano": "in Italian"
+  }
+}
