@@ -464,7 +464,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 2. ✅ Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
 3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
 4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro, template dedicati Linee complete e Usate.
-5. Pagine: ✅ Squadron, Contatti, Conferma — da fare Home, Servizi, Chi siamo, Referenze, Cataloghi, Settori, Lavora con noi + posizioni, 404.
+5. Pagine: ✅ Squadron, Contatti, Conferma, Settori — da fare Home, Servizi, Chi siamo, Referenze, Cataloghi, Lavora con noi + posizioni, 404.
 6. News (dopo aver definito il modello dati).
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
 
@@ -583,3 +583,16 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Consenso nell'email**: la casella privacy ha l'etichetta "Consenso privacy" (EN "Privacy consent"), nascosta in pagina con `display:none`, così `[all-fields]` stampa "Consenso privacy: on" invece di una riga "on" senza nome.
 - **Correzione 29/09 (segnalata dall'utente)**: in hover il testo di "Invia richiesta" restava bianco sul riempimento bianco: il widget genera `.elementor-XX .elementor-element-ID .elementor-button[type="submit"]:hover { color: #fff }` (specificità 0,6,0), che batteva la regola del Kit. Regola di hover del Kit rinforzata (`.es-contact-form` ripetuta + `[type]`): ora testo e contorno Blue 600 sul riempimento bianco, verificato con il mouse nel browser.
 - **Lezioni**: l'opzione "Rispondi a" del form classic si popola solo nell'editor (il validatore accetta solo vuoto): impostata direttamente nei dati; le regole del widget form escono come `.elementor-XX .elementor-element-ID …` e `.elementor-widget-form …`: nel Kit servono selettori con classe ripetuta; se un salvataggio fallisce non cancellare il file caricato prima di aver verificato `success`.
+
+---
+
+## Pagina Settori — stato (29/09, validata IT + EN)
+
+- **Pagina** "Settori" (ID 255 / EN 354 "Sectors", `/settori/`, `/en/sectors/` — slug EN provvisorio per il referente SEO), modello Elementor a larghezza piena, contenitore `main#content`. Testata chiara: breadcrumb `[es_breadcrumb_archivio tema="light"]` (nuovo attributo: senza, resta la variante scura degli archivi), kicker "Cosa imbottigli?", H1, intro; griglia `[es_settori_griglia]`; invito finale "Non trovi il tuo prodotto? Progettiamo su misura." + "Contattaci" (link di tipo pagina → Contatti, in EN `/en/contact/`).
+- **Nuove classi globali riutilizzabili** (stesso schema di testata in Servizi e Chi siamo): `es-sec-hero-light` (fondo bianco, padding `clamp(40px,7vh,80px)` / `clamp(24px,4vh,40px)`), `es-h1-hero` (Display 1 con tracking −0,02em, margini 16px; `max-width` in stile locale: 14ch qui, 26ch Servizi, 18ch Chi siamo), `es-sec-after-hero` (sezione subito sotto la testata: padding alto `clamp(24px,4vh,40px)`, basso come le sezioni).
+- **`[es_settori_griglia]`** (snippet `6-eurostar-pagine.php`): una card per termine `settore` della lingua corrente, nell'**ordine del campo Ordine** (Vino, Birra, Liquori…) invece dell'ordine del wireframe (Acqua, Bevande e succhi, Vino…) — stessa scelta dell'ordine unico già decisa per macchine e pillole. Elenco `ul role="list"`, card = link al settore con nome in `span`; immagine = campo `immagine` del termine (nella traduzione, se vuoto, quella del termine italiano), `alt=""` perché il nome è già il testo del link; senza immagine fondo Gray 150 pieno (niente segnaposto tratteggiato, come le card macchina). CSS nel Kit, blocco "pagina Settori": 4 colonne, 2 sotto 900px, 1 sotto 560px, rapporto 4:5, sfumatura scura in basso, zoom 1,06 dell'immagine in hover (disattivato con "riduci movimento").
+- **Verifica al pixel**: a 1440, 768 e 375 breadcrumb, kicker, H1, intro, griglia, card (302×377,5 a 1440), nome, invito e pulsante hanno le stesse coordinate del wireframe (footer a 2288,4 a 1440). Nessuno scroll orizzontale a 320px (il wireframe sfora a 768 per il footer). Tastiera: dal breadcrumb Tab porta alla prima card con contorno 2px.
+- **EN** (testi scritti da me, **da far rivedere**): "What do you bottle?", "Solutions for your sector", intro, "Can't find your product? We design to order.", "Contact us". Le card mostrano i 10 termini EN (i link usano ancora la base `/en/settori/…`: slug della tassonomia per il referente SEO).
+- **Lezione**: `make_duplicate` su una traduzione già esistente sovrascrive **titolo e slug** con quelli italiani (qui "Settori"/`settori` sulla pagina EN): ripristinarli dopo il duplicato. Una pagina scritta con `elementor-set-content` non ha il pacchetto di stringhe WPML finché non viene salvata: `wp_update_post()` sulla pagina IT lo registra.
+- **Aperti**: immagini dei 10 settori (campo `immagine` dei termini, da caricare quando arrivano le foto).
+
