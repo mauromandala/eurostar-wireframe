@@ -638,3 +638,19 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Verifica al pixel**: 1440 e 375 identici (tessere 200×122 a 1440, invito a 1546,4, footer a 2073,7). Nessuno scroll orizzontale a 320px. EN (**da far rivedere**): "Our customers", "More than 2,000 lines installed worldwide", intro, "Who relies on Eurostar", "Our customers around the world", "Let's talk about your next project".
 - **Da fare**: caricare i loghi dei clienti (cartella Drive `08-loghi-clienti`) nei campi Logo della pagina Clienti; foto di sfondo della testata.
 
+---
+
+## Variabili globali — stato (29/09)
+
+- **37 variabili Elementor v4** (editor → pannello Variabili; nel CSS escono come `--nome` in `:root` del file del Kit, quindi valgono su tutte le pagine):
+  - colori: `navy-950` #000A23, `navy-900` #0D1633, `navy-800` #1C265A, `navy-600` #2E4491, `blue-600` #25387E, `blue-500` #3A56A8, `blue-400` #5B72AD, `blue-300` #9FB0D8, `gray-050` #F2F4FA, `gray-100` #EDEFF4, `gray-150` #E3E6EE, `gray-200` #D3D7E2, `gray-400` #888B8D, `gray-500` #4A4F5E, `gray-600` #3A3F4E, `gray-700` #2B3040, `bianco`, `bianco-82` (#FFFFFFD1), `bianco-72` (#FFFFFFB8), `bordo-sottile` (#1C265A29 = rgba(28,38,90,.16)), `hero-fondo` #767C9D (fondo testate scure finché mancano le foto);
+  - font: `font-titoli` Barlow, `font-testo` Roboto;
+  - misure: `sezione-x`, `sezione-y`, `sezione-compatta`, `testata-y`, `contenuto-max` 1360px, `contenuto-stretto` 1180px, `testo-display-1/2/3`, `testo-h2/h3/h4`, `testo-body-lg`, `testo-body-md` (valori del design system).
+- **Classi globali collegate**: 97 classi, 225 valori (colori, font, misure) ora puntano alle variabili invece che a valori scritti. Rimasti scritti solo valori usati una o due volte (spaziature verticali di singole sezioni, velature delle testate, bianchi semitrasparenti del footer, `transparent`).
+- **CSS personalizzato del Kit**: 161 colori e 50 font sostituiti con `var(--…)`; restano fissi solo `#25D366` (WhatsApp) e `#CD212A` (asterisco obbligatorio).
+- **Copie di sicurezza** (opzioni WordPress): `es_classes_backup_20260929` (JSON delle 150 classi prima della conversione), `es_kit_css_backup_20260929` (CSS del Kit prima); mappa etichetta → ID variabile in `es_variabili_map`.
+- **Verifica**: stessi valori calcolati (font, colori, padding) e stessa posizione del footer su Servizi 5928,5, Settori 2288,4, Chi siamo 5846,1, Referenze 2191,7, Squadron 5980,8, Conferma 987,4, catalogo (testata 432, card a 690).
+- **Corretto durante la verifica** (preesistente): il pulsante "Invia richiesta" usciva `#3A56A8` (colore "In risalto" del Kit) perché `.elementor-widget-form .elementor-button[type=submit]` (0,3,0, caricata dopo il Kit) batteva la nostra regola; selettore rinforzato con `[type]`, ora Blue 600 come nel wireframe.
+- **Regola per le pagine nuove**: nelle classi usare le variabili (`{"$$type":"global-color-variable"|"global-font-variable"|"global-size-variable","value":"e-gv-…"}`, ID in `es_variabili_map`), nel CSS del Kit `var(--nome)`. I colori globali del Kit (sistema classico, 18 colori e 21 stili di testo) restano per i widget classici (form) e non sono collegati alle variabili.
+- **Non convertiti**: gli stili locali dentro le singole pagine/template (pochi: margini e qualche colore, es. ultimo paragrafo della storia in Chi siamo).
+
