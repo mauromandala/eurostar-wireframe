@@ -464,7 +464,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 2. ✅ Header (utility bar, nav, mega-menu, hamburger 1200px, ricerca, selettore lingua WPML) e footer (5/3/2 colonne, WhatsApp, torna su).
 3. Scheda pilota MEC LD (template single `macchina`), confronto pixel con il wireframe → validazione.
 4. ✅ Card (componenti atomic), archivio categoria, archivio settore, catalogo con filtro, template dedicati Linee complete e Usate.
-5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo — da fare Home, Referenze, Cataloghi, Lavora con noi + posizioni, 404.
+5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo, Referenze, 404 — da fare Home, Cataloghi, Lavora con noi + posizioni.
 6. News (dopo aver definito il modello dati).
 7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
 
@@ -618,4 +618,23 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Verifica al pixel**: a 1440, 768 e 375 tutte le sezioni, i titoli, i paragrafi, le schede del team e le foto hanno le coordinate del wireframe (footer a 5728,1 sotto il main a 1440, meno la fascia tolta). Nessuno scroll orizzontale a 320px. Titoli: un H1, H2 di sezione, H3 per i nomi e "Il team allargato".
 - **EN** (testi scritti da me, **da far rivedere**): tutti i 58 testi ("Bottling engineering since 1996", "From design to testing, under one roof", "The faces behind the lines", ruoli e descrizioni del team, "Want to see our plant up close?").
 - **Foto**: elencate nel documento per la grafica (artifact "Immagini sito Eurostar", sezione Chi siamo; cartella Drive `Ilaria/Immagini sito/07-chi-siamo`).
+
+---
+
+## Pagina 404 — stato (29/09, validata IT + EN)
+
+- **Template Theme Builder** "Pagina 404" (ID 650 / EN 652, tipo `error-404`, condizione `include/singular/not_found404`), contenitore `main#content`. Risponde con stato HTTP 404. "404" decorativo (`aria-hidden`), kicker "Errore 404", H1 "Pagina non trovata", testo, pulsanti "Torna alla home" (primario) e "Vai al catalogo macchine" (ghost), `nav` "Sezioni principali" con Azienda, Settori, Servizi, Contatti (link di tipo pagina, tradotti da WPML: in EN `/en/about-us/`, `/en/sectors/`…). I due pulsanti sono link URL (la Home non è ancora una pagina): nel pacchetto EN puntano a `/en/` e `/en/macchine/`.
+- **Classi nuove**: `es-sec-404`, `es-404-box`, `es-404-num`, `es-404-nav`, `es-link-u` (link testuale sottolineato, riusabile).
+- **Colore del "404"**: il wireframe usa `var(--gray-200)`, token **non definito** nel design system (il numero esce nero); uso un grigio chiaro `#D3D7E2`, coerente con l'intento decorativo.
+- **Verifica al pixel**: a 1440 tutti gli elementi e il footer (869,6) coincidono; a 375 scarto di 1,6px (altezza minima in `vh`). EN: "Page not found", "Back to home", "Go to the machine catalogue", "Company / Sectors / Services / Contact" (**da far rivedere**).
+
+---
+
+## Pagina Referenze — stato (29/09, validata IT + EN)
+
+- **Pagina** "Referenze" (ID 257 / EN 358 "References", `/referenze/`, `/en/references/`). Testata scura come Squadron (`es-cat-hero-lg` con altezza minima 42vh), breadcrumb, kicker "I nostri clienti", H1, intro; "I nostri clienti nel mondo" + griglia clienti; invito "Parliamo del tuo prossimo progetto" (nuove classi `es-sec-cta-sm` fondo Navy 950 padding `clamp(56px,8vh,96px)`, `es-inner-60ch`, `es-display-3-white`).
+- **Clienti da un'unica fonte** (servirà anche al nastro dei loghi in Home): pagina opzioni ACF **Clienti** (menu admin "Clienti", `post_id` `es_clienti`, gruppo campi "Clienti": repeater `clienti` con `nome` obbligatorio e `logo` facoltativo), caricati i 29 nomi del wireframe. Shortcode `[es_clienti]` (snippet `6-eurostar-pagine.php`): elenco `ul role="list"`, tessera con il logo (alt = nome) se caricato, altrimenti il nome. ACF Multilingual aggiungerebbe la lingua all'ID delle opzioni (`es_clienti_en`, elenco vuoto in inglese): filtro `acf/validate_post_id` che mantiene `es_clienti` per tutte le lingue, anche in salvataggio.
+- **Tessere**: nel wireframe `min-height:88px` senza `border-box` = 122px reali; nel sito `min-height:122px` (CSS nel Kit, blocco "pagina Referenze").
+- **Verifica al pixel**: 1440 e 375 identici (tessere 200×122 a 1440, invito a 1546,4, footer a 2073,7). Nessuno scroll orizzontale a 320px. EN (**da far rivedere**): "Our customers", "More than 2,000 lines installed worldwide", intro, "Who relies on Eurostar", "Our customers around the world", "Let's talk about your next project".
+- **Da fare**: caricare i loghi dei clienti (cartella Drive `08-loghi-clienti`) nei campi Logo della pagina Clienti; foto di sfondo della testata.
 
