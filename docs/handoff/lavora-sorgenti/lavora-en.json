@@ -1,0 +1,60 @@
+{
+ "comuni": {
+  "Invia candidatura": "Send application",
+  "Sito Eurostar": "Sito Eurostar",
+  "[all-fields]": "[all-fields]",
+  "Candidatura inviata. Grazie per il tuo interesse.": "Application sent. Thank you for your interest.",
+  "Non è stato possibile inviare la candidatura. Riprova o scrivici a eurostarinfo@eurostar.it.": "Your application could not be sent. Please try again or write to eurostarinfo@eurostar.it.",
+  "Controlla i campi evidenziati e riprova.": "Please check the highlighted fields and try again.",
+  "https://eurostar.demoengagemint.it/conferma/": "https://eurostar.demoengagemint.it/en/confirmation/",
+  "Nome": "First name",
+  "Cognome": "Last name",
+  "Email": "Email",
+  "Curriculum vitae (PDF)": "Curriculum vitae (PDF)",
+  "Messaggio": "Message",
+  "Consenso privacy": "Privacy consent",
+  "Ho letto e accetto la <a href=\"https://eurostar.demoengagemint.it/privacy-policy/\">Privacy Policy</a>": "I have read and accept the <a href=\"https://eurostar.demoengagemint.it/?page_id=3\">Privacy Policy</a>"
+ },
+ "262": {
+  "[es_breadcrumb_archivio genitore=\"254\" genitore_nome=\"Azienda\"]": "[es_breadcrumb_archivio genitore=\"254\" genitore_nome=\"Company\"]",
+  "Carriere": "Careers",
+  "Lavora con noi": "Careers",
+  "Da oltre 30 anni progettiamo e realizziamo soluzioni innovative per il settore del bottling e del packaging, portando l'eccellenza del Made in Italy sui mercati internazionali.": "For over 30 years we have been designing and building innovative solutions for the bottling and packaging sector, bringing Made in Italy excellence to international markets.",
+  "Le persone sono il motore della nostra crescita: per questo siamo alla ricerca di professionisti competenti, appassionati e pronti a mettersi in gioco in un contesto dinamico e orientato all'innovazione.": "People are the engine of our growth: that is why we are looking for skilled, passionate professionals ready to take on new challenges in a dynamic, innovation-driven environment.",
+  "Scopri le opportunità aperte o inviaci la tua candidatura spontanea. Siamo sempre interessati a incontrare nuovi talenti che desiderano costruire il futuro insieme a noi.": "Explore our open positions or send us a speculative application. We are always keen to meet new talent who want to build the future with us.",
+  "Opportunità": "Opportunities",
+  "Posizioni aperte": "Open positions",
+  "[es_posizioni]": "[es_posizioni]",
+  "Candidatura spontanea": "Speculative application",
+  "Non trovi una posizione in linea con il tuo profilo? Inviaci comunque il tuo curriculum, raccontandoci le tue competenze e l'ambito in cui ti piacerebbe lavorare. Valuteremo il tuo profilo in relazione alle opportunità in azienda.": "Can't find a position that matches your profile? Send us your CV anyway, telling us about your skills and the area you would like to work in. We will assess your profile against the opportunities in the company.",
+  "[Sito] Candidatura spontanea": "[Sito EN] Candidatura spontanea",
+  "Ambito di interesse": "Area of interest",
+  "Es. commerciale, tecnico, produzione…": "E.g. sales, engineering, production…"
+ },
+ "785": {
+  "[es_breadcrumb_archivio]": "[es_breadcrumb_archivio]",
+  "[es_posizione_kicker]": "[es_posizione_kicker]",
+  "[es_posizione_meta]": "[es_posizione_meta]",
+  "La posizione": "The position",
+  "[es_posizione_corpo]": "[es_posizione_corpo]",
+  "Candidati per questa posizione": "Apply for this position",
+  "Candidatura posizione": "Candidatura posizione",
+  "[Sito] Candidatura — [field id=\"posizione\"]": "[Sito EN] Candidatura — [field id=\"posizione\"]",
+  "Posizione": "Position",
+  "Vedi tutte le posizioni aperte": "See all open positions"
+ },
+ "snippet": {
+  "Rif. %s": "Ref. %s",
+  "Dettagli": "Details",
+  "Tempo indeterminato": "Permanent",
+  "Tempo determinato": "Fixed-term",
+  "Stage": "Internship",
+  "Sede": "Location",
+  "Contratto": "Contract",
+  "Attività principali": "Main responsibilities",
+  "Requisiti richiesti": "Requirements",
+  "Requisiti preferenziali": "Preferred qualifications",
+  "Cosa offriamo": "What we offer",
+  "Posizioni aperte": "Open positions"
+ }
+}

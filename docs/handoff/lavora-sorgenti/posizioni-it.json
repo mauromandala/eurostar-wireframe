@@ -1,0 +1,207 @@
+[
+ {
+  "slug": "area-manager",
+  "titolo": "Area Manager",
+  "kicker": "Commerciale estero · Rif. EU-2026-01",
+  "reparto": "Commerciale estero",
+  "rif": "EU-2026-01",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "contratto": "Tempo indeterminato",
+  "meta_single": [
+   "San Marzano Oliveto (AT), IT",
+   "Tempo indeterminato"
+  ],
+  "la_posizione": "Per ampliare il nostro team commerciale, cerchiamo una figura che si occupi dello sviluppo dei mercati assegnati, della ricerca di nuove opportunità di business e della gestione dei rapporti con clienti e partner internazionali.",
+  "sezioni": {
+   "Attività principali": [
+    "Sviluppo commerciale e acquisizione di nuovi clienti nei mercati assegnati.",
+    "Gestione e fidelizzazione dei clienti esistenti.",
+    "Analisi delle esigenze del cliente, in collaborazione con l'ufficio tecnico.",
+    "Preparazione delle offerte commerciali e gestione delle trattative.",
+    "Gestione dei rapporti con agenti e partner commerciali.",
+    "Partecipazione a fiere di settore e visite presso clienti.",
+    "Monitoraggio delle opportunità commerciali e delle attività di vendita."
+   ],
+   "Requisiti richiesti": [
+    "Ottima padronanza della lingua inglese, scritta e parlata, per gestire in autonomia incontri e trattative commerciali.",
+    "Capacità relazionali, commerciali e di negoziazione.",
+    "Orientamento al cliente e al raggiungimento degli obiettivi.",
+    "Disponibilità a trasferte internazionali.",
+    "Autonomia organizzativa, proattività e attitudine al lavoro in team."
+   ],
+   "Requisiti preferenziali": [
+    "Conoscenza di ulteriori lingue straniere.",
+    "Esperienza commerciale B2B sui mercati internazionali.",
+    "Provenienza dal settore dei macchinari industriali, dell'automazione o del bottling & packaging.",
+    "Interesse e predisposizione alla comprensione di prodotti tecnici."
+   ],
+   "Cosa offriamo": [
+    "Contratto a tempo indeterminato.",
+    "Formazione sul prodotto direttamente in officina, dove le macchine vengono progettate e costruite.",
+    "Trasferte internazionali presso clienti e fiere di settore, a contatto con produttori di tutto il mondo."
+   ]
+  },
+  "ordine": 1
+ },
+ {
+  "slug": "elettricista-plc",
+  "titolo": "Elettricista industriale / Programmatore PLC",
+  "kicker": "Elettrico e automazione · Rif. EU-2026-02",
+  "reparto": "Elettrico e automazione",
+  "rif": "EU-2026-02",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "contratto": "Tempo indeterminato",
+  "meta_single": [
+   "San Marzano Oliveto (AT), IT",
+   "Tempo indeterminato"
+  ],
+  "la_posizione": "Per ampliamento del team, cerchiamo una figura tecnica da inserire nel reparto elettrico e automazione a tempo indeterminato.",
+  "sezioni": {
+   "Attività principali": [
+    "Cablaggio elettrico di macchinari industriali.",
+    "Installazione e collaudo degli impianti.",
+    "Programmazione e modifica di software PLC.",
+    "Assistenza tecnica e risoluzione dei guasti.",
+    "Avviamento delle macchine presso i clienti."
+   ],
+   "Requisiti richiesti": [
+    "Esperienza nel settore elettrico industriale.",
+    "Conoscenza dei PLC Siemens, Omron, Mitsubishi o equivalenti.",
+    "Capacità di lettura degli schemi elettrici.",
+    "Disponibilità a trasferte occasionali.",
+    "Precisione e attitudine al lavoro in team."
+   ],
+   "Requisiti preferenziali": [
+    "Esperienza su macchine automatiche.",
+    "Conoscenza base della lingua inglese.",
+    "Diploma tecnico elettrico/elettronico."
+   ],
+   "Cosa offriamo": [
+    "Contratto a tempo indeterminato.",
+    "Lavoro su macchinari progettati e costruiti internamente.",
+    "Formazione continua sul campo.",
+    "Inserimento in un team tecnico specializzato."
+   ]
+  },
+  "ordine": 2
+ },
+ {
+  "slug": "addetto-ufficio-tecnico",
+  "titolo": "Addetto Ufficio Tecnico",
+  "kicker": "Ufficio tecnico · Rif. EU-2026-03",
+  "reparto": "Ufficio tecnico",
+  "rif": "EU-2026-03",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "contratto": "Tempo indeterminato",
+  "meta_single": [
+   "San Marzano Oliveto (AT), IT",
+   "Tempo indeterminato"
+  ],
+  "la_posizione": "Per rafforzare l'ufficio tecnico, cerchiamo una figura da inserire nel team di progettazione meccanica, a supporto della produzione e della gestione documentale delle macchine.",
+  "sezioni": {
+   "Attività principali": [
+    "Disegno tecnico meccanico 2D/3D di componenti e gruppi macchina.",
+    "Redazione e aggiornamento di distinte base (BOM) e disegni costruttivi.",
+    "Supporto tecnico alla produzione durante l'assemblaggio delle macchine.",
+    "Collaborazione con l'ufficio commerciale per la configurazione tecnica delle offerte.",
+    "Gestione dell'archivio disegni e della documentazione tecnica di prodotto."
+   ],
+   "Requisiti richiesti": [
+    "Diploma o laurea in ambito meccanico/meccatronico.",
+    "Buona conoscenza di un software CAD 2D/3D (SolidWorks, Autodesk Inventor o equivalenti).",
+    "Capacità di lettura di disegni tecnici e schemi meccanici.",
+    "Precisione, metodo e attitudine al lavoro in team."
+   ],
+   "Requisiti preferenziali": [
+    "Esperienza pregressa in ufficio tecnico su macchine automatiche o impianti industriali.",
+    "Conoscenza base della lingua inglese per la documentazione tecnica.",
+    "Familiarità con software di gestione PLM/PDM."
+   ],
+   "Cosa offriamo": [
+    "Contratto a tempo indeterminato.",
+    "Affiancamento diretto con l'ufficio tecnico e la produzione, sulle stesse macchine che vengono progettate e costruite in azienda.",
+    "Formazione continua su prodotto e strumenti di progettazione."
+   ]
+  },
+  "ordine": 3
+ },
+ {
+  "slug": "operaio-assemblaggio",
+  "titolo": "Operaio specializzato — Assemblaggio meccanico",
+  "kicker": "Produzione · Rif. EU-2026-04",
+  "reparto": "Produzione",
+  "rif": "EU-2026-04",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "contratto": "Tempo determinato",
+  "meta_single": [
+   "San Marzano Oliveto (AT), IT",
+   "Tempo determinato"
+  ],
+  "la_posizione": "Per un aumento temporaneo del carico produttivo, cerchiamo un operaio specializzato da inserire nel reparto assemblaggio, per il montaggio meccanico delle macchine prima del collaudo.",
+  "sezioni": {
+   "Attività principali": [
+    "Assemblaggio meccanico di gruppi e sottogruppi macchina secondo disegno.",
+    "Montaggio di componenti pneumatici, oleodinamici e meccanici.",
+    "Regolazioni meccaniche e verifiche dimensionali durante il montaggio.",
+    "Collaborazione con il reparto elettrico per la messa in servizio pre-collaudo.",
+    "Segnalazione di eventuali non conformità dei componenti ricevuti."
+   ],
+   "Requisiti richiesti": [
+    "Esperienza pregressa nell'assemblaggio di macchine automatiche o industriali.",
+    "Capacità di lettura del disegno meccanico.",
+    "Utilizzo di strumenti di misura (calibro, comparatore, ecc.).",
+    "Precisione, manualità e attitudine al lavoro in team."
+   ],
+   "Requisiti preferenziali": [
+    "Diploma tecnico meccanico.",
+    "Conoscenza base di pneumatica e oleodinamica."
+   ],
+   "Cosa offriamo": [
+    "Contratto a tempo determinato, con possibilità di proroga.",
+    "Lavoro su macchinari progettati e costruiti internamente.",
+    "Affiancamento operativo nel reparto assemblaggio."
+   ]
+  },
+  "ordine": 4
+ },
+ {
+  "slug": "customer-service",
+  "titolo": "Customer Service Specialist",
+  "kicker": "Post-vendita · Rif. EU-2026-05",
+  "reparto": "Post-vendita",
+  "rif": "EU-2026-05",
+  "sede": "San Marzano Oliveto (AT), IT (Ibrido)",
+  "contratto": "Tempo indeterminato",
+  "meta_single": [
+   "San Marzano Oliveto (AT), IT (Ibrido)",
+   "Tempo indeterminato"
+  ],
+  "la_posizione": "Per il team post-vendita, cerchiamo una figura da inserire nella gestione delle richieste clienti (ricambi, assistenza, informazioni tecniche), come punto di contatto tra cliente e reparti interni.",
+  "sezioni": {
+   "Attività principali": [
+    "Gestione delle richieste in ingresso da clienti (email, telefono, WhatsApp) su ricambi e assistenza.",
+    "Smistamento delle richieste tecniche verso il reparto assistenza o l'ufficio tecnico.",
+    "Redazione di offerte per ricambi e monitoraggio degli ordini fino alla spedizione.",
+    "Aggiornamento dell'anagrafica clienti e dello storico richieste.",
+    "Supporto alla pianificazione degli interventi di assistenza in loco e da remoto."
+   ],
+   "Requisiti richiesti": [
+    "Esperienza in ruoli di customer service o back office commerciale.",
+    "Buona padronanza della lingua inglese, scritta e parlata.",
+    "Precisione, organizzazione e capacità di gestire più richieste in parallelo.",
+    "Buona dimestichezza con i principali strumenti informatici (email, gestionali, fogli di calcolo)."
+   ],
+   "Requisiti preferenziali": [
+    "Conoscenza di una seconda lingua straniera.",
+    "Esperienza pregressa nel settore dei macchinari industriali o del bottling & packaging.",
+    "Conoscenza base di un gestionale ERP."
+   ],
+   "Cosa offriamo": [
+    "Contratto a tempo indeterminato.",
+    "Modalità di lavoro ibrida, con possibilità di lavoro da remoto per alcuni giorni a settimana.",
+    "Formazione sul prodotto a contatto diretto con ufficio tecnico e assistenza."
+   ]
+  },
+  "ordine": 5
+ }
+]

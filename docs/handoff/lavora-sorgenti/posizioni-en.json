@@ -1,0 +1,167 @@
+{
+ "area-manager": {
+  "slug": "area-manager",
+  "titolo": "Area Manager",
+  "reparto": "International sales",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "la_posizione": "To expand our sales team, we are looking for someone to develop the assigned markets, seek out new business opportunities and manage relationships with international customers and partners.",
+  "sezioni": {
+   "attivita": [
+    "Business development and acquisition of new customers in the assigned markets.",
+    "Management and retention of existing customers.",
+    "Analysis of customer needs, together with the engineering department.",
+    "Preparation of commercial offers and management of negotiations.",
+    "Management of relationships with agents and sales partners.",
+    "Participation in trade fairs and customer visits.",
+    "Monitoring of sales opportunities and activities."
+   ],
+   "requisiti": [
+    "Excellent written and spoken English, to handle meetings and negotiations independently.",
+    "Interpersonal, sales and negotiation skills.",
+    "Customer and goal orientation.",
+    "Willingness to travel internationally.",
+    "Organisational autonomy, proactivity and a team-working attitude."
+   ],
+   "requisiti_preferenziali": [
+    "Knowledge of other foreign languages.",
+    "B2B sales experience in international markets.",
+    "Background in industrial machinery, automation or bottling & packaging.",
+    "Interest in and aptitude for understanding technical products."
+   ],
+   "cosa_offriamo": [
+    "Permanent contract.",
+    "Product training directly in the workshop, where the machines are designed and built.",
+    "International travel to customers and trade fairs, in contact with producers from all over the world."
+   ]
+  }
+ },
+ "elettricista-plc": {
+  "slug": "industrial-electrician-plc-programmer",
+  "titolo": "Industrial Electrician / PLC Programmer",
+  "reparto": "Electrical and automation",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "la_posizione": "To expand our team, we are looking for a technician to join the electrical and automation department on a permanent contract.",
+  "sezioni": {
+   "attivita": [
+    "Electrical wiring of industrial machinery.",
+    "Installation and testing of systems.",
+    "Programming and modification of PLC software.",
+    "Technical support and troubleshooting.",
+    "Machine start-up at customer sites."
+   ],
+   "requisiti": [
+    "Experience in the industrial electrical sector.",
+    "Knowledge of Siemens, Omron, Mitsubishi or equivalent PLCs.",
+    "Ability to read wiring diagrams.",
+    "Willingness to travel occasionally.",
+    "Accuracy and a team-working attitude."
+   ],
+   "requisiti_preferenziali": [
+    "Experience with automatic machines.",
+    "Basic knowledge of English.",
+    "Technical diploma in electrical/electronic engineering."
+   ],
+   "cosa_offriamo": [
+    "Permanent contract.",
+    "Work on machinery designed and built in-house.",
+    "Continuous on-the-job training.",
+    "A place in a specialised technical team."
+   ]
+  }
+ },
+ "addetto-ufficio-tecnico": {
+  "slug": "engineering-department-technician",
+  "titolo": "Engineering Department Technician",
+  "reparto": "Engineering department",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "la_posizione": "To strengthen our engineering department, we are looking for someone to join the mechanical design team, supporting production and the technical documentation of our machines.",
+  "sezioni": {
+   "attivita": [
+    "2D/3D mechanical drawing of machine components and assemblies.",
+    "Drafting and updating bills of materials (BOM) and construction drawings.",
+    "Technical support to production during machine assembly.",
+    "Working with the sales department on the technical configuration of offers.",
+    "Management of the drawing archive and technical product documentation."
+   ],
+   "requisiti": [
+    "Diploma or degree in mechanical/mechatronic engineering.",
+    "Good knowledge of 2D/3D CAD software (SolidWorks, Autodesk Inventor or equivalent).",
+    "Ability to read technical drawings and mechanical diagrams.",
+    "Accuracy, method and a team-working attitude."
+   ],
+   "requisiti_preferenziali": [
+    "Previous experience in an engineering department working on automatic machines or industrial plants.",
+    "Basic English for technical documentation.",
+    "Familiarity with PLM/PDM software."
+   ],
+   "cosa_offriamo": [
+    "Permanent contract.",
+    "Working directly alongside the engineering department and production, on the same machines designed and built in the company.",
+    "Continuous training on the product and design tools."
+   ]
+  }
+ },
+ "operaio-assemblaggio": {
+  "slug": "skilled-worker-mechanical-assembly",
+  "titolo": "Skilled Worker — Mechanical Assembly",
+  "reparto": "Production",
+  "sede": "San Marzano Oliveto (AT), IT",
+  "la_posizione": "Due to a temporary increase in production, we are looking for a skilled worker to join the assembly department, for the mechanical assembly of machines before testing.",
+  "sezioni": {
+   "attivita": [
+    "Mechanical assembly of machine units and sub-units according to drawings.",
+    "Fitting of pneumatic, hydraulic and mechanical components.",
+    "Mechanical adjustments and dimensional checks during assembly.",
+    "Working with the electrical department on pre-test commissioning.",
+    "Reporting any non-conformities in the components received."
+   ],
+   "requisiti": [
+    "Previous experience in assembling automatic or industrial machines.",
+    "Ability to read mechanical drawings.",
+    "Use of measuring instruments (calliper, dial gauge, etc.).",
+    "Accuracy, manual skills and a team-working attitude."
+   ],
+   "requisiti_preferenziali": [
+    "Technical diploma in mechanics.",
+    "Basic knowledge of pneumatics and hydraulics."
+   ],
+   "cosa_offriamo": [
+    "Fixed-term contract, with the possibility of extension.",
+    "Work on machinery designed and built in-house.",
+    "Hands-on support in the assembly department."
+   ]
+  }
+ },
+ "customer-service": {
+  "slug": "customer-service-specialist",
+  "titolo": "Customer Service Specialist",
+  "reparto": "After-sales",
+  "sede": "San Marzano Oliveto (AT), IT (Hybrid)",
+  "la_posizione": "For our after-sales team, we are looking for someone to handle customer requests (spare parts, service, technical information), acting as the point of contact between customers and internal departments.",
+  "sezioni": {
+   "attivita": [
+    "Handling incoming customer requests (email, phone, WhatsApp) about spare parts and service.",
+    "Routing technical requests to the service department or the engineering department.",
+    "Preparing spare parts quotations and tracking orders through to shipment.",
+    "Updating customer records and request history.",
+    "Supporting the planning of on-site and remote service interventions."
+   ],
+   "requisiti": [
+    "Experience in customer service or sales back-office roles.",
+    "Good written and spoken English.",
+    "Accuracy, organisation and the ability to handle several requests at once.",
+    "Good familiarity with the main IT tools (email, management software, spreadsheets)."
+   ],
+   "requisiti_preferenziali": [
+    "Knowledge of a second foreign language.",
+    "Previous experience in industrial machinery or bottling & packaging.",
+    "Basic knowledge of an ERP system."
+   ],
+   "cosa_offriamo": [
+    "Permanent contract.",
+    "Hybrid working, with the option of working remotely a few days a week.",
+    "Product training in direct contact with the engineering and service departments."
+   ]
+  }
+ }
+}
