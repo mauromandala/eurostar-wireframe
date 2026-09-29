@@ -218,6 +218,7 @@ Nel wireframe queste parti non hanno regole responsive e su mobile si rompono (s
 |---|---|---|
 | Footer (5 colonne, tutte le pagine) | Resta a 5 colonne: pagina larga ~970px a 375, ~995px a 768; già a 1025 la griglia sfora il container (950px su 902) | Vedi "Footer — specifica" sotto (validata con prototipo CSS in browser, 28/09) |
 | Header — menu desktop | Tra 1025 e ~1180px voci + "Contattaci" non ci stanno: sfora di ~110px a 1025, ~20px a 1140; entra da ~1180 | **Hamburger fino a 1200px** (decisione 28/09): breakpoint "tablet extra" = 1200 attivo nel Kit, da usare come soglia del menu nel template header. Il pannello hamburger è lo stesso del wireframe sotto i 1024 |
+| Header — loghi su mobile stretto | Sotto ~355px il logo "30 anni" finisce sotto l'hamburger (a 320: logo fino a 288px, pulsante da 256) | **Loghi fluidi** (segnalato dall'utente 29/09): altezze `clamp()` nel Kit — logo 40px, divisore 28px, "30 anni" 32px da ~370px in su (come il wireframe), in proporzione sotto (a 320: 31 / 22 / 25px). Distanza dall'hamburger ≥ 18px a ogni larghezza, desktop invariato |
 | Corpo scheda macchina 65/35 (descrizione + "Richiedi un preventivo") | A 375 resta 183/99px | 1 colonna sotto i 900: box preventivo sotto la descrizione, non più sticky |
 | Corpo news editoriale 70/30 | A 375 resta 209/89px | 1 colonna sotto i 900, colonna laterale sotto |
 | Form a 2 colonne (Contatti, candidatura posizioni) | Campi larghi 71–90px a 375 | Campi a tutta larghezza su mobile |
