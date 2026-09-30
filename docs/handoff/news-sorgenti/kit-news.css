@@ -1,0 +1,77 @@
+
+/* === Eurostar — News (valori dal wireframe archive-news.html, single-news-articolo.html, single-news-editoriale.html) === */
+/* Archivio: griglia a 4 colonne da 300px (auto-fill: con un filtro le card restano larghe uguali), estratto su 4 righe */
+.es-news-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:24px}
+.es-news-grid>li,.es-news-related>li{display:flex;margin:0}
+.es-news-grid>li[hidden]{display:none}
+.es-news-grid .es-art,.es-news-related .es-art{flex:1 1 auto;min-width:0}
+.es-news-grid .es-art-excerpt,.es-news-track .es-art-excerpt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.es-art-frame img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.es-art:hover .es-art-frame img{transform:scale(1.05)}
+@media (prefers-reduced-motion:reduce){.es-art-frame img{transition:none}.es-art:hover .es-art-frame img{transform:none}}
+.es-news-empty.es-news-empty,.es-news-none.es-news-none{margin:40px 0 0;font:300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-news-none.es-news-none{margin:0}
+.es-news-more-row{display:flex;justify-content:center;margin:40px 0 0}
+.es-news-more-row[hidden]{display:none}
+.es-news-more{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;border:0;border-radius:0;background:rgba(0,0,0,.08);color:var(--navy-800);font:700 14px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:color .35s cubic-bezier(.22,1,.36,1)}
+.es-news-more::before{content:"";position:absolute;inset:0 -30px;z-index:-1;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 100%,0 100%);transform:translateX(-101%);transition:transform .35s cubic-bezier(.22,1,.36,1);background:var(--blue-600)}
+.es-news-more:hover,.es-news-more:focus{background:rgba(0,0,0,.08);color:var(--bianco)}
+.es-news-more:hover::before{transform:translateX(0)}
+.es-news-more:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.es-news-more,.es-news-more::before{transition:none}}
+/* Articolo e caso studio: meta sotto il titolo */
+.es-news-meta{display:flex;flex-wrap:wrap;gap:24px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)}
+.es-news-meta-cat{color:var(--blue-600)}
+.es-case-meta.es-case-meta{letter-spacing:.14em;color:var(--blue-500)}
+/* Immagine in evidenza 16:7 (Gray 150 se manca) */
+.es-news-hero-img{max-width:1360px;margin:0 auto;aspect-ratio:16/7;overflow:hidden;background:var(--gray-150)}
+.es-news-hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+/* Testo dell'articolo */
+.es-news-body h2{margin:32px 0 16px;font:800 var(--testo-h3)/1.1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal}
+.es-news-body>h2:first-child{margin-top:0}
+.es-news-body p{margin:0 0 20px;font:300 var(--testo-body-lg)/1.65 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-news-body ul{margin:0 0 20px;padding-left:22px;display:flex;flex-direction:column;gap:10px}
+.es-news-body li{font:300 var(--testo-body-lg)/1.65 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-news-body blockquote{margin:32px 0;padding:24px 28px;background:var(--gray-050);border-left:3px solid var(--blue-600)}
+.es-news-body blockquote p{margin:0;font:700 24px/1.3 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-news-body blockquote cite{display:block;margin-top:12px;font:400 14px/1.5 var(--font-testo),sans-serif;font-style:normal;color:var(--gray-500);text-transform:none}
+.es-news-body .es-news-fonte{margin:40px 0 0;padding-top:20px;border-top:1px solid var(--bordo-sottile);font:400 12px/1.4 var(--font-testo),sans-serif;color:var(--gray-500)}
+/* Caso studio: titoli di sezione più grandi (H2 del design system), numeri in evidenza */
+.es-case-body .es-news-body h2{margin:8px 0 16px;font:900 var(--testo-h2)/.96 var(--font-titoli),sans-serif}
+.es-case-body .es-news-body>h2:first-child{margin-top:0}
+.es-case-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;margin:32px 0;padding:28px 0;border-top:1px solid var(--bordo-sottile);border-bottom:1px solid var(--bordo-sottile)}
+.es-case-stats>div{display:flex;flex-direction:column-reverse;gap:6px}
+.es-case-stats dd{margin:0;font:900 var(--testo-display-3)/1 var(--font-titoli),sans-serif;color:var(--navy-800)}
+.es-case-stats dt{font:500 11px/1.3 var(--font-testo),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)}
+/* Caso studio, colonna laterale: voce del cliente e macchine */
+.es-case-aside{display:flex;flex-direction:column;gap:24px}
+.es-case-label.es-case-label{margin:0 0 16px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500)}
+.es-case-voice{margin:0;padding:24px;background:var(--gray-100);display:flex;flex-direction:column}
+.es-case-voice blockquote{order:3;margin:0}
+.es-case-voice blockquote p{margin:0;font:italic 300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-case-voice figcaption{order:2;display:flex;align-items:center;gap:12px;margin:0 0 14px}
+.es-case-avatar{flex-shrink:0;width:52px;height:52px;overflow:hidden;background:var(--gray-150)}
+.es-case-avatar img{display:block;width:100%;height:100%;object-fit:cover}
+.es-case-name{display:block;font:800 14px/normal var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-case-role{display:block;font:400 12px/1.4 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-case-machines .es-case-label.es-case-label{margin-bottom:12px}
+.es-case-machines ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.es-case-machine{display:flex;align-items:center;gap:14px;padding:14px;background:var(--gray-100);text-decoration:none}
+.es-case-thumb{flex-shrink:0;width:56px;height:56px;overflow:hidden;background:var(--gray-150)}
+.es-case-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.es-case-machine-name{font:800 16px/1.25 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-case-machine-name::after{content:" →" / ""}
+.es-case-machine:hover .es-case-machine-name{color:var(--blue-600)}
+.es-case-machine:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+/* "Continua a leggere": 3 card; nei casi studio etichetta = settore e titolo più piccolo */
+.es-news-related{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:24px}
+/* Con 3 card le colonne si allargano come nel wireframe (auto-fit); con 1-2 card (casi studio) restano larghe come una colonna su 4 */
+.es-news-related:has(>li:nth-child(3)){grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.es-news-related .es-art-title.es-art-title{margin:0}
+.es-news-related--case .es-art-body{padding:22px}
+.es-news-related--case .es-art-meta{margin-bottom:0;line-height:13px}
+.es-news-related--case .es-art-title.es-art-title{margin:10px 0 0;font:800 22px/1 var(--font-titoli),sans-serif}
+#es-correlati:not(:has(.es-art)){display:none}
+/* Breadcrumb dell'articolo: l'ultima voce è la categoria (senza aria-current), stesso colore della voce corrente */
+.es-breadcrumb.es-breadcrumb li:last-child:not(:has(a)){color:var(--navy-800)}
+/* === fine News === */

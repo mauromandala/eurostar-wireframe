@@ -89,27 +89,10 @@ add_shortcode('es_news_home', function () {
     if (!$q->have_posts()) {
         return '';
     }
-    $default = (int) get_option('default_category');
+    // Card uguale a quella dell'archivio News (es_news_card, sezione News dello snippet; etichetta "Caso studio" al singolare)
     $out = '<div class="es-news-track" id="es-news-track" role="region" aria-label="' . esc_attr(es_t('Ultime news')) . '" tabindex="0">';
     foreach ($q->posts as $post) {
-        $cat = '';
-        foreach (get_the_category($post->ID) as $c) {
-            if ((int) $c->term_id !== $default) {
-                $cat = $c->name;
-                break;
-            }
-        }
-        $img = has_post_thumbnail($post)
-            ? get_the_post_thumbnail($post, 'medium_large', ['alt' => '', 'loading' => 'lazy', 'sizes' => '(max-width: 760px) 100vw, 33vw'])
-            : '';
-        $out .= '<a class="es-art" href="' . esc_url(get_permalink($post)) . '">'
-            . '<div class="es-art-frame" aria-hidden="true">' . $img . '</div>'
-            . '<div class="es-art-body">'
-            . '<div class="es-art-meta">' . ($cat !== '' ? '<span>' . esc_html($cat) . '</span>' : '')
-            . '<span class="es-art-date">' . esc_html(date_i18n('F Y', get_post_time('U', false, $post))) . '</span></div>'
-            . '<h3 class="es-art-title">' . esc_html(get_the_title($post)) . '</h3>'
-            . '<p class="es-art-excerpt">' . esc_html(wp_strip_all_tags(get_the_excerpt($post))) . '</p>'
-            . '</div></a>';
+        $out .= es_news_card($post, 'h3');
     }
     $out .= '</div>';
     $out .= "<script>document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.es-news-nav');if(!b)return;"
