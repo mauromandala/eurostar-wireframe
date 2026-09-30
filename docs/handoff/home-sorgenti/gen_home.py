@@ -115,11 +115,18 @@ hero = sec("hm-hero", ["es-home-hero"], [
             btn("hm-hero-btn-2", ["es-btn", "es-btn-ghost-dark"], "Contattaci", page(260, "Contatti")),
         ]),
     ]),
+    # Video di sfondo, velature, lettera "A" e pulsante pausa (proposta grafica, 30/09): snippet 6, [es_home_hero_video]
+    sc("hm-hero-video", "[es_home_hero_video]"),
 ])
 
 engineer = sec("hm-eng", ["es-home-engineer"], [
     box("hm-eng-wrap", "div", ["es-home-eng-wrap"], [
-        box("hm-bottle", "div", ["es-home-bottle"], []),
+        # Bottiglia della proposta grafica (Libreria media 861, WebP con trasparenza); lente e posizione dallo script della Home
+        box("hm-bottle", "div", ["es-home-bottle"], [
+            w("hm-bottle-img", "e-image", {"image": {"$$type": "image", "value": {
+                "src": {"$$type": "image-src", "value": {"id": {"$$type": "image-attachment-id", "value": 861}, "url": None}},
+                "size": T("full")}}}),
+        ]),
         head("hm-claim", "h2", ["es-home-claim"], "Progettiamo soluzioni."),
         box("hm-stats", "div", ["es-home-stats"], [
             box(f"hm-stat-{p}", "div", ["es-home-stat", f"es-home-stat-{p}"], [

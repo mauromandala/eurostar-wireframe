@@ -1,0 +1,49 @@
+
+/* === Eurostar — Home: testata con video e bottiglia (proposta grafica PROPOSTA 1, 30/09; sostituisce il layout del wireframe) === */
+/* Testata: video dei macchinari + velature della proposta; taglio diagonale di 5vw a tutte le larghezze */
+/* Proporzioni della testata della proposta: alta quanto lo schermo meno l'header (--es-hdr-h, dallo script della Home), contenuto
+   centrato al 43% dello schermo (nella proposta 100vh con il contenuto spostato di -7vh): sotto i pulsanti resta lo spazio in cui sale la bottiglia */
+.elementor .es-home-hero.es-home-hero{position:relative;min-height:max(520px,calc(100svh - var(--es-hdr-h,118px)));padding:24px var(--sezione-x) calc(14svh + var(--es-hdr-h,118px));background:var(--navy-800);clip-path:polygon(0 0,100% 0,100% calc(100% - 5vw),0 100%)}
+.elementor .es-home-hero-inner.es-home-hero-inner{position:relative;z-index:1}
+/* Il widget Shortcode con video e pulsante non deve fare da riferimento: i suoi figli coprono tutta la testata */
+.elementor .es-home-hero>.elementor-widget-shortcode,.elementor .es-home-hero>.elementor-widget-shortcode>.elementor-shortcode{position:static}
+.es-hero-media{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:var(--navy-800)}
+.es-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.18) saturate(.78) brightness(.66)}
+.es-hero-shade,.es-hero-vignette{position:absolute;inset:0}
+.es-hero-shade{background:linear-gradient(180deg,rgba(13,22,51,.62) 0%,rgba(28,38,90,.28) 42%,rgba(28,38,90,.32) 60%,rgba(13,22,51,.78) 100%)}
+.es-hero-vignette{background:radial-gradient(ellipse 75% 65% at 50% 42%,rgba(13,22,51,0) 35%,rgba(13,22,51,.55) 100%)}
+.elementor img.es-hero-letter.es-hero-letter{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:right bottom;opacity:.85;mix-blend-mode:overlay}
+/* Pulsante pausa/riproduci del video (non nella proposta: obbligatorio per WCAG 2.2.2); in basso a sinistra, lontano da cookie e WhatsApp */
+.es-hero-play.es-hero-play{position:absolute;z-index:2;left:clamp(16px,3vw,40px);bottom:24px;display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:1px solid rgba(255,255,255,.6);border-radius:50%;background:rgba(13,22,51,.35);color:var(--bianco);cursor:pointer;transition:background .25s,border-color .25s}
+.es-hero-play.es-hero-play:hover,.es-hero-play.es-hero-play:focus{background:rgba(13,22,51,.7);border-color:var(--bianco);color:var(--bianco)}
+.es-hero-play.es-hero-play:focus-visible{outline:2px solid var(--bianco);outline-offset:2px}
+.es-hero-play .es-hero-pause-i,.es-hero-play.is-playing .es-hero-play-i{display:none}
+.es-hero-play.is-playing .es-hero-pause-i{display:block}
+/* Sezione "Progettiamo soluzioni": sopra la testata; la bottiglia sale nella testata (--es-rise), frase e numeri sulla parte bianca */
+.elementor .es-home-engineer.es-home-engineer{position:relative;z-index:3;overflow:visible}
+.elementor .es-home-eng-wrap.es-home-eng-wrap{display:block;position:relative;width:100%;max-width:none;min-height:0;margin:0;padding:calc(92vw * .75 + 240px) 0 0}
+.elementor .es-home-bottle.es-home-bottle{position:absolute;left:50%;top:calc(-1 * var(--es-rise,230px));z-index:2;width:min(1024px,92vw);height:auto;aspect-ratio:1;padding:0;background:none;transform:translate(-50%,var(--es-pb,0px));pointer-events:none}
+.elementor .es-home-bottle.es-home-bottle img{display:block;width:100%;height:auto;max-width:none;filter:drop-shadow(0 40px 70px rgba(13,22,51,.45))}
+.es-home-lens{position:absolute;left:33.5%;right:33.6%;top:0;bottom:0;z-index:2;overflow:hidden;mix-blend-mode:multiply;pointer-events:none}
+.es-home-lens-text,.elementor .es-home-claim.es-home-claim{font:800 clamp(20px,7.2vw,108px)/1 var(--font-titoli),sans-serif;letter-spacing:.02em;color:var(--blue-600);text-transform:uppercase;white-space:nowrap}
+.es-home-lens-text{position:absolute;left:50%;top:var(--es-lens-top,560px);transform:translate(-50%,-50%) translateY(var(--es-lens-shift,0px)) scale(1.3,1.46);text-align:center;filter:blur(2px)}
+.elementor .es-home-claim.es-home-claim{position:absolute;left:50%;top:var(--es-tseam,356px);z-index:1;max-width:none;margin:0;text-align:center;transform:translate(-50%,-50%) translateY(var(--es-ph,0px))}
+.es-home-claim-dot{color:var(--blue-400)}
+/* Numeri: attorno alla bottiglia sopra 1240px (due a sinistra allineati a destra, due a destra sfalsati di 60px), griglia 2×2 sotto */
+.elementor .es-home-stats.es-home-stats{position:absolute;left:0;right:0;top:calc(var(--es-tseam,356px) - 210px);z-index:3;display:grid;grid-template-columns:1fr clamp(300px,38vw,500px) 1fr;grid-template-rows:auto auto;row-gap:220px;width:auto;max-width:none;margin:0;padding:0 clamp(24px,6vw,80px);pointer-events:none}
+.elementor .es-home-stat.es-home-stat{position:static;display:flex;flex-direction:column;gap:6px;width:auto;padding:0;transform:translateY(var(--es-ps,0px))}
+.elementor .es-home-stat-tl.es-home-stat-tl{grid-area:1/1;align-items:flex-end;text-align:right}
+.elementor .es-home-stat-bl.es-home-stat-bl{grid-area:2/1;align-items:flex-end;text-align:right}
+.elementor .es-home-stat-tr.es-home-stat-tr{grid-area:1/3;align-items:flex-start;text-align:left;translate:0 60px}
+.elementor .es-home-stat-br.es-home-stat-br{grid-area:2/3;align-items:flex-start;text-align:left;translate:0 60px}
+.elementor .es-home-stat-value.es-home-stat-value{margin:0;font:800 clamp(40px,4.5vw,64px)/1 var(--font-titoli),sans-serif;letter-spacing:normal;color:var(--blue-600)}
+/* Etichette: grigio testo del sito (Gray 500) invece del #888B8D della proposta, che non raggiunge 4,5:1 (decisione utente 30/09) */
+.elementor .es-home-stat-label.es-home-stat-label{margin:0;font:300 12px/1.4 var(--font-testo),sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-500)}
+@media (max-width:1240px){
+.elementor .es-home-stats.es-home-stats{position:static;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:clamp(28px,7vw,40px) clamp(20px,5vw,32px);max-width:1240px;margin:0 auto;padding:0 clamp(24px,6vw,80px);pointer-events:auto}
+.elementor .es-home-stat.es-home-stat{grid-area:auto;align-items:flex-start;text-align:left;translate:none;transform:none}
+.elementor .es-home-stat-value.es-home-stat-value{font-size:clamp(38px,12vw,52px)}
+.elementor .es-home-stat-label.es-home-stat-label{letter-spacing:.18em}
+}
+@media (prefers-reduced-motion:reduce){.es-hero-play.es-hero-play{transition:none}}
+/* === fine Home: testata con video e bottiglia === */
