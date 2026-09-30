@@ -261,7 +261,7 @@ h2.es-download-title.es-download-title{margin:0 0 16px;font-family:var(--font-ti
 
 /* === Eurostar — pagina Squadron (card estese, resto della gamma, settori serviti; valori dal wireframe) === */
 .es-sq-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px}
-.es-sq-card{background:var(--bianco);scroll-margin-top:110px}
+.es-sq-card{background:var(--bianco);scroll-margin-top:34px}
 .es-sq-media{aspect-ratio:4/3;background:var(--gray-150);overflow:hidden}
 .es-sq-media.es-sq-media img{display:block;width:100%;height:100%;max-width:none;object-fit:cover}
 .es-sq-body{padding:clamp(24px,3vw,32px)}
@@ -276,8 +276,8 @@ h2.es-download-title.es-download-title{margin:0 0 16px;font-family:var(--font-ti
 .es-sq-table.es-sq-table tr:last-child>*{border-bottom:1px solid var(--bordo-sottile)}
 .es-sq-dl{margin-top:20px}
 .es-sq-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px}
-.es-sq-item{position:relative;padding:20px;background:var(--gray-050);scroll-margin-top:110px}
-.es-sq-anchor{position:absolute;top:0;left:0;scroll-margin-top:110px}
+.es-sq-item{position:relative;padding:20px;background:var(--gray-050);scroll-margin-top:34px}
+.es-sq-anchor{position:absolute;top:0;left:0;scroll-margin-top:34px}
 .es-sq-item-name.es-sq-item-name{margin:0 0 8px;font:800 clamp(17px,1.6vw,22px)/1 var(--font-titoli),sans-serif;letter-spacing:normal;color:var(--navy-800);text-transform:uppercase}
 .es-sq-item-sectors{margin:0;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
 .es-chips{display:flex;flex-wrap:wrap;gap:10px}
@@ -604,7 +604,7 @@ a.es-sec.es-sec{position:relative;display:block;aspect-ratio:4/5;overflow:hidden
 #es-sr-risultati .es-inner{display:flex;flex-direction:column;gap:64px}
 #es-sr-macchine:not(:has(.es-mcard)){display:none}
 .es-sr-results{display:flex;flex-direction:column;gap:64px}
-.es-sr-group,#es-sr-macchine{scroll-margin-top:110px}
+.es-sr-group,#es-sr-macchine{scroll-margin-top:34px}
 .es-sr-title.es-sr-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 24px;overflow-wrap:anywhere;font:800 var(--testo-h3)/1.1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal}
 .es-sr-count{font:400 14px/1.4 var(--font-testo),sans-serif;color:var(--gray-500);text-transform:none}
 /* Righe (settori e categorie, pagine, posizioni) */

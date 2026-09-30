@@ -23,7 +23,7 @@
 #es-sr-risultati .es-inner{display:flex;flex-direction:column;gap:64px}
 #es-sr-macchine:not(:has(.es-mcard)){display:none}
 .es-sr-results{display:flex;flex-direction:column;gap:64px}
-.es-sr-group,#es-sr-macchine{scroll-margin-top:110px}
+.es-sr-group,#es-sr-macchine{scroll-margin-top:34px}
 .es-sr-title.es-sr-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 24px;overflow-wrap:anywhere;font:800 var(--testo-h3)/1.1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal}
 .es-sr-count{font:400 14px/1.4 var(--font-testo),sans-serif;color:var(--gray-500);text-transform:none}
 /* Righe (settori e categorie, pagine, posizioni) */

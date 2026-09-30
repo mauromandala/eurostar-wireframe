@@ -1,0 +1,99 @@
+{
+ "catalogo": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 131,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "div. 80–131 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "riempitrici": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "settore-vino": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "articolo": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "caso-studio": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "ricerca": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ }
+}

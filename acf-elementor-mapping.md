@@ -468,7 +468,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo, Referenze, 404, Home, Cataloghi, Lavora con noi + 5 posizioni.
 6. ✅ News: archivio, articolo, caso studio, 16 contenuti IT (EN da tradurre).
 6b. ✅ Risultati di ricerca (IT + EN).
-7. Test: ✅ confronto pixel a 375/768/1024/1280/1440, ✅ tastiera; da fare zoom 200%, scanner Ally, screen reader (vedi "Test finali — stato").
+7. Test: ✅ confronto pixel a 375/768/1024/1280/1440, ✅ tastiera, ✅ zoom 200%; da fare scanner Ally, screen reader (vedi "Test finali — stato").
 
 Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati allo stesso viewport; screenshot + confronto degli stili calcolati per elemento (dimensioni, spaziature, colori, font).
 
@@ -772,9 +772,15 @@ Script e istruzioni in `docs/handoff/test-finali/` (Playwright senza installazio
 - **Prove di interazione** (`interazioni.js`, 29/29 superate): salta al contenuto, mega-menu (apertura, ingresso, uscita, Esc), ricerca (Invio apre con focus nel campo, Esc torna alla lente, Invio cerca), torna su, filtri del catalogo (Invio/Spazio, `aria-pressed`, annuncio "10 macchine"), "Mostra altri articoli" (focus sulla card 13), carosello Home (una card per pressione, pallino aggiornato, `aria-disabled` in fondo), hamburger a 375 (etichetta Apri/Chiudi, Esc), form Contatti (etichette su tutti i campi, ordine del Tab = ordine visivo, anti-spam non raggiungibile). Mouse sul mega-menu invariato.
 - **Copia completa del CSS del Kit** in `wordpress/kit-custom-css.css` (esportata il 30/09 dopo le correzioni; la fonte di verità resta lo staging).
 
+### Zoom 200% (30/09)
+
+- Emulato come finestra 1280×900 al 200% = 640×450 px CSS a densità 2 (`zoom.js`, 23 pagine). **Nessuno scroll orizzontale, nessun testo tagliato o sovrapposto**; header fisso 80px su 450 (18%), 131px con la barra dei filtri (catalogo, News). Il menu hamburger occupa lo schermo e scorre (618px di voci in 450): tutte le voci raggiungibili.
+- **Corretto**: durante il Tab l'elemento con il focus finiva sotto l'header fisso (7 volte in Home, 21 nel catalogo), perché il browser lo porta in vista ignorando lo spazio coperto. Lo script dell'header (snippet 2, copia in `es_snip2_backup_zoom`) imposta ora `scroll-padding-top` = altezza visibile dell'header (+ barra dei filtri sticky), ricalcolata al ridimensionamento e al caricamento, e `scroll-padding-bottom: 72px` (WhatsApp). Le card intere più alte dello spazio libero (card macchina, news, ~420px contro ~300) mostravano la parte bassa con il nome sotto l'header: con il focus da tastiera (`:focus-visible`) la pagina scorre per mostrarne l'inizio. Risultato: 0 focus coperti su tutte le pagine.
+- Le ancore (`scroll-margin-top`) passano da 110 a 34px, perché ora lo spazio dell'header è nello `scroll-padding` (Kit, copia in `es_kit_css_backup_zoom`): Squadron `/macchine/olympia-sa/` → `#olympia-sa` e i gruppi della ricerca restano esattamente 34px sotto l'header a 1440, 640 e 375. Prove di interazione di nuovo 29/29.
+- **Limite noto**: i pulsanti tondi fissi (cookie del plugin e WhatsApp) coprono il bordo destro dei campi dei form e restano sopra il menu aperto; nessuna voce o campo diventa irraggiungibile.
+
 ### Da fare
 
-- Zoom 200% (1280 → equivalente a 640px di larghezza).
 - Scanner Ally dall'admin (richiede l'accesso all'amministrazione).
 - VoiceOver sulla scheda MEC LD.
 

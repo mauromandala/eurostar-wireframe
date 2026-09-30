@@ -1,0 +1,425 @@
+{
+ "home": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "catalogo": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 131,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "div. 80–131 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": [
+   "MEC LD\n\nRiempitrice a gravità/legge ← header.elementor.elementor-342",
+   "MAXIMA\n\nRiempitrice elettropneumati ← header.elementor.elementor-342",
+   "MEC LP\n\nRiempitrice a leggera press ← header.elementor.elementor-342",
+   "MEC AV\n\nRiempitrice ad alto vuoto\n\n ← header.elementor.elementor-342",
+   "MEC ISO\n\nRiempitrice isobarica mecc ← header.elementor.elementor-342",
+   "SKILLFILL\n\nRiempitrice isobarica el ← header.elementor.elementor-342",
+   "DUALFILL\n\nUniblocco automatico di s ← header.elementor.elementor-342",
+   "CANFILL\n\nMonoblocco automatico di s ← header.elementor.elementor-342",
+   "POWERFILL\n\nRiempitrice volumetrica  ← header.elementor.elementor-342",
+   "MEC VOL\n\nRiempitrice volumetrica a  ← header.elementor.elementor-342",
+   "GEMINI/F-IES\n\nTorretta tappante aut ← header.elementor.elementor-342",
+   "GEMINI/R-IES\n\nTorretta tappante aut ← header.elementor.elementor-342",
+   "GEMINI RF-IES\n\nTorretta tappante au ← header.elementor.elementor-342",
+   "EAGLE/VA-IES\n\nTorretta tappante aut ← header.elementor.elementor-342",
+   "EAGLE PK\n\nTorretta tappante automat ← header.elementor.elementor-342",
+   "EAGLE C\n\nTorretta tappante automati ← header.elementor.elementor-342",
+   "SISTEMA NECK HANDLING\n\nMovimentazio ← header.elementor.elementor-342",
+   "STELLE UNIVERSALI\n\nAttrezzatura reg ← header.elementor.elementor-342",
+   "STELLE A GEOMETRIA VARIABILE\n\nStell ← header.elementor.elementor-342"
+  ]
+ },
+ "riempitrici": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": [
+   "MEC LD\n\nRiempitrice a gravità/legge ← header.elementor.elementor-342",
+   "MAXIMA\n\nRiempitrice elettropneumati ← a.es-wa-float",
+   "MEC LP\n\nRiempitrice a leggera press ← header.elementor.elementor-342",
+   "MEC AV\n\nRiempitrice ad alto vuoto\n\n ← a.es-wa-float",
+   "MEC ISO\n\nRiempitrice isobarica mecc ← header.elementor.elementor-342",
+   "SKILLFILL\n\nRiempitrice isobarica el ← a.es-wa-float",
+   "DUALFILL\n\nUniblocco automatico di s ← header.elementor.elementor-342",
+   "CANFILL\n\nMonoblocco automatico di s ← header.elementor.elementor-342",
+   "POWERFILL\n\nRiempitrice volumetrica  ← header.elementor.elementor-342",
+   "MEC VOL\n\nRiempitrice volumetrica a  ← a.es-wa-float"
+  ]
+ },
+ "linee-complete": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "usate": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "settore-vino": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": [
+   "MEC LD\n\nRiempitrice a gravità/legge ← header.elementor.elementor-342",
+   "MAXIMA\n\nRiempitrice elettropneumati ← a.es-wa-float",
+   "MEC ISO\n\nRiempitrice isobarica mecc ← header.elementor.elementor-342",
+   "SKILLFILL\n\nRiempitrice isobarica el ← a.es-wa-float",
+   "DUALFILL\n\nUniblocco automatico di s ← header.elementor.elementor-342",
+   "CANFILL\n\nMonoblocco automatico di s ← header.elementor.elementor-342"
+  ]
+ },
+ "mec-ld": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "squadron": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "settori": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "servizi": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "chi-siamo": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "referenze": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "contatti": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "conferma": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "p404": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "cataloghi": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "lavora-con-noi": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "posizione": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "news": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 131,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "div. 80–131 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ },
+ "articolo": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": [
+   "TERRITORIO E FORMAZIONE\nLUGLIO 2026 ← header.elementor.elementor-342",
+   "TERRITORIO E FORMAZIONE\nGIUGNO 2026 ← header.elementor.elementor-342",
+   "TERRITORIO E FORMAZIONE\nMAGGIO 2026 ← header.elementor.elementor-342"
+  ]
+ },
+ "caso-studio": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": [
+   "OLIO EXTRAVERGINE D'OLIVA\nFRANTOIO  ← header.elementor.elementor-342"
+  ]
+ },
+ "ricerca": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": [
+   "MEC LD\n\nRiempitrice a gravità/legge ← header.elementor.elementor-342",
+   "MAXIMA\n\nRiempitrice elettropneumati ← a.es-wa-float",
+   "MEC ISO\n\nRiempitrice isobarica mecc ← header.elementor.elementor-342",
+   "SKILLFILL\n\nRiempitrice isobarica el ← a.es-wa-float",
+   "DUALFILL\n\nUniblocco automatico di s ← header.elementor.elementor-342",
+   "CANFILL\n\nMonoblocco automatico di s ← header.elementor.elementor-342",
+   "ATHENA\n\nUniblocco isobarico automat ← header.elementor.elementor-342",
+   "EXACTA\n\nUniblocco isobarico semiaut ← a.es-wa-float"
+  ]
+ },
+ "home-en": {
+  "sw": 640,
+  "W": 640,
+  "tagliati": [],
+  "sovrapposti": [],
+  "fissi": {
+   "alto": 80,
+   "basso": 0,
+   "H": 450,
+   "el": [
+    "header.elementor-location-header -42–80 w640",
+    "a.es-wa-float 378–430 w52"
+   ]
+  },
+  "focusCoperti": []
+ }
+}
