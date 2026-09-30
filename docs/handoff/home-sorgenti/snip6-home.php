@@ -95,10 +95,31 @@ add_shortcode('es_news_home', function () {
         $out .= es_news_card($post, 'h3');
     }
     $out .= '</div>';
-    $out .= "<script>document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.es-news-nav');if(!b)return;"
-        . "var t=document.getElementById(b.getAttribute('aria-controls'));if(!t)return;var c=t.querySelector('.es-art');"
-        . "var s=c?c.getBoundingClientRect().width+24:t.clientWidth;"
-        . "var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;"
-        . "t.scrollBy({left:s*parseInt(b.dataset.dir,10),behavior:r?'auto':'smooth'});});</script>";
+    // Contatore a pallini: uno per ogni posizione delle frecce (4 con 3 card visibili, 6 su mobile), costruito dallo script
+    $out .= '<div class="es-news-dots" role="group" aria-label="' . esc_attr(es_t('Posizione nel carosello')) . '"'
+        . ' data-label="' . esc_attr(es_t('News %1$d–%2$d di %3$d')) . '" data-label-one="' . esc_attr(es_t('News %1$d di %3$d')) . '" hidden></div>';
+    // Frecce (una card alla volta, attenuate all'inizio e alla fine) e pallini (aria-current sulla posizione attuale)
+    $out .= '<script>' . '(function(){var t=document.getElementById(\'es-news-track\');if(!t)return;
+var dots=document.querySelector(\'.es-news-dots\'),navs=[].slice.call(document.querySelectorAll(\'.es-news-nav[aria-controls="es-news-track"]\')),cards=[].slice.call(t.querySelectorAll(\'.es-art\'));
+var r=window.matchMedia&&window.matchMedia(\'(prefers-reduced-motion: reduce)\').matches;
+function step(){return cards.length?cards[0].getBoundingClientRect().width+24:t.clientWidth;}
+function total(){return Math.max(1,Math.round((t.scrollWidth-t.clientWidth)/step())+1);}
+function cur(){return Math.min(total()-1,Math.round(t.scrollLeft/step()));}
+function go(i){t.scrollTo({left:i*step(),behavior:r?\'auto\':\'smooth\'});}
+function update(){var i=cur(),n=total();if(dots)[].forEach.call(dots.children,function(b,k){b.setAttribute(\'aria-current\',k===i?\'true\':\'false\');});navs.forEach(function(b){var end=b.dataset.dir===\'1\'?i>=n-1:i<=0;b.setAttribute(\'aria-disabled\',end?\'true\':\'false\');});}
+function build(){if(!dots)return update();var n=total(),vis=cards.length-n+1;dots.innerHTML=\'\';dots.hidden=n<2;for(var k=0;k<n;k++){var b=document.createElement(\'button\');b.type=\'button\';b.className=\'es-news-dot\';b.setAttribute(\'aria-controls\',\'es-news-track\');var l=vis>1?dots.dataset.label:dots.dataset.labelOne;b.setAttribute(\'aria-label\',l.replace(\'%1$d\',k+1).replace(\'%2$d\',k+vis).replace(\'%3$d\',cards.length));(function(k){b.addEventListener(\'click\',function(){go(k);});})(k);dots.appendChild(b);}update();}
+navs.forEach(function(b){b.addEventListener(\'click\',function(){if(b.getAttribute(\'aria-disabled\')===\'true\')return;go(Math.max(0,Math.min(total()-1,cur()+parseInt(b.dataset.dir,10))));});});
+var tm;t.addEventListener(\'scroll\',function(){clearTimeout(tm);tm=setTimeout(update,60);},{passive:true});
+window.addEventListener(\'resize\',build);build();})();' . '</script>';
     return $out;
 });
+
+add_action('init', function () {
+    if (get_option('es_news_strings2') === 'n2') {
+        return;
+    }
+    foreach (['Posizione nel carosello', 'News %1$d–%2$d di %3$d', 'News %1$d di %3$d'] as $s) {
+        do_action('wpml_register_single_string', 'Eurostar template', $s, $s, false, 'it');
+    }
+    update_option('es_news_strings2', 'n2', false);
+}, 20);
