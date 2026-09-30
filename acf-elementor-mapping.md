@@ -699,6 +699,14 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 
 ---
 
+## Effetto al passaggio del mouse sulle card — stato (30/09)
+
+- **Richiesta utente**: card macchina (componente 448: catalogo, categorie, settori), card Squadron compatte (450) e card settore (`[es_settori_griglia]`) con lo stesso effetto delle card news: sollevamento di 6px e ombra `0 18px 44px rgba(0,0,0,.12)` in .35s; sulle card macchina anche zoom 1,05 dell'immagine in .6s (le card settore mantengono il loro zoom 1,06 del wireframe). Disattivato con "riduci movimento". Nel wireframe le card macchina non avevano effetti.
+- CSS in fondo al Kit (blocco "Card macchina, Squadron e settore"), copia in `docs/handoff/kit-card-hover.css`; copia di sicurezza del Kit precedente nell'opzione `es_kit_css_backup_hover_card`. Nessun contenitore delle griglie taglia l'ombra (`overflow` visibile).
+- **Nota per le verifiche**: nei Chrome recenti anche le regole normali hanno `cssRules` (vuoto, per il CSS annidato): per leggere i fogli di stile da JS si controlla `r instanceof CSSStyleRule`, altrimenti le regole vengono saltate.
+
+---
+
 ## Variabili globali — stato (29/09)
 
 - **37 variabili Elementor v4** (editor → pannello Variabili; nel CSS escono come `--nome` in `:root` del file del Kit, quindi valgono su tutte le pagine):

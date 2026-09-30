@@ -1,0 +1,7 @@
+
+/* Card macchina, Squadron e settore: effetto al passaggio del mouse come le card news (richiesta utente 30/09): sollevamento, ombra, zoom dell'immagine */
+.es-mcard.es-mcard,.es-scard.es-scard,a.es-sec.es-sec{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.es-mcard.es-mcard:hover,.es-scard.es-scard:hover,a.es-sec.es-sec:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.12)}
+.es-mcard .es-mcard-img{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.es-mcard:hover .es-mcard-img{transform:scale(1.05)}
+@media (prefers-reduced-motion:reduce){.es-mcard.es-mcard,.es-scard.es-scard,a.es-sec.es-sec,.es-mcard .es-mcard-img{transition:none}.es-mcard.es-mcard:hover,.es-scard.es-scard:hover,a.es-sec.es-sec:hover,.es-mcard:hover .es-mcard-img{transform:none}}
