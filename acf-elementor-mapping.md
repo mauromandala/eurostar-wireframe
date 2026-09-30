@@ -707,6 +707,13 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 
 ---
 
+## Snippet PHP nel repo — stato (30/09)
+
+- I 6 snippet FluentSnippets dello staging sono copiati per intero in `wordpress/snippets/` (checksum MD5 verificate), con un `README.md` che spiega a quale template o pagina serve ciascuno e quali shortcode contiene. Prima nel repo c'erano solo i pezzi aggiunti in questi giorni (`docs/handoff/*-sorgenti/snip6-*.php`, restano come storia delle singole modifiche); gli snippet 1–5 non avevano copia.
+- La fonte di verità resta lo staging: dopo ogni modifica a uno snippet va riesportato in `wordpress/snippets/` e committato (procedura nel README).
+
+---
+
 ## Variabili globali — stato (29/09)
 
 - **37 variabili Elementor v4** (editor → pannello Variabili; nel CSS escono come `--nome` in `:root` del file del Kit, quindi valgono su tutte le pagine):
