@@ -1,0 +1,762 @@
+{
+ "404@1440": {
+  "n": 1,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": true,
+   "sel": "button.cc-btn.cc-btn--reopen-icon",
+   "nome": "Cookies",
+   "w": 44,
+   "h": 44,
+   "invisibile": false,
+   "focus": true,
+   "y": 760
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "home@1440": {
+  "n": 79,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "catalogo@1440": {
+  "n": 77,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "riempitrici@1440": {
+  "n": 62,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "linee-complete@1440": {
+  "n": 52,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "usate@1440": {
+  "n": 52,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "settore-vino@1440": {
+  "n": 67,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "mec-ld@1440": {
+  "n": 60,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "squadron@1440": {
+  "n": 62,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "settori@1440": {
+  "n": 60,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "servizi@1440": {
+  "n": 56,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "chi-siamo@1440": {
+  "n": 50,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "referenze@1440": {
+  "n": 50,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "contatti@1440": {
+  "n": 66,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "conferma@1440": {
+  "n": 51,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "cataloghi@1440": {
+  "n": 50,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "lavora-con-noi@1440": {
+  "n": 64,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "posizione@1440": {
+  "n": 59,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "news@1440": {
+  "n": 70,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "articolo@1440": {
+  "n": 53,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "caso-studio@1440": {
+  "n": 52,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "ricerca@1440": {
+  "n": 77,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": [
+   {
+    "giaVisto": false,
+    "ombraDom": false,
+    "sel": "input#es-sr-input",
+    "nome": "vino",
+    "w": 527,
+    "h": 48,
+    "invisibile": false,
+    "focus": false,
+    "y": 423
+   }
+  ]
+ },
+ "home-en@1440": {
+  "n": 65,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Skip to content",
+   "w": 155,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "404@375": {
+  "n": 1,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": true,
+   "sel": "button.cc-btn.cc-btn--reopen-icon",
+   "nome": "Cookies",
+   "w": 44,
+   "h": 44,
+   "invisibile": false,
+   "focus": true,
+   "y": 672
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "home@375": {
+  "n": 72,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "catalogo@375": {
+  "n": 68,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "riempitrici@375": {
+  "n": 53,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "linee-complete@375": {
+  "n": 43,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "usate@375": {
+  "n": 43,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "settore-vino@375": {
+  "n": 58,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "mec-ld@375": {
+  "n": 51,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "squadron@375": {
+  "n": 53,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "settori@375": {
+  "n": 51,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "servizi@375": {
+  "n": 47,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "chi-siamo@375": {
+  "n": 41,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "referenze@375": {
+  "n": 41,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "contatti@375": {
+  "n": 57,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "conferma@375": {
+  "n": 42,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "cataloghi@375": {
+  "n": 41,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "lavora-con-noi@375": {
+  "n": 55,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "posizione@375": {
+  "n": 50,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "news@375": {
+  "n": 61,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "articolo@375": {
+  "n": 44,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "caso-studio@375": {
+  "n": 43,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ },
+ "ricerca@375": {
+  "n": 68,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Vai al contenuto",
+   "w": 163,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": [
+   {
+    "giaVisto": false,
+    "ombraDom": false,
+    "sel": "input#es-sr-input",
+    "nome": "vino",
+    "w": 233,
+    "h": 48,
+    "invisibile": false,
+    "focus": false,
+    "y": 409
+   }
+  ]
+ },
+ "home-en@375": {
+  "n": 56,
+  "primo": {
+   "giaVisto": false,
+   "ombraDom": false,
+   "sel": "a.skip-link.screen-reader-text",
+   "nome": "Skip to content",
+   "w": 155,
+   "h": 43,
+   "invisibile": false,
+   "focus": true,
+   "y": 4
+  },
+  "invisibili": [],
+  "senzaFocus": []
+ }
+}

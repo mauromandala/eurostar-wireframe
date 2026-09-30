@@ -1,0 +1,5752 @@
+{
+ "404": {
+  "375": {
+   "abbinati": 10,
+   "wf": 10,
+   "st": 10,
+   "salti": [],
+   "dx": [],
+   "stile": [
+    {
+     "t": "404",
+     "wf": "72px 800 Barlow rgb(0, 0, 0)",
+     "st": "72px 800 Barlow rgb(211, 215, 226)"
+    }
+   ],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 10,
+   "wf": 10,
+   "st": 10,
+   "salti": [],
+   "dx": [],
+   "stile": [
+    {
+     "t": "404",
+     "wf": "92.16px 800 Barlow rgb(0, 0, 0)",
+     "st": "92.16px 800 Barlow rgb(211, 215, 226)"
+    }
+   ],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 10,
+   "wf": 10,
+   "st": 10,
+   "salti": [],
+   "dx": [],
+   "stile": [
+    {
+     "t": "404",
+     "wf": "122.88px 800 Barlow rgb(0, 0, 0)",
+     "st": "122.88px 800 Barlow rgb(211, 215, 226)"
+    }
+   ],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 10,
+   "wf": 10,
+   "st": 10,
+   "salti": [],
+   "dx": [],
+   "stile": [
+    {
+     "t": "404",
+     "wf": "140px 800 Barlow rgb(0, 0, 0)",
+     "st": "140px 800 Barlow rgb(211, 215, 226)"
+    }
+   ],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 10,
+   "wf": 10,
+   "st": 10,
+   "salti": [],
+   "dx": [],
+   "stile": [
+    {
+     "t": "404",
+     "wf": "140px 800 Barlow rgb(0, 0, 0)",
+     "st": "140px 800 Barlow rgb(211, 215, 226)"
+    }
+   ],
+   "hWf": 870.1,
+   "hSt": 870.1,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "home": {
+  "375": {
+   "abbinati": 140,
+   "wf": 170,
+   "st": 165,
+   "salti": [
+    {
+     "t": "dal 1996 progettiamo e realizziamo linee di imbott",
+     "wf": 120.1,
+     "st": 25,
+     "salto": -95.1
+    },
+    {
+     "t": "nel cuore della bubble valley piemontese, realizzi",
+     "wf": 362.1,
+     "st": 764.9,
+     "salto": 497.9
+    },
+    {
+     "t": "vedi le macchine",
+     "wf": 496.9,
+     "st": 1223.9,
+     "salto": 324.2
+    },
+    {
+     "t": "progettiamo soluzioni.",
+     "wf": 1175,
+     "st": 46,
+     "salto": -1857
+    },
+    {
+     "t": "1996",
+     "wf": 1272.9,
+     "st": 119.9,
+     "salto": -24
+    },
+    {
+     "t": "prodotta la prima macchina",
+     "wf": 1317.9,
+     "st": 138.9,
+     "salto": -26
+    },
+    {
+     "t": "2.000+",
+     "wf": 1272.9,
+     "st": 234.9,
+     "salto": 141
+    },
+    {
+     "t": "macchine installate",
+     "wf": 1317.9,
+     "st": 253.9,
+     "salto": -26
+    },
+    {
+     "t": "paesi serviti",
+     "wf": 1419.5,
+     "st": 330.9,
+     "salto": -26
+    },
+    {
+     "t": "100%",
+     "wf": 1374.5,
+     "st": 388.9,
+     "salto": 103
+    },
+    {
+     "t": "progettato e costruito internamente",
+     "wf": 1419.5,
+     "st": 407.9,
+     "salto": -26
+    },
+    {
+     "t": "scopri le macchine per:",
+     "wf": 1571.9,
+     "st": 28,
+     "salto": -532.3
+    },
+    {
+     "t": "sciacquatura",
+     "wf": 1694.9,
+     "st": 173.6,
+     "salto": 22.6
+    },
+    {
+     "t": "risciacquo e soffiaggio con acqua, aria filtrata o",
+     "wf": 1725.9,
+     "st": 192.6,
+     "salto": -12
+    },
+    {
+     "t": "esplora",
+     "wf": 1781.9,
+     "st": 451.6,
+     "salto": 203
+    },
+    {
+     "t": "riempimento",
+     "wf": 1899.9,
+     "st": 561.6,
+     "salto": -8
+    },
+    {
+     "t": "sistemi a gravità, leggero vuoto, leggera pression",
+     "wf": 1930.9,
+     "st": 580.6,
+     "salto": -12
+    },
+    {
+     "t": "esplora",
+     "wf": 1986.9,
+     "st": 839.6,
+     "salto": 203
+    },
+    {
+     "t": "tappatura",
+     "wf": 2104.9,
+     "st": 949.6,
+     "salto": -8
+    },
+    {
+     "t": "gestione delle chiusure in base al contenitore sce",
+     "wf": 2135.9,
+     "st": 968.6,
+     "salto": -12
+    },
+    {
+     "t": "esplora",
+     "wf": 2170.9,
+     "st": 1132.6,
+     "salto": 129
+    },
+    {
+     "t": "linee complete",
+     "wf": 2288.9,
+     "st": 1242.6,
+     "salto": -8
+    },
+    {
+     "t": "soluzioni ingegnerizzate su misura per prodotto, c",
+     "wf": 2319.9,
+     "st": 1278.6,
+     "salto": 5
+    },
+    {
+     "t": "esplora",
+     "wf": 2375.9,
+     "st": 1461.6,
+     "salto": 127
+    },
+    {
+     "t": "scelti da produttori in oltre 100 paesi",
+     "wf": 2586.4,
+     "st": 30,
+     "salto": -1642.1
+    },
+    {
+     "t": "al rawdatain",
+     "wf": 2582.9,
+     "st": 173,
+     "salto": 146.5
+    },
+    {
+     "t": "trova la tua soluzione",
+     "wf": 2738.9,
+     "st": 30,
+     "salto": -299
+    },
+    {
+     "t": "percorso 1",
+     "wf": 2818.9,
+     "st": 126,
+     "salto": 16
+    },
+    {
+     "t": "esplora per tipologia di macchina",
+     "wf": 2843.9,
+     "st": 162,
+     "salto": 11
+    },
+    {
+     "t": "sciacquatrici, riempitrici e tappatrici progettate",
+     "wf": 2937.7,
+     "st": 268.5,
+     "salto": 12.7
+    },
+    {
+     "t": "vai al catalogo macchine",
+     "wf": 3054.7,
+     "st": 622.5,
+     "salto": 237
+    },
+    {
+     "t": "percorso 2",
+     "wf": 3155.7,
+     "st": 730.5,
+     "salto": 7
+    },
+    {
+     "t": "scegli in base al tuo settore",
+     "wf": 3180.7,
+     "st": 766.5,
+     "salto": 11
+    },
+    {
+     "t": "alimentare, chimico e farmaceutico: soluzioni otti",
+     "wf": 3249.6,
+     "st": 894,
+     "salto": 58.6
+    },
+    {
+     "t": "vedi soluzioni per settore",
+     "wf": 3342.6,
+     "st": 1096,
+     "salto": 109
+    },
+    {
+     "t": "le nostre soluzioni per piccole e medie produzioni",
+     "wf": 3595.6,
+     "st": 60,
+     "salto": -1289
+    },
+    {
+     "t": "scopri",
+     "wf": 3679.4,
+     "st": 234,
+     "salto": 90.2
+    },
+    {
+     "t": "servizi & post-vendita",
+     "wf": 3896.4,
+     "st": 50,
+     "salto": -401
+    },
+    {
+     "t": "al tuo fianco anche dopo l'installazione",
+     "wf": 3926.4,
+     "st": 122,
+     "salto": 42
+    },
+    {
+     "t": "quando una linea si ferma, ogni minuto pesa sulla ",
+     "wf": 4043.8,
+     "st": 275.7,
+     "salto": 36.3
+    },
+    {
+     "t": "assistenza da remoto, ricambi originali e interven",
+     "wf": 4123,
+     "st": 731.7,
+     "salto": 376.8
+    },
+    {
+     "t": ", ovunque nel mondo la tua linea sia installata.",
+     "wf": 4175.8,
+     "st": 883.7,
+     "salto": 99.2
+    },
+    {
+     "t": "scopri il servizio",
+     "wf": 4269.5,
+     "st": 1066.7,
+     "salto": 89.3
+    },
+    {
+     "t": "innovazione & tecnologia",
+     "wf": 4713.5,
+     "st": 70,
+     "salto": -1440.7
+    },
+    {
+     "t": "ingegneria pensata per non fermarsi mai",
+     "wf": 4743.5,
+     "st": 123,
+     "salto": 23
+    },
+    {
+     "t": "ogni linea nasce nel nostro ufficio tecnico e vien",
+     "wf": 4860.9,
+     "st": 276.7,
+     "salto": 36.3
+    },
+    {
+     "t": "costruita e collaudata internamente",
+     "wf": 4887.3,
+     "st": 447.7,
+     "salto": 144.6
+    },
+    {
+     "t": ", nello stesso stabilimento, dalla progettazione d",
+     "wf": 4913.7,
+     "st": 504.7,
+     "salto": 30.6
+    },
+    {
+     "t": "scopri eurostar",
+     "wf": 5060.3,
+     "st": 839.7,
+     "salto": 188.4
+    },
+    {
+     "t": "soluzioni eurostar",
+     "wf": 5599.3,
+     "st": 30,
+     "salto": -1348.7
+    },
+    {
+     "t": "progettiamo e realizziamo",
+     "wf": 5636.3,
+     "st": 106,
+     "salto": 38
+    },
+    {
+     "t": "linee di imbottigliamento precise e affidabili, pe",
+     "wf": 5668.7,
+     "st": 163,
+     "salto": 24.6
+    },
+    {
+     "t": "continuità, efficienza e qualità",
+     "wf": 5765.8,
+     "st": 334,
+     "salto": 73.9
+    },
+    {
+     "t": "in ogni fase del processo.",
+     "wf": 5798.2,
+     "st": 410,
+     "salto": 43.6
+    },
+    {
+     "t": "\"la soluzione esiste sempre, basta trovarla.\"",
+     "wf": 5896,
+     "st": 505,
+     "salto": -2.8
+    },
+    {
+     "t": "alessandro castagno",
+     "wf": 5983,
+     "st": 649,
+     "salto": 57
+    },
+    {
+     "t": "— fondatore eurostar",
+     "wf": 5983,
+     "st": 687,
+     "salto": 38
+    },
+    {
+     "t": "vedi le macchine",
+     "wf": 6090,
+     "st": 766,
+     "salto": -28
+    },
+    {
+     "t": "la nostra gamma",
+     "wf": 6303,
+     "st": 30,
+     "salto": -949
+    },
+    {
+     "t": "macchine in evidenza",
+     "wf": 6332,
+     "st": 83,
+     "salto": 24
+    },
+    {
+     "t": "una selezione dalle nostre linee di sciacquatura, ",
+     "wf": 6425.2,
+     "st": 161.9,
+     "salto": -14.3
+    },
+    {
+     "t": "sciacquatura",
+     "wf": 6583.8,
+     "st": 532.9,
+     "salto": 212.4
+    },
+    {
+     "t": "sciacquatrice mec si",
+     "wf": 6865.8,
+     "st": 569.9,
+     "salto": -245
+    },
+    {
+     "t": "sciacquatrice / soffiatrice rotativa",
+     "wf": 6901.7,
+     "st": 634.6,
+     "salto": 28.8
+    },
+    {
+     "t": "trattamento interno di bottiglie, lattine in allum",
+     "wf": 6936.5,
+     "st": 710.6,
+     "salto": 41.2
+    },
+    {
+     "t": "schede tecniche",
+     "wf": 7121.5,
+     "st": 1349.6,
+     "salto": 454
+    },
+    {
+     "t": "riempimento",
+     "wf": 7202.5,
+     "st": 1413.6,
+     "salto": -17
+    },
+    {
+     "t": "skillfill",
+     "wf": 7484.5,
+     "st": 1450.6,
+     "salto": -245
+    },
+    {
+     "t": "riempitrice isobarica elettropneumatica",
+     "wf": 7520.5,
+     "st": 1473.5,
+     "salto": -13.1
+    },
+    {
+     "t": "riempitrice isobarica elettropneumatica idonea al ",
+     "wf": 7555.3,
+     "st": 1530.5,
+     "salto": 22.2
+    },
+    {
+     "t": "schede tecniche",
+     "wf": 7740.3,
+     "st": 2226.5,
+     "salto": 511
+    },
+    {
+     "t": "squadron",
+     "wf": 7821.3,
+     "st": 2290.5,
+     "salto": -17
+    },
+    {
+     "t": "athena",
+     "wf": 8103.3,
+     "st": 2327.5,
+     "salto": -245
+    },
+    {
+     "t": "uniblocco isobarico automatico lineare",
+     "wf": 8139.2,
+     "st": 2350.4,
+     "salto": -13
+    },
+    {
+     "t": "uniblocco automatico per sciacquatura, riempimento",
+     "wf": 8174,
+     "st": 2426.4,
+     "salto": 41.2
+    },
+    {
+     "t": "scopri squadron",
+     "wf": 8359,
+     "st": 3008.4,
+     "salto": 397
+    },
+    {
+     "t": "news",
+     "wf": 8572,
+     "st": 50,
+     "salto": -3171.4
+    },
+    {
+     "t": "ultime dal blog eurostar",
+     "wf": 8600,
+     "st": 81,
+     "salto": 3
+    },
+    {
+     "t": "vedi tutte le news",
+     "wf": 8691.9,
+     "st": 216.8,
+     "salto": 43.9
+    },
+    {
+     "t": "caso studio",
+     "wf": 8983.2,
+     "st": 527,
+     "salto": 18.9
+    },
+    {
+     "t": "progettiamo insieme la tua prossima linea",
+     "wf": 9382.9,
+     "st": 26,
+     "salto": -900.7
+    },
+    {
+     "t": "contattaci",
+     "wf": 9541.8,
+     "st": 201.7,
+     "salto": 16.8
+    }
+   ],
+   "dx": [
+    {
+     "t": "dal 1996 progettiamo e realizziamo linee di imbott",
+     "wf": 32.2,
+     "st": 30
+    },
+    {
+     "t": "nel cuore della bubble valley piemontese, realizzi",
+     "wf": 35.5,
+     "st": 30
+    },
+    {
+     "t": "vedi le macchine",
+     "wf": 120.1,
+     "st": 75
+    },
+    {
+     "t": "contattaci",
+     "wf": 142.5,
+     "st": 64
+    },
+    {
+     "t": "progettiamo soluzioni.",
+     "wf": 81.1,
+     "st": 65.5
+    },
+    {
+     "t": "1996",
+     "wf": 66.5,
+     "st": 85.5
+    },
+    {
+     "t": "prodotta la prima macchina",
+     "wf": 30.8,
+     "st": 85.5
+    },
+    {
+     "t": "2.000+",
+     "wf": 223.9,
+     "st": 85.5
+    },
+    {
+     "t": "macchine installate",
+     "wf": 197.7,
+     "st": 85.5
+    },
+    {
+     "t": "100+",
+     "wf": 66.4,
+     "st": 85.5
+    },
+    {
+     "t": "paesi serviti",
+     "wf": 53.6,
+     "st": 85.5
+    },
+    {
+     "t": "100%",
+     "wf": 235.7,
+     "st": 85.5
+    },
+    {
+     "t": "progettato e costruito internamente",
+     "wf": 225.6,
+     "st": 85.5
+    },
+    {
+     "t": "scopri le macchine per:",
+     "wf": 22.5,
+     "st": 95.5
+    },
+    {
+     "t": "sciacquatura",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "risciacquo e soffiaggio con acqua, aria filtrata o",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "esplora",
+     "wf": 22.5,
+     "st": 139.5
+    },
+    {
+     "t": "riempimento",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "sistemi a gravità, leggero vuoto, leggera pression",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "esplora",
+     "wf": 22.5,
+     "st": 139.5
+    },
+    {
+     "t": "tappatura",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "gestione delle chiusure in base al contenitore sce",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "esplora",
+     "wf": 22.5,
+     "st": 139.5
+    },
+    {
+     "t": "linee complete",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "soluzioni ingegnerizzate su misura per prodotto, c",
+     "wf": 22.5,
+     "st": 115.5
+    },
+    {
+     "t": "esplora",
+     "wf": 22.5,
+     "st": 139.5
+    },
+    {
+     "t": "scelti da produttori in oltre 100 paesi",
+     "wf": 22.5,
+     "st": 101
+    },
+    {
+     "t": "al rawdatain",
+     "wf": 359.6,
+     "st": 101
+    },
+    {
+     "t": "san miguel",
+     "wf": 522.7,
+     "st": 264.1
+    },
+    {
+     "t": "ccu – compañía cervecerías unidas s.a.",
+     "wf": 658.7,
+     "st": 400.1
+    },
+    {
+     "t": "abrau-durso",
+     "wf": 1062.7,
+     "st": 804.2
+    },
+    {
+     "t": "bottled in cumbria",
+     "wf": 1220.2,
+     "st": 961.6
+    },
+    {
+     "t": "prestige production",
+     "wf": 1434.5,
+     "st": 1175.9
+    },
+    {
+     "t": "ginstberg",
+     "wf": 1663.3,
+     "st": 1404.7
+    },
+    {
+     "t": "nigerbev",
+     "wf": 1792,
+     "st": 1533.4
+    },
+    {
+     "t": "mib",
+     "wf": 1909.7,
+     "st": 1651.1
+    },
+    {
+     "t": "wdv",
+     "wf": 1971.9,
+     "st": 1713.3
+    },
+    {
+     "t": "kuban vino",
+     "wf": 2043,
+     "st": 1784.4
+    },
+    {
+     "t": "louisiana spirits",
+     "wf": 2179.8,
+     "st": 1921.3
+    },
+    {
+     "t": "better jusage ab",
+     "wf": 2377.3,
+     "st": 2118.7
+    },
+    {
+     "t": "del monte",
+     "wf": 2577.6,
+     "st": 2319
+    },
+    {
+     "t": "la spina santa",
+     "wf": 2706,
+     "st": 2447.4
+    },
+    {
+     "t": "biofruits",
+     "wf": 2882.6,
+     "st": 2624
+    },
+    {
+     "t": "balholm",
+     "wf": 3004.4,
+     "st": 2745.9
+    },
+    {
+     "t": "biogroupe",
+     "wf": 3117.8,
+     "st": 2859.3
+    },
+    {
+     "t": "olisur",
+     "wf": 3246.5,
+     "st": 2988
+    },
+    {
+     "t": "castello di verrazzano",
+     "wf": 3340.7,
+     "st": 3082.1
+    },
+    {
+     "t": "donatella cinelli colombini",
+     "wf": 3603.8,
+     "st": 3345.2
+    },
+    {
+     "t": "frantoio bonamini",
+     "wf": 3907.7,
+     "st": 3649.1
+    },
+    {
+     "t": "cantina padovan",
+     "wf": 4115.3,
+     "st": 3856.8
+    },
+    {
+     "t": "vigezzo – gruppo lauretana",
+     "wf": 4659.9,
+     "st": 4400.6
+    },
+    {
+     "t": "fattoria la vialla",
+     "wf": 4960.2,
+     "st": 4700.9
+    },
+    {
+     "t": "birrificio exit",
+     "wf": 5172.8,
+     "st": 4913.4
+    },
+    {
+     "t": "brasserie apal",
+     "wf": 5338.6,
+     "st": 5079.2
+    },
+    {
+     "t": "embotelladora capri",
+     "wf": 5517.6,
+     "st": 5258.2
+    },
+    {
+     "t": "al rawdatain",
+     "wf": 5756.8,
+     "st": 5497.5
+    },
+    {
+     "t": "san miguel",
+     "wf": 5919.9,
+     "st": 5660.6
+    },
+    {
+     "t": "ccu – compañía cervecerías unidas s.a.",
+     "wf": 6055.9,
+     "st": 5796.6
+    },
+    {
+     "t": "abrau-durso",
+     "wf": 6460,
+     "st": 6200.6
+    },
+    {
+     "t": "bottled in cumbria",
+     "wf": 6617.4,
+     "st": 6358.1
+    },
+    {
+     "t": "prestige production",
+     "wf": 6831.7,
+     "st": 6572.4
+    },
+    {
+     "t": "ginstberg",
+     "wf": 7060.5,
+     "st": 6801.2
+    },
+    {
+     "t": "nigerbev",
+     "wf": 7189.2,
+     "st": 6929.8
+    },
+    {
+     "t": "mib",
+     "wf": 7306.9,
+     "st": 7047.5
+    },
+    {
+     "t": "wdv",
+     "wf": 7369.1,
+     "st": 7109.7
+    },
+    {
+     "t": "kuban vino",
+     "wf": 7440.2,
+     "st": 7180.9
+    },
+    {
+     "t": "louisiana spirits",
+     "wf": 7577.1,
+     "st": 7317.7
+    },
+    {
+     "t": "better jusage ab",
+     "wf": 7774.5,
+     "st": 7515.1
+    },
+    {
+     "t": "del monte",
+     "wf": 7974.8,
+     "st": 7715.5
+    },
+    {
+     "t": "la spina santa",
+     "wf": 8103.2,
+     "st": 7843.9
+    },
+    {
+     "t": "biofruits",
+     "wf": 8279.8,
+     "st": 8020.5
+    },
+    {
+     "t": "balholm",
+     "wf": 8401.7,
+     "st": 8142.3
+    },
+    {
+     "t": "biogroupe",
+     "wf": 8515.1,
+     "st": 8255.7
+    },
+    {
+     "t": "olisur",
+     "wf": 8643.8,
+     "st": 8384.4
+    },
+    {
+     "t": "castello di verrazzano",
+     "wf": 8737.9,
+     "st": 8478.6
+    },
+    {
+     "t": "donatella cinelli colombini",
+     "wf": 9001,
+     "st": 8741.7
+    },
+    {
+     "t": "frantoio bonamini",
+     "wf": 9304.9,
+     "st": 9045.6
+    },
+    {
+     "t": "cantina padovan",
+     "wf": 9512.6,
+     "st": 9253.2
+    },
+    {
+     "t": "vigezzo – gruppo lauretana",
+     "wf": 10057.1,
+     "st": 9797
+    },
+    {
+     "t": "fattoria la vialla",
+     "wf": 10357.5,
+     "st": 10097.3
+    },
+    {
+     "t": "birrificio exit",
+     "wf": 10570,
+     "st": 10309.9
+    },
+    {
+     "t": "brasserie apal",
+     "wf": 10735.8,
+     "st": 10475.7
+    },
+    {
+     "t": "embotelladora capri",
+     "wf": 10914.8,
+     "st": 10654.7
+    },
+    {
+     "t": "trova la tua soluzione",
+     "wf": 22.5,
+     "st": 136.5
+    },
+    {
+     "t": "percorso 1",
+     "wf": 50.5,
+     "st": 156.5
+    },
+    {
+     "t": "esplora per tipologia di macchina",
+     "wf": 50.5,
+     "st": 156.5
+    },
+    {
+     "t": "sciacquatrici, riempitrici e tappatrici progettate",
+     "wf": 50.5,
+     "st": 156.5
+    },
+    {
+     "t": "vai al catalogo macchine",
+     "wf": 50.5,
+     "st": 195.8
+    },
+    {
+     "t": "percorso 2",
+     "wf": 50.5,
+     "st": 156.5
+    },
+    {
+     "t": "scegli in base al tuo settore",
+     "wf": 50.5,
+     "st": 156.5
+    },
+    {
+     "t": "alimentare, chimico e farmaceutico: soluzioni otti",
+     "wf": 50.5,
+     "st": 156.5
+    },
+    {
+     "t": "vedi soluzioni per settore",
+     "wf": 50.5,
+     "st": 196.8
+    },
+    {
+     "t": "le nostre soluzioni per piccole e medie produzioni",
+     "wf": 22.5,
+     "st": 182
+    },
+    {
+     "t": "scopri",
+     "wf": 52.5,
+     "st": 196
+    },
+    {
+     "t": "servizi & post-vendita",
+     "wf": 50.5,
+     "st": 227.5
+    },
+    {
+     "t": "al tuo fianco anche dopo l'installazione",
+     "wf": 50.5,
+     "st": 227.5
+    },
+    {
+     "t": "quando una linea si ferma, ogni minuto pesa sulla ",
+     "wf": 50.5,
+     "st": 227.5
+    },
+    {
+     "t": "assistenza da remoto, ricambi originali e interven",
+     "wf": 239.9,
+     "st": 227.5
+    },
+    {
+     "t": ", ovunque nel mondo la tua linea sia installata.",
+     "wf": 167.8,
+     "st": 258.2
+    },
+    {
+     "t": "scopri il servizio",
+     "wf": 80.5,
+     "st": 256.3
+    },
+    {
+     "t": "innovazione & tecnologia",
+     "wf": 50.5,
+     "st": 257.5
+    },
+    {
+     "t": "ingegneria pensata per non fermarsi mai",
+     "wf": 50.5,
+     "st": 257.5
+    },
+    {
+     "t": "ogni linea nasce nel nostro ufficio tecnico e vien",
+     "wf": 50.5,
+     "st": 257.5
+    },
+    {
+     "t": "costruita e collaudata internamente",
+     "wf": 158.4,
+     "st": 257.5
+    },
+    {
+     "t": ", nello stesso stabilimento, dalla progettazione d",
+     "wf": 145,
+     "st": 353.7
+    },
+    {
+     "t": "scopri eurostar",
+     "wf": 80.5,
+     "st": 288.8
+    },
+    {
+     "t": "soluzioni eurostar",
+     "wf": 107.2,
+     "st": 243
+    },
+    {
+     "t": "dal 1996",
+     "wf": 65.7,
+     "st": 243
+    },
+    {
+     "t": "progettiamo e realizziamo",
+     "wf": 156.8,
+     "st": 243
+    },
+    {
+     "t": "linee di imbottigliamento precise e affidabili, pe",
+     "wf": 208,
+     "st": 243
+    },
+    {
+     "t": "continuità, efficienza e qualità",
+     "wf": 181.7,
+     "st": 243
+    },
+    {
+     "t": "in ogni fase del processo.",
+     "wf": 252,
+     "st": 243
+    },
+    {
+     "t": "\"la soluzione esiste sempre, basta trovarla.\"",
+     "wf": 32,
+     "st": 243
+    },
+    {
+     "t": "alessandro castagno",
+     "wf": 110.5,
+     "st": 253
+    },
+    {
+     "t": "— fondatore eurostar",
+     "wf": 244.9,
+     "st": 253
+    },
+    {
+     "t": "vedi le macchine",
+     "wf": 120.1,
+     "st": 278
+    },
+    {
+     "t": "la nostra gamma",
+     "wf": 22.5,
+     "st": 278.5
+    },
+    {
+     "t": "macchine in evidenza",
+     "wf": 22.5,
+     "st": 278.5
+    },
+    {
+     "t": "una selezione dalle nostre linee di sciacquatura, ",
+     "wf": 22.5,
+     "st": 278.5
+    },
+    {
+     "t": "sciacquatura",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "sciacquatrice mec si",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "sciacquatrice / soffiatrice rotativa",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "trattamento interno di bottiglie, lattine in allum",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "schede tecniche",
+     "wf": 52.5,
+     "st": 316.4
+    },
+    {
+     "t": "riempimento",
+     "wf": 22.5,
+     "st": 298.5
+    },
+    {
+     "t": "skillfill",
+     "wf": 22.5,
+     "st": 298.5
+    },
+    {
+     "t": "riempitrice isobarica elettropneumatica",
+     "wf": 22.5,
+     "st": 298.5
+    },
+    {
+     "t": "riempitrice isobarica elettropneumatica idonea al ",
+     "wf": 22.5,
+     "st": 298.5
+    },
+    {
+     "t": "schede tecniche",
+     "wf": 52.5,
+     "st": 326.4
+    },
+    {
+     "t": "squadron",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "athena",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "uniblocco isobarico automatico lineare",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "uniblocco automatico per sciacquatura, riempimento",
+     "wf": 22.5,
+     "st": 288.5
+    },
+    {
+     "t": "scopri squadron",
+     "wf": 52.5,
+     "st": 324
+    },
+    {
+     "t": "news",
+     "wf": 22.5,
+     "st": 334
+    },
+    {
+     "t": "ultime dal blog eurostar",
+     "wf": 22.5,
+     "st": 334
+    },
+    {
+     "t": "vedi tutte le news",
+     "wf": 22.5,
+     "st": 361.2
+    },
+    {
+     "t": "caso studio",
+     "wf": 356.5,
+     "st": 338
+    },
+    {
+     "t": "progettiamo insieme la tua prossima linea",
+     "wf": 67.8,
+     "st": 349.5
+    },
+    {
+     "t": "contattaci",
+     "wf": 142.5,
+     "st": 383.5
+    }
+   ],
+   "stile": [
+    {
+     "t": "dal 1996 progettiamo e realizziamo linee di imbott",
+     "wf": "28px 900 Barlow rgb(255, 255, 255)",
+     "st": "34px 900 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "nel cuore della bubble valley piemontese, realizzi",
+     "wf": "13px 300 Roboto rgba(255, 255, 255, 0.85)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "vedi le macchine",
+     "wf": "14px 700 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "contattaci",
+     "wf": "14px 700 Barlow rgb(255, 255, 255)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "progettiamo soluzioni.",
+     "wf": "33.75px 900 Barlow rgb(28, 38, 90)",
+     "st": "26px 900 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "1996",
+     "wf": "34px 800 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "prodotta la prima macchina",
+     "wf": "12px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "2.000+",
+     "wf": "34px 800 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "macchine installate",
+     "wf": "12px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "100+",
+     "wf": "34px 800 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "paesi serviti",
+     "wf": "12px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "100%",
+     "wf": "34px 800 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "progettato e costruito internamente",
+     "wf": "12px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "scopri le macchine per:",
+     "wf": "14px 700 Barlow rgb(74, 79, 94)",
+     "st": "19px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "sciacquatura",
+     "wf": "16px 800 Barlow rgb(28, 38, 90)",
+     "st": "17px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "risciacquo e soffiaggio con acqua, aria filtrata o",
+     "wf": "14px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "esplora",
+     "wf": "13px 700 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "riempimento",
+     "wf": "16px 800 Barlow rgb(28, 38, 90)",
+     "st": "17px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "sistemi a gravità, leggero vuoto, leggera pression",
+     "wf": "14px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "esplora",
+     "wf": "13px 700 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "tappatura",
+     "wf": "16px 800 Barlow rgb(28, 38, 90)",
+     "st": "17px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "gestione delle chiusure in base al contenitore sce",
+     "wf": "14px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "esplora",
+     "wf": "13px 700 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "linee complete",
+     "wf": "16px 800 Barlow rgb(28, 38, 90)",
+     "st": "17px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "soluzioni ingegnerizzate su misura per prodotto, c",
+     "wf": "14px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "esplora",
+     "wf": "13px 700 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "scelti da produttori in oltre 100 paesi",
+     "wf": "11px 600 Barlow rgba(255, 255, 255, 0.5)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "trova la tua soluzione",
+     "wf": "13px 600 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "percorso 1",
+     "wf": "11px 600 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "esplora per tipologia di macchina",
+     "wf": "26px 900 Barlow rgb(28, 38, 90)",
+     "st": "19px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "sciacquatrici, riempitrici e tappatrici progettate",
+     "wf": "15px 300 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "vai al catalogo macchine",
+     "wf": "13px 700 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "percorso 2",
+     "wf": "11px 600 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "scegli in base al tuo settore",
+     "wf": "26px 900 Barlow rgb(28, 38, 90)",
+     "st": "19px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "alimentare, chimico e farmaceutico: soluzioni otti",
+     "wf": "15px 300 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "vedi soluzioni per settore",
+     "wf": "13px 700 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "le nostre soluzioni per piccole e medie produzioni",
+     "wf": "19px 800 Barlow rgb(255, 255, 255)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "scopri",
+     "wf": "14px 700 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "servizi & post-vendita",
+     "wf": "13px 600 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "al tuo fianco anche dopo l'installazione",
+     "wf": "28px 900 Barlow rgb(28, 38, 90)",
+     "st": "26px 900 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "quando una linea si ferma, ogni minuto pesa sulla ",
+     "wf": "16px 300 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "assistenza da remoto, ricambi originali e interven",
+     "wf": "16px 400 Roboto rgb(28, 38, 90)",
+     "st": "16px 700 Roboto rgb(28, 38, 90)"
+    },
+    {
+     "t": ", ovunque nel mondo la tua linea sia installata.",
+     "wf": "16px 300 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "scopri il servizio",
+     "wf": "14px 700 Barlow rgb(255, 255, 255)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "innovazione & tecnologia",
+     "wf": "13px 600 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "ingegneria pensata per non fermarsi mai",
+     "wf": "28px 900 Barlow rgb(28, 38, 90)",
+     "st": "26px 900 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "ogni linea nasce nel nostro ufficio tecnico e vien",
+     "wf": "16px 300 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "costruita e collaudata internamente",
+     "wf": "16px 400 Roboto rgb(28, 38, 90)",
+     "st": "16px 700 Roboto rgb(28, 38, 90)"
+    },
+    {
+     "t": ", nello stesso stabilimento, dalla progettazione d",
+     "wf": "16px 300 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "scopri eurostar",
+     "wf": "14px 700 Barlow rgb(255, 255, 255)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "soluzioni eurostar",
+     "wf": "13px 700 Barlow rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "dal 1996",
+     "wf": "24px 900 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "progettiamo e realizziamo",
+     "wf": "24px 900 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "linee di imbottigliamento precise e affidabili, pe",
+     "wf": "24px 900 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "continuità, efficienza e qualità",
+     "wf": "24px 900 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "in ogni fase del processo.",
+     "wf": "24px 900 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "\"la soluzione esiste sempre, basta trovarla.\"",
+     "wf": "20px 600 Roboto rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "alessandro castagno",
+     "wf": "14px 700 Roboto rgb(28, 38, 90)",
+     "st": "16px 700 Roboto rgb(28, 38, 90)"
+    },
+    {
+     "t": "— fondatore eurostar",
+     "wf": "14px 400 Roboto rgb(74, 79, 94)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "vedi le macchine",
+     "wf": "14px 700 Barlow rgb(255, 255, 255)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "la nostra gamma",
+     "wf": "13px 600 Barlow rgb(159, 176, 216)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "macchine in evidenza",
+     "wf": "32px 900 Barlow rgb(255, 255, 255)",
+     "st": "26px 900 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "una selezione dalle nostre linee di sciacquatura, ",
+     "wf": "16px 300 Roboto rgba(255, 255, 255, 0.72)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "sciacquatura",
+     "wf": "12px 700 Barlow rgba(255, 255, 255, 0.5)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "sciacquatrice mec si",
+     "wf": "26px 900 Barlow rgb(255, 255, 255)",
+     "st": "19px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "sciacquatrice / soffiatrice rotativa",
+     "wf": "12px 400 Roboto rgba(255, 255, 255, 0.5)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "trattamento interno di bottiglie, lattine in allum",
+     "wf": "15px 300 Roboto rgba(255, 255, 255, 0.72)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "schede tecniche",
+     "wf": "14px 700 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "riempimento",
+     "wf": "12px 700 Barlow rgba(255, 255, 255, 0.5)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "skillfill",
+     "wf": "26px 900 Barlow rgb(255, 255, 255)",
+     "st": "19px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "riempitrice isobarica elettropneumatica",
+     "wf": "12px 400 Roboto rgba(255, 255, 255, 0.5)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "riempitrice isobarica elettropneumatica idonea al ",
+     "wf": "15px 300 Roboto rgba(255, 255, 255, 0.72)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "schede tecniche",
+     "wf": "14px 700 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "squadron",
+     "wf": "12px 700 Barlow rgba(255, 255, 255, 0.5)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "athena",
+     "wf": "26px 900 Barlow rgb(255, 255, 255)",
+     "st": "19px 800 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "uniblocco isobarico automatico lineare",
+     "wf": "12px 400 Roboto rgba(255, 255, 255, 0.5)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "uniblocco automatico per sciacquatura, riempimento",
+     "wf": "15px 300 Roboto rgba(255, 255, 255, 0.72)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "scopri squadron",
+     "wf": "14px 700 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "news",
+     "wf": "13px 600 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(74, 79, 94)"
+    },
+    {
+     "t": "vedi tutte le news",
+     "wf": "13px 700 Barlow rgb(37, 56, 126)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    },
+    {
+     "t": "progettiamo insieme la tua prossima linea",
+     "wf": "38px 900 Barlow rgb(255, 255, 255)",
+     "st": "26px 900 Barlow rgb(28, 38, 90)"
+    },
+    {
+     "t": "contattaci",
+     "wf": "14px 700 Barlow rgb(28, 38, 90)",
+     "st": "16px 400 Roboto rgb(37, 56, 126)"
+    }
+   ],
+   "hWf": 9718.8,
+   "hSt": 3102.4,
+   "swWf": 971,
+   "swSt": 519
+  },
+  "768": {
+   "abbinati": 140,
+   "wf": 170,
+   "st": 165,
+   "salti": [
+    {
+     "t": "progettiamo insieme la tua prossima linea",
+     "wf": 8161.7,
+     "st": 8252.4,
+     "salto": 90.7
+    }
+   ],
+   "dx": [
+    {
+     "t": "birrificio exit",
+     "wf": 10945.1,
+     "st": 10943.5
+    },
+    {
+     "t": "brasserie apal",
+     "wf": 11117.3,
+     "st": 11115.7
+    },
+    {
+     "t": "\"la soluzione esiste sempre, basta trovarla.\"",
+     "wf": 186.6,
+     "st": 192.9
+    },
+    {
+     "t": "caso studio",
+     "wf": 303.3,
+     "st": 70.1
+    }
+   ],
+   "stile": [],
+   "hWf": 8493.6,
+   "hSt": 8584.3,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 140,
+   "wf": 170,
+   "st": 165,
+   "salti": [
+    {
+     "t": "progettiamo insieme la tua prossima linea",
+     "wf": 6229.8,
+     "st": 6358.5,
+     "salto": 128.7
+    }
+   ],
+   "dx": [
+    {
+     "t": "birrificio exit",
+     "wf": 11664.3,
+     "st": 11662.7
+    },
+    {
+     "t": "\"la soluzione esiste sempre, basta trovarla.\"",
+     "wf": 314.6,
+     "st": 320.9
+    },
+    {
+     "t": "caso studio",
+     "wf": 393.8,
+     "st": 85.4
+    }
+   ],
+   "stile": [],
+   "hWf": 6597.6,
+   "hSt": 6726.4,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 140,
+   "wf": 170,
+   "st": 165,
+   "salti": [
+    {
+     "t": "progettiamo insieme la tua prossima linea",
+     "wf": 6410.9,
+     "st": 6537.4,
+     "salto": 126.5
+    }
+   ],
+   "dx": [
+    {
+     "t": "fattoria la vialla",
+     "wf": 12139.8,
+     "st": 12138.2
+    },
+    {
+     "t": "\"la soluzione esiste sempre, basta trovarla.\"",
+     "wf": 442.6,
+     "st": 448.9
+    },
+    {
+     "t": "caso studio",
+     "wf": 484.3,
+     "st": 100.8
+    }
+   ],
+   "stile": [],
+   "hWf": 6813.7,
+   "hSt": 6940.2,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 140,
+   "wf": 170,
+   "st": 165,
+   "salti": [
+    {
+     "t": "progettiamo insieme la tua prossima linea",
+     "wf": 6482,
+     "st": 6586.4,
+     "salto": 104.4
+    }
+   ],
+   "dx": [
+    {
+     "t": "fattoria la vialla",
+     "wf": 12143,
+     "st": 12141.4
+    },
+    {
+     "t": "\"la soluzione esiste sempre, basta trovarla.\"",
+     "wf": 522.6,
+     "st": 528.9
+    },
+    {
+     "t": "caso studio",
+     "wf": 538.7,
+     "st": 104
+    }
+   ],
+   "stile": [],
+   "hWf": 6907.4,
+   "hSt": 7011.9,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "catalogo": {
+  "375": {
+   "abbinati": 138,
+   "wf": 162,
+   "st": 139,
+   "salti": [
+    {
+     "t": "riempitrici",
+     "wf": 547,
+     "st": 469,
+     "salto": -78
+    },
+    {
+     "t": "linee complete",
+     "wf": 625,
+     "st": 469,
+     "salto": -78
+    },
+    {
+     "t": "sistemi movimentazione contenitori",
+     "wf": 703,
+     "st": 469,
+     "salto": -78
+    },
+    {
+     "t": "usate",
+     "wf": 781,
+     "st": 469,
+     "salto": -78
+    }
+   ],
+   "dx": [
+    {
+     "t": "riempitrici",
+     "wf": 26.5,
+     "st": 343
+    },
+    {
+     "t": "tappatrici",
+     "wf": 146.6,
+     "st": 463.1
+    },
+    {
+     "t": "linee complete",
+     "wf": 26.5,
+     "st": 580.3
+    },
+    {
+     "t": "sistemi movimentazione contenitori",
+     "wf": 26.5,
+     "st": 735
+    },
+    {
+     "t": "usate",
+     "wf": 26.5,
+     "st": 1050.4
+    }
+   ],
+   "stile": [],
+   "hWf": 10705.5,
+   "hSt": 10218.3,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 138,
+   "wf": 162,
+   "st": 139,
+   "salti": [
+    {
+     "t": "linee complete",
+     "wf": 508,
+     "st": 430,
+     "salto": -78
+    }
+   ],
+   "dx": [
+    {
+     "t": "linee complete",
+     "wf": 50.1,
+     "st": 603.9
+    },
+    {
+     "t": "sistemi movimentazione contenitori",
+     "wf": 204.8,
+     "st": 758.5
+    },
+    {
+     "t": "usate",
+     "wf": 520.2,
+     "st": 1074
+    }
+   ],
+   "stile": [],
+   "hWf": 5919.6,
+   "hSt": 5670.3,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 138,
+   "wf": 162,
+   "st": 139,
+   "salti": [
+    {
+     "t": "sistemi movimentazione contenitori",
+     "wf": 508,
+     "st": 430,
+     "salto": -78
+    }
+   ],
+   "dx": [
+    {
+     "t": "sistemi movimentazione contenitori",
+     "wf": 65.4,
+     "st": 773.9
+    },
+    {
+     "t": "usate",
+     "wf": 380.8,
+     "st": 1089.3
+    }
+   ],
+   "stile": [],
+   "hWf": 4005.4,
+   "hSt": 3757.7,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 138,
+   "wf": 162,
+   "st": 139,
+   "salti": [
+    {
+     "t": "tipo di chiusura",
+     "wf": 2305.5,
+     "st": 2287.7,
+     "salto": -16.3
+    },
+    {
+     "t": "fino a 3.000",
+     "wf": 2269,
+     "st": 2267.5,
+     "salto": 16.3
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 3619.7,
+   "hSt": 3447.7,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 138,
+   "wf": 162,
+   "st": 139,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 3705.5,
+   "hSt": 3532.9,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "riempitrici": {
+  "375": {
+   "abbinati": 72,
+   "wf": 82,
+   "st": 72,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 5688.6,
+   "hSt": 5684.7,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 72,
+   "wf": 82,
+   "st": 72,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 3339.5,
+   "hSt": 3337.6,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 72,
+   "wf": 82,
+   "st": 72,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2826,
+   "hSt": 2824.4,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 72,
+   "wf": 82,
+   "st": 72,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2442.9,
+   "hSt": 2441.7,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 72,
+   "wf": 82,
+   "st": 72,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2620.2,
+   "hSt": 2619,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "sciacquatrici": {
+  "375": {
+   "abbinati": 24,
+   "wf": 26,
+   "st": 24,
+   "salti": [
+    {
+     "t": "home",
+     "wf": 91.7,
+     "st": 66.9,
+     "salto": -24.8
+    },
+    {
+     "t": "sciacquatrici/soffiatrici",
+     "wf": 91.7,
+     "st": 91.7,
+     "salto": 24.8
+    }
+   ],
+   "dx": [
+    {
+     "t": "sciacquatrici/soffiatrici",
+     "wf": 183.3,
+     "st": 22.5
+    }
+   ],
+   "stile": [],
+   "hWf": 2135.5,
+   "hSt": 2134.7,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 24,
+   "wf": 26,
+   "st": 24,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1557.8,
+   "hSt": 1557.4,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 24,
+   "wf": 26,
+   "st": 24,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1661.3,
+   "hSt": 1660.9,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 24,
+   "wf": 26,
+   "st": 24,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1803.2,
+   "hSt": 1802.8,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 24,
+   "wf": 26,
+   "st": 24,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1956.7,
+   "hSt": 1956.3,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "linee-complete": {
+  "375": {
+   "abbinati": 18,
+   "wf": 19,
+   "st": 18,
+   "salti": [
+    {
+     "t": "vedi tutto il catalogo",
+     "wf": 2116.4,
+     "st": 2067.5,
+     "salto": -49
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2656.1,
+   "hSt": 2607.2,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 18,
+   "wf": 19,
+   "st": 18,
+   "salti": [
+    {
+     "t": "vedi tutto il catalogo",
+     "wf": 1428.7,
+     "st": 1379.7,
+     "salto": -49
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1925.6,
+   "hSt": 1876.6,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 18,
+   "wf": 19,
+   "st": 18,
+   "salti": [
+    {
+     "t": "vedi tutto il catalogo",
+     "wf": 1659.9,
+     "st": 1611,
+     "salto": -49
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2195.8,
+   "hSt": 2146.9,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 18,
+   "wf": 19,
+   "st": 18,
+   "salti": [
+    {
+     "t": "vedi tutto il catalogo",
+     "wf": 1866.9,
+     "st": 1818,
+     "salto": -49
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2441.8,
+   "hSt": 2392.9,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 18,
+   "wf": 19,
+   "st": 18,
+   "salti": [
+    {
+     "t": "vedi tutto il catalogo",
+     "wf": 2015.2,
+     "st": 1966.3,
+     "salto": -49
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2603.8,
+   "hSt": 2554.9,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "usate": {
+  "375": {
+   "abbinati": 13,
+   "wf": 13,
+   "st": 13,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1395,
+   "hSt": 1395,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 13,
+   "wf": 13,
+   "st": 13,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1255.5,
+   "hSt": 1255.5,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 13,
+   "wf": 13,
+   "st": 13,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1311,
+   "hSt": 1311,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 13,
+   "wf": 13,
+   "st": 13,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1382.3,
+   "hSt": 1382.3,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 13,
+   "wf": 13,
+   "st": 13,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1410.4,
+   "hSt": 1410.4,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "settore-vino": {
+  "375": {
+   "abbinati": 58,
+   "wf": 82,
+   "st": 76,
+   "salti": [
+    {
+     "t": "mec iso",
+     "wf": 2617,
+     "st": 3072,
+     "salto": 455.3
+    },
+    {
+     "t": "canfill",
+     "wf": 3073.2,
+     "st": 4439.3,
+     "salto": 911.1
+    },
+    {
+     "t": "linea squadron",
+     "wf": 4650.3,
+     "st": 4648,
+     "salto": -1368.4
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 6173.7,
+   "hSt": 6171.3,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 58,
+   "wf": 82,
+   "st": 76,
+   "salti": [
+    {
+     "t": "mec iso",
+     "wf": 1724.5,
+     "st": 2176.6,
+     "salto": 452.5
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2855,
+     "st": 2853.8,
+     "salto": -452.9
+    }
+   ],
+   "dx": [
+    {
+     "t": "mec iso",
+     "wf": 418,
+     "st": 68.1
+    },
+    {
+     "t": "riempitrice isobarica meccanica (riempimento a con",
+     "wf": 418,
+     "st": 68.1
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 418,
+     "st": 68.1
+    },
+    {
+     "t": "prodotto",
+     "wf": 418,
+     "st": 68.1
+    },
+    {
+     "t": "fino a 25.000",
+     "wf": 571,
+     "st": 221
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 571,
+     "st": 221
+    },
+    {
+     "t": "canfill",
+     "wf": 68.1,
+     "st": 418
+    },
+    {
+     "t": "monoblocco automatico di sciacquatura, riempimento",
+     "wf": 68.1,
+     "st": 418
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 68.1,
+     "st": 418
+    },
+    {
+     "t": "prodotto",
+     "wf": 68.1,
+     "st": 418
+    },
+    {
+     "t": "fino a 6.000",
+     "wf": 221,
+     "st": 571
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 221,
+     "st": 571
+    }
+   ],
+   "stile": [],
+   "hWf": 3876.7,
+   "hSt": 3875.5,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 58,
+   "wf": 82,
+   "st": 76,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 1688.6,
+     "st": 2121.9,
+     "salto": 433.7
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2377.8,
+     "st": 2361,
+     "salto": -450.1
+    }
+   ],
+   "dx": [
+    {
+     "t": "mec iso",
+     "wf": 391.8,
+     "st": 700.2
+    },
+    {
+     "t": "riempitrice isobarica meccanica (riempimento a con",
+     "wf": 391.8,
+     "st": 700.2
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 391.8,
+     "st": 700.2
+    },
+    {
+     "t": "prodotto",
+     "wf": 391.8,
+     "st": 700.2
+    },
+    {
+     "t": "fino a 25.000",
+     "wf": 524,
+     "st": 832.4
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 524,
+     "st": 832.4
+    }
+   ],
+   "stile": [],
+   "hWf": 3343.7,
+   "hSt": 3326.9,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 58,
+   "wf": 82,
+   "st": 76,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 1842.8,
+     "st": 2268.8,
+     "salto": 426.4
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2518,
+     "st": 2517.3,
+     "salto": -426.7
+    }
+   ],
+   "dx": [
+    {
+     "t": "mec iso",
+     "wf": 386.4,
+     "st": 674
+    },
+    {
+     "t": "riempitrice isobarica meccanica (riempimento a con",
+     "wf": 386.4,
+     "st": 674
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 386.4,
+     "st": 674
+    },
+    {
+     "t": "prodotto",
+     "wf": 386.4,
+     "st": 674
+    },
+    {
+     "t": "fino a 25.000",
+     "wf": 500.4,
+     "st": 788
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 500.4,
+     "st": 788
+    },
+    {
+     "t": "canfill",
+     "wf": 674,
+     "st": 386.4
+    },
+    {
+     "t": "monoblocco automatico di sciacquatura, riempimento",
+     "wf": 674,
+     "st": 386.4
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 674,
+     "st": 386.4
+    },
+    {
+     "t": "prodotto",
+     "wf": 674,
+     "st": 386.4
+    },
+    {
+     "t": "fino a 6.000",
+     "wf": 788,
+     "st": 500.4
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 788,
+     "st": 500.4
+    }
+   ],
+   "stile": [],
+   "hWf": 3447.9,
+   "hSt": 3447.1,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 58,
+   "wf": 82,
+   "st": 76,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 1874.2,
+     "st": 2333.9,
+     "salto": 460.1
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2570.2,
+     "st": 2585.4,
+     "salto": -444.5
+    }
+   ],
+   "dx": [
+    {
+     "t": "mec iso",
+     "wf": 428,
+     "st": 754
+    },
+    {
+     "t": "riempitrice isobarica meccanica (riempimento a con",
+     "wf": 428,
+     "st": 754
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 428,
+     "st": 754
+    },
+    {
+     "t": "prodotto",
+     "wf": 428,
+     "st": 754
+    },
+    {
+     "t": "fino a 25.000",
+     "wf": 569,
+     "st": 895
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 569,
+     "st": 895
+    },
+    {
+     "t": "canfill",
+     "wf": 754,
+     "st": 428
+    },
+    {
+     "t": "monoblocco automatico di sciacquatura, riempimento",
+     "wf": 754,
+     "st": 428
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 754,
+     "st": 428
+    },
+    {
+     "t": "prodotto",
+     "wf": 754,
+     "st": 428
+    },
+    {
+     "t": "fino a 6.000",
+     "wf": 895,
+     "st": 569
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 895,
+     "st": 569
+    }
+   ],
+   "stile": [],
+   "hWf": 3514.8,
+   "hSt": 3530,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "settore-birra": {
+  "375": {
+   "abbinati": 50,
+   "wf": 67,
+   "st": 62,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 2726.1,
+     "st": 3636.4,
+     "salto": 911.1
+    },
+    {
+     "t": "linea squadron",
+     "wf": 3847.1,
+     "st": 3845.2,
+     "salto": -912.2
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5118,
+   "hSt": 5116.1,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 50,
+   "wf": 67,
+   "st": 62,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 1993.4,
+     "st": 2461.1,
+     "salto": 468.1
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2655,
+     "st": 2669.9,
+     "salto": -452.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 3581.9,
+   "hSt": 3596.8,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 50,
+   "wf": 67,
+   "st": 62,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 1531.9,
+     "st": 1965.1,
+     "salto": 433.6
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2221.1,
+     "st": 2204.3,
+     "salto": -450.1
+    }
+   ],
+   "dx": [
+    {
+     "t": "canfill",
+     "wf": 700.2,
+     "st": 391.8
+    },
+    {
+     "t": "monoblocco automatico di sciacquatura, riempimento",
+     "wf": 700.2,
+     "st": 391.8
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 700.2,
+     "st": 391.8
+    },
+    {
+     "t": "prodotto",
+     "wf": 700.2,
+     "st": 391.8
+    },
+    {
+     "t": "fino a 6.000",
+     "wf": 832.4,
+     "st": 524
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 832.4,
+     "st": 524
+    }
+   ],
+   "stile": [],
+   "hWf": 3092.2,
+   "hSt": 3075.4,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 50,
+   "wf": 67,
+   "st": 62,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 1631.6,
+     "st": 2073.5,
+     "salto": 442.3
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2306.8,
+     "st": 2322,
+     "salto": -426.8
+    }
+   ],
+   "dx": [
+    {
+     "t": "canfill",
+     "wf": 674,
+     "st": 98.8
+    },
+    {
+     "t": "monoblocco automatico di sciacquatura, riempimento",
+     "wf": 674,
+     "st": 98.8
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 674,
+     "st": 98.8
+    },
+    {
+     "t": "prodotto",
+     "wf": 674,
+     "st": 98.8
+    },
+    {
+     "t": "fino a 6.000",
+     "wf": 788,
+     "st": 212.8
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 788,
+     "st": 212.8
+    }
+   ],
+   "stile": [],
+   "hWf": 3236.7,
+   "hSt": 3251.9,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 50,
+   "wf": 67,
+   "st": 62,
+   "salti": [
+    {
+     "t": "canfill",
+     "wf": 1724.2,
+     "st": 2199.9,
+     "salto": 476.1
+    },
+    {
+     "t": "linea squadron",
+     "wf": 2420.2,
+     "st": 2435.4,
+     "salto": -460.5
+    }
+   ],
+   "dx": [
+    {
+     "t": "canfill",
+     "wf": 754,
+     "st": 102
+    },
+    {
+     "t": "monoblocco automatico di sciacquatura, riempimento",
+     "wf": 754,
+     "st": 102
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 754,
+     "st": 102
+    },
+    {
+     "t": "prodotto",
+     "wf": 754,
+     "st": 102
+    },
+    {
+     "t": "fino a 6.000",
+     "wf": 895,
+     "st": 243
+    },
+    {
+     "t": "contenitori/ora",
+     "wf": 895,
+     "st": 243
+    }
+   ],
+   "stile": [],
+   "hWf": 3270,
+   "hSt": 3285.2,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "mec-ld": {
+  "375": {
+   "abbinati": 38,
+   "wf": 46,
+   "st": 38,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 1065.3,
+     "st": 978.3,
+     "salto": -87
+    },
+    {
+     "t": "sistema di riempimento a gravità/leggero vuoto per",
+     "wf": 1121.3,
+     "st": 1018.3,
+     "salto": -16
+    },
+    {
+     "t": "caratteristiche",
+     "wf": 1585.1,
+     "st": 1291.8,
+     "salto": -190.3
+    },
+    {
+     "t": "tecnologia di riempimento",
+     "wf": 1663.6,
+     "st": 1363.8,
+     "salto": -6.5
+    },
+    {
+     "t": "gravità/leggero vuoto — meccanico",
+     "wf": 1648.1,
+     "st": 1354.8,
+     "salto": 6.5
+    },
+    {
+     "t": "contenitori",
+     "wf": 1789.6,
+     "st": 1448.3,
+     "salto": -48
+    },
+    {
+     "t": "bottiglie in vetro, pet, hdpe, alluminio",
+     "wf": 1751.1,
+     "st": 1433.8,
+     "salto": 24
+    },
+    {
+     "t": "prodotto da riempire",
+     "wf": 1911.1,
+     "st": 1533.8,
+     "salto": -60
+    },
+    {
+     "t": "liquidi piatti con densità pari all'acqua (non gas",
+     "wf": 1878.1,
+     "st": 1512.8,
+     "salto": 12
+    },
+    {
+     "t": "campo di produzione della gamma",
+     "wf": 2003.1,
+     "st": 1619.3,
+     "salto": -18.5
+    },
+    {
+     "t": "fino a 25.000 contenitori/ora",
+     "wf": 2005.1,
+     "st": 1615.8,
+     "salto": -5.5
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 1095.3,
+     "st": 1810.8,
+     "salto": 1104.8
+    },
+    {
+     "t": "contattaci",
+     "wf": 1198,
+     "st": 1871.7,
+     "salto": -41.8
+    },
+    {
+     "t": "configura la tua mec ld",
+     "wf": 2412,
+     "st": 2111.7,
+     "salto": -974
+    }
+   ],
+   "dx": [
+    {
+     "t": "gravità/leggero vuoto — meccanico",
+     "wf": 129.5,
+     "st": 179.1
+    },
+    {
+     "t": "bottiglie in vetro, pet, hdpe, alluminio",
+     "wf": 129.5,
+     "st": 179.1
+    },
+    {
+     "t": "liquidi piatti con densità pari all'acqua (non gas",
+     "wf": 129.5,
+     "st": 179.1
+    },
+    {
+     "t": "fino a 25.000 contenitori/ora",
+     "wf": 129.5,
+     "st": 179.1
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 285.8,
+     "st": 54.5
+    },
+    {
+     "t": "contattaci",
+     "wf": 315.8,
+     "st": 84.5
+    }
+   ],
+   "stile": [],
+   "hWf": 2712.9,
+   "hSt": 2412.6,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 38,
+   "wf": 46,
+   "st": 38,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 1340.1,
+     "st": 1166.6,
+     "salto": -173.5
+    },
+    {
+     "t": "caratteristiche",
+     "wf": 1599.2,
+     "st": 1398.6,
+     "salto": -27.1
+    },
+    {
+     "t": "tecnologia di riempimento",
+     "wf": 1671.2,
+     "st": 1464.1,
+     "salto": -6.5
+    },
+    {
+     "t": "gravità/leggero vuoto — meccanico",
+     "wf": 1662.2,
+     "st": 1461.6,
+     "salto": 6.5
+    },
+    {
+     "t": "contenitori",
+     "wf": 1755.7,
+     "st": 1519.1,
+     "salto": -36
+    },
+    {
+     "t": "bottiglie in vetro, pet, hdpe, alluminio",
+     "wf": 1741.2,
+     "st": 1516.6,
+     "salto": 12
+    },
+    {
+     "t": "prodotto da riempire",
+     "wf": 1834.7,
+     "st": 1574.1,
+     "salto": -36
+    },
+    {
+     "t": "liquidi piatti con densità pari all'acqua (non gas",
+     "wf": 1820.2,
+     "st": 1571.6,
+     "salto": 12
+    },
+    {
+     "t": "campo di produzione della gamma",
+     "wf": 1896.2,
+     "st": 1629.1,
+     "salto": -18.5
+    },
+    {
+     "t": "fino a 25.000 contenitori/ora",
+     "wf": 1899.2,
+     "st": 1626.6,
+     "salto": -5.5
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 1370.1,
+     "st": 1797.6,
+     "salto": 700.1
+    },
+    {
+     "t": "contattaci",
+     "wf": 1451.9,
+     "st": 1858.5,
+     "salto": -20.9
+    },
+    {
+     "t": "configura la tua mec ld",
+     "wf": 2257.1,
+     "st": 2097.5,
+     "salto": -566.2
+    }
+   ],
+   "dx": [
+    {
+     "t": "gravità/leggero vuoto — meccanico",
+     "wf": 234.4,
+     "st": 345.9
+    },
+    {
+     "t": "bottiglie in vetro, pet, hdpe, alluminio",
+     "wf": 234.4,
+     "st": 345.9
+    },
+    {
+     "t": "liquidi piatti con densità pari all'acqua (non gas",
+     "wf": 234.4,
+     "st": 345.9
+    },
+    {
+     "t": "fino a 25.000 contenitori/ora",
+     "wf": 234.4,
+     "st": 345.9
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 534.2,
+     "st": 78.1
+    },
+    {
+     "t": "contattaci",
+     "wf": 564.2,
+     "st": 108.1
+    }
+   ],
+   "stile": [],
+   "hWf": 2469.1,
+   "hSt": 2309.4,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 38,
+   "wf": 46,
+   "st": 38,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 686.3,
+     "st": 653.7,
+     "salto": -32.6
+    },
+    {
+     "t": "configura la tua mec ld",
+     "wf": 1526.1,
+     "st": 1402.6,
+     "salto": -90.9
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1753.1,
+   "hSt": 1629.6,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 38,
+   "wf": 46,
+   "st": 38,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 792.5,
+     "st": 687,
+     "salto": -105.5
+    },
+    {
+     "t": "configura la tua mec ld",
+     "wf": 1649.8,
+     "st": 1447.7,
+     "salto": -96.6
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1891.7,
+   "hSt": 1689.7,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 38,
+   "wf": 46,
+   "st": 38,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 865.3,
+     "st": 709.8,
+     "salto": -155.5
+    },
+    {
+     "t": "configura la tua mec ld",
+     "wf": 1733.5,
+     "st": 1479.5,
+     "salto": -98.5
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1980.1,
+   "hSt": 1726.1,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "canfill": {
+  "375": {
+   "abbinati": 36,
+   "wf": 44,
+   "st": 36,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 1013.6,
+     "st": 926.6,
+     "salto": -87
+    },
+    {
+     "t": "canfill è un monoblocco automatico rotativo proget",
+     "wf": 1069.6,
+     "st": 966.6,
+     "salto": -16
+    },
+    {
+     "t": "caratteristiche",
+     "wf": 1397.5,
+     "st": 1185.8,
+     "salto": -108.7
+    },
+    {
+     "t": "tecnologia di riempimento",
+     "wf": 1464,
+     "st": 1257.8,
+     "salto": 5.5
+    },
+    {
+     "t": "isobarico — meccanico",
+     "wf": 1460.5,
+     "st": 1248.8,
+     "salto": -5.5
+    },
+    {
+     "t": "contenitori",
+     "wf": 1566,
+     "st": 1342.3,
+     "salto": -12
+    },
+    {
+     "t": "lattine in alluminio e pet",
+     "wf": 1539.5,
+     "st": 1327.8,
+     "salto": 12
+    },
+    {
+     "t": "prodotto da riempire",
+     "wf": 1651.5,
+     "st": 1421.3,
+     "salto": -18.5
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 1642.5,
+     "st": 1406.8,
+     "salto": -5.5
+    },
+    {
+     "t": "campo di produzione della gamma",
+     "wf": 1719.5,
+     "st": 1494.8,
+     "salto": 11
+    },
+    {
+     "t": "fino a 6.000 contenitori/ora",
+     "wf": 1721.5,
+     "st": 1485.8,
+     "salto": -11
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 1043.6,
+     "st": 1680.8,
+     "salto": 872.9
+    },
+    {
+     "t": "contattaci",
+     "wf": 1146.3,
+     "st": 1741.6,
+     "salto": -41.9
+    },
+    {
+     "t": "configura la tua canfill",
+     "wf": 2128.4,
+     "st": 1981.6,
+     "salto": -742.1
+    }
+   ],
+   "dx": [
+    {
+     "t": "isobarico — meccanico",
+     "wf": 129.5,
+     "st": 212.3
+    },
+    {
+     "t": "lattine in alluminio e pet",
+     "wf": 129.5,
+     "st": 212.3
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 129.5,
+     "st": 212.3
+    },
+    {
+     "t": "fino a 6.000 contenitori/ora",
+     "wf": 129.5,
+     "st": 212.3
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 285.8,
+     "st": 54.5
+    },
+    {
+     "t": "contattaci",
+     "wf": 315.8,
+     "st": 84.5
+    }
+   ],
+   "stile": [],
+   "hWf": 2429.3,
+   "hSt": 2282.5,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 36,
+   "wf": 44,
+   "st": 36,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 1281.5,
+     "st": 1108.1,
+     "salto": -173.4
+    },
+    {
+     "t": "campo di produzione della gamma",
+     "wf": 1723.3,
+     "st": 1543.3,
+     "salto": -6.5
+    },
+    {
+     "t": "fino a 6.000 contenitori/ora",
+     "wf": 1714.3,
+     "st": 1540.8,
+     "salto": 6.5
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 1311.5,
+     "st": 1711.8,
+     "salto": 573.8
+    },
+    {
+     "t": "contattaci",
+     "wf": 1393.3,
+     "st": 1772.7,
+     "salto": -20.9
+    },
+    {
+     "t": "configura la tua canfill",
+     "wf": 2096.2,
+     "st": 2011.7,
+     "salto": -463.9
+    }
+   ],
+   "dx": [
+    {
+     "t": "isobarico — meccanico",
+     "wf": 287.4,
+     "st": 450
+    },
+    {
+     "t": "lattine in alluminio e pet",
+     "wf": 287.4,
+     "st": 450
+    },
+    {
+     "t": "liquidi gassati e piatti",
+     "wf": 287.4,
+     "st": 450
+    },
+    {
+     "t": "fino a 6.000 contenitori/ora",
+     "wf": 287.4,
+     "st": 450
+    },
+    {
+     "t": "richiedi un preventivo",
+     "wf": 534.2,
+     "st": 78.1
+    },
+    {
+     "t": "contattaci",
+     "wf": 564.2,
+     "st": 108.1
+    }
+   ],
+   "stile": [],
+   "hWf": 2308.2,
+   "hSt": 2223.7,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 36,
+   "wf": 44,
+   "st": 36,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 686.3,
+     "st": 640.1,
+     "salto": -46.2
+    },
+    {
+     "t": "configura la tua canfill",
+     "wf": 1474.9,
+     "st": 1337.8,
+     "salto": -90.9
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1701.9,
+   "hSt": 1564.8,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 36,
+   "wf": 44,
+   "st": 36,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 792.5,
+     "st": 655.2,
+     "salto": -137.3
+    },
+    {
+     "t": "configura la tua canfill",
+     "wf": 1617.1,
+     "st": 1383.3,
+     "salto": -96.5
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1859.1,
+   "hSt": 1625.2,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 36,
+   "wf": 44,
+   "st": 36,
+   "salti": [
+    {
+     "t": "descrizione tecnica",
+     "wf": 865.3,
+     "st": 709.8,
+     "salto": -155.5
+    },
+    {
+     "t": "configura la tua canfill",
+     "wf": 1699.5,
+     "st": 1445.5,
+     "salto": -98.5
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1946.1,
+   "hSt": 1692.1,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "squadron": {
+  "375": {
+   "abbinati": 100,
+   "wf": 106,
+   "st": 104,
+   "salti": [
+    {
+     "t": "acqua",
+     "wf": 7565.5,
+     "st": 7608.5,
+     "salto": 43
+    },
+    {
+     "t": "alimenti e condimenti",
+     "wf": 7651.5,
+     "st": 7651.5,
+     "salto": -43
+    }
+   ],
+   "dx": [
+    {
+     "t": "acqua",
+     "wf": 41.5,
+     "st": 194.4
+    },
+    {
+     "t": "olio alimentare",
+     "wf": 206.1,
+     "st": 41.5
+    },
+    {
+     "t": "alimenti e condimenti",
+     "wf": 41.5,
+     "st": 180.7
+    }
+   ],
+   "stile": [],
+   "hWf": 9207,
+   "hSt": 9207,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 100,
+   "wf": 106,
+   "st": 104,
+   "salti": [],
+   "dx": [
+    {
+     "t": "acqua",
+     "wf": 65.1,
+     "st": 458.8
+    }
+   ],
+   "stile": [],
+   "hWf": 6260.8,
+   "hSt": 6260.8,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 100,
+   "wf": 106,
+   "st": 104,
+   "salti": [],
+   "dx": [
+    {
+     "t": "acqua",
+     "wf": 80.4,
+     "st": 474.2
+    }
+   ],
+   "stile": [],
+   "hWf": 5820.9,
+   "hSt": 5820.9,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 100,
+   "wf": 106,
+   "st": 104,
+   "salti": [],
+   "dx": [
+    {
+     "t": "acqua",
+     "wf": 95.8,
+     "st": 489.5
+    }
+   ],
+   "stile": [],
+   "hWf": 5797,
+   "hSt": 5797,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 100,
+   "wf": 106,
+   "st": 104,
+   "salti": [],
+   "dx": [
+    {
+     "t": "acqua",
+     "wf": 99,
+     "st": 492.7
+    }
+   ],
+   "stile": [],
+   "hWf": 5864.5,
+   "hSt": 5864.5,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "settori": {
+  "375": {
+   "abbinati": 14,
+   "wf": 28,
+   "st": 18,
+   "salti": [
+    {
+     "t": "acqua",
+     "wf": 759.4,
+     "st": 2505.4,
+     "salto": 1746
+    },
+    {
+     "t": "olio alimentare",
+     "wf": 2941.9,
+     "st": 2941.9,
+     "salto": -1746
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5211.1,
+   "hSt": 5211.1,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 14,
+   "wf": 28,
+   "st": 18,
+   "salti": [
+    {
+     "t": "acqua",
+     "wf": 756.9,
+     "st": 1619.7,
+     "salto": 862.8
+    },
+    {
+     "t": "olio alimentare",
+     "wf": 1619.7,
+     "st": 1619.7,
+     "salto": -862.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2955.8,
+   "hSt": 2955.8,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 14,
+   "wf": 28,
+   "st": 18,
+   "salti": [
+    {
+     "t": "acqua",
+     "wf": 641.5,
+     "st": 924.6,
+     "salto": 283.1
+    },
+    {
+     "t": "olio alimentare",
+     "wf": 898.3,
+     "st": 898.3,
+     "salto": -283.1
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1707.1,
+   "hSt": 1707.1,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 14,
+   "wf": 28,
+   "st": 18,
+   "salti": [
+    {
+     "t": "acqua",
+     "wf": 760.8,
+     "st": 1114.3,
+     "salto": 353.5
+    },
+    {
+     "t": "olio alimentare",
+     "wf": 1114.3,
+     "st": 1114.3,
+     "salto": -353.5
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1993.1,
+   "hSt": 1993.1,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 14,
+   "wf": 28,
+   "st": 18,
+   "salti": [
+    {
+     "t": "acqua",
+     "wf": 833.3,
+     "st": 1234.8,
+     "salto": 401.5
+    },
+    {
+     "t": "olio alimentare",
+     "wf": 1234.8,
+     "st": 1234.8,
+     "salto": -401.5
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2170.8,
+   "hSt": 2170.8,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "servizi": {
+  "375": {
+   "abbinati": 64,
+   "wf": 73,
+   "st": 74,
+   "salti": [
+    {
+     "t": "assistenza tecnica",
+     "wf": 4145.3,
+     "st": 4230.6,
+     "salto": 85.3
+    },
+    {
+     "t": "conosciamo la tua macchina",
+     "wf": 4188.3,
+     "st": 4254.6,
+     "salto": -19
+    },
+    {
+     "t": "il reparto tecnico segue ogni macchina per tutto i",
+     "wf": 4265.9,
+     "st": 4311.4,
+     "salto": -20.8
+    },
+    {
+     "t": "ricambi originali",
+     "wf": 4145.3,
+     "st": 4799.7,
+     "salto": 608.9
+    },
+    {
+     "t": "indica il numero di matricola della macchina e, se",
+     "wf": 4226,
+     "st": 4859.5,
+     "salto": -20.9
+    },
+    {
+     "t": "assistenza da remoto",
+     "wf": 4905.8,
+     "st": 5347.8,
+     "salto": -191.5
+    },
+    {
+     "t": "assistenza da remoto",
+     "wf": 4948.8,
+     "st": 5371.8,
+     "salto": -19
+    },
+    {
+     "t": "tutte le macchine di nuova produzione sono predisp",
+     "wf": 5005.6,
+     "st": 5407.7,
+     "salto": -20.9
+    },
+    {
+     "t": "manutenzione programmata",
+     "wf": 4905.8,
+     "st": 5991.9,
+     "salto": 684
+    },
+    {
+     "t": "interventi pianificati, non emergenze",
+     "wf": 4948.8,
+     "st": 6015.9,
+     "salto": -19
+    },
+    {
+     "t": "offriamo contratti di manutenzione programmata, so",
+     "wf": 5047.4,
+     "st": 6072.7,
+     "salto": -41.8
+    },
+    {
+     "t": "assistenza nella tua lingua",
+     "wf": 5683.6,
+     "st": 6372.7,
+     "salto": -336.2
+    },
+    {
+     "t": "presenza internazionale",
+     "wf": 6166.6,
+     "st": 6801.7,
+     "salto": -54
+    }
+   ],
+   "dx": [
+    {
+     "t": "ricambi originali",
+     "wf": 267.9,
+     "st": 50.5
+    },
+    {
+     "t": "componenti originali",
+     "wf": 267.9,
+     "st": 50.5
+    },
+    {
+     "t": "indica il numero di matricola della macchina e, se",
+     "wf": 267.9,
+     "st": 50.5
+    },
+    {
+     "t": "manutenzione programmata",
+     "wf": 267.9,
+     "st": 50.5
+    },
+    {
+     "t": "interventi pianificati, non emergenze",
+     "wf": 267.9,
+     "st": 50.5
+    },
+    {
+     "t": "offriamo contratti di manutenzione programmata, so",
+     "wf": 267.9,
+     "st": 50.5
+    }
+   ],
+   "stile": [],
+   "hWf": 6925.8,
+   "hSt": 7560.9,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 64,
+   "wf": 73,
+   "st": 74,
+   "salti": [
+    {
+     "t": "presenza internazionale",
+     "wf": 4508.1,
+     "st": 4454.1,
+     "salto": -54
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5426.5,
+   "hSt": 5372.5,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 64,
+   "wf": 73,
+   "st": 74,
+   "salti": [
+    {
+     "t": "presenza internazionale",
+     "wf": 4352.4,
+     "st": 4298.4,
+     "salto": -54
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5426.4,
+   "hSt": 5372.4,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 64,
+   "wf": 73,
+   "st": 74,
+   "salti": [
+    {
+     "t": "presenza internazionale",
+     "wf": 4567.2,
+     "st": 4513.2,
+     "salto": -54
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5796.7,
+   "hSt": 5742.7,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 64,
+   "wf": 73,
+   "st": 74,
+   "salti": [
+    {
+     "t": "presenza internazionale",
+     "wf": 4540.7,
+     "st": 4486.7,
+     "salto": -54
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5865.8,
+   "hSt": 5811.8,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "chi-siamo": {
+  "375": {
+   "abbinati": 62,
+   "wf": 75,
+   "st": 62,
+   "salti": [
+    {
+     "t": "dalla progettazione al collaudo, sotto lo stesso t",
+     "wf": 313.7,
+     "st": 288.8,
+     "salto": -25.9
+    },
+    {
+     "t": "vuoi conoscere lo stabilimento da vicino?",
+     "wf": 10599.3,
+     "st": 10230.9,
+     "salto": -343.5
+    }
+   ],
+   "dx": [],
+   "stile": [
+    {
+     "t": "ingegneria dell'imbottigliamento dal 1996",
+     "wf": "38px 900 Barlow rgb(28, 38, 90)",
+     "st": "29px 900 Barlow rgb(28, 38, 90)"
+    }
+   ],
+   "hWf": 10867.2,
+   "hSt": 10498.7,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 62,
+   "wf": 75,
+   "st": 62,
+   "salti": [
+    {
+     "t": "vuoi conoscere lo stabilimento da vicino?",
+     "wf": 7283.6,
+     "st": 6956.8,
+     "salto": -326.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 7534.6,
+   "hSt": 7207.8,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 62,
+   "wf": 75,
+   "st": 62,
+   "salti": [
+    {
+     "t": "vuoi conoscere lo stabilimento da vicino?",
+     "wf": 5127.1,
+     "st": 4800.3,
+     "salto": -326.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5406,
+   "hSt": 5079.2,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 62,
+   "wf": 75,
+   "st": 62,
+   "salti": [
+    {
+     "t": "vuoi conoscere lo stabilimento da vicino?",
+     "wf": 5558,
+     "st": 5231.2,
+     "salto": -326.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 5864.9,
+   "hSt": 5538.1,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 62,
+   "wf": 75,
+   "st": 62,
+   "salti": [
+    {
+     "t": "vuoi conoscere lo stabilimento da vicino?",
+     "wf": 5739.7,
+     "st": 5412.9,
+     "salto": -326.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 6055.8,
+   "hSt": 5729,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "referenze": {
+  "375": {
+   "abbinati": 40,
+   "wf": 40,
+   "st": 40,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 5121.5,
+   "hSt": 5121.5,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 40,
+   "wf": 40,
+   "st": 40,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2465,
+   "hSt": 2465,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 40,
+   "wf": 40,
+   "st": 40,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2257.6,
+   "hSt": 2257.6,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 40,
+   "wf": 40,
+   "st": 40,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2153.1,
+   "hSt": 2153.1,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 40,
+   "wf": 40,
+   "st": 40,
+   "salti": [
+    {
+     "t": "vigezzo – gruppo lauretana",
+     "wf": 1379.4,
+     "st": 1387.9,
+     "salto": 8.5
+    },
+    {
+     "t": "fattoria la vialla",
+     "wf": 1387.9,
+     "st": 1387.9,
+     "salto": -8.5
+    }
+   ],
+   "dx": [
+    {
+     "t": "vigezzo – gruppo lauretana",
+     "wf": 127.8,
+     "st": 97.1
+    }
+   ],
+   "stile": [],
+   "hWf": 2074.6,
+   "hSt": 2074.6,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "contatti": {
+  "375": {
+   "abbinati": 26,
+   "wf": 44,
+   "st": 26,
+   "salti": [
+    {
+     "t": "contatti",
+     "wf": 124,
+     "st": 92,
+     "salto": -32
+    },
+    {
+     "t": "regione leiso, 86",
+     "wf": 642.2,
+     "st": 319.9,
+     "salto": -290.3
+    },
+    {
+     "t": "14050 san marzano oliveto (at), italia",
+     "wf": 690.2,
+     "st": 343.9,
+     "salto": -24
+    },
+    {
+     "t": "+39 0141 856032",
+     "wf": 800.2,
+     "st": 381.9,
+     "salto": -72
+    },
+    {
+     "t": "eurostarinfo@eurostar.it",
+     "wf": 862.2,
+     "st": 419.9,
+     "salto": -24
+    },
+    {
+     "t": "assistenza h24",
+     "wf": 990.2,
+     "st": 523.9,
+     "salto": -24
+    },
+    {
+     "t": "ricambi originali",
+     "wf": 1044.2,
+     "st": 523.9,
+     "salto": -54
+    },
+    {
+     "t": "tipo di richiesta",
+     "wf": 62,
+     "st": 670.9,
+     "salto": 1129.2
+    },
+    {
+     "t": "cognome",
+     "wf": 153,
+     "st": 852.9,
+     "salto": 91
+    },
+    {
+     "t": "paese",
+     "wf": 244,
+     "st": 1034.9,
+     "salto": 91
+    },
+    {
+     "t": "telefono",
+     "wf": 335,
+     "st": 1216.9,
+     "salto": 91
+    },
+    {
+     "t": "oggetto richiesta",
+     "wf": 497,
+     "st": 1307.9,
+     "salto": -71
+    },
+    {
+     "t": "tipo di contenitore",
+     "wf": 588,
+     "st": 1489.9,
+     "salto": 91
+    },
+    {
+     "t": "contenitori/ora indicativi",
+     "wf": 701,
+     "st": 1580.9,
+     "salto": -22
+    },
+    {
+     "t": "messaggio",
+     "wf": 803,
+     "st": 1671.9,
+     "salto": -11
+    },
+    {
+     "t": "privacy policy",
+     "wf": 998,
+     "st": 1845.9,
+     "salto": -21
+    },
+    {
+     "t": "invia richiesta",
+     "wf": 1163,
+     "st": 1904.9,
+     "salto": -106
+    }
+   ],
+   "dx": [
+    {
+     "t": "ricambi originali",
+     "wf": 39,
+     "st": 190.7
+    },
+    {
+     "t": "tipo di richiesta",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "nome",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "cognome",
+     "wf": 270.5,
+     "st": 24
+    },
+    {
+     "t": "azienda",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "paese",
+     "wf": 270.5,
+     "st": 24
+    },
+    {
+     "t": "email",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "telefono",
+     "wf": 270.5,
+     "st": 24
+    },
+    {
+     "t": "oggetto richiesta",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "tipo di prodotto",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "tipo di contenitore",
+     "wf": 260.7,
+     "st": 24
+    },
+    {
+     "t": "contenitori/ora indicativi",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "messaggio",
+     "wf": 174,
+     "st": 24
+    },
+    {
+     "t": "ho letto e accetto la",
+     "wf": 204,
+     "st": 54
+    },
+    {
+     "t": "privacy policy",
+     "wf": 204,
+     "st": 182.3
+    },
+    {
+     "t": "invia richiesta",
+     "wf": 242.3,
+     "st": 54
+    }
+   ],
+   "stile": [],
+   "hWf": 1424.4,
+   "hSt": 2000.9,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 26,
+   "wf": 44,
+   "st": 26,
+   "salti": [
+    {
+     "t": "regione leiso, 86",
+     "wf": 353.3,
+     "st": 300.5,
+     "salto": -52.8
+    },
+    {
+     "t": "+39 0141 856032",
+     "wf": 439.3,
+     "st": 362.5,
+     "salto": -24
+    },
+    {
+     "t": "ricambi originali",
+     "wf": 624.3,
+     "st": 504.5,
+     "salto": -43
+    },
+    {
+     "t": "tipo di richiesta",
+     "wf": 62,
+     "st": 651.5,
+     "salto": 709.3
+    },
+    {
+     "t": "oggetto richiesta",
+     "wf": 476,
+     "st": 1015.5,
+     "salto": -50
+    },
+    {
+     "t": "invia richiesta",
+     "wf": 1088,
+     "st": 1521.5,
+     "salto": -106
+    }
+   ],
+   "dx": [
+    {
+     "t": "ricambi originali",
+     "wf": 45.7,
+     "st": 197.4
+    },
+    {
+     "t": "tipo di richiesta",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "nome",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "cognome",
+     "wf": 545.6,
+     "st": 318.7
+    },
+    {
+     "t": "azienda",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "paese",
+     "wf": 545.6,
+     "st": 318.7
+    },
+    {
+     "t": "email",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "telefono",
+     "wf": 545.6,
+     "st": 318.7
+    },
+    {
+     "t": "oggetto richiesta",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "tipo di prodotto",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "tipo di contenitore",
+     "wf": 545.6,
+     "st": 318.7
+    },
+    {
+     "t": "contenitori/ora indicativi",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "messaggio",
+     "wf": 337.9,
+     "st": 30.7
+    },
+    {
+     "t": "ho letto e accetto la",
+     "wf": 367.9,
+     "st": 60.7
+    },
+    {
+     "t": "privacy policy",
+     "wf": 496.2,
+     "st": 189
+    },
+    {
+     "t": "invia richiesta",
+     "wf": 367.9,
+     "st": 60.7
+    }
+   ],
+   "stile": [],
+   "hWf": 1248.4,
+   "hSt": 1617.5,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 26,
+   "wf": 44,
+   "st": 26,
+   "salti": [
+    {
+     "t": "oggetto richiesta",
+     "wf": 455,
+     "st": 426,
+     "salto": -29
+    },
+    {
+     "t": "invia richiesta",
+     "wf": 1067,
+     "st": 932,
+     "salto": -106
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1227.4,
+   "hSt": 1028,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 26,
+   "wf": 44,
+   "st": 26,
+   "salti": [
+    {
+     "t": "oggetto richiesta",
+     "wf": 465.5,
+     "st": 436.5,
+     "salto": -29
+    },
+    {
+     "t": "invia richiesta",
+     "wf": 1085.4,
+     "st": 950.4,
+     "salto": -106
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1229,
+   "hSt": 1046.4,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 26,
+   "wf": 44,
+   "st": 26,
+   "salti": [
+    {
+     "t": "oggetto richiesta",
+     "wf": 467.8,
+     "st": 438.8,
+     "salto": -29
+    },
+    {
+     "t": "invia richiesta",
+     "wf": 1089.3,
+     "st": 954.3,
+     "salto": -106
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1232.9,
+   "hSt": 1050.3,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "conferma": {
+  "375": {
+   "abbinati": 8,
+   "wf": 8,
+   "st": 8,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 8,
+   "wf": 8,
+   "st": 8,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 8,
+   "wf": 8,
+   "st": 8,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 8,
+   "wf": 8,
+   "st": 8,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 864,
+   "hSt": 864,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 8,
+   "wf": 8,
+   "st": 8,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 869.8,
+   "hSt": 869.8,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "cataloghi": {
+  "375": {
+   "abbinati": 9,
+   "wf": 42,
+   "st": 9,
+   "salti": [
+    {
+     "t": "non trovi quello che cerchi?",
+     "wf": 2059.6,
+     "st": 456.8,
+     "salto": -1602.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2372,
+   "hSt": 769.2,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 9,
+   "wf": 42,
+   "st": 9,
+   "salti": [
+    {
+     "t": "non trovi quello che cerchi?",
+     "wf": 1222.3,
+     "st": 372.5,
+     "salto": -849.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1526.5,
+   "hSt": 676.7,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 9,
+   "wf": 42,
+   "st": 9,
+   "salti": [
+    {
+     "t": "non trovi quello che cerchi?",
+     "wf": 1234.3,
+     "st": 384.5,
+     "salto": -849.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1565.5,
+   "hSt": 715.8,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 9,
+   "wf": 42,
+   "st": 9,
+   "salti": [
+    {
+     "t": "non trovi quello che cerchi?",
+     "wf": 1263,
+     "st": 407.1,
+     "salto": -855.9
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1697.1,
+   "hSt": 841.3,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 9,
+   "wf": 42,
+   "st": 9,
+   "salti": [
+    {
+     "t": "non trovi quello che cerchi?",
+     "wf": 1271.9,
+     "st": 413.3,
+     "salto": -858.6
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1734.3,
+   "hSt": 875.7,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "lavora-con-noi": {
+  "375": {
+   "abbinati": 42,
+   "wf": 42,
+   "st": 53,
+   "salti": [
+    {
+     "t": "elettrico e automazione",
+     "wf": 1397.3,
+     "st": 1418.4,
+     "salto": 21.1
+    },
+    {
+     "t": "produzione",
+     "wf": 2014.3,
+     "st": 2056.5,
+     "salto": 21
+    }
+   ],
+   "dx": [
+    {
+     "t": "dettagli",
+     "wf": 218.9,
+     "st": 208.9
+    },
+    {
+     "t": "dettagli",
+     "wf": 218.9,
+     "st": 208.9
+    },
+    {
+     "t": "dettagli",
+     "wf": 218.9,
+     "st": 208.9
+    },
+    {
+     "t": "dettagli",
+     "wf": 218.9,
+     "st": 208.9
+    },
+    {
+     "t": "dettagli",
+     "wf": 218.9,
+     "st": 208.9
+    }
+   ],
+   "stile": [],
+   "hWf": 2625.1,
+   "hSt": 3849.2,
+   "swWf": 980,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 42,
+   "wf": 42,
+   "st": 53,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2454.2,
+   "hSt": 3472.8,
+   "swWf": 1003,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 42,
+   "wf": 42,
+   "st": 53,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1895.1,
+   "hSt": 2999.1,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 42,
+   "wf": 42,
+   "st": 53,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1643.7,
+   "hSt": 2806.2,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 42,
+   "wf": 42,
+   "st": 53,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 1663.1,
+   "hSt": 2874,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "posizione": {
+  "375": {
+   "abbinati": 44,
+   "wf": 52,
+   "st": 44,
+   "salti": [
+    {
+     "t": "per ampliare il nostro team commerciale, cerchiamo",
+     "wf": 524.9,
+     "st": 490,
+     "salto": -34.9
+    },
+    {
+     "t": "attività principali",
+     "wf": 882.8,
+     "st": 715.9,
+     "salto": -132
+    },
+    {
+     "t": "gestione e fidelizzazione dei clienti esistenti.",
+     "wf": 1027.8,
+     "st": 812.9,
+     "salto": -48
+    },
+    {
+     "t": "analisi delle esigenze del cliente, in collaborazi",
+     "wf": 1087.8,
+     "st": 848.9,
+     "salto": -24
+    },
+    {
+     "t": "preparazione delle offerte commerciali e gestione ",
+     "wf": 1171.8,
+     "st": 908.9,
+     "salto": -24
+    },
+    {
+     "t": "gestione dei rapporti con agenti e partner commerc",
+     "wf": 1255.8,
+     "st": 968.9,
+     "salto": -24
+    },
+    {
+     "t": "partecipazione a fiere di settore e visite presso ",
+     "wf": 1339.8,
+     "st": 1028.9,
+     "salto": -24
+    },
+    {
+     "t": "monitoraggio delle opportunità commerciali e delle",
+     "wf": 1423.8,
+     "st": 1088.9,
+     "salto": -24
+    },
+    {
+     "t": "requisiti richiesti",
+     "wf": 1540.8,
+     "st": 1181.9,
+     "salto": -24
+    },
+    {
+     "t": "capacità relazionali, commerciali e di negoziazion",
+     "wf": 1709.8,
+     "st": 1302.9,
+     "salto": -48
+    },
+    {
+     "t": "orientamento al cliente e al raggiungimento degli ",
+     "wf": 1793.8,
+     "st": 1362.9,
+     "salto": -24
+    },
+    {
+     "t": "disponibilità a trasferte internazionali.",
+     "wf": 1877.8,
+     "st": 1422.9,
+     "salto": -24
+    },
+    {
+     "t": "autonomia organizzativa, proattività e attitudine ",
+     "wf": 1937.8,
+     "st": 1458.9,
+     "salto": -24
+    },
+    {
+     "t": "requisiti preferenziali",
+     "wf": 2078.8,
+     "st": 1551.9,
+     "salto": -48
+    },
+    {
+     "t": "conoscenza di ulteriori lingue straniere.",
+     "wf": 2133.8,
+     "st": 1588.9,
+     "salto": -18
+    },
+    {
+     "t": "esperienza commerciale b2b sui mercati internazion",
+     "wf": 2193.8,
+     "st": 1624.9,
+     "salto": -24
+    },
+    {
+     "t": "provenienza dal settore dei macchinari industriali",
+     "wf": 2277.8,
+     "st": 1684.9,
+     "salto": -24
+    },
+    {
+     "t": "interesse e predisposizione alla comprensione di p",
+     "wf": 2409.8,
+     "st": 1768.9,
+     "salto": -48
+    },
+    {
+     "t": "cosa offriamo",
+     "wf": 2550.8,
+     "st": 1861.9,
+     "salto": -48
+    },
+    {
+     "t": "formazione sul prodotto direttamente in officina, ",
+     "wf": 2647.8,
+     "st": 1934.9,
+     "salto": -24
+    },
+    {
+     "t": "trasferte internazionali presso clienti e fiere di",
+     "wf": 2779.8,
+     "st": 2018.9,
+     "salto": -48
+    },
+    {
+     "t": "candidati per questa posizione",
+     "wf": 462,
+     "st": 2165.9,
+     "salto": 2464.8
+    },
+    {
+     "t": "cognome",
+     "wf": 532.8,
+     "st": 2327.7,
+     "salto": 91
+    },
+    {
+     "t": "email",
+     "wf": 634.8,
+     "st": 2418.7,
+     "salto": -11
+    },
+    {
+     "t": "messaggio",
+     "wf": 821.8,
+     "st": 2594.7,
+     "salto": -11
+    },
+    {
+     "t": "privacy policy",
+     "wf": 992.8,
+     "st": 2744.7,
+     "salto": -21
+    },
+    {
+     "t": "vedi tutte le posizioni aperte",
+     "wf": 3035.8,
+     "st": 2983.7,
+     "salto": -1804
+    }
+   ],
+   "dx": [
+    {
+     "t": "candidati per questa posizione",
+     "wf": 307.6,
+     "st": 54.5
+    },
+    {
+     "t": "nome",
+     "wf": 307.6,
+     "st": 54.5
+    },
+    {
+     "t": "cognome",
+     "wf": 397.1,
+     "st": 54.5
+    },
+    {
+     "t": "email",
+     "wf": 307.6,
+     "st": 54.5
+    },
+    {
+     "t": "curriculum vitae (pdf)",
+     "wf": 307.6,
+     "st": 54.5
+    },
+    {
+     "t": "messaggio",
+     "wf": 307.6,
+     "st": 54.5
+    },
+    {
+     "t": "ho letto e accetto la",
+     "wf": 337.6,
+     "st": 84.5
+    },
+    {
+     "t": "privacy policy",
+     "wf": 337.6,
+     "st": 212.8
+    },
+    {
+     "t": "invia candidatura",
+     "wf": 369,
+     "st": 84.5
+    },
+    {
+     "t": "vedi tutte le posizioni aperte",
+     "wf": 69.6,
+     "st": 78.5
+    }
+   ],
+   "stile": [],
+   "hWf": 3191.8,
+   "hSt": 3107.7,
+   "swWf": 980,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 44,
+   "wf": 52,
+   "st": 44,
+   "salti": [
+    {
+     "t": "attività principali",
+     "wf": 730.4,
+     "st": 677.6,
+     "salto": -52.8
+    },
+    {
+     "t": "gestione e fidelizzazione dei clienti esistenti.",
+     "wf": 827.4,
+     "st": 750.6,
+     "salto": -24
+    },
+    {
+     "t": "preparazione delle offerte commerciali e gestione ",
+     "wf": 923.4,
+     "st": 822.6,
+     "salto": -24
+    },
+    {
+     "t": "gestione dei rapporti con agenti e partner commerc",
+     "wf": 983.4,
+     "st": 858.6,
+     "salto": -24
+    },
+    {
+     "t": "partecipazione a fiere di settore e visite presso ",
+     "wf": 1043.4,
+     "st": 894.6,
+     "salto": -24
+    },
+    {
+     "t": "requisiti richiesti",
+     "wf": 1172.4,
+     "st": 999.6,
+     "salto": -24
+    },
+    {
+     "t": "capacità relazionali, commerciali e di negoziazion",
+     "wf": 1293.4,
+     "st": 1096.6,
+     "salto": -24
+    },
+    {
+     "t": "disponibilità a trasferte internazionali.",
+     "wf": 1389.4,
+     "st": 1168.6,
+     "salto": -24
+    },
+    {
+     "t": "requisiti preferenziali",
+     "wf": 1518.4,
+     "st": 1273.6,
+     "salto": -24
+    },
+    {
+     "t": "provenienza dal settore dei macchinari industriali",
+     "wf": 1651.4,
+     "st": 1382.6,
+     "salto": -24
+    },
+    {
+     "t": "interesse e predisposizione alla comprensione di p",
+     "wf": 1711.4,
+     "st": 1418.6,
+     "salto": -24
+    },
+    {
+     "t": "cosa offriamo",
+     "wf": 1804.4,
+     "st": 1487.6,
+     "salto": -24
+    },
+    {
+     "t": "trasferte internazionali presso clienti e fiere di",
+     "wf": 1937.4,
+     "st": 1596.6,
+     "salto": -24
+    },
+    {
+     "t": "candidati per questa posizione",
+     "wf": 462,
+     "st": 1695.6,
+     "salto": 1574.4
+    },
+    {
+     "t": "nome",
+     "wf": 532.8,
+     "st": 1745.5,
+     "salto": -20.9
+    },
+    {
+     "t": "messaggio",
+     "wf": 810.8,
+     "st": 2012.5,
+     "salto": -11
+    },
+    {
+     "t": "privacy policy",
+     "wf": 981.8,
+     "st": 2162.5,
+     "salto": -21
+    },
+    {
+     "t": "vedi tutte le posizioni aperte",
+     "wf": 2121.4,
+     "st": 2401.5,
+     "salto": -900.6
+    }
+   ],
+   "dx": [
+    {
+     "t": "candidati per questa posizione",
+     "wf": 521.7,
+     "st": 78.1
+    },
+    {
+     "t": "nome",
+     "wf": 521.7,
+     "st": 78.1
+    },
+    {
+     "t": "cognome",
+     "wf": 613.8,
+     "st": 366.1
+    },
+    {
+     "t": "email",
+     "wf": 521.7,
+     "st": 78.1
+    },
+    {
+     "t": "curriculum vitae (pdf)",
+     "wf": 521.7,
+     "st": 78.1
+    },
+    {
+     "t": "messaggio",
+     "wf": 521.7,
+     "st": 78.1
+    },
+    {
+     "t": "ho letto e accetto la",
+     "wf": 551.7,
+     "st": 108.1
+    },
+    {
+     "t": "privacy policy",
+     "wf": 551.7,
+     "st": 236.4
+    },
+    {
+     "t": "invia candidatura",
+     "wf": 585.6,
+     "st": 108.1
+    }
+   ],
+   "stile": [],
+   "hWf": 2245.4,
+   "hSt": 2525.5,
+   "swWf": 1003,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 44,
+   "wf": 52,
+   "st": 44,
+   "salti": [
+    {
+     "t": "invia candidatura",
+     "wf": 1034.6,
+     "st": 1013.6,
+     "salto": -21
+    },
+    {
+     "t": "vedi tutte le posizioni aperte",
+     "wf": 1871.5,
+     "st": 1871.5,
+     "salto": 21
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 1995.5,
+   "hSt": 1995.5,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 44,
+   "wf": 52,
+   "st": 44,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2061.8,
+   "hSt": 2061.8,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 44,
+   "wf": 52,
+   "st": 44,
+   "salti": [],
+   "dx": [],
+   "stile": [],
+   "hWf": 2034.7,
+   "hSt": 2034.7,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "news": {
+  "375": {
+   "abbinati": 11,
+   "wf": 36,
+   "st": 63,
+   "salti": [
+    {
+     "t": "marzo 2026",
+     "wf": 826.3,
+     "st": 4570.3,
+     "salto": 3744
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 1251.3,
+     "st": 5542,
+     "salto": 546.7
+    },
+    {
+     "t": "mostra altri articoli",
+     "wf": 3233.2,
+     "st": 6316.5,
+     "salto": -1207.4
+    }
+   ],
+   "dx": [
+    {
+     "t": "fiere ed eventi",
+     "wf": 194.9,
+     "st": 230.4
+    },
+    {
+     "t": "marzo 2026",
+     "wf": 108.6,
+     "st": 248.3
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 147.3,
+     "st": 230.1
+    }
+   ],
+   "stile": [],
+   "hWf": 3356.2,
+   "hSt": 6439.5,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 11,
+   "wf": 36,
+   "st": 63,
+   "salti": [
+    {
+     "t": "marzo 2026",
+     "wf": 745.7,
+     "st": 2688.8,
+     "salto": 1943.1
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 745.7,
+     "st": 3188,
+     "salto": 499.2
+    },
+    {
+     "t": "mostra altri articoli",
+     "wf": 1896.4,
+     "st": 3481.6,
+     "salto": -857.1
+    }
+   ],
+   "dx": [
+    {
+     "t": "fiere ed eventi",
+     "wf": 218.5,
+     "st": 254
+    },
+    {
+     "t": "marzo 2026",
+     "wf": 132.1,
+     "st": 269
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 520.8,
+     "st": 251.1
+    }
+   ],
+   "stile": [],
+   "hWf": 2019.4,
+   "hSt": 3604.6,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 11,
+   "wf": 36,
+   "st": 63,
+   "salti": [
+    {
+     "t": "marzo 2026",
+     "wf": 825.6,
+     "st": 2914,
+     "salto": 2088.4
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 825.6,
+     "st": 3451.8,
+     "salto": 537.8
+    },
+    {
+     "t": "mostra altri articoli",
+     "wf": 2045.1,
+     "st": 3724.4,
+     "salto": -946.9
+    }
+   ],
+   "dx": [
+    {
+     "t": "fiere ed eventi",
+     "wf": 233.9,
+     "st": 269.4
+    },
+    {
+     "t": "marzo 2026",
+     "wf": 147.5,
+     "st": 289.6
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 648.8,
+     "st": 269.8
+    }
+   ],
+   "stile": [],
+   "hWf": 2168.1,
+   "hSt": 3847.4,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 11,
+   "wf": 36,
+   "st": 63,
+   "salti": [
+    {
+     "t": "marzo 2026",
+     "wf": 812.7,
+     "st": 1876.5,
+     "salto": 1063.8
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 812.7,
+     "st": 2408.5,
+     "salto": 532
+    },
+    {
+     "t": "mostra altri articoli",
+     "wf": 1592.5,
+     "st": 2724.7,
+     "salto": -463.6
+    }
+   ],
+   "dx": [
+    {
+     "t": "fiere ed eventi",
+     "wf": 249.2,
+     "st": 284.7
+    },
+    {
+     "t": "marzo 2026",
+     "wf": 162.9,
+     "st": 1071.9
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 585.1,
+     "st": 668.6
+    }
+   ],
+   "stile": [],
+   "hWf": 1715.5,
+   "hSt": 2847.7,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 11,
+   "wf": 36,
+   "st": 63,
+   "salti": [
+    {
+     "t": "marzo 2026",
+     "wf": 730.8,
+     "st": 1810.7,
+     "salto": 1079.9
+    },
+    {
+     "t": "mostra altri articoli",
+     "wf": 1561.8,
+     "st": 2196.3,
+     "salto": -445.4
+    }
+   ],
+   "dx": [
+    {
+     "t": "fiere ed eventi",
+     "wf": 252.4,
+     "st": 287.9
+    },
+    {
+     "t": "marzo 2026",
+     "wf": 166.1,
+     "st": 286.2
+    },
+    {
+     "t": "febbraio 2026",
+     "wf": 530.8,
+     "st": 921.9
+    }
+   ],
+   "stile": [],
+   "hWf": 1684.8,
+   "hSt": 2319.3,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "articolo": {
+  "375": {
+   "abbinati": 6,
+   "wf": 28,
+   "st": 25,
+   "salti": [
+    {
+     "t": "continua a leggere",
+     "wf": 1709.2,
+     "st": 1681.2,
+     "salto": -28
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2879.4,
+   "hSt": 2955.8,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 6,
+   "wf": 28,
+   "st": 25,
+   "salti": [
+    {
+     "t": "continua a leggere",
+     "wf": 1535,
+     "st": 1351.3,
+     "salto": -183.7
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2364,
+   "hSt": 2274.9,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 6,
+   "wf": 28,
+   "st": 25,
+   "salti": [
+    {
+     "t": "continua a leggere",
+     "wf": 1610.3,
+     "st": 1420.1,
+     "salto": -190.2
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2127.7,
+   "hSt": 1990.3,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 6,
+   "wf": 28,
+   "st": 25,
+   "salti": [
+    {
+     "t": "continua a leggere",
+     "wf": 1824.1,
+     "st": 1621.8,
+     "salto": -202.3
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2386.6,
+   "hSt": 2232.2,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 6,
+   "wf": 28,
+   "st": 25,
+   "salti": [
+    {
+     "t": "continua a leggere",
+     "wf": 1938.2,
+     "st": 1827.3,
+     "salto": -110.9
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2540,
+   "hSt": 2454.4,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ },
+ "caso-studio": {
+  "375": {
+   "abbinati": 8,
+   "wf": 38,
+   "st": 37,
+   "salti": [
+    {
+     "t": "la voce del cliente",
+     "wf": 573.9,
+     "st": 4056.5,
+     "salto": 3482.6
+    },
+    {
+     "t": "macchine nel progetto",
+     "wf": 955.5,
+     "st": 4269.5,
+     "salto": -168.6
+    },
+    {
+     "t": "continua a leggere",
+     "wf": 2137.9,
+     "st": 4557.5,
+     "salto": -894.4
+    }
+   ],
+   "dx": [
+    {
+     "t": "la voce del cliente",
+     "wf": 287.1,
+     "st": 46.5
+    },
+    {
+     "t": "macchine nel progetto",
+     "wf": 263.1,
+     "st": 22.5
+    }
+   ],
+   "stile": [],
+   "hWf": 3310.2,
+   "hSt": 5103.3,
+   "swWf": 971,
+   "swSt": 375
+  },
+  "768": {
+   "abbinati": 8,
+   "wf": 38,
+   "st": 37,
+   "salti": [
+    {
+     "t": "la voce del cliente",
+     "wf": 647.4,
+     "st": 2678.6,
+     "salto": 2031.2
+    },
+    {
+     "t": "macchine nel progetto",
+     "wf": 911,
+     "st": 2867.6,
+     "salto": -74.6
+    },
+    {
+     "t": "continua a leggere",
+     "wf": 1628.9,
+     "st": 3155.6,
+     "salto": -429.9
+    }
+   ],
+   "dx": [
+    {
+     "t": "la voce del cliente",
+     "wf": 552.8,
+     "st": 70.1
+    },
+    {
+     "t": "macchine nel progetto",
+     "wf": 528.8,
+     "st": 46.1
+    }
+   ],
+   "stile": [],
+   "hWf": 2467.5,
+   "hSt": 3707.5,
+   "swWf": 995,
+   "swSt": 768
+  },
+  "1024": {
+   "abbinati": 8,
+   "wf": 38,
+   "st": 37,
+   "salti": [
+    {
+     "t": "la voce del cliente",
+     "wf": 784.9,
+     "st": 836.9,
+     "salto": 52
+    },
+    {
+     "t": "macchine nel progetto",
+     "wf": 997.9,
+     "st": 1073.9,
+     "salto": 24
+    },
+    {
+     "t": "continua a leggere",
+     "wf": 1609.3,
+     "st": 3099.9,
+     "salto": 1414.6
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2100.3,
+   "hSt": 3660.9,
+   "swWf": 1024,
+   "swSt": 1024
+  },
+  "1280": {
+   "abbinati": 8,
+   "wf": 38,
+   "st": 37,
+   "salti": [
+    {
+     "t": "la voce del cliente",
+     "wf": 922.5,
+     "st": 987.5,
+     "salto": 65
+    },
+    {
+     "t": "macchine nel progetto",
+     "wf": 1116.8,
+     "st": 1235,
+     "salto": 53.2
+    },
+    {
+     "t": "continua a leggere",
+     "wf": 1822.9,
+     "st": 3265.9,
+     "salto": 1324.8
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2380.8,
+   "hSt": 3864.8,
+   "swWf": 1280,
+   "swSt": 1280
+  },
+  "1440": {
+   "abbinati": 8,
+   "wf": 38,
+   "st": 37,
+   "salti": [
+    {
+     "t": "la voce del cliente",
+     "wf": 1003.4,
+     "st": 1073,
+     "salto": 69.6
+    },
+    {
+     "t": "macchine nel progetto",
+     "wf": 1198.8,
+     "st": 1295.5,
+     "salto": 27.1
+    },
+    {
+     "t": "continua a leggere",
+     "wf": 1931.7,
+     "st": 3322.1,
+     "salto": 1293.7
+    }
+   ],
+   "dx": [],
+   "stile": [],
+   "hWf": 2532.8,
+   "hSt": 3893.3,
+   "swWf": 1440,
+   "swSt": 1440
+  }
+ }
+}

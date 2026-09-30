@@ -1,0 +1,637 @@
+/* Base del wireframe: il body non imposta interlinea (normal), Hello imposta 1.5 */
+body{line-height:normal}
+/* === Eurostar — accessibilità globale (WCAG) === */
+/* Focus da tastiera sempre visibile, nel colore del testo: bianco su fondo scuro, blu/navy su chiaro */
+:where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"]), [role="button"]):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+/* Utenti con "riduci movimento": niente animazioni né transizioni, resta solo il cambio di stato */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Eurostar — componenti (valori dal wireframe; classi raddoppiate per battere gli stili del Kit su a/h2) === */
+.es-page .elementor-widget-shortcode{margin:0}
+.es-page .elementor-widget-shortcode:not(:has(*:not(.elementor-shortcode))){display:none}
+
+/* Pulsanti: riempimento diagonale in hover (es-hover.css del wireframe) */
+.es-btn.es-btn{position:relative;isolation:isolate;overflow:hidden;cursor:pointer;transition:background .35s cubic-bezier(.22,1,.36,1),color .35s cubic-bezier(.22,1,.36,1)}
+.es-btn.es-btn::before{content:"";position:absolute;inset:0 -30px 0 -30px;z-index:-1;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 100%,0 100%);transform:translateX(-101%);transition:transform .35s cubic-bezier(.22,1,.36,1);background:var(--blue-600)}
+.es-btn-primary.es-btn::before,.es-btn-ghost-dark.es-btn::before{background:var(--bianco)}
+@media (hover:hover) and (pointer:fine){
+  .es-btn.es-btn:hover::before{transform:translateX(0)}
+  .es-btn-primary.es-btn.es-btn:hover{color:var(--blue-600);outline:1px solid var(--blue-600);outline-offset:-1px}
+  .es-btn-primary-dark.es-btn.es-btn:hover,.es-btn-ghost.es-btn.es-btn:hover{color:var(--bianco)}
+  .es-btn-ghost-dark.es-btn.es-btn:hover{color:var(--navy-800)}
+}
+@media (prefers-reduced-motion:reduce){.es-btn.es-btn::before{transition:none}}
+
+/* Breadcrumb */
+.es-breadcrumb.es-breadcrumb{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0 0 24px;font-family:var(--font-testo),sans-serif;font-weight:400;font-size:12px;line-height:1.4;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)}
+.es-breadcrumb.es-breadcrumb li{margin:0;padding:0}
+.es-breadcrumb.es-breadcrumb a{color:var(--gray-500);text-decoration:none}
+.es-breadcrumb.es-breadcrumb a:hover{color:var(--gray-500);opacity:.65}
+.es-breadcrumb.es-breadcrumb [aria-current]{color:var(--navy-800)}
+
+/* Etichette meta e pillole "Adatta per" */
+.es-adatta{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.es-meta-label{font-family:var(--font-testo),sans-serif;font-weight:400;font-size:12px;line-height:1.4;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)}
+.es-chip.es-chip{font-family:var(--font-testo),sans-serif;font-weight:400;font-size:13px;line-height:normal;letter-spacing:.02em;color:var(--navy-800);background:var(--gray-100);border:1px solid var(--bordo-sottile);border-radius:9999px;padding:6px 16px;text-decoration:none;transition:color .35s cubic-bezier(.22,1,.36,1),border-color .35s cubic-bezier(.22,1,.36,1),background-color .35s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover) and (pointer:fine){.es-chip.es-chip:hover{color:var(--blue-600);border-color:var(--blue-600);background:var(--bianco)}}
+
+/* Contenitori */
+.es-contenitori{margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.es-contenitori-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.es-contenitori-icon{display:inline-flex;color:var(--navy-800)}
+.es-contenitori-text.es-contenitori-text{margin:0;font-family:var(--font-testo),sans-serif;font-weight:400;font-size:15px;line-height:1.5;color:var(--navy-800)}
+
+/* Galleria */
+.es-gallery{display:flex;flex-direction:column;gap:12px}
+.es-gallery-main{aspect-ratio:4/3;background:var(--gray-100);overflow:hidden}
+.es-gallery-frame{width:100%;height:100%;background:var(--gray-150)}
+.es-gallery-img{display:block;width:100%;height:100%;object-fit:cover}
+.es-gallery-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.es-gallery-thumb.es-gallery-thumb{aspect-ratio:1/1;padding:0;border:1px solid var(--gray-150);border-radius:0;background:var(--gray-150);cursor:pointer;overflow:hidden}
+.es-gallery-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.es-gallery-thumb.es-gallery-thumb.is-active{border-color:var(--blue-600)}
+
+/* Descrizione tecnica */
+.es-descrizione{margin:20px 0 48px}
+.es-descrizione.es-descrizione p{margin:0;max-width:60ch;font-family:var(--font-testo),sans-serif;font-weight:300;font-size:clamp(16px,1.5vw,20px);line-height:1.7;color:var(--gray-500)}
+.es-descrizione.es-descrizione p+p{margin-top:16px}
+
+/* Tabella Caratteristiche (neutralizza reset e righe alternate di Hello) */
+table.es-spec-table{width:100%;border-collapse:collapse;border:0;margin:16px 0 56px;font-size:inherit}
+.es-spec-table.es-spec-table th,.es-spec-table.es-spec-table td{border:0;background:transparent;vertical-align:middle}
+.es-spec-table.es-spec-table tbody>tr:nth-child(odd)>td,.es-spec-table.es-spec-table tbody>tr:nth-child(odd)>th,.es-spec-table.es-spec-table tbody tr:hover>td,.es-spec-table.es-spec-table tbody tr:hover>th{background:transparent}
+.es-spec-table.es-spec-table th{text-align:left;padding:15px 14px 15px 0;font-family:var(--font-testo),sans-serif;font-weight:500;font-size:11px;line-height:1;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500)}
+.es-spec-table.es-spec-table td{padding:15px 0;font-family:var(--font-testo),sans-serif;font-weight:300;font-size:clamp(15px,1.3vw,17px);line-height:1.6;color:var(--navy-800)}
+.es-spec-table.es-spec-table tr+tr>*{border-top:1px solid var(--bordo-sottile)}
+.es-spec-table.es-spec-table tr:last-child>*{border-bottom:1px solid var(--bordo-sottile)}
+
+/* Download */
+h2.es-download-title.es-download-title{margin:0 0 16px;font-family:var(--font-titoli),sans-serif;font-weight:800;font-size:clamp(19px,1.7vw,23px);line-height:1.1;letter-spacing:normal;color:var(--navy-800);text-transform:uppercase}
+.es-dl-link.es-dl-link{display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid var(--bordo-sottile);border-bottom:1px solid var(--bordo-sottile);font-family:var(--font-testo),sans-serif;font-weight:500;font-size:clamp(15px,1.3vw,17px);line-height:1.6;color:var(--blue-600);text-decoration:none}
+.es-dl-link.es-dl-link>span[aria-hidden]{display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover) and (pointer:fine){.es-dl-link.es-dl-link:hover>span[aria-hidden]{transform:translateY(3px)}}
+@media (prefers-reduced-motion:reduce){.es-dl-link.es-dl-link>span[aria-hidden],.es-chip.es-chip{transition:none}}
+/* === fine componenti === */
+
+/* === Eurostar — header e footer (valori dal wireframe; hamburger fino a 1200px) === */
+.es-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.elementor-location-header{position:sticky;top:0;z-index:50}
+.es-header .elementor-widget-shortcode,.es-footer .elementor-widget-shortcode{margin:0}
+
+/* Barra alta */
+.es-util{background:var(--navy-950);color:var(--bianco-72);display:flex;align-items:center;flex-wrap:nowrap;gap:12px;padding:8px clamp(20px,4vw,56px);font-family:var(--font-testo),sans-serif;font-weight:400;font-size:12px;line-height:1.4}
+.es-util-support{display:flex;align-items:center;gap:10px;min-width:0}
+.es-util-dot{width:7px;height:7px;border-radius:9999px;background:var(--blue-400);display:inline-block}
+.es-util-text{letter-spacing:.04em}
+.es-util-right{display:flex;align-items:center;gap:16px;margin-left:auto;flex-shrink:0}
+.es-util-link.es-util-link{display:inline-flex;align-items:center;gap:6px;color:var(--bianco-72);text-decoration:none;font-family:var(--font-testo),sans-serif;font-size:12px;line-height:1.4;letter-spacing:.02em}
+.es-util-link.es-util-link:hover{color:var(--bianco)}
+.es-util-divider{width:1px;height:14px;background:rgba(255,255,255,.2);display:inline-block}
+.es-lang-switcher{display:flex;align-items:center;gap:8px;font-family:var(--font-titoli),sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.es-lang-switcher>span{opacity:.4}
+.es-lang.es-lang{color:rgba(255,255,255,.5);text-decoration:none}
+.es-lang.es-lang.is-active,.es-lang.es-lang:hover{color:var(--bianco)}
+@media (max-width:767px){.es-util-support{display:none !important}}
+
+/* Ricerca */
+.es-search-wrap{position:relative;display:flex;align-items:center}
+.es-search-toggle.es-search-toggle{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:none;border:none;border-radius:0;color:var(--bianco-72);cursor:pointer;padding:0}
+.es-search-toggle.es-search-toggle:hover,.es-search-toggle.es-search-toggle[aria-expanded="true"]{color:var(--bianco);background:none}
+.es-search-panel{position:absolute;top:calc(100% + 12px);right:0;z-index:55;background:var(--bianco);border:1px solid var(--bordo-sottile);box-shadow:0 30px 60px rgba(0,0,0,.4);padding:16px;width:280px;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .35s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility .35s}
+.es-search-panel.is-open{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .35s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility 0s}
+.es-search-toggle.es-search-toggle:focus-visible{outline:2px solid var(--bianco);outline-offset:2px}
+.es-search-panel input[type=search]:focus-visible{outline:2px solid var(--blue-600);outline-offset:1px}
+.es-search-submit.es-search-submit:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+.es-search-panel form{display:flex;gap:8px;align-items:center;margin:0}
+.es-search-panel input[type=search]{flex:1;min-width:0;border:1px solid var(--gray-400);border-radius:0;padding:8px 10px;font-family:var(--font-testo),sans-serif;font-size:14px;line-height:1.5;color:var(--navy-800);box-sizing:border-box;background:var(--bianco);transition:none}
+.es-search-submit.es-search-submit{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0;background:var(--blue-600);border:none;border-radius:0;color:var(--bianco);cursor:pointer;padding:0}
+.es-search-submit.es-search-submit:hover{background:var(--navy-800);color:var(--bianco)}
+
+/* Nav */
+.es-nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,4vw,56px);background:var(--navy-800);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.es-logo-link{display:flex;align-items:center;gap:16px}
+/* Loghi fluidi sotto ~370px: come il wireframe sopra, più piccoli sotto per non finire sotto l'hamburger (a 320px: 31/25px) */
+.es-logo-main.es-logo-main{height:clamp(28px,calc(17vw - 23px),40px);width:auto;cursor:pointer}
+.es-logo-divider{width:1px;height:clamp(20px,calc(11.9vw - 16px),28px);background:rgba(255,255,255,.3)}
+.es-logo-30.es-logo-30{height:clamp(22px,calc(13.6vw - 18.4px),32px);width:auto}
+.es-nav-links{display:flex;gap:clamp(16px,2.2vw,32px);align-items:center;align-self:stretch}
+.es-navlink.es-navlink{position:relative;display:inline-block;padding-bottom:6px;font-family:var(--font-titoli),sans-serif;font-weight:700;font-size:13px;line-height:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--bianco);opacity:.75;cursor:pointer;text-decoration:none}
+.es-navlink.es-navlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--bianco);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.es-navlink.es-navlink:hover{color:var(--bianco)}
+.es-navlink.es-navlink:hover::after{transform:scaleX(1)}
+.es-navlink.es-navlink:focus-visible{opacity:1;outline:2px solid var(--bianco);outline-offset:4px}
+.es-navlink.es-navlink.active{opacity:1;font-weight:800}
+.es-navlink.es-navlink.active::after{transform:scaleX(1);background:var(--blue-300)}
+.es-navlink-group{position:relative;display:inline-flex;align-items:center;gap:2px}
+.es-navlink-group .es-navlink.es-navlink::after{content:none}
+.es-navlink-group::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--bianco);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.es-navlink-group:hover::after,.es-navlink-group:focus-within::after{transform:scaleX(1)}
+.es-navlink-group:has(.es-navlink.active)::after{transform:scaleX(1);background:var(--blue-300)}
+.es-navlink-group:hover .es-navlink.es-navlink,.es-navlink-group:focus-within .es-navlink.es-navlink{color:var(--bianco)}
+.es-navlink-cta.es-navlink-cta{position:relative;isolation:isolate;align-self:stretch;display:flex;align-items:center;background:var(--blue-600);color:var(--bianco);font-family:var(--font-titoli),sans-serif;font-weight:700;font-size:13px;line-height:normal;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;margin:-18px calc(-1 * clamp(20px,4vw,56px)) -18px 0;padding:18px clamp(20px,4vw,56px) 18px 28px;transition:background .35s cubic-bezier(.22,1,.36,1)}
+.es-navlink-cta.es-navlink-cta::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--bianco);clip-path:polygon(0 0,0 0,-30px 100%,0 100%);transition:clip-path .35s cubic-bezier(.22,1,.36,1)}
+.es-navlink-cta.es-navlink-cta:focus-visible{outline:2px solid var(--bianco);outline-offset:-4px}
+@media (hover:hover) and (pointer:fine){
+  .es-navlink-cta.es-navlink-cta:hover{background:var(--blue-600);color:var(--blue-600)}
+  .es-navlink-cta.es-navlink-cta:hover::before{clip-path:polygon(0 0,calc(100% + 30px) 0,100% 100%,0 100%)}
+}
+.es-nav-toggle.es-nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;border-radius:0;cursor:pointer;padding:0;flex-shrink:0;position:relative;z-index:41}
+.es-nav-toggle.es-nav-toggle:hover{background:none}
+.es-nav-toggle span{display:block;width:24px;height:2px;background:var(--bianco);transition:transform .35s cubic-bezier(.22,1,.36,1),opacity .35s cubic-bezier(.22,1,.36,1)}
+.es-nav-toggle.es-nav-toggle:focus-visible{outline:2px solid var(--bianco);outline-offset:2px}
+.es-nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.es-nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.es-nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mega-menu */
+.es-mega-caret.es-mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:none;border:none;border-radius:0;color:var(--bianco);opacity:.75;cursor:pointer;padding:0}
+.es-mega-caret.es-mega-caret:hover{opacity:1;background:none}
+.es-mega-caret svg{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.es-mega-caret[aria-expanded="true"] svg{transform:rotate(180deg)}
+.es-mega-caret.es-mega-caret:focus-visible{outline:2px solid var(--bianco);outline-offset:2px}
+.es-mega{font-family:var(--font-testo),sans-serif;font-size:12px;line-height:1.4;position:fixed;left:0;right:0;z-index:45;background:var(--bianco);border-top:1px solid var(--bordo-sottile);box-shadow:0 30px 60px rgba(0,0,0,.4);max-height:calc(100vh - 100px);overflow-y:auto;padding:44px clamp(20px,6vw,80px);box-sizing:border-box;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .35s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility .35s}
+.es-mega.is-open{opacity:1;transform:translateY(0);visibility:visible}
+.es-mega-inner{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:56px;position:relative}
+.es-mega-col.es-mega-col h3{margin:0 0 4px;font-family:var(--font-titoli),sans-serif;font-weight:800;font-size:14px;line-height:1;letter-spacing:normal;color:var(--navy-800);text-transform:uppercase}
+.es-mega-col.es-mega-col p{margin:0 0 16px;font-family:var(--font-testo),sans-serif;font-weight:400;font-size:14px;line-height:1.5;color:var(--gray-500)}
+.es-mega-list.es-mega-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.es-mega-list.es-mega-list li{margin:0;padding:0}
+.es-mega-list.es-mega-list a{display:block;padding:8px 0;font-family:var(--font-testo),sans-serif;font-weight:400;font-size:14px;line-height:1.3;color:var(--gray-500);text-decoration:none;border-bottom:1px solid var(--bordo-sottile)}
+.es-mega-list.es-mega-list a:hover{color:var(--navy-800)}
+.es-mega-featured{background:var(--gray-050);padding:20px}
+.es-mega-frame{aspect-ratio:4/3;background:var(--gray-150);margin-bottom:14px;overflow:hidden}
+.es-mega-frame.es-mega-frame img{display:block;width:100%;height:100%;object-fit:cover}
+.es-mega-col.es-mega-featured h4{margin:0 0 4px;font-family:var(--font-titoli),sans-serif;font-weight:800;font-size:15px;line-height:1;letter-spacing:normal;color:var(--navy-800);text-transform:uppercase}
+.es-mega-col.es-mega-featured p{margin:0 0 12px}
+.es-textlink.es-textlink{color:var(--blue-600);text-decoration:none;font-family:var(--font-testo),sans-serif}
+.es-textlink.es-textlink:hover{color:var(--navy-800)}
+.es-textlink.es-textlink .es-arrow{display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover) and (pointer:fine){.es-textlink.es-textlink:hover .es-arrow{transform:translateX(5px)}}
+
+/* Menu hamburger fino a 1200px (tablet extra) */
+@media (max-width:1200px){
+  .es-nav-toggle.es-nav-toggle{display:flex}
+  .es-nav-links{position:fixed;inset:0;z-index:40;flex-direction:column;align-items:stretch !important;gap:0;background:var(--navy-950);padding:110px 28px 40px;overflow-y:auto;align-self:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.22,1,.36,1);visibility:hidden}
+  .es-nav-links.is-open{transform:translateX(0);visibility:visible}
+  .es-nav-links .es-navlink.es-navlink{padding:18px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.4)}
+  .es-nav-links .es-navlink-group{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.4)}
+  .es-nav-links .es-navlink-group .es-navlink.es-navlink{border-bottom:none;padding:18px 0}
+  .es-nav-links .es-navlink-cta.es-navlink-cta{margin:28px 0 0;align-self:auto;justify-content:center;padding:16px 24px}
+  .es-mega-caret.es-mega-caret,.es-mega{display:none}
+  .es-navlink-group::after{content:none}
+}
+
+/* Footer: testi e link generati dagli shortcode */
+.es-footer-links{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.es-footer-links.es-footer-links a{font-family:var(--font-testo),sans-serif;font-weight:400;font-size:16px;line-height:1.4;color:var(--bianco-72);text-decoration:none}
+.es-footer-links.es-footer-links a:hover{color:var(--bianco)}
+.es-footer-links--strong.es-footer-links a{font-weight:500;color:var(--bianco)}
+.es-social{display:flex;gap:10px;margin-top:20px}
+@media (max-width:1024px){.es-social{flex-wrap:wrap}}
+.es-social-link.es-social-link{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.4);color:var(--bianco);text-decoration:none}
+.es-social-link.es-social-link:hover{color:var(--bianco);border-color:rgba(255,255,255,.7)}
+.es-back-to-top.es-back-to-top{width:46px;height:28px;border-radius:14px;border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;color:var(--bianco);flex-shrink:0}
+.es-back-to-top.es-back-to-top:hover{color:var(--bianco);border-color:rgba(255,255,255,.7)}
+.es-wa-float.es-wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:52px;height:52px;border-radius:9999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.25);color:var(--bianco)}
+.es-wa-float.es-wa-float:hover{color:var(--bianco)}
+.es-wa-float.es-wa-float:focus-visible{outline:2px solid var(--navy-800);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.es-navlink.es-navlink::after,.es-navlink-group::after,.es-navlink-cta.es-navlink-cta::before,.es-mega,.es-search-panel,.es-nav-links,.es-textlink.es-textlink .es-arrow{transition:none}}
+/* === fine header e footer === */
+
+/* === Eurostar — card macchina (MachineCard del wireframe; riga dati da [es_card_stats]) === */
+.es-mcard-media.es-mcard-media img{display:block;width:100%;height:100%;max-width:none;object-fit:cover}
+.es-mcard-stats{display:flex;gap:24px;margin-top:14px;padding:18px 22px 22px;border-top:1px solid var(--bordo-sottile)}
+.es-mcard-stat{flex:1}
+.es-mcard-stat-v.es-mcard-stat-v{margin:0;font:900 clamp(11px,1.1vw,13px)/1.25 var(--font-titoli),sans-serif;color:var(--navy-800)}
+.es-mcard-stat-l.es-mcard-stat-l{margin:4px 0 0;font:400 11px/normal var(--font-testo),sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500)}
+/* Breadcrumb su fondo scuro (archivi) */
+.es-breadcrumb.es-breadcrumb--dark{margin:0 0 20px;color:rgba(255,255,255,.5)}
+.es-breadcrumb.es-breadcrumb--dark a,.es-breadcrumb.es-breadcrumb--dark a:hover{color:rgba(255,255,255,.5)}
+.es-breadcrumb.es-breadcrumb--dark [aria-current]{color:var(--bianco)}
+/* Settore: sfide, intestazione Linea Squadron; gruppo nascosto se non ci sono modelli Squadron */
+.es-sfide p{margin:0 0 24px;font:300 clamp(16px,1.5vw,20px)/1.7 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-sfide p:last-child{margin-bottom:0}
+.es-group-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 24px;padding:0 0 16px;border-bottom:1px solid var(--bordo-sottile)}
+.es-group-title.es-group-title{margin:0;font:800 clamp(19px,1.7vw,23px)/1.1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal}
+.es-group-title span{font:400 12px/1.4 var(--font-testo),sans-serif;letter-spacing:.1em;color:var(--gray-500)}
+.es-squadron-group.es-squadron-group:not(:has(.es-scard)){display:none}
+/* Catalogo: barra filtri (sticky sotto l'header), filtri, messaggio senza risultati */
+.elementor-widget:has(> .elementor-shortcode > .es-filterbar){position:sticky;top:0;z-index:40}
+.es-filterbar{background:var(--bianco);border-bottom:1px solid var(--bordo-sottile)}
+.es-filterbar-inner{box-sizing:content-box;max-width:1360px;margin:0 auto;padding:0 clamp(20px,6vw,80px);display:flex;flex-wrap:wrap;gap:28px}
+.es-filter.es-filter{display:inline-block;padding:16px 4px;margin:0;background:none;border:0;border-bottom:2px solid transparent;border-radius:0;font:700 13px/normal var(--font-titoli),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);text-decoration:none;cursor:pointer}
+.es-filter.es-filter:hover,.es-filter.es-filter:focus{background:none;color:var(--navy-800)}
+.es-filter.es-filter[aria-pressed="true"]{color:var(--navy-800);border-bottom-color:var(--blue-600)}
+.es-catalog-grid.es-catalog-grid [role="listitem"][hidden]{display:none}
+.es-catalog-empty{margin:40px 0 0;text-align:center;font:300 clamp(15px,1.3vw,17px)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-catalog-empty[hidden]{display:none}
+/* Filtri sempre su una riga che scorre in orizzontale quando non ci stanno (decisione utente 29/09: sotto ~1236px;
+   sopra è identica al wireframe): sfumature ai bordi quando c'è altro da vedere, barra sticky anche su mobile (50px).
+   Focus con offset negativo: con overflow il contorno esterno verrebbe tagliato */
+.es-filterbar{position:relative}
+.es-filterbar::before,.es-filterbar::after{content:"";position:absolute;top:0;bottom:1px;width:40px;pointer-events:none;opacity:0;transition:opacity .2s;z-index:1}
+.es-filterbar::before{left:0;background:linear-gradient(90deg,var(--bianco) 20%,rgba(255,255,255,0))}
+.es-filterbar::after{right:0;background:linear-gradient(270deg,var(--bianco) 20%,rgba(255,255,255,0))}
+.es-filterbar.can-scroll-left::before,.es-filterbar.can-scroll-right::after{opacity:1}
+.es-filterbar-inner.es-filterbar-inner{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain}
+.es-filterbar-inner::-webkit-scrollbar{display:none}
+.es-filter.es-filter{flex:0 0 auto;white-space:nowrap}
+.es-filter.es-filter:focus-visible{outline-offset:-3px}
+@media (prefers-reduced-motion:reduce){.es-filterbar::before,.es-filterbar::after{transition:none}}
+/* Linee complete e Usate: testo "descrizione" del termine, esempi di layout */
+.es-term-desc p{margin:0 0 40px;font:300 clamp(16px,1.5vw,20px)/1.65 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-empty-box .es-term-desc p{margin-bottom:24px}
+.es-layouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px}
+.es-layout{margin:0;background:var(--gray-100);border:1px solid var(--bordo-sottile)}
+.es-layout.es-layout img{display:block;width:100%;height:auto;max-width:none;border-bottom:1px solid var(--bordo-sottile)}
+.es-layout figcaption{padding:18px 22px 22px}
+.es-layout-title{display:block;font:800 16px/normal var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-layout-caption{display:block;margin-top:4px;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
+/* === fine card macchina === */
+
+/* === Eurostar — pagina Squadron (card estese, resto della gamma, settori serviti; valori dal wireframe) === */
+.es-sq-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px}
+.es-sq-card{background:var(--bianco);scroll-margin-top:110px}
+.es-sq-media{aspect-ratio:4/3;background:var(--gray-150);overflow:hidden}
+.es-sq-media.es-sq-media img{display:block;width:100%;height:100%;max-width:none;object-fit:cover}
+.es-sq-body{padding:clamp(24px,3vw,32px)}
+.es-sq-name.es-sq-name{margin:0 0 6px;font:900 clamp(26px,2.8vw,42px)/.96 var(--font-titoli),sans-serif;letter-spacing:normal;color:var(--navy-800);text-transform:uppercase}
+.es-sq-type.es-sq-type{margin:0 0 16px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-600)}
+.es-sq-desc p{margin:0 0 10px;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-sq-desc p:last-child{margin-bottom:18px}
+.es-sq-table.es-sq-table{width:100%;margin:0;border:0;border-collapse:collapse}
+.es-sq-table.es-sq-table th,.es-sq-table.es-sq-table td{background:transparent;border:0;border-top:1px solid var(--bordo-sottile);vertical-align:top}
+.es-sq-table.es-sq-table th{padding:10px 12px 10px 0;text-align:left;white-space:nowrap;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)}
+.es-sq-table.es-sq-table td{padding:10px 0;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--navy-800)}
+.es-sq-table.es-sq-table tr:last-child>*{border-bottom:1px solid var(--bordo-sottile)}
+.es-sq-dl{margin-top:20px}
+.es-sq-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px}
+.es-sq-item{position:relative;padding:20px;background:var(--gray-050);scroll-margin-top:110px}
+.es-sq-anchor{position:absolute;top:0;left:0;scroll-margin-top:110px}
+.es-sq-item-name.es-sq-item-name{margin:0 0 8px;font:800 clamp(17px,1.6vw,22px)/1 var(--font-titoli),sans-serif;letter-spacing:normal;color:var(--navy-800);text-transform:uppercase}
+.es-sq-item-sectors{margin:0;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-chips{display:flex;flex-wrap:wrap;gap:10px}
+.es-chip.es-chip--lg{padding:8px 18px;background:var(--gray-050)}
+/* === fine pagina Squadron === */
+
+/* === Eurostar — Contatti e Conferma (valori dal wireframe; campi con bordo Gray 400 per WCAG 2.1 1.4.11) === */
+.es-hub.es-hub{position:relative}
+.es-hub.es-hub::before{content:"";position:absolute;top:0;bottom:0;left:0;width:max(0px,calc((100% - 1360px) / 2));background:var(--navy-800)}
+.es-hub-grid.es-hub-grid{position:relative}
+.es-contact-info{display:flex;flex-direction:column;gap:14px;margin:0 0 36px;font:300 clamp(15px,1.3vw,17px)/1.6 var(--font-testo),sans-serif;color:rgba(255,255,255,.9)}
+.es-contact-info p{margin:0}
+.es-contact-info a,.es-contact-info a:hover{color:var(--bianco);text-decoration:underline}
+/* Form classic di Elementor Pro (hover del pulsante con selettore rinforzato: il widget genera .elementor-XX .elementor-element-ID .elementor-button[type="submit"]:hover, specificità 0,6,0) */
+.es-contact-form .elementor-form{max-width:560px}
+.es-contact-form .elementor-field-group>.elementor-field-label{padding:0;margin:0 0 8px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-600)}
+.es-contact-form .elementor-mark-required .elementor-field-label:after{color:#CD212A}
+/* Consenso obbligatorio: asterisco rosso in fondo al testo visibile, come nel wireframe (l'etichetta con l'asterisco di Elementor è nascosta); escluso dai lettori di schermo, la casella ha già required */
+.es-contact-form .elementor-field-type-acceptance.elementor-field-required .elementor-field-subgroup label::after{content:" *" / "";color:#CD212A}
+.es-contact-form.es-contact-form .elementor-field-group .elementor-field-textual{min-height:0;height:auto;margin:0;padding:13px 15px;border:1px solid var(--gray-400);border-radius:0;background:var(--bianco);font:300 clamp(15px,1.3vw,17px)/1.6 var(--font-testo),sans-serif;color:var(--navy-800)}
+.es-contact-form .elementor-field-group select.elementor-field-textual{padding-right:44px}
+.es-contact-form.es-contact-form .elementor-field-group textarea.elementor-field-textual{display:block;height:120px;margin-bottom:4px;resize:vertical}
+.es-contact-form .elementor-field-group .elementor-field-textual:focus{box-shadow:none}
+.es-contact-form .elementor-field-group .elementor-field-textual:focus-visible{outline:2px solid var(--blue-600);outline-offset:1px}
+.es-contact-form.es-contact-form.es-contact-form .elementor-field-group.elementor-field-group-messaggio{margin-bottom:28px}
+.es-contact-form.es-contact-form.es-contact-form .elementor-field-group.elementor-field-type-acceptance{margin-bottom:24px}
+.es-contact-form .elementor-field-type-acceptance .elementor-field-subgroup label{font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-contact-form .elementor-field-type-acceptance a{color:var(--blue-600)}
+.es-contact-form .elementor-field-type-acceptance input{margin:3px 13px 0 4px}
+.es-contact-form .elementor-field-subgroup .elementor-field-option{display:flex;align-items:flex-start}
+.es-contact-form .elementor-message{font:400 14px/1.5 var(--font-testo),sans-serif;margin-top:8px}
+.es-contact-form .elementor-message-danger,.es-contact-form .elementor-error .elementor-field-textual{color:#CD212A;border-color:#CD212A}
+/* [type] per battere .elementor-widget-form .elementor-button[type=submit] (colore In risalto), caricata dopo il Kit */
+.es-contact-form .elementor-button.elementor-button[type]{min-height:0;position:relative;isolation:isolate;overflow:hidden;padding:16px 30px;border:0;border-radius:0;background:var(--blue-600);color:var(--bianco);font:700 14px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .35s cubic-bezier(.22,1,.36,1),color .35s cubic-bezier(.22,1,.36,1)}
+.es-contact-form .elementor-button.elementor-button::before{content:"";position:absolute;inset:0 -30px 0 -30px;z-index:-1;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 100%,0 100%);transform:translateX(-101%);transition:transform .35s cubic-bezier(.22,1,.36,1);background:var(--bianco)}
+@media (hover:hover) and (pointer:fine){.es-contact-form.es-contact-form.es-contact-form.es-contact-form .elementor-button.elementor-button[type]:hover{color:var(--blue-600);outline:1px solid var(--blue-600);outline-offset:-1px}.es-contact-form .elementor-button.elementor-button:hover::before{transform:translateX(0)}}
+.es-contact-form .elementor-button.elementor-button:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+@media (max-width:767px){.es-contact-form .elementor-field-group.elementor-col-50{width:100%}}
+/* Conferma */
+.es-check-circle.es-check-circle{background:var(--blue-600) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/32px no-repeat}
+.es-conferma-urgenze{margin:0 0 36px;font:300 clamp(15px,1.3vw,17px)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-conferma-urgenze a{color:var(--blue-600);text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.es-contact-form .elementor-button.elementor-button,.es-contact-form .elementor-button.elementor-button::before{transition:none}}
+/* Etichetta del consenso usata solo nell'email ([all-fields]); in pagina la casella è etichettata dal testo del consenso */
+.es-contact-form .elementor-field-group.elementor-field-type-acceptance>.elementor-field-label{display:none}
+/* === fine Contatti e Conferma === */
+/* === Eurostar — pagina Settori (valori dal wireframe archive-settori.html) === */
+/* Breadcrumb su testata chiara delle pagine ([es_breadcrumb_archivio tema="light"]) */
+.es-breadcrumb.es-breadcrumb--light{margin:0 0 20px}
+/* Griglia dei settori ([es_settori_griglia]): 4 colonne, 2 sotto 900px, 1 sotto 767px (560 del wireframe portato al breakpoint Mobile) */
+.es-sectors-grid.es-sectors-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.es-sectors-grid.es-sectors-grid>li{margin:0;padding:0;min-width:0}
+a.es-sec.es-sec{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--navy-900);color:var(--navy-800);text-decoration:none}
+.es-sec .es-sec-media{position:absolute;inset:0;background:var(--gray-150)}
+.es-sec .es-sec-media img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.es-sec .es-sec-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,10,.55) 72%,rgba(10,10,10,.92) 100%)}
+.es-sec:hover .es-sec-media img{transform:scale(1.06)}
+.es-sec .es-sec-name{position:absolute;left:20px;right:20px;bottom:20px;font:800 24px/1.1 var(--font-titoli),sans-serif;color:var(--bianco);text-transform:uppercase}
+@media (max-width:900px){.es-sectors-grid.es-sectors-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:767px){.es-sectors-grid.es-sectors-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.es-sec .es-sec-media img{transition:none}}
+/* === fine pagina Settori === */
+/* === Eurostar — pagina Servizi (valori dal wireframe archive-servizi.html) === */
+/* Card post-vendita: sollevamento in hover come nel wireframe */
+.es-svc.es-svc{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.es-svc.es-svc:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.12)}
+/* Recapiti post-vendita ([es_aftersales], [es_aftersales_cta]): nel wireframe testo semplice, qui link email/telefono */
+.es-aftersales{margin:0;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-aftersales a{color:var(--blue-600);text-decoration:underline}
+.es-aftersales a:hover{color:var(--navy-800)}
+.es-aftersales-cta{margin:20px 0 0;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--bianco-72)}
+.es-aftersales-cta a,.es-aftersales-cta a:hover{color:var(--bianco);text-decoration:underline}
+/* === fine pagina Servizi === */
+/* === Eurostar — pagina Referenze (valori dal wireframe page-referenze.html) === */
+/* Tessere clienti ([es_clienti]): auto-fill 180px, gap 16, nome finché manca il logo; altezza 122px = 88px del wireframe + padding e bordo (il wireframe non usa border-box) */
+.es-client-grid.es-client-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(180px,100%),1fr));gap:16px}
+.es-client-grid .es-logo-tile{display:flex;align-items:center;justify-content:center;text-align:center;min-height:122px;margin:0;padding:16px;background:var(--gray-050);border:1px solid var(--bordo-sottile);font:600 13px/1.3 var(--font-testo),sans-serif;color:var(--gray-500);overflow-wrap:anywhere}
+.es-client-grid .es-logo-tile img.es-logo-img{display:block;width:auto;max-width:100%;height:auto;max-height:56px;object-fit:contain}
+/* === fine pagina Referenze === */
+
+/* === Eurostar — Home (valori dal wireframe home.html) === */
+/* Link testuali con freccia (es-textlink del wireframe) e pulsanti dei blocchi diagonali con freccia ↗: la freccia non viene letta */
+.es-link-arrow.es-link-arrow::after{content:"→" / "";display:inline-block;margin-left:0;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover) and (pointer:fine){.es-link-arrow.es-link-arrow:hover::after{transform:translateX(5px)}}
+.es-home-diag-cta.es-home-diag-cta::after{content:"↗" / "";line-height:1}
+/* Grassetti e parole in evidenza nei testi */
+.es-home-diag-text strong,.es-home-author-text strong{color:var(--navy-800)}
+.es-home-quote-lead span{color:var(--blue-600)}
+.es-home-bivio.es-home-bivio{transition:background .35s cubic-bezier(.22,1,.36,1)}
+/* Icone "Scopri le macchine per" (disegnate con maschera, colore del testo Blue 600) */
+.es-home-discover-icon.es-home-discover-icon::before{content:"";position:static;inset:auto;flex-shrink:0;width:22px;height:22px;background:currentColor;-webkit-mask:var(--es-ico) center/contain no-repeat;mask:var(--es-ico) center/contain no-repeat}
+.es-ico-sciacquatura{--es-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Cpath d='M12 3c-3 3.5-5 6.2-5 9a5 5 0 0 0 10 0c0-2.8-2-5.5-5-9z'/%3E%3C/svg%3E")}
+.es-ico-riempimento{--es-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Cpath d='M9 2h6v3.5l1.5 2.5v12a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V8l1.5-2.5V2z'/%3E%3Cpath d='M9 2h6'/%3E%3C/svg%3E")}
+.es-ico-tappatura{--es-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Crect x='9' y='3' width='6' height='4' rx='1'/%3E%3Cpath d='M8 7h8l1 4H7l1-4z'/%3E%3Cpath d='M7 11h10v10H7z'/%3E%3C/svg%3E")}
+.es-ico-linee{--es-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Crect x='3' y='4' width='18' height='16' rx='1.5'/%3E%3Cpath d='M3 10h18M8 4v6'/%3E%3C/svg%3E")}
+/* Nastro clienti ([es_clienti_nastro]): scorrimento 34s, bordi sfumati, pausa al passaggio del mouse e con il pulsante */
+.es-home-trust-inner>.elementor-widget-shortcode{flex:1 1 0%;min-width:0}
+.es-marquee-wrap{display:flex;align-items:center;gap:40px}
+.es-marquee{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.es-marquee-track{display:flex;width:max-content;animation:es-marquee-scroll 34s linear infinite}
+.es-marquee:hover .es-marquee-track,.es-marquee-track.is-paused{animation-play-state:paused}
+.es-marquee-list{display:flex;align-items:center;gap:clamp(32px,5vw,64px);margin:0;padding:0 clamp(32px,5vw,64px) 0 0;list-style:none}
+.es-logo{font-family:var(--font-titoli),sans-serif;font-weight:800;font-size:17px;line-height:normal;letter-spacing:.06em;color:var(--bianco);text-transform:uppercase;opacity:.55;white-space:nowrap}
+.es-logo .es-logo-img{display:block;height:40px;width:auto;max-width:none;filter:brightness(0) invert(1)}
+@keyframes es-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.es-marquee-pause{flex-shrink:0;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.4);color:var(--bianco);cursor:pointer;transition:border-color .35s cubic-bezier(.22,1,.36,1)}
+.es-marquee-pause:hover,.es-marquee-pause:focus{background:rgba(255,255,255,.1);color:var(--bianco);border-color:rgba(255,255,255,.7)}
+.es-marquee-pause:focus-visible{outline:2px solid var(--bianco);outline-offset:3px}
+.es-marquee-pause svg{display:block;pointer-events:none}
+.es-marquee-pause .es-ico-play,.es-marquee-pause[aria-pressed="true"] .es-ico-pause{display:none}
+.es-marquee-pause[aria-pressed="true"] .es-ico-play{display:block}
+@media (prefers-reduced-motion:reduce){.es-marquee-track{animation:none}}
+@media (max-width:767px){.es-home-trust-inner>.elementor-widget-shortcode{flex:none}}
+/* News ([es_news_home], [es_news_nav]): sezione nascosta finché non ci sono articoli; 1 card sotto 760px, 3 sopra */
+.es-home-news.es-home-news:not(:has(.es-news-track)){display:none}
+.es-news-navs{display:flex;gap:10px}
+.es-news-nav{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%;border:1px solid rgba(28,38,90,.24);background:var(--bianco);color:var(--navy-800);cursor:pointer;flex-shrink:0}
+.es-news-nav:hover,.es-news-nav:focus{background:var(--gray-050);color:var(--navy-800)}
+.es-news-nav:focus-visible{outline:2px solid var(--navy-800);outline-offset:2px}
+.es-news-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;margin:-48px 0 -60px;padding:48px 0 60px;-ms-overflow-style:none;scrollbar-width:none}
+.es-news-track::-webkit-scrollbar{display:none}
+.es-news-track:focus-visible{outline:2px solid var(--navy-800);outline-offset:-2px}
+.es-art{background:var(--bianco);text-decoration:none;display:flex;flex-direction:column;scroll-snap-align:start;flex:0 0 100%;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.es-art:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.12)}
+.es-art:focus-visible{outline:2px solid var(--navy-800);outline-offset:4px}
+@media (min-width:760px){.es-art{flex:0 0 calc(33.333% - 16px)}}
+.es-art-frame{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--gray-150)}
+.es-art-frame img{display:block;width:100%;height:100%;object-fit:cover}
+.es-art-body{padding:24px}
+.es-art-meta{display:flex;gap:14px;margin-bottom:12px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-600)}
+.es-art-date{color:var(--gray-500)}
+.es-art-title.es-art-title{margin:0 0 10px;font:800 var(--testo-h3)/1.1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-art-excerpt{margin:0;font:300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+/* === fine Home === */
+
+/* === Eurostar — Cataloghi (valori dal wireframe page-cataloghi.html) === */
+/* Righe dei PDF ([es_cataloghi]): gruppo e sezione nascosti finché non c'è almeno un PDF */
+#cataloghi-elenco:not(:has(.es-catalog-row)),.es-catalog-group.es-catalog-group:not(:has(.es-catalog-row)){display:none}
+.es-catalog-list{list-style:none;margin:0;padding:0}
+.es-catalog-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--bordo-sottile)}
+.es-catalog-row:last-child{padding-bottom:0}
+.es-catalog-icon{flex-shrink:0;width:46px;height:46px;border:1px solid var(--bordo-sottile);color:var(--blue-600);display:flex;align-items:center;justify-content:center}
+.es-catalog-info{flex:1;min-width:0}
+.es-catalog-title.es-catalog-title{margin:0 0 4px;font:800 16px/1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:none;letter-spacing:normal}
+.es-catalog-meta.es-catalog-meta{margin:0;font:400 14px/1.5 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-catalog-dl.es-catalog-dl{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font:700 12px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600);white-space:nowrap;text-decoration:none}
+.es-catalog-dl.es-catalog-dl:hover{color:var(--navy-800)}
+.es-catalog-dl.es-catalog-dl:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+.es-catalog-cat.es-catalog-cat{margin-right:12px;color:var(--gray-500);font-weight:400;text-transform:none;letter-spacing:0}
+/* Sotto 767px i link vanno a capo sotto il testo (nel wireframe la colonna del testo resta larga 54px) */
+@media (max-width:767px){.es-catalog-row{flex-wrap:wrap;gap:12px 20px}.es-catalog-info{flex:1 1 calc(100% - 66px)}.es-catalog-info+.es-catalog-dl.es-catalog-dl{margin-left:66px}}
+/* === fine Cataloghi === */
+
+/* === Eurostar — Lavora con noi (valori dal wireframe page-lavora-con-noi.html e single-posizione-lavoro-*.html) === */
+/* Card delle posizioni ([es_posizioni]): sezione nascosta senza posizioni pubblicate */
+#posizioni-aperte:not(:has(.es-job-card)){display:none}
+.es-job-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:24px}
+.es-job-grid>li{display:flex;margin:0}
+.es-job-card.es-job-card{flex:1;display:flex;flex-direction:column;min-height:280px;padding:clamp(26px,3.4vw,36px);background:var(--gray-050);border:2px solid var(--blue-600);text-decoration:none;color:var(--blue-600);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.es-job-card.es-job-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.12)}
+.es-job-card.es-job-card:focus-visible{outline:2px solid var(--blue-600);outline-offset:-2px}
+.es-job-card.es-job-card h3{margin:0 0 8px;font:900 22px/.96 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal}
+.es-job-dept{display:block;margin:0 0 6px;font:300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-job-id{display:block;margin:0 0 24px;font:400 12px/1.4 var(--font-testo),sans-serif;letter-spacing:.04em;color:var(--gray-500)}
+.es-job-meta{display:flex;flex-direction:column;gap:10px;margin:0 0 28px}
+.es-job-meta-row{display:flex;align-items:center;gap:10px;font:700 14px/normal var(--font-titoli),sans-serif;color:var(--navy-800)}
+.es-job-meta-row svg{flex-shrink:0;color:var(--blue-600)}
+.es-job-footer{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:auto}
+.es-job-footer>span:first-child{font:700 13px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-800)}
+.es-job-arrow{width:38px;height:38px;border-radius:50%;border:1px solid var(--navy-800);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy-800);transition:background .35s cubic-bezier(.22,1,.36,1),border-color .35s cubic-bezier(.22,1,.36,1),color .35s cubic-bezier(.22,1,.36,1)}
+.es-job-card:hover .es-job-arrow{background:var(--blue-600);border-color:var(--blue-600);color:var(--bianco)}
+@media (prefers-reduced-motion:reduce){.es-job-card.es-job-card,.es-job-arrow{transition:none}.es-job-card.es-job-card:hover{transform:none}}
+/* Scheda posizione: sede e contratto nella testata scura */
+.es-job-meta-strip{display:flex;flex-wrap:wrap;gap:24px 40px;margin:28px 0 0}
+.es-job-meta-strip .es-job-meta-row{color:var(--bianco)}
+.es-job-meta-strip .es-job-meta-row svg{color:var(--blue-300)}
+/* Scheda posizione: corpo ([es_posizione_corpo]) */
+.es-job-lead.es-job-lead{margin:0 0 48px;padding-bottom:48px;border-bottom:1px solid var(--bordo-sottile);font:300 var(--testo-body-lg)/1.65 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-job-section.es-job-section h3{margin:48px 0 16px;font:700 15px/normal var(--font-titoli),sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-800)}
+.es-job-section.es-job-section h3:first-child{margin-top:0}
+.es-job-section.es-job-section ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:12px;list-style:disc}
+.es-job-section.es-job-section li{margin:0;font:300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+/* Link "Vedi tutte le posizioni aperte": bordo Blue 600, riempimento diagonale in hover come i pulsanti, freccia a sinistra */
+.es-job-back.es-job-back{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:var(--bianco);border:2px solid var(--blue-600);border-radius:0;font:700 13px/normal var(--font-titoli),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-600);text-decoration:none;text-align:start;cursor:pointer;transition:color .35s cubic-bezier(.22,1,.36,1)}
+.es-job-back.es-job-back::before{content:"";position:absolute;inset:0 -30px;z-index:-1;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 100%,0 100%);transform:translateX(-101%);transition:transform .35s cubic-bezier(.22,1,.36,1);background:var(--blue-600)}
+.es-job-back.es-job-back::after{content:"";order:-1;flex-shrink:0;width:16px;height:16px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 18l-6-6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 18l-6-6 6-6'/%3E%3C/svg%3E") center/contain no-repeat}
+@media (hover:hover) and (pointer:fine){.es-job-back.es-job-back:hover{background:var(--bianco);color:var(--bianco)}.es-job-back.es-job-back:hover::before{transform:translateX(0)}}
+.es-job-back.es-job-back:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.es-job-back.es-job-back,.es-job-back.es-job-back::before{transition:none}}
+/* Form di candidatura (Elementor Pro, classe es-contact-form es-job-form): bordi sottili, messaggio più basso, campo CV */
+.es-job-form.es-job-form.es-job-form .elementor-field-group .elementor-field-textual{border-color:var(--bordo-sottile)}
+.es-job-form.es-job-form.es-job-form .elementor-field-group textarea.elementor-field-textual{height:100px}
+.es-job-form.es-job-form.es-job-form.es-job-form .elementor-field-group.elementor-field-group-messaggio{margin-bottom:24px}
+.es-job-form .elementor-field-type-upload .elementor-upload-field{width:100%;padding:10px 15px;border:1px solid var(--bordo-sottile);border-radius:0;background:var(--bianco);font:300 clamp(15px,1.3vw,17px)/1.6 var(--font-testo),sans-serif;color:var(--navy-800)}
+.es-job-form .elementor-field-type-upload .elementor-upload-field:focus-visible{outline:2px solid var(--blue-600);outline-offset:1px}
+/* Pulsante "Scegli file" con interlinea normale. Solo la variante -webkit-: il nome standard contiene la parola che Elementor sostituisce con la classe del Kit */
+.es-job-form .elementor-field-type-upload .elementor-upload-field::-webkit-file-upload-button{line-height:normal}
+/* Casella del consenso con i margini predefiniti del browser, come nel wireframe (testo a 26px dal bordo) */
+.es-job-form.es-job-form .elementor-field-type-acceptance input{margin:3px 13px 0 4px}
+.es-form-box .es-contact-form .elementor-form{max-width:none}
+/* === fine Lavora con noi === */
+
+/* === Eurostar — News (valori dal wireframe archive-news.html, single-news-articolo.html, single-news-editoriale.html) === */
+/* Archivio: griglia a 4 colonne da 300px (auto-fill: con un filtro le card restano larghe uguali), estratto su 4 righe */
+.es-news-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:24px}
+.es-news-grid>li,.es-news-related>li{display:flex;margin:0}
+.es-news-grid>li[hidden]{display:none}
+.es-news-grid .es-art,.es-news-related .es-art{flex:1 1 auto;min-width:0}
+.es-news-grid .es-art-excerpt,.es-news-track .es-art-excerpt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.es-art-frame img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.es-art:hover .es-art-frame img{transform:scale(1.05)}
+@media (prefers-reduced-motion:reduce){.es-art-frame img{transition:none}.es-art:hover .es-art-frame img{transform:none}}
+.es-news-empty.es-news-empty,.es-news-none.es-news-none{margin:40px 0 0;font:300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-news-none.es-news-none{margin:0}
+.es-news-more-row{display:flex;justify-content:center;margin:40px 0 0}
+.es-news-more-row[hidden]{display:none}
+.es-news-more{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;border:0;border-radius:0;background:rgba(0,0,0,.08);color:var(--navy-800);font:700 14px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:color .35s cubic-bezier(.22,1,.36,1)}
+.es-news-more::before{content:"";position:absolute;inset:0 -30px;z-index:-1;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 100%,0 100%);transform:translateX(-101%);transition:transform .35s cubic-bezier(.22,1,.36,1);background:var(--blue-600)}
+.es-news-more:hover,.es-news-more:focus{background:rgba(0,0,0,.08);color:var(--bianco)}
+.es-news-more:hover::before{transform:translateX(0)}
+.es-news-more:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.es-news-more,.es-news-more::before{transition:none}}
+/* Articolo e caso studio: meta sotto il titolo */
+.es-news-meta{display:flex;flex-wrap:wrap;gap:24px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)}
+.es-news-meta-cat{color:var(--blue-600)}
+.es-case-meta.es-case-meta{letter-spacing:.14em;color:var(--blue-500)}
+/* Immagine in evidenza 16:7 (Gray 150 se manca) */
+.es-news-hero-img{max-width:1360px;margin:0 auto;aspect-ratio:16/7;overflow:hidden;background:var(--gray-150)}
+.es-news-hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+/* Testo dell'articolo */
+.es-news-body h2{margin:32px 0 16px;font:800 var(--testo-h3)/1.1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal}
+.es-news-body>h2:first-child{margin-top:0}
+.es-news-body p{margin:0 0 20px;font:300 var(--testo-body-lg)/1.65 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-news-body ul{margin:0 0 20px;padding-left:22px;display:flex;flex-direction:column;gap:10px}
+.es-news-body li{font:300 var(--testo-body-lg)/1.65 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-news-body blockquote{margin:32px 0;padding:24px 28px;background:var(--gray-050);border-left:3px solid var(--blue-600)}
+.es-news-body blockquote p{margin:0;font:700 24px/1.3 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-news-body blockquote cite{display:block;margin-top:12px;font:400 14px/1.5 var(--font-testo),sans-serif;font-style:normal;color:var(--gray-500);text-transform:none}
+.es-news-body .es-news-fonte{margin:40px 0 0;padding-top:20px;border-top:1px solid var(--bordo-sottile);font:400 12px/1.4 var(--font-testo),sans-serif;color:var(--gray-500)}
+/* Caso studio: titoli di sezione più grandi (H2 del design system), numeri in evidenza */
+.es-case-body .es-news-body h2{margin:8px 0 16px;font:900 var(--testo-h2)/.96 var(--font-titoli),sans-serif}
+.es-case-body .es-news-body>h2:first-child{margin-top:0}
+.es-case-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;margin:32px 0;padding:28px 0;border-top:1px solid var(--bordo-sottile);border-bottom:1px solid var(--bordo-sottile)}
+.es-case-stats>div{display:flex;flex-direction:column-reverse;gap:6px}
+.es-case-stats dd{margin:0;font:900 var(--testo-display-3)/1 var(--font-titoli),sans-serif;color:var(--navy-800)}
+.es-case-stats dt{font:500 11px/1.3 var(--font-testo),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500)}
+/* Caso studio, colonna laterale: voce del cliente e macchine */
+.es-case-aside{display:flex;flex-direction:column;gap:24px}
+.es-case-label.es-case-label{margin:0 0 16px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500)}
+.es-case-voice{margin:0;padding:24px;background:var(--gray-100);display:flex;flex-direction:column}
+.es-case-voice blockquote{order:3;margin:0}
+.es-case-voice blockquote p{margin:0;font:italic 300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-case-voice figcaption{order:2;display:flex;align-items:center;gap:12px;margin:0 0 14px}
+.es-case-avatar{flex-shrink:0;width:52px;height:52px;overflow:hidden;background:var(--gray-150)}
+.es-case-avatar img{display:block;width:100%;height:100%;object-fit:cover}
+.es-case-name{display:block;font:800 14px/normal var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-case-role{display:block;font:400 12px/1.4 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-case-machines .es-case-label.es-case-label{margin-bottom:12px}
+.es-case-machines ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.es-case-machine{display:flex;align-items:center;gap:14px;padding:14px;background:var(--gray-100);text-decoration:none}
+.es-case-thumb{flex-shrink:0;width:56px;height:56px;overflow:hidden;background:var(--gray-150)}
+.es-case-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.es-case-machine-name{font:800 16px/1.25 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase}
+.es-case-machine-name::after{content:" →" / ""}
+.es-case-machine:hover .es-case-machine-name{color:var(--blue-600)}
+.es-case-machine:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+/* "Continua a leggere": 3 card; nei casi studio etichetta = settore e titolo più piccolo */
+.es-news-related{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:24px}
+/* Con 3 card le colonne si allargano come nel wireframe (auto-fit); con 1-2 card (casi studio) restano larghe come una colonna su 4 */
+.es-news-related:has(>li:nth-child(3)){grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.es-news-related .es-art-title.es-art-title{margin:0}
+.es-news-related--case .es-art-body{padding:22px}
+.es-news-related--case .es-art-meta{margin-bottom:0;line-height:13px}
+.es-news-related--case .es-art-title.es-art-title{margin:10px 0 0;font:800 22px/1 var(--font-titoli),sans-serif}
+#es-correlati:not(:has(.es-art)){display:none}
+/* Breadcrumb dell'articolo: l'ultima voce è la categoria (senza aria-current), stesso colore della voce corrente */
+.es-breadcrumb.es-breadcrumb--light li:last-child:not(:has(a)){color:var(--navy-800)}
+/* === fine News === */
+
+/* Card macchina, Squadron e settore: effetto al passaggio del mouse come le card news (richiesta utente 30/09): sollevamento, ombra, zoom dell'immagine */
+.es-mcard.es-mcard,.es-scard.es-scard,a.es-sec.es-sec{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.es-mcard.es-mcard:hover,.es-scard.es-scard:hover,a.es-sec.es-sec:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.12)}
+.es-mcard .es-mcard-img{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.es-mcard:hover .es-mcard-img{transform:scale(1.05)}
+@media (prefers-reduced-motion:reduce){.es-mcard.es-mcard,.es-scard.es-scard,a.es-sec.es-sec,.es-mcard .es-mcard-img{transition:none}.es-mcard.es-mcard:hover,.es-scard.es-scard:hover,a.es-sec.es-sec:hover,.es-mcard:hover .es-mcard-img{transform:none}}
+
+/* Carosello News in Home (richiesta utente 30/09): niente spazio laterale (si vedevano pezzi delle card vicine; resta sopra e sotto per sollevamento e ombra),
+   focus delle card all'interno, frecce attenuate agli estremi, contatore a pallini (bersagli 24px, pallino 10px, attivo allungato Navy 800) */
+.es-news-track .es-art:focus-visible{outline-offset:-3px}
+.es-news-nav[aria-disabled="true"]{opacity:.35;cursor:default}
+.es-news-nav[aria-disabled="true"]:hover{background:var(--bianco)}
+.es-news-dots{display:flex;justify-content:center;margin-top:28px}
+.es-news-dots[hidden]{display:none}
+.es-news-dot{position:relative;width:24px;height:24px;padding:0;border:0;border-radius:0;background:none;cursor:pointer;transition:width .35s cubic-bezier(.22,1,.36,1)}
+.es-news-dot::before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:5px;transform:translate(-50%,-50%);background:rgba(28,38,90,.24);transition:width .35s cubic-bezier(.22,1,.36,1),background .35s cubic-bezier(.22,1,.36,1)}
+.es-news-dot:hover,.es-news-dot:focus{background:none}
+.es-news-dot:hover::before{background:rgba(28,38,90,.5)}
+.es-news-dot[aria-current="true"]{width:38px}
+.es-news-dot[aria-current="true"]::before{width:28px;background:var(--navy-800)}
+.es-news-dot:focus-visible{outline:2px solid var(--navy-800);outline-offset:0}
+@media (prefers-reduced-motion:reduce){.es-news-dot,.es-news-dot::before{transition:none}}
+
+/* === Eurostar — Ricerca (template dei risultati; il wireframe non ha la pagina: disegnata sul modello dell'archivio News) === */
+#es-sr-hero h1{overflow-wrap:anywhere}
+/* Campo di ricerca nella testata scura: riquadro bianco con il pulsante Blue 600 dentro */
+.es-sr-form{margin:28px 0 0;max-width:640px}
+.es-sr-label{display:block;margin:0 0 10px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--bianco-82)}
+.es-sr-field{display:flex;align-items:stretch;gap:4px;padding:4px;background:var(--bianco)}
+.es-sr-field:focus-within{outline:2px solid var(--bianco);outline-offset:2px}
+.es-sr-form input[type=search]{flex:1 1 auto;min-width:0;height:48px;margin:0;padding:0 14px;border:0;border-radius:0;background:transparent;font:400 16px/normal var(--font-testo),sans-serif;color:var(--navy-800);outline:0;box-shadow:none;transition:none}
+.es-sr-form input[type=search]::-webkit-search-cancel-button{cursor:pointer}
+.es-sr-field>button[type=submit]{flex-shrink:0;padding:0 26px;border:0;border-radius:0;background:var(--blue-600);color:var(--bianco);font:700 14px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .25s}
+.es-sr-field>button[type=submit]:hover,.es-sr-field>button[type=submit]:focus{background:var(--navy-800);color:var(--bianco)}
+.es-sr-field>button[type=submit]:focus-visible{outline:2px solid var(--navy-800);outline-offset:2px}
+/* Link ai gruppi di risultati (solo con più di un gruppo) */
+.es-sr-jump{margin:20px 0 0}
+.es-sr-jump ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.es-sr-jump a{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border:1px solid rgba(255,255,255,.5);color:var(--bianco);font:700 12px/1 var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .25s,color .25s}
+.es-sr-jump a span{font:500 12px/1 var(--font-testo),sans-serif;letter-spacing:0;color:var(--bianco-82)}
+.es-sr-jump a:hover{background:var(--bianco);color:var(--navy-800)}
+.es-sr-jump a:hover span{color:var(--gray-500)}
+.es-sr-jump a:focus-visible{outline:2px solid var(--bianco);outline-offset:2px}
+/* Gruppi: 64px tra un gruppo e l'altro, anche tra il gruppo Macchine (loop del template) e gli altri (shortcode) */
+#es-sr-risultati .es-inner{display:flex;flex-direction:column;gap:64px}
+#es-sr-macchine:not(:has(.es-mcard)){display:none}
+.es-sr-results{display:flex;flex-direction:column;gap:64px}
+.es-sr-group,#es-sr-macchine{scroll-margin-top:110px}
+.es-sr-title.es-sr-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 24px;overflow-wrap:anywhere;font:800 var(--testo-h3)/1.1 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal}
+.es-sr-count{font:400 14px/1.4 var(--font-testo),sans-serif;color:var(--gray-500);text-transform:none}
+/* Righe (settori e categorie, pagine, posizioni) */
+.es-sr-list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--bordo-sottile)}
+.es-sr-list>li{margin:0;border-top:1px solid var(--bordo-sottile)}
+.es-sr-row{display:block;padding:24px 0;text-decoration:none}
+.es-sr-type{display:block;margin:0 0 10px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-600)}
+.es-sr-row-title.es-sr-row-title{margin:0;font:800 22px/1.15 var(--font-titoli),sans-serif;color:var(--navy-800);text-transform:uppercase;letter-spacing:normal;transition:color .25s}
+.es-sr-row-title::after{content:" →" / ""}
+.es-sr-row:hover .es-sr-row-title{color:var(--blue-600)}
+.es-sr-row:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+.es-sr-excerpt.es-sr-excerpt{max-width:80ch;margin:10px 0 0;font:300 var(--testo-body-md)/1.6 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-sr-excerpt mark{padding:0 2px;background:var(--gray-150);color:var(--navy-800);font-weight:500}
+/* Stato vuoto: suggerimenti per categoria e settore, link al catalogo */
+.es-sr-hint.es-sr-hint{max-width:60ch;margin:0 0 40px;font:300 var(--testo-body-lg)/1.65 var(--font-testo),sans-serif;color:var(--gray-500)}
+.es-sr-suggest{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:40px;margin:0 0 40px}
+.es-sr-suggest-title.es-sr-suggest-title{margin:0 0 16px;font:500 11px/1 var(--font-testo),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500)}
+.es-sr-suggest ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.es-sr-suggest a{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--bordo-sottile);color:var(--navy-800);font:700 13px/1.2 var(--font-titoli),sans-serif;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:border-color .25s,background .25s}
+.es-sr-suggest a:hover{border-color:var(--blue-600);background:var(--gray-050)}
+.es-sr-suggest a:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+.es-sr-cta-row.es-sr-cta-row{margin:0}
+.es-sr-cta.es-sr-cta{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;background:var(--blue-600);color:var(--bianco);font:700 14px/normal var(--font-titoli),sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;box-shadow:inset 0 0 0 1px var(--blue-600);transition:color .35s cubic-bezier(.22,1,.36,1)}
+.es-sr-cta::before{content:"";position:absolute;inset:0 -30px;z-index:-1;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 100%,0 100%);transform:translateX(-101%);transition:transform .35s cubic-bezier(.22,1,.36,1);background:var(--bianco)}
+.es-sr-cta.es-sr-cta:hover,.es-sr-cta.es-sr-cta:focus{color:var(--blue-600)}
+.es-sr-cta:hover::before{transform:translateX(0)}
+.es-sr-cta:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.es-sr-cta,.es-sr-cta::before,.es-sr-row-title,.es-sr-jump a{transition:none}}
+@media (max-width:767px){.es-sr-field>button[type=submit]{padding:0 18px}.es-sr-row-title.es-sr-row-title{font-size:20px}}
+/* === fine Ricerca === */

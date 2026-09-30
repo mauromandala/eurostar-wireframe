@@ -468,7 +468,7 @@ Estratte dagli script e dal CSS del wireframe (28/09). Token di movimento: `--du
 5. Pagine: ✅ Squadron, Contatti, Conferma, Settori, Servizi, Chi siamo, Referenze, 404, Home, Cataloghi, Lavora con noi + 5 posizioni.
 6. ✅ News: archivio, articolo, caso studio, 16 contenuti IT (EN da tradurre).
 6b. ✅ Risultati di ricerca (IT + EN).
-7. Test: confronto pixel a 375/768/1024/1280/1440, tastiera, zoom 200% e 320px, scanner Ally, screen reader.
+7. Test: ✅ confronto pixel a 375/768/1024/1280/1440, ✅ tastiera; da fare zoom 200%, scanner Ally, screen reader (vedi "Test finali — stato").
 
 Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati allo stesso viewport; screenshot + confronto degli stili calcolati per elemento (dimensioni, spaziature, colori, font).
 
@@ -744,4 +744,37 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **EN** (**da far rivedere**): "Site search", "Results for “…”", "Search the site", "Sectors and categories", "No results for “…”", "Where would you like to start?", "Go to the machine catalogue", "Can't find what you're looking for?"… (elenco in `ricerca-en.json`).
 - **Per il referente SEO** (da annotare, non da decidere qui): titolo del documento "Risultati della ricerca per “…” – Eurostar Handmade With Love" (titolo e motto del sito) e indicizzazione delle pagine di ricerca.
 - **Da decidere**: la pagina di esempio di WordPress "Sample Page" (ID 2) è pubblicata; esclusa dalla ricerca, ma raggiungibile a `/sample-page/`.
+
+---
+
+## Test finali — stato (30/09)
+
+Script e istruzioni in `docs/handoff/test-finali/` (Playwright senza installazioni; report JSON nella stessa cartella).
+
+### Confronto al pixel (24 pagine × 375/768/1024/1280/1440)
+
+- **Nessuno scroll orizzontale** su nessuna pagina a nessuna larghezza; nessuna differenza di font o colore (tranne il "404" decorativo, voluto).
+- **Corretto durante i test**:
+  - **Card macchina** (catalogo, categorie, settori), a 1280: la colonna dati di destra era 7,8px più a destra. Il componente del wireframe (MachineCard del design system) ha `flex:1` **senza** `min-width:0`: la colonna con la parola più lunga ("CONTENITORI/ORA") si allarga. Tolto `min-width:0` da `.es-mcard-stat` → scarto 0 a tutte le larghezze.
+  - **404 e Conferma**, a 1024 e 1280: sezione più bassa (752 contro 864px a 1024). Nel wireframe `min-height:64vh` vale per il solo contenuto (`content-box`) e il padding si somma. Classi `es-sec-404` / `es-sec-confirm` con `min-height: calc(64vh + 2 * clamp(90px,16vh,180px))` → identiche a tutte le larghezze (copie in `es_class_backup_es-sec-404` / `-confirm`).
+  - **Consenso privacy** dei form (Contatti, candidature): casella con i margini predefiniti del browser come nel wireframe (4px a sinistra, testo a 26px), prima solo nel form candidature; aggiunto l'asterisco rosso " *" in fondo al testo del consenso, come nel wireframe (con l'asterisco il testo va a capo come nel wireframe: pulsante "Invia candidatura" a 1024 ora alla stessa y). Asterisco escluso dai lettori di schermo (la casella ha `required`).
+- **Scostamenti rimasti, tutti già decisi o dovuti ai contenuti**: ordine di settori e pillole (campo Ordine); filtri del catalogo su una riga; galleria della scheda senza miniature e Download nascosto senza PDF; scheda macchina e posizione in una colonna sotto 900px (il wireframe resta a due colonne strette); Servizi, Chi siamo, Linee complete, Lavora con noi, Contatti (errore dimostrativo e reCAPTCHA) senza i segnaposto del wireframe; Cataloghi senza PDF; News, articolo e caso studio con i testi reali; barra clienti a 375 con l'etichetta sopra; citazione del fondatore (6px, corsivo vero); breadcrumb di Sciacquatrici a 375 che va a capo (nel wireframe sfiora il bordo); Referenze a 1440: un nome cliente va a capo in modo diverso (±8px locali).
+- **Da segnalare al cliente**: il wireframe scrive "Sughero a fungo" nella card GEMINI/F-IES e "Sughero fungo" nella scheda; il sito usa un solo campo ("Sughero fungo").
+
+### Tastiera
+
+- **Scansione** di 23 pagine (IT, Home EN, ricerca) a 1440 e 375: primo Tab sempre "Vai al contenuto"; **nessun elemento nascosto raggiungibile col Tab**; focus visibile su tutti gli elementi (il campo della pagina di ricerca lo mostra sul riquadro che lo contiene).
+- **Banner cookie** (plugin Cookiez, in shadow DOM): finché non si sceglie trattiene il focus nei suoi 4 pulsanti, come una finestra modale; dopo la scelta resta il pulsante tondo "Cookies" raggiungibile in fondo alla pagina.
+- **Corretti nello script dell'header** (snippet 2, copia in `es_snip2_backup_tastiera`; blocco in `docs/handoff/test-finali/sorgenti/snip2-tastiera.js`):
+  - **mega-menu**: il pannello sta dopo tutta la nav, quindi dopo Invio il Tab andava a "Settori" e le voci del pannello arrivavano solo dopo tutta la navigazione, con il pannello ancora aperto. Ora Tab dal pulsante aperto entra nella prima voce, Tab dall'ultima chiude ed esce verso la voce dopo il pulsante, Maiusc+Tab dalla prima torna al pulsante; il pannello si chiude quando il focus esce;
+  - **menu mobile**: con Tab oltre l'ultima voce il focus finiva sul contenuto coperto dal pannello aperto; ora il menu si chiude quando il focus esce dall'header;
+  - **"Torna su"**: scorreva in cima ma lasciava il focus in fondo (il Tab successivo andava a WhatsApp); ora porta il focus all'header (senza contorno), il Tab riparte da "Catalogo".
+- **Prove di interazione** (`interazioni.js`, 29/29 superate): salta al contenuto, mega-menu (apertura, ingresso, uscita, Esc), ricerca (Invio apre con focus nel campo, Esc torna alla lente, Invio cerca), torna su, filtri del catalogo (Invio/Spazio, `aria-pressed`, annuncio "10 macchine"), "Mostra altri articoli" (focus sulla card 13), carosello Home (una card per pressione, pallino aggiornato, `aria-disabled` in fondo), hamburger a 375 (etichetta Apri/Chiudi, Esc), form Contatti (etichette su tutti i campi, ordine del Tab = ordine visivo, anti-spam non raggiungibile). Mouse sul mega-menu invariato.
+- **Copia completa del CSS del Kit** in `wordpress/kit-custom-css.css` (esportata il 30/09 dopo le correzioni; la fonte di verità resta lo staging).
+
+### Da fare
+
+- Zoom 200% (1280 → equivalente a 640px di larghezza).
+- Scanner Ally dall'admin (richiede l'accesso all'amministrazione).
+- VoiceOver sulla scheda MEC LD.
 
