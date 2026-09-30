@@ -97,7 +97,8 @@ add_shortcode('es_news_filtri', function () {
 
 // Archivio News, griglia: tutti gli articoli (esclusi quelli solo in "Senza categoria"), dal più recente.
 // Ne mostra 12, "Mostra altri articoli" ne aggiunge 12 alla volta; con un filtro attivo si vedono tutti quelli della categoria.
-// ?categoria=slug preseleziona un filtro (gli archivi di categoria di WordPress rimandano qui).
+// Barra sticky a filo della nav: altezza header meno barra alta (non si legge lo spostamento dell'header, che il suo script
+// imposta dopo: letto prima dava 42px di stacco). ?categoria=slug preseleziona un filtro (gli archivi di categoria di WordPress rimandano qui).
 add_shortcode('es_news_griglia', function () {
     $posts = get_posts([
         'post_type' => 'post', 'post_status' => 'publish', 'numberposts' => -1, 'suppress_filters' => false,
@@ -119,10 +120,10 @@ add_shortcode('es_news_griglia', function () {
         . "var items=[].slice.call(grid.children),more=document.querySelector('.es-news-more'),empty=document.querySelector('.es-news-empty'),status=document.querySelector('.es-news-status'),shown=12,filter='all';"
         . "function render(){var n=0;items.forEach(function(li){var a=li.firstElementChild,ok=filter==='all'||a.getAttribute('data-cat')===filter;var vis=ok&&(filter!=='all'||n<shown);if(ok)n++;li.hidden=!vis;});"
         . "if(more)more.parentNode.hidden=!(filter==='all'&&items.length>shown);empty.hidden=n>0;status.textContent=n===1?status.dataset.one:status.dataset.many.replace('%d',n);}"
-        . "function stick(){var h=document.querySelector('.elementor-location-header');var top=0;if(h&&getComputedStyle(h).position==='sticky'){top=h.offsetHeight+(parseFloat(getComputedStyle(h).top)||0);}if(bar)(bar.closest('.elementor-widget')||bar).style.top=Math.max(0,top)+'px';}"
+        . "function stick(){var h=document.querySelector('.elementor-location-header');var top=0;if(h&&getComputedStyle(h).position==='sticky'){var u=h.querySelector('.es-header-top .es-util');top=h.offsetHeight-(u?u.offsetHeight:0);}if(bar)(bar.closest('.elementor-widget')||bar).style.top=Math.max(0,top)+'px';}"
         . "function select(f){filter=f;if(bar)[].forEach.call(bar.querySelectorAll('[data-filter]'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-filter')===f?'true':'false');});render();}"
         . "var strip=bar&&bar.querySelector('.es-filterbar-inner');function fades(){if(!strip)return;var max=strip.scrollWidth-strip.clientWidth;bar.classList.toggle('can-scroll-left',strip.scrollLeft>1);bar.classList.toggle('can-scroll-right',max>1&&strip.scrollLeft<max-1);}"
-        . "if(bar){bar.addEventListener('click',function(e){var b=e.target.closest('[data-filter]');if(b){select(b.getAttribute('data-filter'));b.scrollIntoView({block:'nearest',inline:'nearest'});}});stick();fades();strip.addEventListener('scroll',fades,{passive:true});window.addEventListener('resize',function(){stick();fades();});}"
+        . "if(bar){bar.addEventListener('click',function(e){var b=e.target.closest('[data-filter]');if(b){select(b.getAttribute('data-filter'));b.scrollIntoView({block:'nearest',inline:'nearest'});}});stick();window.addEventListener('load',stick);fades();strip.addEventListener('scroll',fades,{passive:true});window.addEventListener('resize',function(){stick();fades();});}"
         . "if(more)more.addEventListener('click',function(){var first=shown;shown+=12;render();var li=items[first];var a=li&&li.querySelector('a');if(a)a.focus();});"
         . "var q=new URLSearchParams(location.search).get('categoria');if(q&&bar&&bar.querySelector('[data-filter=\"'+q.replace(/[^a-z0-9-]/g,'')+'\"]'))select(q);else render();})();</script>";
     return $out;
