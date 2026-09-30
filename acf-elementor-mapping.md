@@ -695,7 +695,7 @@ Metodo di confronto: wireframe (`http://localhost:4173`) e staging affiancati al
 - **Home**: il carosello News ora mostra gli ultimi 6 articoli con la stessa card dell'archivio (`es_news_card`); corretto `scroll-padding:0 44px` sul carosello (senza, lo scatto spostava la prima card 44px a sinistra).
 - **Verifica al pixel** (1440, 768; 375/320 senza scroll orizzontale): archivio, articolo e caso studio coincidono col wireframe in testata, filtri, griglia, card, corpo (H2, paragrafi, citazioni), colonna laterale e correlati; le differenze di altezza dipendono solo dai testi reali, più lunghi. Frecce del carosello in Home provate: avanti/indietro di una card.
 - **EN** (decisione utente: solo italiano per ora): pagina News EN con testata tradotta e "No articles published yet."; carosello nascosto nella Home EN; stringhe dello snippet già tradotte. Template EN da creare quando arriveranno gli articoli tradotti.
-- **Da verificare con il cliente**: date vere dei 6 articoli; immagini dei casi studio e di "Brevetti pionieri"; testo per "CFIA Rennes"; sigla "VP-PP" (art. 3); "circa 60 Paesi" (art. 4) contro "oltre 100 paesi" del resto del sito; articolo "Hello world!" di WordPress ancora pubblicato (escluso da archivio e Home, da cestinare).
+- **Da verificare con il cliente**: date vere dei 6 articoli; immagini dei casi studio e di "Brevetti pionieri"; testo per "CFIA Rennes"; sigla "VP-PP" (art. 3); "circa 60 Paesi" (art. 4) contro "oltre 100 paesi" del resto del sito. Articolo di prova "Hello world!" di WordPress spostato nel cestino (30/09).
 
 ---
 
