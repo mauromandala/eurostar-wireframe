@@ -116,6 +116,9 @@ add_shortcode('es_breadcrumb_archivio', function ($atts = []) {
             $items[] = [get_permalink($page_id), get_the_title($page_id)];
         }
         $current = get_the_title(get_queried_object_id());
+    } elseif (is_search()) {
+        // Risultati di ricerca: Home / Ricerca.
+        $current = es_t('Ricerca');
     }
     // corrente="…": voce finale più breve del titolo della pagina (es. "Servizi" per "Servizi e post-vendita").
     if ($current !== '' && $atts['corrente'] !== '') {

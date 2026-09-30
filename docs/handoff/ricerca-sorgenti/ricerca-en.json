@@ -1,0 +1,35 @@
+{
+  "_nota": "Traduzioni EN scritte da Claude il 30/09, da far rivedere. 'snippet' = String Translation, contesto 'Eurostar template'; 'template' = pacchetto WPML del template 855 (EN 857).",
+  "snippet": {
+    "Ricerca": "Search",
+    "Cerca nel sito": "Search the site",
+    "Risultati per «%s»": "Results for “%s”",
+    "Nessun risultato": "No results",
+    "1 risultato": "1 result",
+    "%d risultati": "%d results",
+    "Scrivi il nome di una macchina, un settore o un argomento.": "Type the name of a machine, a sector or a topic.",
+    "Cerca": "Search",
+    "Tipi di risultato": "Result types",
+    "Macchine": "Machines",
+    "Settori e categorie": "Sectors and categories",
+    "Pagine": "Pages",
+    "News": "News",
+    "Posizioni aperte": "Open positions",
+    "Settore": "Sector",
+    "Categoria di macchine": "Machine category",
+    "Pagina": "Page",
+    "Posizione aperta": "Open position",
+    "Nessun risultato per «%s»": "No results for “%s”",
+    "Da dove vuoi iniziare?": "Where would you like to start?",
+    "Controlla di aver scritto bene o prova con un termine più generico: il nome di una macchina (per esempio MEC LD), un settore (vino, olio) o un tipo di macchina (riempitrice).": "Check the spelling or try a more general term: the name of a machine (for example MEC LD), a sector (wine, oil) or a type of machine (filler).",
+    "Macchine per categoria": "Machines by category",
+    "Settori": "Sectors",
+    "Vai al catalogo macchine": "Go to the machine catalogue"
+  },
+  "template": {
+    "Ricerca nel sito": "Site search",
+    "Non trovi quello che cerchi?": "Can't find what you're looking for?",
+    "Scrivici: il nostro team tecnico ti aiuta a trovare la soluzione giusta per il tuo prodotto.": "Write to us: our technical team will help you find the right solution for your product.",
+    "Contattaci": "Contact us"
+  }
+}

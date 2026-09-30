@@ -72,6 +72,7 @@
 .es-news-related--case .es-art-meta{margin-bottom:0;line-height:13px}
 .es-news-related--case .es-art-title.es-art-title{margin:10px 0 0;font:800 22px/1 var(--font-titoli),sans-serif}
 #es-correlati:not(:has(.es-art)){display:none}
-/* Breadcrumb dell'articolo: l'ultima voce è la categoria (senza aria-current), stesso colore della voce corrente */
-.es-breadcrumb.es-breadcrumb li:last-child:not(:has(a)){color:var(--navy-800)}
+/* Breadcrumb dell'articolo (variante chiara): l'ultima voce è la categoria (senza aria-current), stesso colore della voce corrente.
+   Solo --light: senza, la regola batteva il bianco della variante scura e la voce corrente delle testate scure usciva Navy 800 */
+.es-breadcrumb.es-breadcrumb--light li:last-child:not(:has(a)){color:var(--navy-800)}
 /* === fine News === */
